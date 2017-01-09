@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>David Hamp-Gonsalves</title>
+    <link>https://davidhampgonsalves.github.io/index.xml</link>
+    <description>Recent content on David Hamp-Gonsalves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 08 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://davidhampgonsalves.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugo Black &amp; Light</title>
+      <link>https://davidhampgonsalves.github.io/posts/hugo-black-and-light-theme/</link>
+      <pubDate>Sun, 08 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/hugo-black-and-light-theme/</guid>
+      <description>
+
+&lt;h1 id=&#34;an-h1-header&#34;&gt;An h1 header&lt;/h1&gt;
+
+&lt;p&gt;Paragraphs are separated by a blank line.&lt;/p&gt;
+
+&lt;p&gt;2nd paragraph. &lt;em&gt;Italic&lt;/em&gt;, &lt;strong&gt;bold&lt;/strong&gt;, and &lt;code&gt;monospace&lt;/code&gt;. Itemized lists
+look like:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;this one&lt;/li&gt;
+&lt;li&gt;that one&lt;/li&gt;
+&lt;li&gt;the other one&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that &amp;mdash; not considering the asterisk &amp;mdash; the actual text
+content starts at 4-columns in.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Block quotes are
+written like so.&lt;/p&gt;
+
+&lt;p&gt;They can span multiple paragraphs,
+if you like.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., &amp;ldquo;it&amp;rsquo;s all
+in chapters 12&amp;ndash;14&amp;rdquo;). Three dots &amp;hellip; will be converted to an ellipsis.
+Unicode is supported. ☺&lt;/p&gt;
+
+&lt;h2 id=&#34;an-h2-header&#34;&gt;An h2 header&lt;/h2&gt;
+
+&lt;p&gt;Here&amp;rsquo;s a numbered list:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;first item&lt;/li&gt;
+&lt;li&gt;second item&lt;/li&gt;
+&lt;li&gt;third item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Note again how the actual text starts at 4 columns in (4 characters
+from the left side). Here&amp;rsquo;s a code sample:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Let me re-iterate ...
+for i in 1 .. 10 { do-something(i) }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you probably guessed, indented 4 spaces. By the way, instead of
+indenting the block, you can use delimited blocks, if you like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;define foobar() {
+    print &amp;quot;Welcome to flavor country!&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(which makes copying &amp;amp; pasting easier). You can optionally mark the
+delimited block for Pandoc to syntax highlight it:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;time&lt;/span&gt;
+&lt;span style=&#34;font-style: italic&#34;&gt;# Quick, count to ten!&lt;/span&gt;
+&lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;font-weight: bold&#34;&gt;in&lt;/span&gt; range(10):
+    &lt;span style=&#34;font-style: italic&#34;&gt;# (but not *too* quick)&lt;/span&gt;
+    time.sleep(0.5)
+    &lt;span style=&#34;font-weight: bold&#34;&gt;print&lt;/span&gt; i
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;an-h3-header&#34;&gt;An h3 header&lt;/h3&gt;
+
+&lt;p&gt;Now a nested list:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;First, get these ingredients:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;carrots&lt;/li&gt;
+&lt;li&gt;celery&lt;/li&gt;
+&lt;li&gt;lentils&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Boil some water.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Dump everything in the pot and follow
+this algorithm:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;find wooden spoon
+uncover pot
+stir
+cover pot
+balance wooden spoon precariously on pot handle
+wait 10 minutes
+goto first step (or shut off burner when done)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Do not bump wooden spoon or it will fall.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Notice again how text always lines up on 4-space indents (including
+that last line which continues item 3 above).&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s a link to &lt;a href=&#34;http://foo.bar&#34;&gt;a website&lt;/a&gt;, to a &lt;a href=&#34;local-doc.html&#34;&gt;local
+doc&lt;/a&gt;, and to a &lt;a href=&#34;#an-h2-header&#34;&gt;section heading in the current
+doc&lt;/a&gt;. Here&amp;rsquo;s a footnote &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;A horizontal rule follows.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Here&amp;rsquo;s a definition list:&lt;/p&gt;
+
+&lt;p&gt;apples
+  : Good for making applesauce.
+oranges
+  : Citrus!
+tomatoes
+  : There&amp;rsquo;s no &amp;ldquo;e&amp;rdquo; in tomatoe.&lt;/p&gt;
+
+&lt;p&gt;Again, text is indented 4 spaces. (Put a blank line between each
+term/definition pair to spread things out more.)&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s a &amp;ldquo;line block&amp;rdquo;:&lt;/p&gt;
+
+&lt;p&gt;| Line one
+|   Line too
+| Line tree&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;Footnote text goes here.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Octopress to Hugo</title>
+      <link>https://davidhampgonsalves.github.io/posts/octopress-to-hugo/</link>
+      <pubDate>Fri, 06 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/octopress-to-hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java 8: The Good Parts</title>
+      <link>https://davidhampgonsalves.github.io/posts/java-8-the-good-parts/</link>
+      <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/java-8-the-good-parts/</guid>
+      <description>
+
+&lt;p&gt;Sometimes I feel that Java has become a second class citizen on the JVM. While it commands a huge market share and is generally blazingly fast it hasn&amp;rsquo;t progressed like Clojure, Scala and even Groovy have. Java 8 delivered on some of the long planned features and this post is to talk about my favourites.&lt;/p&gt;
+
+&lt;h2 id=&#34;streams&#34;&gt;Streams&lt;/h2&gt;
+
+&lt;p&gt;Java&amp;rsquo;s Streams are monads that let you represent computations as a chain of steps. Typically they are created from a Collection and then the typical functional &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;reduce&lt;/code&gt;, &lt;code&gt;filter&lt;/code&gt;, etc functions are applied to achieve a desired transformation.&lt;/p&gt;
+
+&lt;p&gt;Streams are a high level abstraction that make (in many common cases) writing parallelised computations simple and readable.&lt;/p&gt;
+
+&lt;h2 id=&#34;method-references&#34;&gt;Method References&lt;/h2&gt;
+
+&lt;p&gt;With the addition of &lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html&#34;&gt;Method References&lt;/a&gt; Java can almost support &lt;a href=&#34;https://en.wikipedia.org/wiki/First-class_function&#34;&gt;first-class functions&lt;/a&gt; which when coming from other languages should help Java feel less awkward.&lt;/p&gt;
+
+&lt;h2 id=&#34;default-methods&#34;&gt;Default Methods&lt;/h2&gt;
+
+&lt;p&gt;While default methods don&amp;rsquo;t allow you to do anything you couldn&amp;rsquo;t already do with abstract classes and proper inheritance design but I&amp;rsquo;ve found them to be convenient and more natural.&lt;/p&gt;
+
+&lt;h2 id=&#34;futures&#34;&gt;Futures&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://download.java.net/lambda/b88/docs/api/java/util/concurrent/CompletableFuture.html&#34;&gt;CompletableFutures&lt;/a&gt; improves the flexibility of the existing Futures&lt;/p&gt;
+
+&lt;h2 id=&#34;fork-join-thread-pool&#34;&gt;Fork/Join Thread Pool?&lt;/h2&gt;
+
+&lt;p&gt;Introduced in Java 7, a system wide instance of the &lt;a href=&#34;http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ForkJoinPool.html&#34;&gt;ForkJoinPool&lt;/a&gt; enables allows for parallel execution for both Streams and Futures,&lt;/p&gt;
+
+&lt;h2 id=&#34;monads&#34;&gt;Monads&lt;/h2&gt;
+
+&lt;p&gt;Along with Streams we also have the &lt;a href=&#34;https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html&#34;&gt;Optional&lt;/a&gt; monad. While its a great building block its not currently used often in the stdlib which means you would need to wrap functions that still use &lt;code&gt;null&lt;/code&gt; to represent not found, or similar states.&lt;/p&gt;
+
+&lt;h2 id=&#34;date-time&#34;&gt;Date/Time&lt;/h2&gt;
+
+&lt;p&gt;JodaTime has traditionally been almost a requirement for writing solid time/date code in but now we have &lt;code&gt;java.time&lt;/code&gt; which was worked on by the author of JodaTime.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Value of Failed Projects</title>
+      <link>https://davidhampgonsalves.github.io/posts/failed-projects/</link>
+      <pubDate>Mon, 03 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/failed-projects/</guid>
+      <description>&lt;p&gt;Personal projects fail just as easily as well funded professional ones. Even small projects and spikes deserve to be put down gently and documented for the benefit of all projects that follow.&lt;/p&gt;
+
+&lt;p&gt;My contributions are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://davidhampgonsalves.github.io/failed-projects-tree-ring-generation&#34;&gt;Tree-Rings&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://davidhampgonsalves.github.io/failed-projects-open-mosaic&#34;&gt;Open-Mosiac&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Failed Projects: Open Mosaic</title>
+      <link>https://davidhampgonsalves.github.io/posts/open-mosiac/</link>
+      <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/open-mosiac/</guid>
+      <description>
+
+&lt;p&gt;The goal of this project was to recreate an image as a mosaic of other images. I wanted to achieve this with a low number of tiles and not simply use images as pixels based on their colors.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/open-mosaic/sample.png&#34; style=&#34;width\: 800px&#34; class=&#34;center plain&#34;/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;mistakes&#34;&gt;Mistakes&lt;/h2&gt;
+
+&lt;p&gt;The biggest mistake I made was to vastly underestimate the difficulty of the problem. I thought I could get good results by tuning my early histogram grid implementation and floundered. I have seen many other attempts at this project but yet to see any that produce good results.&lt;/p&gt;
+
+&lt;h2 id=&#34;path-to-failure&#34;&gt;Path to Failure&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Played with Perceptual Hashes (then read about how they work and abandoned this path).&lt;/li&gt;
+&lt;li&gt;Moved to Grid of Histograms: &lt;em&gt;Divide source and input images into grids and generate / compare Histograms.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Switched from HSV to LAB / LUV color spaces for a more human perception of color.&lt;/li&gt;
+&lt;li&gt;Switched from Instagram to Flickr for source images(Insta is filled with images of text).&lt;/li&gt;
+&lt;li&gt;Experimented with different histogram comparison methods (Chi-Square, Bhattacharyya, etc).&lt;/li&gt;
+&lt;li&gt;Optimised algorithm for a shorter iteration loop (this was successful).&lt;/li&gt;
+&lt;li&gt;Researched our perception of shapes, switched to basic shape (still factor in color) approach.&lt;/li&gt;
+&lt;li&gt;Performance mandated hybrid approch: first pass histogram grid, second pass with feature detection, finally adjust image contrast / brightness.&lt;/li&gt;
+&lt;li&gt;Failure.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;next-time&#34;&gt;Next Time&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Quantify success early: &lt;em&gt;manually create mosaic based on small input set and diff with algorithms results to calculate how successful each run was&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Search inside each possible image for good matches / try different rotations of source images.&lt;/li&gt;
+&lt;li&gt;More processing power (cluster).&lt;/li&gt;
+&lt;li&gt;Focus on shapes and start in greyscale space.&lt;/li&gt;
+&lt;li&gt;Use bag of words model.&lt;/li&gt;
+&lt;li&gt;Use weighted multiple factors (histograms, FLANN, Feature Detection, shapes, etc).&lt;/li&gt;
+&lt;li&gt;Write it in C++: &lt;em&gt;Other language bindings are great but the stack traces force you into C/C++ anyway.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Failed Projects: Tree Ring Generation</title>
+      <link>https://davidhampgonsalves.github.io/posts/tree-ring-generation/</link>
+      <pubDate>Sat, 01 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/tree-ring-generation/</guid>
+      <description>
+
+&lt;h2 id=&#34;project-goal&#34;&gt;Project Goal&lt;/h2&gt;
+
+&lt;p&gt;I wanted to generate SVG based tree rings that would mirror peoples lives based on some basic info (name, age, times of growth).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/tree-rings/pine.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;project-motivation&#34;&gt;Project Motivation&lt;/h1&gt;
+
+&lt;p&gt;Tree rings are interesting because they contain a lot of information.  Over the course of the project I identified and achieved the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;age (how many rings)&lt;/li&gt;
+&lt;li&gt;species (bark characteristics, color, chance of cracking, etc)&lt;/li&gt;
+&lt;li&gt;ring dark to light ratio and smoothness&lt;/li&gt;
+&lt;li&gt;cracks that span multiple rings and have depth&lt;/li&gt;
+&lt;li&gt;defects in rings (both round and angled)&lt;/li&gt;
+&lt;li&gt;non-uniform ring width (simulate environmental factors)&lt;/li&gt;
+&lt;li&gt;grain texture and coloration&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/tree-rings/willow.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The code generates a scalable image using millions of points. Unfortunately the SVG files are huge and complex and most programs can&amp;rsquo;t handle them. Paper.js also often fails when exporting to SVG. It draws them to an HTML canvas element easily but then its no longer scalable.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/tree-rings/willow-env.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;downfall-of-project&#34;&gt;Downfall of Project&lt;/h2&gt;
+
+&lt;p&gt;I could never get the look I wanted. Tree rings are so organic and beautiful that my representations always looked childish in comparison. The code is an abomination that arose out of a series of spikes to test out my early theories. It could be rewritten but I don&amp;rsquo;t think it would result in a better final product.&lt;/p&gt;
+
+&lt;p&gt;The code is preserved in all its tangled-ness in &lt;a href=&#34;https://github.com/davidhampgonsalves/tree-rings&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/tree-rings/hemlock.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Longterm Costs of Personal Projects</title>
+      <link>https://davidhampgonsalves.github.io/posts/long-term-costs-personal-projects/</link>
+      <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/long-term-costs-personal-projects/</guid>
+      <description>
+
+&lt;p&gt;Maintaining personal projects incur a small but on going cost: API&amp;rsquo;s change, PAAS&amp;rsquo;s deprecate old stacks, frameworks and libraries die / decay and domains need to be renewed.&lt;/p&gt;
+
+&lt;p&gt;If you want your projects to live to a ripe old age without requiring a constant stream of your love and attention I suggest:&lt;/p&gt;
+
+&lt;h2 id=&#34;avoid-paas&#34;&gt;Avoid PAAS&lt;/h2&gt;
+
+&lt;p&gt;Heroku, GAE, etc are all active projects that regularly deprecate obsolete stacks which your project will eventually be running on. Docker + EC2 / Digital Ocean is my current choice.&lt;/p&gt;
+
+&lt;h2 id=&#34;frameworks-libraries&#34;&gt;Frameworks &amp;amp; Libraries&lt;/h2&gt;
+
+&lt;p&gt;The tidy solution is to lock your versions down in whatever package manager your use but the safe solution is to check all code dependancies in with the rest of your code.&lt;/p&gt;
+
+&lt;h2 id=&#34;expect-api-changes-death&#34;&gt;Expect API Changes / Death&lt;/h2&gt;
+
+&lt;p&gt;Creating your system to gracefully handle API changes by alerting users and entering an archive mode removes the urgency of reviving and old project. In many cases its can be a fitting end that maintains the initial intent of the project.&lt;/p&gt;
+
+&lt;h2 id=&#34;domains&#34;&gt;Domains&lt;/h2&gt;
+
+&lt;p&gt;When a project is shiny and new its easy to think its valuable enough to warrant its own domain but they incur a constant monetary / time cost to renew. Automated renewals help and subdomains  usually suffice.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>File to Knife Conversion</title>
+      <link>https://davidhampgonsalves.github.io/posts/file-to-knife-conversion/</link>
+      <pubDate>Fri, 05 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/file-to-knife-conversion/</guid>
+      <description>&lt;p&gt;To learn some of the basics of metallurgy and have an understanding of what goes into some of our most basic tools I built a knife out of a discarded file.&lt;/p&gt;
+
+&lt;p&gt;Good quality files are made from high carbon steel which can be annealed (softened) so that it can be worked into a new shape and then hardened to produce a pretty high quality knife.&lt;/p&gt;
+
+&lt;p&gt;I mostly followed the excellent &lt;a href=&#34;https://www.youtube.com/watch?v=J_jMNsjVc-s]&#34;&gt;video series&lt;/a&gt; by Walter Sorrells but with a modified design.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/knife/knife.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WebRTC in 5 Minutes</title>
+      <link>https://davidhampgonsalves.github.io/posts/webrtc-in-5-minutes/</link>
+      <pubDate>Sat, 23 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/webrtc-in-5-minutes/</guid>
+      <description>
+
+&lt;p&gt;While WebRTC has been around for awhile now but its still feels like a young technology and there are few resources to learn about it. These are the basics of how a connection is made between peers which is important for understanding how WebRTC differs from traditional networking.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-a-connection&#34;&gt;Creating a Connection&lt;/h2&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;strong&gt;Fetch ICE (Interactive Connectivity Establishment) Candidates from STUN server.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Contains details of how the data is going to be exchanged (ip, port, protocol).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;If STUN reports we are unreachable (behind a symetric NAT?) then we must use a TURN relay.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Need to use &lt;code&gt;TURN&lt;/code&gt; relay since peer wont be able to directly connect to us.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Make an offer SDP which contains meta-data about the data the peers will be sending.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SDL = session description protocol&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;SDL is shared with peer via Signal Channel.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Signal channel can be anything from a websocket to word of mouth but WebRTC doesn&amp;rsquo;t do this part.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Remote party answers with their own SDP via Signal Channel.&lt;/strong&gt;
+&lt;br&gt;
+&lt;strong&gt;Peers connect with information recieved SDP.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;em&gt;I learned about WebRTC in the context of &lt;a href=&#34;https://github.com/feross/webtorrent&#34;&gt;WebTorrent&lt;/a&gt; which is an amazing project, you should check it out.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Terminal GIFs on OSX</title>
+      <link>https://davidhampgonsalves.github.io/posts/terminal-gifs-osx/</link>
+      <pubDate>Tue, 07 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/terminal-gifs-osx/</guid>
+      <description>
+
+&lt;p&gt;Using Gifs for terminal explanations and usages aren&amp;rsquo;t new and exciting anymore but they are still useful. This is how to create them quickly on OSX.&lt;/p&gt;
+
+&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
+
+&lt;p&gt;The tool we will use to capture our gif &lt;a href=&#34;https://github.com/icholy/ttygif&#34;&gt;ttygif&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;brew install imagemagick ttyrec
+brew install https&lt;span style=&#34;font-weight: bold; font-style: italic&#34;&gt;\:&lt;/span&gt;//raw.githubusercontent.com/icholy/ttygif/master/ttygif.rb
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;gif&#34;&gt;Gif&lt;/h2&gt;
+
+&lt;p&gt;The process of creating the gif is:
+* Run &lt;code&gt;ttyrec&lt;/code&gt; which records your terminal session as series of &lt;code&gt;png&lt;/code&gt; files.
+* Run &lt;code&gt;ttygif&lt;/code&gt; to convert the &lt;code&gt;png&lt;/code&gt; files to small &lt;code&gt;gifs&lt;/code&gt;.
+* Concat the &lt;code&gt;gif&lt;/code&gt; files using the concat script.
+* Edit the final &lt;code&gt;gif&lt;/code&gt; using whatever tool or online site you like.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-style: italic&#34;&gt;#creates series pngs(type exit to finish recording)&lt;/span&gt;
+ttyrec recording-name
+&lt;span style=&#34;font-style: italic&#34;&gt;#convert png -&amp;gt; gif(-f disables cropping)&lt;/span&gt;
+ttygif recording-name -f
+&lt;span style=&#34;font-style: italic&#34;&gt;#concat gif parts into final product&lt;/span&gt;
+concat_osx.sh recording-name.gif
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&#34;example&#34;&gt;Example&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/terminal-gif-example.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ethical Apps on Greenpeace Podcast</title>
+      <link>https://davidhampgonsalves.github.io/posts/greenpeace-podcast/</link>
+      <pubDate>Fri, 20 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/greenpeace-podcast/</guid>
+      <description>
+
+&lt;p&gt;Did a interview about ethical apps on the &lt;a href=&#34;https://itunes.apple.com/ca/podcast/greenpeace-podcast/id675078420?mt=2&#34;&gt;Greenpeace Podcast&lt;/a&gt;. Its a great new podcast and I had a great time speaking with them.&lt;/p&gt;
+
+&lt;h2 id=&#34;listen&#34;&gt;Listen&lt;/h2&gt;
+
+&lt;p&gt;The podcast is also up on soundcloud so you can hear my &lt;a href=&#34;https://soundcloud.com/greenpeace-canada/an-app-for-choosing-ethical-foods#t=5:46&#34;&gt;first segment&lt;/a&gt; or the &lt;a href=&#34;https://soundcloud.com/greenpeace-canada/an-app-for-choosing-ethical-foods&#34;&gt;entire show&lt;/a&gt; from there.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Docker Phusion Base</title>
+      <link>https://davidhampgonsalves.github.io/posts/phusion-docker-base/</link>
+      <pubDate>Sun, 15 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/phusion-docker-base/</guid>
+      <description>&lt;p&gt;I have been using the &lt;a href=&#34;https://github.com/phusion/passenger-docker&#34;&gt;phusion baseimage-docker&lt;/a&gt;. While in the past i&amp;rsquo;ve been mostly interested in making my docker images as small as possible with images like alpine-linux(busy-box based) the Phusion base breaks from this tradition by encouraging you to run multiple processes from a single container.&lt;/p&gt;
+
+&lt;p&gt;While I was wary of this approach initially they make a good &lt;a href=&#34;https://github.com/phusion/baseimage-docker#docker_single_process&#34;&gt;argument&lt;/a&gt; for it and in practice I have been really enjoying working in this fashion.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The baseimage-docker uses RUnit rather then upstart and configuring services is well documented and straightforward.&lt;/li&gt;
+&lt;li&gt;Cron works as you would expect and its usage isn&amp;rsquo;t discouraged.&lt;/li&gt;
+&lt;li&gt;The container size isn&amp;rsquo;t tiny but since you have less of them its not a huge factor.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For my project snap-spot I have my app server(http-kit), nginx, new-relic monitoring and a data cleanup task in the same container. For a project of my size this is a good fit and has simplified my deployment,&lt;/p&gt;
+
+&lt;p&gt;The ability and convince of grouping processes  logically without the overhead of complex docker container orchestration. For small projects this is great.&lt;/p&gt;
+
+&lt;p&gt;Finally I don&amp;rsquo;t find myself constantly &lt;code&gt;docker exec&lt;/code&gt;&amp;lsquo;ing into a pile of containers because the services can be logically grouped which makes development and maintenance more convenient.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Launchd in 5 Minutes</title>
+      <link>https://davidhampgonsalves.github.io/posts/launchd-in-5-minutes/</link>
+      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/launchd-in-5-minutes/</guid>
+      <description>
+
+&lt;p&gt;Launchd is the official way to schedule a task or run a service on OSX. The provided documentations goal is to turn you into a launchd expert at the cost of your afternoon. These are the 5 minute highlights to get a task running.&lt;/p&gt;
+
+&lt;h2 id=&#34;configure-plist&#34;&gt;Configure Plist&lt;/h2&gt;
+
+&lt;p&gt;You tell launchd to run a task by putting a reverse domain named plist file(&lt;code&gt;com.example.name&lt;/code&gt;) in &lt;code&gt;~/Library/LaunchAgents&lt;/code&gt;, this is probably what you are looking for but if you want it to be global then put it in &lt;code&gt;/Library/LaunchAgents&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This file needs to have 600 permissions &lt;code&gt;chmod 600 com.example.name.plist&lt;/code&gt; and be owned by &lt;code&gt;root&lt;/code&gt;, &lt;code&gt;chown root com.example.name.plist&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Launchd tasks are run from &lt;code&gt;/&lt;/code&gt; so all paths should be relative from that point.&lt;/p&gt;
+
+&lt;p&gt;Take a look at my &lt;a href=&#34;https://github.com/davidhampgonsalves/markov-cloj/blob/master/markov-tumblr.plist&#34;&gt;plist&lt;/a&gt; as an example. Everything in there is pretty self explanatory. There is also an &lt;a href=&#34;http://launched.zerowidth.com/&#34;&gt;online service&lt;/a&gt; to help you build your own..&lt;/p&gt;
+
+&lt;h2 id=&#34;launchctl&#34;&gt;LaunchCtl&lt;/h2&gt;
+
+&lt;p&gt;The following commands are self explanatory. If you change your plist you need to unload/load it again for the changes to take effect.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;launchctl list | grep com.task.name&lt;/code&gt;
+&lt;code&gt;sudo launchctl unload com.davidhampgonsalves.markov-tumblr.plist&lt;/code&gt;
+&lt;code&gt;sudo launchctl load -w com.davidhampgonsalves.markov-tumblr.plist&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;You can force a run of your task with &lt;code&gt;sudo launchctl start com.markov-tumblr&lt;/code&gt;,&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;debug&#34;&gt;debug&lt;/h2&gt;
+
+&lt;p&gt;The best way I have found is to keep a tail of the syslog running with: &lt;code&gt;tail -F /var/log/system.log&lt;/code&gt;. decipher any error numbers with &lt;code&gt;launchd error &amp;lt;error number&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OpenCV CompareHist Performance</title>
+      <link>https://davidhampgonsalves.github.io/posts/opencv-comparehist/</link>
+      <pubDate>Sat, 31 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/opencv-comparehist/</guid>
+      <description>&lt;p&gt;I did some performance tests on the four histograms comparison methods that &lt;a href=&#34;http://docs.opencv.org/java/org/opencv/imgproc/Imgproc.html#compareHist(org.opencv.core.Mat, org.opencv.core.Mat, int)&#34;&gt;compareHist&lt;/a&gt; provides and initially found that in basic performance tests they were all about the same speed. More recently I profiled them in a real world application and found they were significantly different.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/opencv-graph.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This is all using the Java OpenCV bindings.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Markov Chains in Clojure</title>
+      <link>https://davidhampgonsalves.github.io/posts/markov-chains/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/markov-chains/</guid>
+      <description>&lt;p&gt;I noticed that when you enter 30 into tumblrs age field it switches from &amp;ldquo;years old&amp;rdquo; to &amp;ldquo;years young&amp;rdquo;. Fully grasping the limited scope of my existence for the first time I wrote a &lt;a href=&#34;http://en.wikipedia.org/wiki/Markov_chain&#34;&gt;Markov Chain&lt;/a&gt; generator so that it could provide(tenuous) value long after I have fled this mortal coil, by mashing up the works &lt;a href=&#34;http://scrumdiddlyumptious-clojure.tumblr.com/&#34;&gt;of Roald Dahl with some Clojure manuals&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When you reach this point in your life you can save some time and use my &lt;a href=&#34;https://github.com/davidhampgonsalves/markov-cloj&#34;&gt;Clojure implementation&lt;/a&gt; or write your own.&lt;/p&gt;
+
+&lt;p&gt;If you write your own, here are some pointers\:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Don&amp;rsquo;t remove punctuation, all that data is valuable.&lt;/li&gt;
+&lt;li&gt;The training material quality is of the utmost importance.&lt;/li&gt;
+&lt;li&gt;Similar training materials will intertwine more often and lead to more interesting results.&lt;/li&gt;
+&lt;li&gt;Avoid works that contain made up words/spellings, they will lead to boring chains.&lt;/li&gt;
+&lt;li&gt;Longer state lengths(how many words are considered when calculating next state) lead to more readable but boring text.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

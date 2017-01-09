@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on David Hamp-Gonsalves</title>
+    <link>https://davidhampgonsalves.github.io/tags/java/index.xml</link>
+    <description>Recent content in Java on David Hamp-Gonsalves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://davidhampgonsalves.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Java 8: The Good Parts</title>
+      <link>https://davidhampgonsalves.github.io/posts/java-8-the-good-parts/</link>
+      <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/java-8-the-good-parts/</guid>
+      <description>
+
+&lt;p&gt;Sometimes I feel that Java has become a second class citizen on the JVM. While it commands a huge market share and is generally blazingly fast it hasn&amp;rsquo;t progressed like Clojure, Scala and even Groovy have. Java 8 delivered on some of the long planned features and this post is to talk about my favourites.&lt;/p&gt;
+
+&lt;h2 id=&#34;streams&#34;&gt;Streams&lt;/h2&gt;
+
+&lt;p&gt;Java&amp;rsquo;s Streams are monads that let you represent computations as a chain of steps. Typically they are created from a Collection and then the typical functional &lt;code&gt;map&lt;/code&gt;, &lt;code&gt;reduce&lt;/code&gt;, &lt;code&gt;filter&lt;/code&gt;, etc functions are applied to achieve a desired transformation.&lt;/p&gt;
+
+&lt;p&gt;Streams are a high level abstraction that make (in many common cases) writing parallelised computations simple and readable.&lt;/p&gt;
+
+&lt;h2 id=&#34;method-references&#34;&gt;Method References&lt;/h2&gt;
+
+&lt;p&gt;With the addition of &lt;a href=&#34;https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html&#34;&gt;Method References&lt;/a&gt; Java can almost support &lt;a href=&#34;https://en.wikipedia.org/wiki/First-class_function&#34;&gt;first-class functions&lt;/a&gt; which when coming from other languages should help Java feel less awkward.&lt;/p&gt;
+
+&lt;h2 id=&#34;default-methods&#34;&gt;Default Methods&lt;/h2&gt;
+
+&lt;p&gt;While default methods don&amp;rsquo;t allow you to do anything you couldn&amp;rsquo;t already do with abstract classes and proper inheritance design but I&amp;rsquo;ve found them to be convenient and more natural.&lt;/p&gt;
+
+&lt;h2 id=&#34;futures&#34;&gt;Futures&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://download.java.net/lambda/b88/docs/api/java/util/concurrent/CompletableFuture.html&#34;&gt;CompletableFutures&lt;/a&gt; improves the flexibility of the existing Futures&lt;/p&gt;
+
+&lt;h2 id=&#34;fork-join-thread-pool&#34;&gt;Fork/Join Thread Pool?&lt;/h2&gt;
+
+&lt;p&gt;Introduced in Java 7, a system wide instance of the &lt;a href=&#34;http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ForkJoinPool.html&#34;&gt;ForkJoinPool&lt;/a&gt; enables allows for parallel execution for both Streams and Futures,&lt;/p&gt;
+
+&lt;h2 id=&#34;monads&#34;&gt;Monads&lt;/h2&gt;
+
+&lt;p&gt;Along with Streams we also have the &lt;a href=&#34;https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html&#34;&gt;Optional&lt;/a&gt; monad. While its a great building block its not currently used often in the stdlib which means you would need to wrap functions that still use &lt;code&gt;null&lt;/code&gt; to represent not found, or similar states.&lt;/p&gt;
+
+&lt;h2 id=&#34;date-time&#34;&gt;Date/Time&lt;/h2&gt;
+
+&lt;p&gt;JodaTime has traditionally been almost a requirement for writing solid time/date code in but now we have &lt;code&gt;java.time&lt;/code&gt; which was worked on by the author of JodaTime.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Failed Projects: Open Mosaic</title>
+      <link>https://davidhampgonsalves.github.io/posts/open-mosiac/</link>
+      <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/open-mosiac/</guid>
+      <description>
+
+&lt;p&gt;The goal of this project was to recreate an image as a mosaic of other images. I wanted to achieve this with a low number of tiles and not simply use images as pixels based on their colors.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/open-mosaic/sample.png&#34; style=&#34;width\: 800px&#34; class=&#34;center plain&#34;/&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;mistakes&#34;&gt;Mistakes&lt;/h2&gt;
+
+&lt;p&gt;The biggest mistake I made was to vastly underestimate the difficulty of the problem. I thought I could get good results by tuning my early histogram grid implementation and floundered. I have seen many other attempts at this project but yet to see any that produce good results.&lt;/p&gt;
+
+&lt;h2 id=&#34;path-to-failure&#34;&gt;Path to Failure&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Played with Perceptual Hashes (then read about how they work and abandoned this path).&lt;/li&gt;
+&lt;li&gt;Moved to Grid of Histograms: &lt;em&gt;Divide source and input images into grids and generate / compare Histograms.&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Switched from HSV to LAB / LUV color spaces for a more human perception of color.&lt;/li&gt;
+&lt;li&gt;Switched from Instagram to Flickr for source images(Insta is filled with images of text).&lt;/li&gt;
+&lt;li&gt;Experimented with different histogram comparison methods (Chi-Square, Bhattacharyya, etc).&lt;/li&gt;
+&lt;li&gt;Optimised algorithm for a shorter iteration loop (this was successful).&lt;/li&gt;
+&lt;li&gt;Researched our perception of shapes, switched to basic shape (still factor in color) approach.&lt;/li&gt;
+&lt;li&gt;Performance mandated hybrid approch: first pass histogram grid, second pass with feature detection, finally adjust image contrast / brightness.&lt;/li&gt;
+&lt;li&gt;Failure.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;next-time&#34;&gt;Next Time&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Quantify success early: &lt;em&gt;manually create mosaic based on small input set and diff with algorithms results to calculate how successful each run was&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Search inside each possible image for good matches / try different rotations of source images.&lt;/li&gt;
+&lt;li&gt;More processing power (cluster).&lt;/li&gt;
+&lt;li&gt;Focus on shapes and start in greyscale space.&lt;/li&gt;
+&lt;li&gt;Use bag of words model.&lt;/li&gt;
+&lt;li&gt;Use weighted multiple factors (histograms, FLANN, Feature Detection, shapes, etc).&lt;/li&gt;
+&lt;li&gt;Write it in C++: &lt;em&gt;Other language bindings are great but the stack traces force you into C/C++ anyway.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Generating Identicons</title>
+      <link>https://davidhampgonsalves.github.io/posts/identicons/</link>
+      <pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/identicons/</guid>
+      <description>&lt;p&gt;Identicons are icons that are generated from some form of user information. They usually serve to fill the gaps left by photo-less users that don&amp;rsquo;t provide a photo as unique(ish) identifiers for users.&lt;/p&gt;
+
+&lt;p&gt;These are usually generated by hashing the chosen user data and then using that hash to flip image pixels on and off. The following code snippit is a Java implementation of this concept and generates a 5*5 pixel, horizontally symmetrical identicon much like the ones github recently &lt;a href=&#34;https://github.com/blog/1586-identicons&#34;&gt;rolled out&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;byte&lt;/span&gt;[] hash = MessageDigest.getInstance(algorithim).digest(userName.getBytes());
+
+BufferedImage identicon = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+    WritableRaster raster = identicon.getRaster();
+
+    &lt;span style=&#34;font-weight: bold&#34;&gt;int&lt;/span&gt; [] background = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;int&lt;/span&gt; [] {255,255,255, 0};
+    &lt;span style=&#34;font-weight: bold&#34;&gt;int&lt;/span&gt; [] foreground = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;int&lt;/span&gt; [] {hash[0] &amp;amp; 255, hash[1] &amp;amp; 255, hash[2] &amp;amp; 255, 255};
+
+    &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;int&lt;/span&gt; x=0 ; x &amp;lt; width ; x++) {
+            &lt;span style=&#34;font-style: italic&#34;&gt;//Enforce horizontal symmetry&lt;/span&gt;
+            &lt;span style=&#34;font-weight: bold&#34;&gt;int&lt;/span&gt; i = x &amp;lt; 3 ? x &lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: 4 - x;
+    	&lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;int&lt;/span&gt; y=0 ; y &amp;lt; height; y++) {
+    		&lt;span style=&#34;font-weight: bold&#34;&gt;int&lt;/span&gt; [] pixelColor;
+		&lt;span style=&#34;font-style: italic&#34;&gt;//toggle pixels based on bit being on/off&lt;/span&gt;
+    		&lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;((hash[i] &amp;gt;&amp;gt; y &amp;amp; 1) == 1)
+    		      pixelColor = foreground;
+    		&lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt;
+    		      pixelColor = background;
+    		raster.setPixel(x, y, pixelColor);
+    	}
+    }
+
+    &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; identicon;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;For an android version of this code you can take a look at the &lt;a href=&#34;https://github.com/davidhampgonsalves/Contact-Identicons&#34;&gt;source code&lt;/a&gt; of my Android &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.davidhampgonsalves.contactidenticons&#34;&gt;Contact Identicons&lt;/a&gt; app that generates these types of identicons for contact photos.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <base href="https://davidhampgonsalves.github.io/">
+    <meta name="description" content="Don&#39;t panic">
+
+    <title>
+      
+      
+       OpenCV/Python Color Tracking 
+      
+    </title>
+    <link rel="canonical" href="https://davidhampgonsalves.github.io/posts/opencv-python-color-tracking/">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT' rel='stylesheet' type='text/css'>
+
+    <style>
+  * {
+    border:0;
+    font:inherit;
+    font-size:100%;
+    vertical-align:baseline;
+    margin:0;
+    padding:0;
+    color: black;
+  }
+
+  body {
+    font-family:'Open Sans', 'Myriad Pro', Myriad, sans-serif;
+    font-size:17px;
+    line-height:160%;
+    color:#1d1313;
+    max-width:700px;
+    margin:auto;
+  }
+
+  caption {
+    text-align:left;
+    font-weight:400;
+    vertical-align:middle;
+  }
+
+  a img {
+    border:none;
+  }
+
+  img {
+    margin: 10px auto 10px auto;
+    max-width: 100%;
+  }
+
+  pre, code {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    background-color: #f7f7f7;
+  }
+
+  code {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  pre {
+    margin-top: 0;
+    margin-bottom: 16px;
+    word-wrap: normal;
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+  }
+
+  pre>code {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+  }
+
+  pre code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+  }
+
+  pre code::before,
+  pre code::after {
+    content: normal;
+  }
+
+  em,q,em,dfn {
+    font-style:italic;
+  }
+
+  .sans,html .gist .gist-file .gist-meta {
+    font-family:"Open Sans","Myriad Pro",Myriad,sans-serif;
+  }
+
+  .mono,pre,code,tt,p code,li code {
+    font-family:Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+  }
+
+  .heading,.serif,h1,h2,h3 {
+    font-family:"Old Standard TT",serif;
+  }
+
+  strong {
+    font-weight:600;
+  }
+
+  q:before {
+    content:"\201C";
+  }
+
+  q:after {
+    content:"\201D";
+  }
+
+  del,s {
+    text-decoration:line-through;
+  }
+
+  blockquote {
+    font-family:"Old Standard TT",serif;
+    text-align:center;
+    padding:50px;
+  }
+
+  blockquote p {
+    display:inline-block;
+    font-style:italic;
+  }
+
+  blockquote:before,blockquote:after {
+    font-family:"Old Standard TT",serif;
+    content:'\201C';
+    font-size:35px;
+    color:#403c3b;
+  }
+
+  blockquote:after {
+    content:'\201D';
+  }
+
+  hr {
+    width:40%;
+    height: 1px;
+    background:#403c3b;
+    margin: 25px auto;
+  }
+
+  h1 {
+    font-size:35px;
+  }
+
+  h2 {
+    font-size:28px;
+  }
+
+  h3 {
+    font-size:22px;
+    margin-top:18px;
+  }
+
+  h1 a,h2 a,h3 a {
+    text-decoration:none;
+  }
+
+  h1,h2 {
+    margin-top:28px;
+  }
+
+  #sub-header, time {
+    color:#403c3b;
+    font-size:13px;
+  }
+
+  #sub-header {
+    margin: 0 4px;
+  }
+
+  #nav h1 a {
+    font-size:35px;
+    color:#1d1313;
+    line-height:120%;
+  }
+
+  .posts_listing a,#nav a {
+    text-decoration: none;
+  }
+
+  li {
+    margin-left: 20px;
+  }
+
+  ul li {
+    margin-left: 5px;
+  }
+
+  ul li {
+    list-style-type: none;
+  }
+  ul li:before {
+    content:"\00BB \0020";
+  }
+
+  #nav ul li:before, .posts_listing li:before {
+    content:'';
+    margin-right:0;
+  }
+
+  #content {
+    text-align:left;
+    width:100%;
+    font-size:15px;
+    padding:60px 0 80px;
+  }
+
+  #content h1,#content h2 {
+    margin-bottom:5px;
+  }
+
+  #content h2 {
+    font-size:25px;
+  }
+
+  #content .entry-content {
+    margin-top:15px;
+  }
+
+  #content time {
+    margin-left:3px;
+  }
+
+  #content h1 {
+    font-size:30px;
+  }
+
+  .highlight {
+    margin: 10px 0;
+  }
+
+  .posts_listing {
+    margin:0 0 50px;
+  }
+
+  .posts_listing li {
+    margin:0 0 25px 15px;
+  }
+
+  .posts_listing li a:hover,#nav li a:hover {
+    text-decoration: underline;
+  }
+
+  #nav {
+    text-align:center;
+    position:static;
+    margin-top:60px;
+  }
+
+  #nav ul {
+    display: table;
+    margin: 8px auto 0 auto;
+  }
+
+  #nav li {
+    list-style-type:none;
+    display:table-cell;
+    font-size:15px;
+    padding: 0 20px;
+  }
+
+  #links {
+    margin: 50px 0 0 0;
+  }
+
+  #links :nth-child(2) {
+    float:right;
+  }
+
+  #not-found {
+    text-align: center;
+  }
+
+  #not-found a {
+    font-family:"Old Standard TT",serif;
+    font-size: 200px;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 225px;
+  }
+
+  @media (max-width: 750px) {
+    body {
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    #nav h1 a {
+      font-size:28px;
+    }
+
+    #nav li {
+      font-size:13px;
+      padding: 0 15px;
+    }
+
+    #content {
+      margin-top:0;
+      padding-top:50px;
+      font-size:14px;
+    }
+
+    #content h1 {
+      font-size:25px;
+    }
+
+    #content h2 {
+      font-size:22px;
+    }
+
+    .posts_listing li div {
+      font-size:12px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    body {
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    #nav h1 a {
+      font-size:22px;
+    }
+
+    #nav li {
+      font-size:12px;
+      padding: 0 10px;
+    }
+
+    #content {
+      margin-top:0;
+      padding-top:20px;
+      font-size:12px;
+    }
+
+    #content h1 {
+      font-size:20px;
+    }
+
+    #content h2 {
+      font-size:18px;
+    }
+
+    .posts_listing li div{
+      font-size:12px;
+    }
+  }
+</style>
+
+
+    <link rel="shortcut icon" href="https://davidhampgonsalves.github.io/favicon.ico">
+
+    
+  </head>
+
+  <body lang="en">
+    <section id=nav>
+      <h1><a href="https://davidhampgonsalves.github.io/">David Hamp-Gonsalves</a></h1>
+      <ul>
+        <li><a href="https://github.com/davidhampgonsalves">GitHub</a>
+          <li><a href="https://davidhampgonsalves.github.io/projects/">Projects</a>
+            <li><a href="http://www.ethicalbarcode.com">Ethical Barcode</a>
+      </ul>
+    </section>
+
+
+<section id=content>
+  <h1> OpenCV/Python Color Tracking </h1>
+
+  <div id=sub-header>
+    May 2011 · 3 minute read
+  </div>
+
+  <div class="entry-content">
+    
+
+<p><img src="https://davidhampgonsalves.github.io/images/color_tracking.png" alt="" /></p>
+
+<h2 id="preamble">Preamble</h2>
+
+<p>I needed some color based object tracking for a project I was hacking together last weekend. I choose to use the OpenCV Python bindings since I knew that I wouldn&rsquo;t be doing anything fancy and I thought it would simplify the learning process. While the Python bindings are great I wasn&rsquo;t able to find much documentation and what I thought would be an easy 10 minutes turned into a bit of an afternoon project. Admittedly I got side tracked with CamShifts, Histograms, Moments and the example code.</p>
+
+<p>I also found that most of the tutorials and documentation makes even simple concepts like color tracking seem more complex then it really are. This post is intended to help you bypass all that and help you get your feet wet teaching your computer to see.</p>
+
+<h2 id="overview-of-the-process">Overview of the Process</h2>
+
+<p>The first thing we need to do is to get a single frame of the video feed and convert its color model from RGB which OpenCV uses to represent images by default to HSV since we can then look at just a single value to determine the Hue.</p>
+
+<p>Now that we have our image in the correct format we can apply a threshold to eliminate(set their value to 0) all pixels that don&rsquo;t meet our criteria. This will leave only the object we aim to track so then to determine its location we can get OpenCV to calculate its moments and compute its co-ordinal position.</p>
+
+<h2 id="the-code">The Code</h2>
+
+<p>And finally without further adieu, the commented code which will get you on your way. This code will open a window which will display the web cams video feed. It will then try to track a purple object but you can change the hue value to make it work with any color you want. Just make sure that color is fairly unique in the video feed.</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="font-style: italic">#! /usr/bin/env python</span>
+
+<span style="font-weight: bold">import</span> <span style="font-weight: bold">cv</span>
+
+color_tracker_window = <span style="font-style: italic">&quot;Color Tracker&quot;</span>
+
+<span style="font-weight: bold">class</span> <span style="font-weight: bold">ColorTracker</span>\:
+
+    <span style="font-weight: bold">def</span> __init__(self)\:
+        cv.NamedWindow( color_tracker_window, 1 )
+        self.capture = cv.CaptureFromCAM(0)
+
+    <span style="font-weight: bold">def</span> run(self)\:
+        <span style="font-weight: bold">while</span> True\:
+            img = cv.QueryFrame( self.capture )
+
+            <span style="font-style: italic">#blur the source image to reduce color noise</span>
+            cv.Smooth(img, img, cv.CV_BLUR, 3);
+
+            <span style="font-style: italic">#convert the image to hsv(Hue, Saturation, Value) so its</span>
+            <span style="font-style: italic">#easier to determine the color to track(hue)</span>
+            hsv_img = cv.CreateImage(cv.GetSize(img), 8, 3)
+            cv.CvtColor(img, hsv_img, cv.CV_BGR2HSV)
+
+            <span style="font-style: italic">#limit all pixels that don&#39;t match our criteria, in this case we are</span>
+            <span style="font-style: italic">#looking for purple but if you want you can adjust the first value in</span>
+            <span style="font-style: italic">#both turples which is the hue range(120,140).  OpenCV uses 0-180 as</span>
+            <span style="font-style: italic">#a hue range for the HSV color model</span>
+            thresholded_img =  cv.CreateImage(cv.GetSize(hsv_img), 8, 1)
+            cv.InRangeS(hsv_img, (120, 80, 80), (140, 255, 255), thresholded_img)
+
+            <span style="font-style: italic">#determine the objects moments and check that the area is large</span>
+            <span style="font-style: italic">#enough to be our object</span>
+            moments = cv.Moments(thresholded_img, 0)
+            area = cv.GetCentralMoment(moments, 0, 0)
+
+            <span style="font-style: italic">#there can be noise in the video so ignore objects with small areas</span>
+            <span style="font-weight: bold">if</span>(area &gt; 100000)\:
+                <span style="font-style: italic">#determine the x and y coordinates of the center of the object</span>
+                <span style="font-style: italic">#we are tracking by dividing the 1, 0 and 0, 1 moments by the area</span>
+                x = cv.GetSpatialMoment(moments, 1, 0)/area
+                y = cv.GetSpatialMoment(moments, 0, 1)/area
+
+                <span style="font-style: italic">#print &#39;x\: &#39; + str(x) + &#39; y\: &#39; + str(y) + &#39; area\: &#39; + str(area)</span>
+
+                <span style="font-style: italic">#create an overlay to mark the center of the tracked object</span>
+                overlay = cv.CreateImage(cv.GetSize(img), 8, 3)
+
+                cv.Circle(overlay, (x, y), 2, (255, 255, 255), 20)
+                cv.Add(img, overlay, img)
+                <span style="font-style: italic">#add the thresholded image back to the img so we can see what was</span>
+                <span style="font-style: italic">#left after it was applied</span>
+                cv.Merge(thresholded_img, None, None, None, img)
+
+            <span style="font-style: italic">#display the image</span>
+            cv.ShowImage(color_tracker_window, img)
+
+            <span style="font-weight: bold">if</span> cv.WaitKey(10) == 27\:
+                <span style="font-weight: bold">break</span>
+
+<span style="font-weight: bold">if</span> __name__==<span style="font-style: italic">&quot;__main__&quot;</span>\:
+    color_tracker = ColorTracker()
+    color_tracker.run()
+</pre></div>
+
+  </div>
+
+  <div id=links>
+    
+      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/posts/pdf-itext/">&laquo; PDF&#39;s using iText in 10 lines</a>
+    
+    
+      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/posts/wowza-live-metadata-3/">Live Metadata Handling Using OSMF (3/3) &raquo;</a>
+    
+  </div>
+</section>
+
+  </div>
+</body>
+</html>
+
+
+

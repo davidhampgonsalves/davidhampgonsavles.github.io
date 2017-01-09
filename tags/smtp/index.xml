@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Smtp on David Hamp-Gonsalves</title>
+    <link>https://davidhampgonsalves.github.io/tags/smtp/index.xml</link>
+    <description>Recent content in Smtp on David Hamp-Gonsalves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://davidhampgonsalves.github.io/tags/smtp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SMTP Test/Usage Via Telnet</title>
+      <link>https://davidhampgonsalves.github.io/posts/smtp-telnet-test/</link>
+      <pubDate>Wed, 09 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/smtp-telnet-test/</guid>
+      <description>
+
+&lt;p&gt;A telnet client is a handy testing tool for testing connectivity between servers. Today I needed to test an SMTP server connection from a linux environment so I wrote the following script. You could use the same technique manually to do the same thing as long as your have access to a telnet client.&lt;/p&gt;
+
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;The script takes three parameters: the smtp server url, the sender address and the recipient address.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-style: italic&#34;&gt;#!/usr/bin/env bash&lt;/span&gt;
+	(echo HELO
+	 sleep 10
+	 echo MAIL FROM&lt;span style=&#34;font-weight: bold; font-style: italic&#34;&gt;\:&lt;/span&gt;$2
+	 sleep 10
+	 echo RCPT TO&lt;span style=&#34;font-weight: bold; font-style: italic&#34;&gt;\:&lt;/span&gt;$3
+	 sleep 10
+	 echo DATA
+	 sleep 10
+	 echo .
+	 sleep 10
+	 echo QUIT) | telnet $1 25
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

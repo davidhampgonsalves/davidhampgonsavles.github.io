@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on David Hamp-Gonsalves</title>
+    <link>https://davidhampgonsalves.github.io/tags/python/index.xml</link>
+    <description>Recent content in Python on David Hamp-Gonsalves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://davidhampgonsalves.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Music Player/Organizer For the Rest of Us</title>
+      <link>https://davidhampgonsalves.github.io/posts/beets-play-plugin/</link>
+      <pubDate>Fri, 02 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/beets-play-plugin/</guid>
+      <description>&lt;p&gt;Everyone has their own &lt;em&gt;(strong)&lt;/em&gt; opinions about this but I think I&amp;rsquo;ve figured it out. First to organize your music &lt;a href=&#34;http://beets.radbox.org/&#34;&gt;Beets&lt;/a&gt; is amazing. Its light, easy to use and lets you tweek things exactly how you want them.&lt;/p&gt;
+
+&lt;p&gt;The limitation with Beets was that it was just an organizer and you still needed a full GUI application to conveniently find and play your music. This weekend I wrote the Play plugin which lets you harness the might of Beets queries and send those results to your choice of lightweight music player.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Welcome to light, understandable, configurable, organized and opensource music zen.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The &lt;a href=&#34;http://beets.readthedocs.org/en/latest/plugins/play.html&#34;&gt;Play plugin&lt;/a&gt; is availiable in Beets 1.3.6.&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Building a Basic Android Bot</title>
+      <link>https://davidhampgonsalves.github.io/posts/android-bot.js/</link>
+      <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/android-bot.js/</guid>
+      <description>
+
+&lt;p&gt;Last week I started playing a new game on my phone called Castle Crash. I don&amp;rsquo;t play often play video games but when I do, I play them obsesively until they are defeated. In this case you can&amp;rsquo;t beat the game since you are playing against the internet so I decided to tap out and let my computer take over.&lt;/p&gt;
+
+&lt;h2 id=&#34;monkeyrunner&#34;&gt;MonkeyRunner&lt;/h2&gt;
+
+&lt;p&gt;Android has a great tool for writing simple automated tests on a device called MonkeyRunner. It uses Jython to let you write Python scripts that simulate user interactions and events on your device. &lt;a href=&#34;http://developer.android.com/tools/help/monkeyrunner_concepts.html&#34;&gt;MonkeyRunner&lt;/a&gt; can be found in the tool directoy after you have installed the Android SDK.&lt;/p&gt;
+
+&lt;h2 id=&#34;determine-apps-package-activity&#34;&gt;Determine Apps Package/Activity&lt;/h2&gt;
+
+&lt;p&gt;To determine an apps package/activity the easiest way is to download the .apk file, decompress it and take a look at the &lt;a href=&#34;http://developer.android.com/guide/topics/manifest/manifest-intro.html&#34;&gt;AndroidManifest.xml&lt;/a&gt;. Alternatevly you can run the app on your device and watch the &lt;a href=&#34;http://developer.android.com/tools/help/logcat.html&#34;&gt;logs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;long-presses&#34;&gt;Long Presses&lt;/h2&gt;
+
+&lt;p&gt;Long pressing is a pretty standard user interaction but MonkeyRunner doesn&amp;rsquo;t really support it. It does however support .drag() which can be used for the same purpose.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;	device.drag((x,y), (x,y), pressTime)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;exiting-app&#34;&gt;Exiting App&lt;/h2&gt;
+
+&lt;p&gt;Exiting the app is a good way to reset back to a known state and can be done between actions if the game structure allows.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;device.shell(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;am force-stop &amp;#39;&lt;/span&gt; + package)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;determine-interaction-coordinates&#34;&gt;Determine Interaction Coordinates&lt;/h2&gt;
+
+&lt;p&gt;Since MonkeyRunner doesn&amp;rsquo;t know anything about the app that is running it works solely with pixel coordinates. This means that you need to determine the location of all elements on the screen you want to interact with and there are a few ways of doign this. The most basic way is to determine the size in pixels of your device and then start estimating from there. This actually works quite well once you get the hang of it. A more accurate method is to enable ponter locations on your device(under developer options) and then walk through the flow keeping track of each required action.&lt;/p&gt;
+
+&lt;h2 id=&#34;some-bot-code&#34;&gt;Some Bot Code&lt;/h2&gt;
+
+&lt;p&gt;This code replenishes the four troop camps in Castle Crash and is a good example of simple interactions with the game.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;def&lt;/span&gt; replenishTroops(campNumber)\:
+	&lt;span style=&#34;font-weight: bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;replenishing troops&amp;#39;&lt;/span&gt;
+	campLocations = [(320, 400), (320, 120), (590, 80), (560, 350)][campNumber]
+
+	touch(campLocations[0], campLocations[1]) &lt;span style=&#34;font-style: italic&#34;&gt;#select camp&lt;/span&gt;
+	touch(480, 450) &lt;span style=&#34;font-style: italic&#34;&gt;#press hire button&lt;/span&gt;
+
+	device.drag((300, 450), (200, 450)) &lt;span style=&#34;font-style: italic&#34;&gt;#scroll to archers&lt;/span&gt;
+	time.sleep(5) &lt;span style=&#34;font-style: italic&#34;&gt;#wait for scroll to finish&lt;/span&gt;
+	device.drag((500, 450), (501, 451), 5) &lt;span style=&#34;font-style: italic&#34;&gt;#long press archers button&lt;/span&gt;
+
+	touch(660, 60) &lt;span style=&#34;font-style: italic&#34;&gt;#close areana window&lt;/span&gt;
+	touch(5, 5) &lt;span style=&#34;font-style: italic&#34;&gt;#deselect anything&lt;/span&gt;
+
+&lt;span style=&#34;font-weight: bold&#34;&gt;def&lt;/span&gt; touch(x, y, delay=2)\:
+	&lt;span style=&#34;font-weight: bold&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;touching &amp;#39;&lt;/span&gt; + str(x) + &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;, &amp;#39;&lt;/span&gt; + str(y))
+	device.touch(x, y, &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;DOWN_AND_UP&amp;#39;&lt;/span&gt;)
+	time.sleep(delay)
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DIY Photobooth</title>
+      <link>https://davidhampgonsalves.github.io/posts/diy-photobooth/</link>
+      <pubDate>Mon, 12 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/diy-photobooth/</guid>
+      <description>
+
+&lt;p&gt;Last week I got married(it was amazing and surreal). When planning the wedding we really wanted to make the whole night reflect &amp;ldquo;us&amp;rdquo;. This meant an all vegan menu from hearty catering(amazing) and a lot of elbow grease as we built and crafted mostly everything ourselves. Our signs were life sized pictures, the cupcake stand was wooden slabs of a tree and I build a photobooth which is what I&amp;rsquo;m going to talk about in this post.
+&lt;img src=&#34;https://davidhampgonsalves.github.io/images/photobooth/photobooth-01.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-alternatives&#34;&gt;The Alternatives&lt;/h2&gt;
+
+&lt;p&gt;Looking on the internet I found that lots of people &amp;ldquo;built&amp;rdquo; photobooths by plunking a laptop on a table with some &amp;ldquo;photobooth&amp;rdquo; software. In my mind this was worse then nothing. Everyone owns a laptop and a webcam, whats the point in letting them use yours? What I wanted was to simulate(with as little work as possible) was the magic of a photobooth and the feeling you get from walking away with a small strip of memories to mark an event.
+&lt;img src=&#34;https://davidhampgonsalves.github.io/images/photobooth/photobooth-02.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-bit-of-movie-magic&#34;&gt;A Bit of Movie Magic&lt;/h2&gt;
+
+&lt;p&gt;What the &amp;ldquo;magic&amp;rdquo; meant for me(never used a real photobooth so this could be way off) is you walk in to a dark booth, you push a button, the booth &amp;ldquo;speaks&amp;rdquo; to you and directs you in taking some pictures, you walk out and you get a convenient photo strip(not an entire page!) of well lit pictures to slip in your pocket.&lt;/p&gt;
+
+&lt;p&gt;With that in mind my photobooths user flow starts when the user presses the main(and only) button(hacked apart usb keyboard). This triggers the main loop in the python script that drives the whole thing. It plays the introductory audio to explain whats going to happen, then it uses the python OpenCV bindings to grab our first picture and makes a shutter sounds. This cycle repeats 3 more times and then the booth directs the users to leave and pick up their strip outside. The strips are automatically printed on strips of photo paper that are pre-cut. The strips are the width of an envelope since thats the narrowest that most printers can support repeatedly without any screw ups.
+&lt;img src=&#34;https://davidhampgonsalves.github.io/images/photobooth/photobooth-03.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The beauty of this booth is that from the users perspective its more then what it really is. Like real photobooths its a magic box. The picture quality is great because you can control the focus and lighting of the booth and the result is a cool take away.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;as a little extra the booth also says hi/bye as people enter and leave the booth, just to be friendly.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-code&#34;&gt;The Code&lt;/h2&gt;
+
+&lt;p&gt;I wrote my booth in Python 2.7. You can find the code here in my github account. I used OpenCV to interface with the webcam, the PIL to manipulate the images and build the photo strip and some cool printing tricks I learned about here.&lt;/p&gt;
+
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/photobooth/photobooth-04.jpg&#34; alt=&#34;&#34; /&gt;
+Running the python script will start an openCV loop which will connect to the first webcam on your system. It will display the webcam feed in a window so you can focus your webcam and make any adjustments. Pressing the spacebar will trigger the photo strip process. Audio will be played from the sounds folder and the pictures will be taken. Then the photostrip will be created. It will create a color version of the strip and save it in the /images/color folder and it will create and print the greyscale version. It will then archive the full resolution originals in the images/originals folder. After that it&amp;rsquo;ll be ready for the next user.&lt;/p&gt;
+
+&lt;h2 id=&#34;building-the-booth&#34;&gt;Building the Booth&lt;/h2&gt;
+
+&lt;p&gt;My booth was pretty basic but it worked out pretty well. The whole thing was made from &lt;sup&gt;1&lt;/sup&gt;&amp;frasl;&lt;sub&gt;4&lt;/sub&gt;&amp;rsquo; OSB and 2 * 2&amp;rsquo;s. I drilled small holes in the ceiling for the speaker audio to come through. Mounted a recessed light fixture covered with wax paper for a soft light source. The webcam was mounted in the same way but I learned that people get pretty rowdy in photobooths so I would recomend shielding it with some plexiglass. The curtain needs to be thick enough so that you don&amp;rsquo;t have any external light seeping through. This way you can totally control and adjust the lighting to take some really nice/consistant pictures.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-end&#34;&gt;The End&lt;/h2&gt;
+
+&lt;p&gt;Having a photobooth at a wedding(or anywhere) is a ton of fun. Your guests will have a blast cramming in and creating memories. Get to work.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OpenCV/Python Color Tracking</title>
+      <link>https://davidhampgonsalves.github.io/posts/opencv-python-color-tracking/</link>
+      <pubDate>Mon, 30 May 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/opencv-python-color-tracking/</guid>
+      <description>
+
+&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/color_tracking.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;preamble&#34;&gt;Preamble&lt;/h2&gt;
+
+&lt;p&gt;I needed some color based object tracking for a project I was hacking together last weekend. I choose to use the OpenCV Python bindings since I knew that I wouldn&amp;rsquo;t be doing anything fancy and I thought it would simplify the learning process. While the Python bindings are great I wasn&amp;rsquo;t able to find much documentation and what I thought would be an easy 10 minutes turned into a bit of an afternoon project. Admittedly I got side tracked with CamShifts, Histograms, Moments and the example code.&lt;/p&gt;
+
+&lt;p&gt;I also found that most of the tutorials and documentation makes even simple concepts like color tracking seem more complex then it really are. This post is intended to help you bypass all that and help you get your feet wet teaching your computer to see.&lt;/p&gt;
+
+&lt;h2 id=&#34;overview-of-the-process&#34;&gt;Overview of the Process&lt;/h2&gt;
+
+&lt;p&gt;The first thing we need to do is to get a single frame of the video feed and convert its color model from RGB which OpenCV uses to represent images by default to HSV since we can then look at just a single value to determine the Hue.&lt;/p&gt;
+
+&lt;p&gt;Now that we have our image in the correct format we can apply a threshold to eliminate(set their value to 0) all pixels that don&amp;rsquo;t meet our criteria. This will leave only the object we aim to track so then to determine its location we can get OpenCV to calculate its moments and compute its co-ordinal position.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-code&#34;&gt;The Code&lt;/h2&gt;
+
+&lt;p&gt;And finally without further adieu, the commented code which will get you on your way. This code will open a window which will display the web cams video feed. It will then try to track a purple object but you can change the hue value to make it work with any color you want. Just make sure that color is fairly unique in the video feed.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-style: italic&#34;&gt;#! /usr/bin/env python&lt;/span&gt;
+
+&lt;span style=&#34;font-weight: bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;cv&lt;/span&gt;
+
+color_tracker_window = &lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;Color Tracker&amp;quot;&lt;/span&gt;
+
+&lt;span style=&#34;font-weight: bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;ColorTracker&lt;/span&gt;\:
+
+    &lt;span style=&#34;font-weight: bold&#34;&gt;def&lt;/span&gt; __init__(self)\:
+        cv.NamedWindow( color_tracker_window, 1 )
+        self.capture = cv.CaptureFromCAM(0)
+
+    &lt;span style=&#34;font-weight: bold&#34;&gt;def&lt;/span&gt; run(self)\:
+        &lt;span style=&#34;font-weight: bold&#34;&gt;while&lt;/span&gt; True\:
+            img = cv.QueryFrame( self.capture )
+
+            &lt;span style=&#34;font-style: italic&#34;&gt;#blur the source image to reduce color noise&lt;/span&gt;
+            cv.Smooth(img, img, cv.CV_BLUR, 3);
+
+            &lt;span style=&#34;font-style: italic&#34;&gt;#convert the image to hsv(Hue, Saturation, Value) so its&lt;/span&gt;
+            &lt;span style=&#34;font-style: italic&#34;&gt;#easier to determine the color to track(hue)&lt;/span&gt;
+            hsv_img = cv.CreateImage(cv.GetSize(img), 8, 3)
+            cv.CvtColor(img, hsv_img, cv.CV_BGR2HSV)
+
+            &lt;span style=&#34;font-style: italic&#34;&gt;#limit all pixels that don&amp;#39;t match our criteria, in this case we are&lt;/span&gt;
+            &lt;span style=&#34;font-style: italic&#34;&gt;#looking for purple but if you want you can adjust the first value in&lt;/span&gt;
+            &lt;span style=&#34;font-style: italic&#34;&gt;#both turples which is the hue range(120,140).  OpenCV uses 0-180 as&lt;/span&gt;
+            &lt;span style=&#34;font-style: italic&#34;&gt;#a hue range for the HSV color model&lt;/span&gt;
+            thresholded_img =  cv.CreateImage(cv.GetSize(hsv_img), 8, 1)
+            cv.InRangeS(hsv_img, (120, 80, 80), (140, 255, 255), thresholded_img)
+
+            &lt;span style=&#34;font-style: italic&#34;&gt;#determine the objects moments and check that the area is large&lt;/span&gt;
+            &lt;span style=&#34;font-style: italic&#34;&gt;#enough to be our object&lt;/span&gt;
+            moments = cv.Moments(thresholded_img, 0)
+            area = cv.GetCentralMoment(moments, 0, 0)
+
+            &lt;span style=&#34;font-style: italic&#34;&gt;#there can be noise in the video so ignore objects with small areas&lt;/span&gt;
+            &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(area &amp;gt; 100000)\:
+                &lt;span style=&#34;font-style: italic&#34;&gt;#determine the x and y coordinates of the center of the object&lt;/span&gt;
+                &lt;span style=&#34;font-style: italic&#34;&gt;#we are tracking by dividing the 1, 0 and 0, 1 moments by the area&lt;/span&gt;
+                x = cv.GetSpatialMoment(moments, 1, 0)/area
+                y = cv.GetSpatialMoment(moments, 0, 1)/area
+
+                &lt;span style=&#34;font-style: italic&#34;&gt;#print &amp;#39;x\: &amp;#39; + str(x) + &amp;#39; y\: &amp;#39; + str(y) + &amp;#39; area\: &amp;#39; + str(area)&lt;/span&gt;
+
+                &lt;span style=&#34;font-style: italic&#34;&gt;#create an overlay to mark the center of the tracked object&lt;/span&gt;
+                overlay = cv.CreateImage(cv.GetSize(img), 8, 3)
+
+                cv.Circle(overlay, (x, y), 2, (255, 255, 255), 20)
+                cv.Add(img, overlay, img)
+                &lt;span style=&#34;font-style: italic&#34;&gt;#add the thresholded image back to the img so we can see what was&lt;/span&gt;
+                &lt;span style=&#34;font-style: italic&#34;&gt;#left after it was applied&lt;/span&gt;
+                cv.Merge(thresholded_img, None, None, None, img)
+
+            &lt;span style=&#34;font-style: italic&#34;&gt;#display the image&lt;/span&gt;
+            cv.ShowImage(color_tracker_window, img)
+
+            &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; cv.WaitKey(10) == 27\:
+                &lt;span style=&#34;font-weight: bold&#34;&gt;break&lt;/span&gt;
+
+&lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; __name__==&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;__main__&amp;quot;&lt;/span&gt;\:
+    color_tracker = ColorTracker()
+    color_tracker.run()
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

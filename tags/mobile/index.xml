@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mobile on David Hamp-Gonsalves</title>
+    <link>https://davidhampgonsalves.github.io/tags/mobile/index.xml</link>
+    <description>Recent content in Mobile on David Hamp-Gonsalves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://davidhampgonsalves.github.io/tags/mobile/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Detecting Mobile Device from Javascript</title>
+      <link>https://davidhampgonsalves.github.io/posts/detect-mobile-javascript/</link>
+      <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/detect-mobile-javascript/</guid>
+      <description>&lt;p&gt;This is a pretty lightweight way of detecting when your javascript is living in a mobile device.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;typeof&lt;/span&gt; window.orientation != &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;undefined&amp;#39;&lt;/span&gt;) { &lt;span style=&#34;font-style: italic&#34;&gt;/* put mobile spesific code here */&lt;/span&gt; }
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;To omit spesific devices from running this code you can also add individual checks like the following.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;typeof&lt;/span&gt; window.orientation != &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;undefined&amp;#39;&lt;/span&gt; &amp;amp;&amp;amp; !navigator.userAgent.match(&lt;span style=&#34;font-style: italic&#34;&gt;/iPad/i&lt;/span&gt;)) {
+  &lt;span style=&#34;font-style: italic&#34;&gt;/* put mobile spesific(but not ipad) code here */&lt;/span&gt;
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is a mix of the answers found on &lt;a href=&#34;http://stackoverflow.com/questions/11381673/javascript-solution-to-detect-mobile-browser&#34;&gt;stack overflow&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

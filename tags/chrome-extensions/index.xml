@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chrome Extensions on David Hamp-Gonsalves</title>
+    <link>https://davidhampgonsalves.github.io/tags/chrome-extensions/index.xml</link>
+    <description>Recent content in Chrome Extensions on David Hamp-Gonsalves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://davidhampgonsalves.github.io/tags/chrome-extensions/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Updating Chrome Extension Manifest</title>
+      <link>https://davidhampgonsalves.github.io/posts/chrome-extension-manifest/</link>
+      <pubDate>Wed, 29 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/chrome-extension-manifest/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This post should really just read: JQuery 1.4 breaks(Refused to execute inline script) when used in Chrome Extensions using the version 2 Manifest. Update to Jquery 1.7 and you&amp;rsquo;ll be happy.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Unfortunately it doesn&amp;rsquo;t, it reads more like:&lt;/p&gt;
+
+&lt;p&gt;Last night I decided to cross something off my to do list and updated &lt;a href=&#34;https://chrome.google.com/webstore/detail/jpgagcapnkccceppgljfpoadahaopjdb&#34;&gt;Foxish&lt;/a&gt;(a chrome extension) to use the version 2 manifest that will become manditory in a short while.&lt;/p&gt;
+
+&lt;p&gt;For the most part it was pretty painless. Mostly it involves moving your javascript from the headers(or footers) of your html and placing it in seperate .js files to avoid some security risks outlined on the &lt;a href=&#34;http://developer.chrome.com/extensions/manifestVersion.html&#34;&gt;chrome site&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The tricky part came after I had finished eliminating all the inline javascript and I was still seeing &lt;strong&gt;Refused to execute inline script because it violates the following Content Security Policy directive: &amp;ldquo;script-src &amp;lsquo;self&amp;rsquo; chrome-extension-resource:&amp;ldquo;&lt;/strong&gt;. on every page of my extension.&lt;/p&gt;
+
+&lt;p&gt;Since it was affecting everything and all the errors were reported to come from the first line of each page I knew it had to be something global or common to all pages. Turns out it was JQuery. I was still using version 1.4.2(which was the newest at the time) and for some reason(I didn&amp;rsquo;t check) that causes the issue. Upgrading to 1.7 fixes this.&lt;/p&gt;
+
+&lt;p&gt;Looking around the internet this morning it looks like a couple other people have been affected by this but all(like me) have been to lazy to rip appart the old JQuery library to determine the cause. If you get around to it let me know and I&amp;rsquo;ll buy you a coffee.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

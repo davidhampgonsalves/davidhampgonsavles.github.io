@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Postgresql on David Hamp-Gonsalves</title>
+    <link>https://davidhampgonsalves.github.io/tags/postgresql/index.xml</link>
+    <description>Recent content in Postgresql on David Hamp-Gonsalves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://davidhampgonsalves.github.io/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Postgresql Range Basics</title>
+      <link>https://davidhampgonsalves.github.io/posts/postgres-ranges/</link>
+      <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/postgres-ranges/</guid>
+      <description>
+
+&lt;p&gt;In postgres 9.2 a new family of data types were added called &lt;a href=&#34;http://www.postgresql.org/docs/9.2/static/rangetypes.html&#34;&gt;Ranges&lt;/a&gt;. This is a quick overview of how to use them.&lt;/p&gt;
+
+&lt;h3 id=&#34;range-types&#34;&gt;Range Types&lt;/h3&gt;
+
+&lt;p&gt;There are a handful of built in range types that cover the expected number and date types and you can also define your own if you need something outside of that.&lt;/p&gt;
+
+&lt;h2 id=&#34;basic-operations&#34;&gt;Basic Operations&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Defining Range&lt;/strong&gt; - CREATE TABLE ranges (range int4range)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inserting Range&lt;/strong&gt; - INSERT INTO ranges VALUES(&amp;rsquo;[1, 4]&amp;lsquo;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Infinate Ranges&lt;/strong&gt; - INSERT INTO ranges VALUES(&amp;rsquo;[4, infinity]&amp;lsquo;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Check Range Membership&lt;/strong&gt; - SELECT * FROM ranges where range @&amp;gt; 2&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Get Range Bounds&lt;/strong&gt; - SELECT lower(range), upper(range) FROM ranges&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;defining-ranges-values&#34;&gt;Defining Ranges Values&lt;/h2&gt;
+
+&lt;p&gt;You can define &lt;em&gt;inclusive&lt;/em&gt; ranges using [2,3] and &lt;em&gt;exclusive&lt;/em&gt; ranges using (1,4). You can also &lt;em&gt;mix&lt;/em&gt; them [2,4). You can create &lt;em&gt;infinate ranges&lt;/em&gt; like [4, infinaty] or [-infinity, 4] and you can test for infinity using _lower&lt;em&gt;inf&lt;/em&gt; and _upper&lt;em&gt;inf&lt;/em&gt;. Keep in mind that creating a range like [NULL, 4] will create a unbound lower range. This will act like [infinity, 4] but you wont be able to test for infinity since NULL is still distinct from infinity.&lt;/p&gt;
+
+&lt;h2 id=&#34;non-overlapping-ranges&#34;&gt;Non-Overlapping Ranges&lt;/h2&gt;
+
+&lt;p&gt;I find that when using ranges you often need to create non-overlapping ranges. You can add such a condition using like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;TABLE&lt;/span&gt; ranges (
+  range int4range,
+  EXCLUDE &lt;span style=&#34;font-weight: bold&#34;&gt;USING&lt;/span&gt; gist (range &lt;span style=&#34;font-weight: bold&#34;&gt;WITH&lt;/span&gt; &amp;amp;&amp;amp;)
+);
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

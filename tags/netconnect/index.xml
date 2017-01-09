@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Netconnect on David Hamp-Gonsalves</title>
+    <link>https://davidhampgonsalves.github.io/tags/netconnect/index.xml</link>
+    <description>Recent content in Netconnect on David Hamp-Gonsalves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://davidhampgonsalves.github.io/tags/netconnect/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Flash NetConnection for Wowza RMI (2/3)</title>
+      <link>https://davidhampgonsalves.github.io/posts/wowza-live-metadata-2/</link>
+      <pubDate>Tue, 02 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/wowza-live-metadata-2/</guid>
+      <description>
+
+&lt;p&gt;This is the second post in a series about injecting JSON based metadata into a live RTP streams using Wowza Media Server, Adobe Flex and OSMF.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-we-ve-built&#34;&gt;What We&amp;rsquo;ve Built&lt;/h2&gt;
+
+&lt;p&gt;So far in the previous post we got Wowza setup and created a module which will inject our JSON metadata into our live RTP stream.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-we-re-building-in-this-post&#34;&gt;What We&amp;rsquo;re Building (in this post)&lt;/h2&gt;
+
+&lt;p&gt;In this short post we&amp;rsquo;ll be triggering the injection of metadata from the browser using a flash object created with Flex. Depending on your needs you may choose to call this method in some other way.&lt;/p&gt;
+
+&lt;h2 id=&#34;developing-in-flash-builder&#34;&gt;Developing in Flash Builder&lt;/h2&gt;
+
+&lt;p&gt;The first thing you&amp;rsquo;ll need is Flash Builder, or in my case a 30 day trial of Flash Builder.&lt;/p&gt;
+
+&lt;p&gt;Once you have Flash Builder you&amp;rsquo;ll need to create a Flex Project for the web. At the time of writing this I was using Flex 4.5.1.&lt;/p&gt;
+
+&lt;h2 id=&#34;netconection-rmi&#34;&gt;NetConection RMI&lt;/h2&gt;
+
+&lt;p&gt;In my case I used the ExternalInterface to allow me to call one of the flash object&amp;rsquo;s methods from Javascript but you can do whatever you want in your broadcaster. The important bit is creating a connection to the Wowza server via a NetConnection and using it to call our Modules(created in last post) inject metadata method. This is shown bellow:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;NetConnection.defaultObjectEncoding = flash.net.ObjectEncoding.AMF0;
+NetConnection nc = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; NetConnection();
+nc.connect(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;your server name&amp;quot;&lt;/span&gt;);
+
+nc.call(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;wowza_module_method_name&amp;quot;&lt;/span&gt;, &lt;span style=&#34;font-weight: bold&#34;&gt;null&lt;/span&gt;, &lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;your movie name&amp;quot;&lt;/span&gt;, JSONMetadata);
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This code tells the net connection to use the object encoding of AS 1.0/2.0 which Wowza likes. Then it creates the connection to your server and passes the movie name as a method parameter so that Wowza knows what stream to inject the data into. The JSONMetadata parameter is an Flex Object that contains all the metadata to inject.&lt;/p&gt;
+
+&lt;h2 id=&#34;closing&#34;&gt;Closing&lt;/h2&gt;
+
+&lt;p&gt;This post is pretty brief but I&amp;rsquo;m hoping the important bits are all in there. I&amp;rsquo;ll be posting all my code in the next(last) post. Im my code to keep the flash to a minimum I created a flash object which I called using javascript(ExternalInterface) and passed in a javascript object which gets converted to an Action Script object automatically.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

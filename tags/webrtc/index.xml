@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webrtc on David Hamp-Gonsalves</title>
+    <link>https://davidhampgonsalves.github.io/tags/webrtc/index.xml</link>
+    <description>Recent content in Webrtc on David Hamp-Gonsalves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://davidhampgonsalves.github.io/tags/webrtc/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>WebRTC in 5 Minutes</title>
+      <link>https://davidhampgonsalves.github.io/posts/webrtc-in-5-minutes/</link>
+      <pubDate>Sat, 23 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/webrtc-in-5-minutes/</guid>
+      <description>
+
+&lt;p&gt;While WebRTC has been around for awhile now but its still feels like a young technology and there are few resources to learn about it. These are the basics of how a connection is made between peers which is important for understanding how WebRTC differs from traditional networking.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-a-connection&#34;&gt;Creating a Connection&lt;/h2&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;strong&gt;Fetch ICE (Interactive Connectivity Establishment) Candidates from STUN server.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Contains details of how the data is going to be exchanged (ip, port, protocol).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;If STUN reports we are unreachable (behind a symetric NAT?) then we must use a TURN relay.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Need to use &lt;code&gt;TURN&lt;/code&gt; relay since peer wont be able to directly connect to us.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Make an offer SDP which contains meta-data about the data the peers will be sending.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SDL = session description protocol&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;SDL is shared with peer via Signal Channel.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Signal channel can be anything from a websocket to word of mouth but WebRTC doesn&amp;rsquo;t do this part.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Remote party answers with their own SDP via Signal Channel.&lt;/strong&gt;
+&lt;br&gt;
+&lt;strong&gt;Peers connect with information recieved SDP.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;em&gt;I learned about WebRTC in the context of &lt;a href=&#34;https://github.com/feross/webtorrent&#34;&gt;WebTorrent&lt;/a&gt; which is an amazing project, you should check it out.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

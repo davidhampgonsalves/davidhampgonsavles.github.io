@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Html on David Hamp-Gonsalves</title>
+    <link>https://davidhampgonsalves.github.io/tags/html/index.xml</link>
+    <description>Recent content in Html on David Hamp-Gonsalves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://davidhampgonsalves.github.io/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>HTML Sticky Headers</title>
+      <link>https://davidhampgonsalves.github.io/posts/sticky-headers/</link>
+      <pubDate>Sun, 22 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/sticky-headers/</guid>
+      <description>
+
+&lt;p&gt;Sticky headers are heading elements that stick to the top of the window as the user scrolls down the page. This is useful since you can use them to retain the contextual information of the section regardless of the position.&lt;/p&gt;
+
+&lt;p&gt;In my case I needed to have multiple headers in the hourly forecast list for &lt;a href=&#34;http://www.hourweather.com/&#34;&gt;hourweather.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I found there wasn&amp;rsquo;t much out there about this topic, especially when you want to have multiple sticky headers per page so I thought I&amp;rsquo;d share my implementation(which is pretty rough) for others to reference for the main ideas.&lt;/p&gt;
+
+&lt;h2 id=&#34;basic-concept&#34;&gt;Basic Concept&lt;/h2&gt;
+
+&lt;p&gt;Sticky headers basically work by toggling the headers position type when it reaches the top of the window to fixed so that it sticks in place. The rest of the logic really just handles the flipping from one stuck headers to the next as the scrolling continues up or down the page.&lt;/p&gt;
+
+&lt;h2 id=&#34;demo&#34;&gt;Demo&lt;/h2&gt;
+
+&lt;p&gt;Check out &lt;a href=&#34;http://www.hourweather.com/&#34;&gt;hourweather.com&lt;/a&gt; as its used in the hourly forecast listings.&lt;/p&gt;
+
+&lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
+
+&lt;p&gt;This code uses JQuery since I was already using it on the page. You could remove the references pretty easily since I only used some selectors and CSS manipulations.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; setupStickyHeaders() {
+    &lt;span style=&#34;font-style: italic&#34;&gt;//get initial offset positions of the headers&lt;/span&gt;
+    &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; headers = [];
+    $.each($(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;div.day-start&amp;#39;&lt;/span&gt;), &lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt;(i, headerDiv) {
+        &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; header = $(headerDiv);
+        headers.push({element&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:header, orgOffset&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: header.offset().top});
+    });
+
+    &lt;span style=&#34;font-style: italic&#34;&gt;//if no headers on this page then stop&lt;/span&gt;
+    &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(headers.length == 0)
+        &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt;;
+
+    &lt;span style=&#34;font-style: italic&#34;&gt;//get the original css for the&lt;/span&gt;
+    &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; orgCSS = {width&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:headers[0].element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;width&amp;#39;&lt;/span&gt;), position&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:headers[0].element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;position&amp;#39;&lt;/span&gt;), height&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:headers[0].element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;height&amp;#39;&lt;/span&gt;)};
+
+    &lt;span style=&#34;font-style: italic&#34;&gt;//handle scrolling&lt;/span&gt;
+    $(window).scroll(&lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt;(){
+        &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; scrollTop = $(&lt;span style=&#34;font-weight: bold&#34;&gt;this&lt;/span&gt;).scrollTop();
+
+
+        &lt;span style=&#34;font-style: italic&#34;&gt;//unstick headers&lt;/span&gt;
+        &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(i &lt;span style=&#34;font-weight: bold&#34;&gt;in&lt;/span&gt; headers) {
+            &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; header = headers[i];
+            &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(!isStuck(header)) &lt;span style=&#34;font-weight: bold&#34;&gt;break&lt;/span&gt;;
+
+            &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(scrollTop &amp;lt; header.orgOffset) {
+                header.element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;position&amp;#39;&lt;/span&gt;, orgCSS.position).css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;top&amp;#39;&lt;/span&gt;,&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;).prev().remove();
+                &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(i &amp;gt; 0)
+                    headers[i-1].element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;z-index&amp;#39;&lt;/span&gt;, 1);
+            }
+        }
+
+        &lt;span style=&#34;font-style: italic&#34;&gt;//stick headers&lt;/span&gt;
+        &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(i &lt;span style=&#34;font-weight: bold&#34;&gt;in&lt;/span&gt; headers) {
+            &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; header = headers[i];
+            &lt;span style=&#34;font-style: italic&#34;&gt;//make sure any stuck headers are stuck in the right place(fast scrolling sometimes messes this up)&lt;/span&gt;
+            &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(isStuck(header))
+                header.element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;top&amp;#39;&lt;/span&gt;,&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;)
+
+            &lt;span style=&#34;font-style: italic&#34;&gt;//skip this header if its bellow the top of the window&lt;/span&gt;
+            &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(scrollTop &amp;lt; header.orgOffset - parseInt(orgCSS.height))
+                &lt;span style=&#34;font-weight: bold&#34;&gt;break&lt;/span&gt;;
+
+            &lt;span style=&#34;font-style: italic&#34;&gt;//if the header is already stuck then ignore it&lt;/span&gt;
+            &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(!isStuck(header)) {
+                &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(scrollTop &amp;gt; header.orgOffset) {
+                    &lt;span style=&#34;font-style: italic&#34;&gt;//stick the header&lt;/span&gt;
+                    header.element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;width&amp;#39;&lt;/span&gt;, orgCSS.width).css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;position&amp;#39;&lt;/span&gt;, &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;fixed&amp;#39;&lt;/span&gt;).css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;top&amp;#39;&lt;/span&gt;,&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;).before(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;&amp;lt;div class=day-start&amp;gt; &amp;lt;/div&amp;gt;&amp;#39;&lt;/span&gt;);
+                    &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(i &amp;gt; 0)
+                        headers[i-1].element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;z-index&amp;#39;&lt;/span&gt;, -1);
+                }&lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(i &amp;gt; 0)
+                    &lt;span style=&#34;font-style: italic&#34;&gt;//hide the element since it should be off the screen now&lt;/span&gt;
+                    headers[i-1].element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;top&amp;#39;&lt;/span&gt;, header.orgOffset - scrollTop - parseInt(orgCSS.height));
+            }
+        }
+    });
+}
+
+&lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; isStuck(header) {&lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; header.element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;position&amp;#39;&lt;/span&gt;) === &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;fixed&amp;#39;&lt;/span&gt;}
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

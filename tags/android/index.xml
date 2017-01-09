@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on David Hamp-Gonsalves</title>
+    <link>https://davidhampgonsalves.github.io/tags/android/index.xml</link>
+    <description>Recent content in Android on David Hamp-Gonsalves</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://davidhampgonsalves.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Building a Basic Android Bot</title>
+      <link>https://davidhampgonsalves.github.io/posts/android-bot.js/</link>
+      <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/posts/android-bot.js/</guid>
+      <description>
+
+&lt;p&gt;Last week I started playing a new game on my phone called Castle Crash. I don&amp;rsquo;t play often play video games but when I do, I play them obsesively until they are defeated. In this case you can&amp;rsquo;t beat the game since you are playing against the internet so I decided to tap out and let my computer take over.&lt;/p&gt;
+
+&lt;h2 id=&#34;monkeyrunner&#34;&gt;MonkeyRunner&lt;/h2&gt;
+
+&lt;p&gt;Android has a great tool for writing simple automated tests on a device called MonkeyRunner. It uses Jython to let you write Python scripts that simulate user interactions and events on your device. &lt;a href=&#34;http://developer.android.com/tools/help/monkeyrunner_concepts.html&#34;&gt;MonkeyRunner&lt;/a&gt; can be found in the tool directoy after you have installed the Android SDK.&lt;/p&gt;
+
+&lt;h2 id=&#34;determine-apps-package-activity&#34;&gt;Determine Apps Package/Activity&lt;/h2&gt;
+
+&lt;p&gt;To determine an apps package/activity the easiest way is to download the .apk file, decompress it and take a look at the &lt;a href=&#34;http://developer.android.com/guide/topics/manifest/manifest-intro.html&#34;&gt;AndroidManifest.xml&lt;/a&gt;. Alternatevly you can run the app on your device and watch the &lt;a href=&#34;http://developer.android.com/tools/help/logcat.html&#34;&gt;logs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;long-presses&#34;&gt;Long Presses&lt;/h2&gt;
+
+&lt;p&gt;Long pressing is a pretty standard user interaction but MonkeyRunner doesn&amp;rsquo;t really support it. It does however support .drag() which can be used for the same purpose.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;	device.drag((x,y), (x,y), pressTime)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;exiting-app&#34;&gt;Exiting App&lt;/h2&gt;
+
+&lt;p&gt;Exiting the app is a good way to reset back to a known state and can be done between actions if the game structure allows.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;device.shell(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;am force-stop &amp;#39;&lt;/span&gt; + package)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;determine-interaction-coordinates&#34;&gt;Determine Interaction Coordinates&lt;/h2&gt;
+
+&lt;p&gt;Since MonkeyRunner doesn&amp;rsquo;t know anything about the app that is running it works solely with pixel coordinates. This means that you need to determine the location of all elements on the screen you want to interact with and there are a few ways of doign this. The most basic way is to determine the size in pixels of your device and then start estimating from there. This actually works quite well once you get the hang of it. A more accurate method is to enable ponter locations on your device(under developer options) and then walk through the flow keeping track of each required action.&lt;/p&gt;
+
+&lt;h2 id=&#34;some-bot-code&#34;&gt;Some Bot Code&lt;/h2&gt;
+
+&lt;p&gt;This code replenishes the four troop camps in Castle Crash and is a good example of simple interactions with the game.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;def&lt;/span&gt; replenishTroops(campNumber)\:
+	&lt;span style=&#34;font-weight: bold&#34;&gt;print&lt;/span&gt; &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;replenishing troops&amp;#39;&lt;/span&gt;
+	campLocations = [(320, 400), (320, 120), (590, 80), (560, 350)][campNumber]
+
+	touch(campLocations[0], campLocations[1]) &lt;span style=&#34;font-style: italic&#34;&gt;#select camp&lt;/span&gt;
+	touch(480, 450) &lt;span style=&#34;font-style: italic&#34;&gt;#press hire button&lt;/span&gt;
+
+	device.drag((300, 450), (200, 450)) &lt;span style=&#34;font-style: italic&#34;&gt;#scroll to archers&lt;/span&gt;
+	time.sleep(5) &lt;span style=&#34;font-style: italic&#34;&gt;#wait for scroll to finish&lt;/span&gt;
+	device.drag((500, 450), (501, 451), 5) &lt;span style=&#34;font-style: italic&#34;&gt;#long press archers button&lt;/span&gt;
+
+	touch(660, 60) &lt;span style=&#34;font-style: italic&#34;&gt;#close areana window&lt;/span&gt;
+	touch(5, 5) &lt;span style=&#34;font-style: italic&#34;&gt;#deselect anything&lt;/span&gt;
+
+&lt;span style=&#34;font-weight: bold&#34;&gt;def&lt;/span&gt; touch(x, y, delay=2)\:
+	&lt;span style=&#34;font-weight: bold&#34;&gt;print&lt;/span&gt;(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;touching &amp;#39;&lt;/span&gt; + str(x) + &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;, &amp;#39;&lt;/span&gt; + str(y))
+	device.touch(x, y, &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;DOWN_AND_UP&amp;#39;&lt;/span&gt;)
+	time.sleep(delay)
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
