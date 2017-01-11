@@ -10,10 +10,10 @@
     
     <item>
       <title>Connecting to SVN with Scala/Java</title>
-      <link>https://davidhampgonsalves.github.io/posts/scala-svn/</link>
+      <link>https://davidhampgonsalves.github.io/connecting-to-svn-with-scala/java/</link>
       <pubDate>Thu, 25 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/scala-svn/</guid>
+      <guid>https://davidhampgonsalves.github.io/connecting-to-svn-with-scala/java/</guid>
       <description>
 
 &lt;p&gt;I needed to do some SVN scraping recently to automate the detection of certain areas of code and this is what I learned.&lt;/p&gt;

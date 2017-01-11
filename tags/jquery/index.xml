@@ -10,10 +10,10 @@
     
     <item>
       <title>Updating Chrome Extension Manifest</title>
-      <link>https://davidhampgonsalves.github.io/posts/chrome-extension-manifest/</link>
+      <link>https://davidhampgonsalves.github.io/updating-chrome-extension-manifest/</link>
       <pubDate>Wed, 29 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/chrome-extension-manifest/</guid>
+      <guid>https://davidhampgonsalves.github.io/updating-chrome-extension-manifest/</guid>
       <description>&lt;p&gt;&lt;em&gt;This post should really just read: JQuery 1.4 breaks(Refused to execute inline script) when used in Chrome Extensions using the version 2 Manifest. Update to Jquery 1.7 and you&amp;rsquo;ll be happy.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Unfortunately it doesn&amp;rsquo;t, it reads more like:&lt;/p&gt;
@@ -32,10 +32,10 @@
     
     <item>
       <title>Slimming Down JQuery Easing</title>
-      <link>https://davidhampgonsalves.github.io/posts/jquery-easing/</link>
+      <link>https://davidhampgonsalves.github.io/slimming-down-jquery-easing/</link>
       <pubDate>Fri, 06 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/jquery-easing/</guid>
+      <guid>https://davidhampgonsalves.github.io/slimming-down-jquery-easing/</guid>
       <description>
 
 &lt;p&gt;For simple javascript animations there is always a trade off between code size and visual effects. Recently I was trying to add some visual pizzazz to &lt;a href=&#34;http://www.hourweather.com/&#34;&gt;hour weather&lt;/a&gt; but didn&amp;rsquo;t want to incur the overhead of JQuery UI. What I was looking for was just a simple bounce effect on some moving objects. A lighter weight alternative that I considered was &lt;a href=&#34;http://gsgd.co.uk/sandbox/jquery/easing/&#34;&gt;JQuery easing&lt;/a&gt; but even that seemed like overkill. My solution was to rip out the parts I needed and I wanted to share how easy that process is.&lt;/p&gt;
@@ -81,10 +81,10 @@ jQuery.extend( jQuery.easing,
     
     <item>
       <title>JQuery JFeed</title>
-      <link>https://davidhampgonsalves.github.io/posts/jfeed/</link>
+      <link>https://davidhampgonsalves.github.io/jquery-jfeed/</link>
       <pubDate>Wed, 26 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/jfeed/</guid>
+      <guid>https://davidhampgonsalves.github.io/jquery-jfeed/</guid>
       <description>
 
 &lt;p&gt;While working on Foxish I needed to parse some RSS/Atom feeds in javascript. Thinking there would be nice a library for this I took a look around and found a couple old libraries and determined that the best of those was &lt;a href=&#34;http://plugins.jquery.com/project/jFeed&#34;&gt;JFeed&lt;/a&gt; which is a JQuery plugin.&lt;/p&gt;

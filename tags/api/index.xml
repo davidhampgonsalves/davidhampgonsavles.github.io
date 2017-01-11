@@ -10,10 +10,10 @@
     
     <item>
       <title>UPC/EAN Product Databases/API&#39;s</title>
-      <link>https://davidhampgonsalves.github.io/posts/upc-databases/</link>
+      <link>https://davidhampgonsalves.github.io/upc/ean-product-databases/apis/</link>
       <pubDate>Wed, 07 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/upc-databases/</guid>
+      <guid>https://davidhampgonsalves.github.io/upc/ean-product-databases/apis/</guid>
       <description>
 
 &lt;p&gt;Converting a barcode into useful, descriptive information is harder then you would expect. Or rather its difficult to do with any reliability and accuracy. There are a few good API&amp;rsquo;s that I&amp;rsquo;ve been using or looking into that I&amp;rsquo;ll cover here.

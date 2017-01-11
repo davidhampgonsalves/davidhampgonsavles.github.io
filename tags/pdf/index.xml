@@ -10,10 +10,10 @@
     
     <item>
       <title>PDF&#39;s using iText in 10 lines</title>
-      <link>https://davidhampgonsalves.github.io/posts/pdf-itext/</link>
+      <link>https://davidhampgonsalves.github.io/pdfs-using-itext-in-10-lines/</link>
       <pubDate>Mon, 16 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/pdf-itext/</guid>
+      <guid>https://davidhampgonsalves.github.io/pdfs-using-itext-in-10-lines/</guid>
       <description>
 
 &lt;p&gt;There are some getting started tutorials for the iText library but I don&amp;rsquo;t think they really capture how fast and easy it is to get working PDF&amp;rsquo;s.&lt;/p&gt;

@@ -10,10 +10,10 @@
     
     <item>
       <title>Dynamic CSS Reset</title>
-      <link>https://davidhampgonsalves.github.io/posts/css-reset/</link>
+      <link>https://davidhampgonsalves.github.io/dynamic-css-reset/</link>
       <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/css-reset/</guid>
+      <guid>https://davidhampgonsalves.github.io/dynamic-css-reset/</guid>
       <description>&lt;p&gt;When ever you ever have to inject HTML into an unknown page you have to battle with all the page styles messing with your own content. This happens a lot when building bookmarklets like my recent &lt;a href=&#34;https://davidhampgonsalves.github.io/spritz-like-rsvp-reader-bookmarklet/&#34;&gt;RSVP Reader&lt;/a&gt;. In the past you had to manually assign values for all the CSS properties that could have been set by the page. Since then then &lt;em&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/initial&#34;&gt;initial&lt;/a&gt;&lt;/em&gt; CSS property was added we can perform this reset automatically. The following is a function that resets all CSS properties for a given DOM node.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function resetStyles(node) {
@@ -31,10 +31,10 @@
     
     <item>
       <title>Spritz like(RSVP) Reader Bookmarklet</title>
-      <link>https://davidhampgonsalves.github.io/posts/spritz-like-rsvp-reader-bookmarklet/</link>
+      <link>https://davidhampgonsalves.github.io/spritz-likersvp-reader-bookmarklet/</link>
       <pubDate>Tue, 04 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/spritz-like-rsvp-reader-bookmarklet/</guid>
+      <guid>https://davidhampgonsalves.github.io/spritz-likersvp-reader-bookmarklet/</guid>
       <description>
 
 &lt;p&gt;So after seeing &lt;a href=&#34;http://www.spritzinc.com/&#34;&gt;Spritz&lt;/a&gt; I waited for someone to whip up a nice extension so that I could try out the same technique(&lt;a href=&#34;http://en.wikipedia.org/wiki/Rapid_Serial_Visual_Presentation&#34;&gt;RSVP&lt;/a&gt;) in my brower. Since that hasn&amp;rsquo;t happened I created a bookmarklet that covers the basics so that we test this all out in real life and see how useful it really is.&lt;/p&gt;
@@ -86,10 +86,10 @@
     
     <item>
       <title>Compressing JSON into a Brittle Lightweight String</title>
-      <link>https://davidhampgonsalves.github.io/posts/compress-json.js/</link>
+      <link>https://davidhampgonsalves.github.io/compressing-json-into-a-brittle-lightweight-string/</link>
       <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/compress-json.js/</guid>
+      <guid>https://davidhampgonsalves.github.io/compressing-json-into-a-brittle-lightweight-string/</guid>
       <description>
 
 &lt;p&gt;Client side single page apps tend to throw a lot of JSON data across the internet. These are some techniques I used on &lt;a href=&#34;http://crimeheatmap.ca&#34;&gt;cimrheatmap.ca&lt;/a&gt; to compress my Geo/Time data by about &lt;strong&gt;90%&lt;/strong&gt; and avoided the overhead of gzipping the page. Be warned most of this was just for fun and is a silly idea because of the disadvantages listed bellow.
@@ -161,10 +161,10 @@ This resulted in a savings of &lt;strong&gt;%40&lt;/strong&gt;.&lt;/p&gt;
     
     <item>
       <title>Animated Javascript Heatmaps.js</title>
-      <link>https://davidhampgonsalves.github.io/posts/animated-heatmaps.js/</link>
+      <link>https://davidhampgonsalves.github.io/animated-javascript-heatmaps.js/</link>
       <pubDate>Wed, 23 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/animated-heatmaps.js/</guid>
+      <guid>https://davidhampgonsalves.github.io/animated-javascript-heatmaps.js/</guid>
       <description>
 
 &lt;p&gt;I&amp;rsquo;ve been working on a &lt;a href=&#34;http://www.crimeheatmap.ca&#34;&gt;crime heatmap animation&lt;/a&gt; lately and these are some tips for anyone else building something similar.&lt;/p&gt;
@@ -197,10 +197,10 @@ This resulted in a savings of &lt;strong&gt;%40&lt;/strong&gt;.&lt;/p&gt;
     
     <item>
       <title>Detecting Mobile Device from Javascript</title>
-      <link>https://davidhampgonsalves.github.io/posts/detect-mobile-javascript/</link>
+      <link>https://davidhampgonsalves.github.io/detecting-mobile-device-from-javascript/</link>
       <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/detect-mobile-javascript/</guid>
+      <guid>https://davidhampgonsalves.github.io/detecting-mobile-device-from-javascript/</guid>
       <description>&lt;p&gt;This is a pretty lightweight way of detecting when your javascript is living in a mobile device.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if(typeof window.orientation != &#39;undefined&#39;) { /* put mobile spesific code here */ }
@@ -219,10 +219,10 @@ This resulted in a savings of &lt;strong&gt;%40&lt;/strong&gt;.&lt;/p&gt;
     
     <item>
       <title>Drawing Region Polygons on Google Maps API v.3</title>
-      <link>https://davidhampgonsalves.github.io/posts/polygons_and_google_maps/</link>
+      <link>https://davidhampgonsalves.github.io/drawing-region-polygons-on-google-maps-api-v.3/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/polygons_and_google_maps/</guid>
+      <guid>https://davidhampgonsalves.github.io/drawing-region-polygons-on-google-maps-api-v.3/</guid>
       <description>
 
 &lt;p&gt;You can &amp;ldquo;draw&amp;rdquo; all sorts of stuff on Google Maps using Layers but mor simply you can also directly create polygons and with a bit of extra work make them looks pretty cool. In this case I&amp;rsquo;m tracing a country using data from the &lt;a href=&#34;https://www.google.com/fusiontables/DataSource?docid=1UGwYogqtxVPga_76rxpL38CO1U6tr2s6Z0wSaQ&#34;&gt;Natural Earth Google Fusion Tables Dataset&lt;/a&gt;. Here is the final product showing &lt;a href=&#34;http://www.iswhere.us/new_york.html&#34;&gt;where New York is&lt;/a&gt;.&lt;/p&gt;
@@ -277,10 +277,10 @@ allPolygonBounds.union(regionBounds);
     
     <item>
       <title>Generating Bitcoins using Online Ads</title>
-      <link>https://davidhampgonsalves.github.io/posts/online-ads-and-mining-bitcoins/</link>
+      <link>https://davidhampgonsalves.github.io/generating-bitcoins-using-online-ads/</link>
       <pubDate>Fri, 02 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/online-ads-and-mining-bitcoins/</guid>
+      <guid>https://davidhampgonsalves.github.io/generating-bitcoins-using-online-ads/</guid>
       <description>&lt;p&gt;After reading about using &lt;a href=&#34;http://threatpost.com/buy-an-ad-own-a-browser-botnet&#34;&gt;online ads to launch a javascript based DDoS attack&lt;/a&gt; I started wondering about how well such a system would do at mining bitcoins. These are my &lt;em&gt;rough calculations.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;From my research I&amp;rsquo;ve found there are 3 ways to mine bitcoins(compute hashes) using Javascript:&lt;/p&gt;
@@ -312,10 +312,10 @@ allPolygonBounds.union(regionBounds);
     
     <item>
       <title>Javascript Damerau Levenshtein Algorithim</title>
-      <link>https://davidhampgonsalves.github.io/posts/damerau-levenshtein/</link>
+      <link>https://davidhampgonsalves.github.io/javascript-damerau-levenshtein-algorithim/</link>
       <pubDate>Tue, 20 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/damerau-levenshtein/</guid>
+      <guid>https://davidhampgonsalves.github.io/javascript-damerau-levenshtein-algorithim/</guid>
       <description>&lt;p&gt;The &lt;a href=&#34;http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance&#34;&gt;Damerau Levenshtein&lt;/a&gt; algorithim calculates a distance between two words in the same way that basic Levenshtein does but adds transpositions to the set of operations that it uses to calculate distance. This makes it much more reliable at finding similiar or alternate spellings of words.&lt;/p&gt;
 
 &lt;p&gt;I was doing some nodejs work lately and needed such a function to clean up one of my datasets and so I ported this version from C# to Javascript.&lt;/p&gt;
@@ -374,10 +374,10 @@ allPolygonBounds.union(regionBounds);
     
     <item>
       <title>HTML Sticky Headers</title>
-      <link>https://davidhampgonsalves.github.io/posts/sticky-headers/</link>
+      <link>https://davidhampgonsalves.github.io/html-sticky-headers/</link>
       <pubDate>Sun, 22 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/sticky-headers/</guid>
+      <guid>https://davidhampgonsalves.github.io/html-sticky-headers/</guid>
       <description>
 
 &lt;p&gt;Sticky headers are heading elements that stick to the top of the window as the user scrolls down the page. This is useful since you can use them to retain the contextual information of the section regardless of the position.&lt;/p&gt;

@@ -10,10 +10,10 @@
     
     <item>
       <title>Compressing JSON into a Brittle Lightweight String</title>
-      <link>https://davidhampgonsalves.github.io/posts/compress-json.js/</link>
+      <link>https://davidhampgonsalves.github.io/compressing-json-into-a-brittle-lightweight-string/</link>
       <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/compress-json.js/</guid>
+      <guid>https://davidhampgonsalves.github.io/compressing-json-into-a-brittle-lightweight-string/</guid>
       <description>
 
 &lt;p&gt;Client side single page apps tend to throw a lot of JSON data across the internet. These are some techniques I used on &lt;a href=&#34;http://crimeheatmap.ca&#34;&gt;cimrheatmap.ca&lt;/a&gt; to compress my Geo/Time data by about &lt;strong&gt;90%&lt;/strong&gt; and avoided the overhead of gzipping the page. Be warned most of this was just for fun and is a silly idea because of the disadvantages listed bellow.

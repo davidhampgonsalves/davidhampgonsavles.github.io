@@ -10,10 +10,10 @@
     
     <item>
       <title>Drawing Region Polygons on Google Maps API v.3</title>
-      <link>https://davidhampgonsalves.github.io/posts/polygons_and_google_maps/</link>
+      <link>https://davidhampgonsalves.github.io/drawing-region-polygons-on-google-maps-api-v.3/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/polygons_and_google_maps/</guid>
+      <guid>https://davidhampgonsalves.github.io/drawing-region-polygons-on-google-maps-api-v.3/</guid>
       <description>
 
 &lt;p&gt;You can &amp;ldquo;draw&amp;rdquo; all sorts of stuff on Google Maps using Layers but mor simply you can also directly create polygons and with a bit of extra work make them looks pretty cool. In this case I&amp;rsquo;m tracing a country using data from the &lt;a href=&#34;https://www.google.com/fusiontables/DataSource?docid=1UGwYogqtxVPga_76rxpL38CO1U6tr2s6Z0wSaQ&#34;&gt;Natural Earth Google Fusion Tables Dataset&lt;/a&gt;. Here is the final product showing &lt;a href=&#34;http://www.iswhere.us/new_york.html&#34;&gt;where New York is&lt;/a&gt;.&lt;/p&gt;

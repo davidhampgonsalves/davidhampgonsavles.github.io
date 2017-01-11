@@ -10,10 +10,10 @@
     
     <item>
       <title>HTML Sticky Headers</title>
-      <link>https://davidhampgonsalves.github.io/posts/sticky-headers/</link>
+      <link>https://davidhampgonsalves.github.io/html-sticky-headers/</link>
       <pubDate>Sun, 22 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/sticky-headers/</guid>
+      <guid>https://davidhampgonsalves.github.io/html-sticky-headers/</guid>
       <description>
 
 &lt;p&gt;Sticky headers are heading elements that stick to the top of the window as the user scrolls down the page. This is useful since you can use them to retain the contextual information of the section regardless of the position.&lt;/p&gt;

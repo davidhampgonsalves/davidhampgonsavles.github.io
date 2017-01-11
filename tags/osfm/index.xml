@@ -10,10 +10,10 @@
     
     <item>
       <title>Live Metadata Handling Using OSMF (3/3)</title>
-      <link>https://davidhampgonsalves.github.io/posts/wowza-live-metadata-3/</link>
+      <link>https://davidhampgonsalves.github.io/live-metadata-handling-using-osmf-3/3/</link>
       <pubDate>Mon, 01 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/wowza-live-metadata-3/</guid>
+      <guid>https://davidhampgonsalves.github.io/live-metadata-handling-using-osmf-3/3/</guid>
       <description>
 
 &lt;p&gt;This is the third post in a series about injecting JSON based metadata into a live RTP streams using Wowza Media Server, Adobe Flex and OSMF.&lt;/p&gt;

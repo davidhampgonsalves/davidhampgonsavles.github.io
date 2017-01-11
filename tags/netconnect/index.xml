@@ -10,10 +10,10 @@
     
     <item>
       <title>Flash NetConnection for Wowza RMI (2/3)</title>
-      <link>https://davidhampgonsalves.github.io/posts/wowza-live-metadata-2/</link>
+      <link>https://davidhampgonsalves.github.io/flash-netconnection-for-wowza-rmi-2/3/</link>
       <pubDate>Tue, 02 Aug 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/wowza-live-metadata-2/</guid>
+      <guid>https://davidhampgonsalves.github.io/flash-netconnection-for-wowza-rmi-2/3/</guid>
       <description>
 
 &lt;p&gt;This is the second post in a series about injecting JSON based metadata into a live RTP streams using Wowza Media Server, Adobe Flex and OSMF.&lt;/p&gt;

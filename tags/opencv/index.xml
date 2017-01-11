@@ -10,10 +10,10 @@
     
     <item>
       <title>Failed Projects: Open Mosaic</title>
-      <link>https://davidhampgonsalves.github.io/posts/open-mosiac/</link>
+      <link>https://davidhampgonsalves.github.io/failed-projects-open-mosaic/</link>
       <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/open-mosiac/</guid>
+      <guid>https://davidhampgonsalves.github.io/failed-projects-open-mosaic/</guid>
       <description>
 
 &lt;p&gt;The goal of this project was to recreate an image as a mosaic of other images. I wanted to achieve this with a low number of tiles and not simply use images as pixels based on their colors.&lt;/p&gt;
@@ -54,10 +54,10 @@
     
     <item>
       <title>OpenCV CompareHist Performance</title>
-      <link>https://davidhampgonsalves.github.io/posts/opencv-comparehist/</link>
+      <link>https://davidhampgonsalves.github.io/opencv-comparehist-performance/</link>
       <pubDate>Sat, 31 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/opencv-comparehist/</guid>
+      <guid>https://davidhampgonsalves.github.io/opencv-comparehist-performance/</guid>
       <description>&lt;p&gt;I did some performance tests on the four histograms comparison methods that &lt;a href=&#34;http://docs.opencv.org/java/org/opencv/imgproc/Imgproc.html#compareHist(org.opencv.core.Mat, org.opencv.core.Mat, int)&#34;&gt;compareHist&lt;/a&gt; provides and initially found that in basic performance tests they were all about the same speed. More recently I profiled them in a real world application and found they were significantly different.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/opencv-graph.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -68,10 +68,10 @@
     
     <item>
       <title>OpenCV/Python Color Tracking</title>
-      <link>https://davidhampgonsalves.github.io/posts/opencv-python-color-tracking/</link>
+      <link>https://davidhampgonsalves.github.io/opencv/python-color-tracking/</link>
       <pubDate>Mon, 30 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/opencv-python-color-tracking/</guid>
+      <guid>https://davidhampgonsalves.github.io/opencv/python-color-tracking/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/color_tracking.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;

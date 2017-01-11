@@ -11,10 +11,10 @@
     
     <item>
       <title>Hugo Black &amp; Light</title>
-      <link>https://davidhampgonsalves.github.io/posts/hugo-black-and-light-theme/</link>
+      <link>https://davidhampgonsalves.github.io/hugo-black--light/</link>
       <pubDate>Sun, 08 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/hugo-black-and-light-theme/</guid>
+      <guid>https://davidhampgonsalves.github.io/hugo-black--light/</guid>
       <description>
 
 &lt;h1 id=&#34;an-h1-header&#34;&gt;An h1 header&lt;/h1&gt;
@@ -153,19 +153,19 @@ term/definition pair to spread things out more.)&lt;/p&gt;
     
     <item>
       <title>Octopress to Hugo</title>
-      <link>https://davidhampgonsalves.github.io/posts/octopress-to-hugo/</link>
+      <link>https://davidhampgonsalves.github.io/octopress-to-hugo/</link>
       <pubDate>Fri, 06 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/octopress-to-hugo/</guid>
+      <guid>https://davidhampgonsalves.github.io/octopress-to-hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java 8: The Good Parts</title>
-      <link>https://davidhampgonsalves.github.io/posts/java-8-the-good-parts/</link>
+      <link>https://davidhampgonsalves.github.io/java-8-the-good-parts/</link>
       <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/java-8-the-good-parts/</guid>
+      <guid>https://davidhampgonsalves.github.io/java-8-the-good-parts/</guid>
       <description>
 
 &lt;p&gt;Sometimes I feel that Java has become a second class citizen on the JVM. While it commands a huge market share and is generally blazingly fast it hasn&amp;rsquo;t progressed like Clojure, Scala and even Groovy have. Java 8 delivered on some of the long planned features and this post is to talk about my favourites.&lt;/p&gt;
@@ -204,10 +204,10 @@ term/definition pair to spread things out more.)&lt;/p&gt;
     
     <item>
       <title>The Value of Failed Projects</title>
-      <link>https://davidhampgonsalves.github.io/posts/failed-projects/</link>
+      <link>https://davidhampgonsalves.github.io/the-value-of-failed-projects/</link>
       <pubDate>Mon, 03 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/failed-projects/</guid>
+      <guid>https://davidhampgonsalves.github.io/the-value-of-failed-projects/</guid>
       <description>&lt;p&gt;Personal projects fail just as easily as well funded professional ones. Even small projects and spikes deserve to be put down gently and documented for the benefit of all projects that follow.&lt;/p&gt;
 
 &lt;p&gt;My contributions are:&lt;/p&gt;
@@ -221,10 +221,10 @@ term/definition pair to spread things out more.)&lt;/p&gt;
     
     <item>
       <title>Failed Projects: Open Mosaic</title>
-      <link>https://davidhampgonsalves.github.io/posts/open-mosiac/</link>
+      <link>https://davidhampgonsalves.github.io/failed-projects-open-mosaic/</link>
       <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/open-mosiac/</guid>
+      <guid>https://davidhampgonsalves.github.io/failed-projects-open-mosaic/</guid>
       <description>
 
 &lt;p&gt;The goal of this project was to recreate an image as a mosaic of other images. I wanted to achieve this with a low number of tiles and not simply use images as pixels based on their colors.&lt;/p&gt;
@@ -265,10 +265,10 @@ term/definition pair to spread things out more.)&lt;/p&gt;
     
     <item>
       <title>Failed Projects: Tree Ring Generation</title>
-      <link>https://davidhampgonsalves.github.io/posts/tree-ring-generation/</link>
+      <link>https://davidhampgonsalves.github.io/failed-projects-tree-ring-generation/</link>
       <pubDate>Sat, 01 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/tree-ring-generation/</guid>
+      <guid>https://davidhampgonsalves.github.io/failed-projects-tree-ring-generation/</guid>
       <description>
 
 &lt;h2 id=&#34;project-goal&#34;&gt;Project Goal&lt;/h2&gt;
@@ -309,10 +309,10 @@ term/definition pair to spread things out more.)&lt;/p&gt;
     
     <item>
       <title>The Longterm Costs of Personal Projects</title>
-      <link>https://davidhampgonsalves.github.io/posts/long-term-costs-personal-projects/</link>
+      <link>https://davidhampgonsalves.github.io/the-longterm-costs-of-personal-projects/</link>
       <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/long-term-costs-personal-projects/</guid>
+      <guid>https://davidhampgonsalves.github.io/the-longterm-costs-of-personal-projects/</guid>
       <description>
 
 &lt;p&gt;Maintaining personal projects incur a small but on going cost: API&amp;rsquo;s change, PAAS&amp;rsquo;s deprecate old stacks, frameworks and libraries die / decay and domains need to be renewed.&lt;/p&gt;
@@ -339,10 +339,10 @@ term/definition pair to spread things out more.)&lt;/p&gt;
     
     <item>
       <title>File to Knife Conversion</title>
-      <link>https://davidhampgonsalves.github.io/posts/file-to-knife-conversion/</link>
+      <link>https://davidhampgonsalves.github.io/file-to-knife-conversion/</link>
       <pubDate>Fri, 05 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/file-to-knife-conversion/</guid>
+      <guid>https://davidhampgonsalves.github.io/file-to-knife-conversion/</guid>
       <description>&lt;p&gt;To learn some of the basics of metallurgy and have an understanding of what goes into some of our most basic tools I built a knife out of a discarded file.&lt;/p&gt;
 
 &lt;p&gt;Good quality files are made from high carbon steel which can be annealed (softened) so that it can be worked into a new shape and then hardened to produce a pretty high quality knife.&lt;/p&gt;
@@ -355,10 +355,10 @@ term/definition pair to spread things out more.)&lt;/p&gt;
     
     <item>
       <title>WebRTC in 5 Minutes</title>
-      <link>https://davidhampgonsalves.github.io/posts/webrtc-in-5-minutes/</link>
+      <link>https://davidhampgonsalves.github.io/webrtc-in-5-minutes/</link>
       <pubDate>Sat, 23 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/webrtc-in-5-minutes/</guid>
+      <guid>https://davidhampgonsalves.github.io/webrtc-in-5-minutes/</guid>
       <description>
 
 &lt;p&gt;While WebRTC has been around for awhile now but its still feels like a young technology and there are few resources to learn about it. These are the basics of how a connection is made between peers which is important for understanding how WebRTC differs from traditional networking.&lt;/p&gt;
@@ -402,10 +402,10 @@ term/definition pair to spread things out more.)&lt;/p&gt;
     
     <item>
       <title>Terminal GIFs on OSX</title>
-      <link>https://davidhampgonsalves.github.io/posts/terminal-gifs-osx/</link>
+      <link>https://davidhampgonsalves.github.io/terminal-gifs-on-osx/</link>
       <pubDate>Tue, 07 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/terminal-gifs-osx/</guid>
+      <guid>https://davidhampgonsalves.github.io/terminal-gifs-on-osx/</guid>
       <description>
 
 &lt;p&gt;Using Gifs for terminal explanations and usages aren&amp;rsquo;t new and exciting anymore but they are still useful. This is how to create them quickly on OSX.&lt;/p&gt;
@@ -442,10 +442,10 @@ concat_osx.sh recording-name.gif
     
     <item>
       <title>Ethical Apps on Greenpeace Podcast</title>
-      <link>https://davidhampgonsalves.github.io/posts/greenpeace-podcast/</link>
+      <link>https://davidhampgonsalves.github.io/ethical-apps-on-greenpeace-podcast/</link>
       <pubDate>Fri, 20 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/greenpeace-podcast/</guid>
+      <guid>https://davidhampgonsalves.github.io/ethical-apps-on-greenpeace-podcast/</guid>
       <description>
 
 &lt;p&gt;Did a interview about ethical apps on the &lt;a href=&#34;https://itunes.apple.com/ca/podcast/greenpeace-podcast/id675078420?mt=2&#34;&gt;Greenpeace Podcast&lt;/a&gt;. Its a great new podcast and I had a great time speaking with them.&lt;/p&gt;
@@ -458,10 +458,10 @@ concat_osx.sh recording-name.gif
     
     <item>
       <title>Docker Phusion Base</title>
-      <link>https://davidhampgonsalves.github.io/posts/phusion-docker-base/</link>
+      <link>https://davidhampgonsalves.github.io/docker-phusion-base/</link>
       <pubDate>Sun, 15 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/phusion-docker-base/</guid>
+      <guid>https://davidhampgonsalves.github.io/docker-phusion-base/</guid>
       <description>&lt;p&gt;I have been using the &lt;a href=&#34;https://github.com/phusion/passenger-docker&#34;&gt;phusion baseimage-docker&lt;/a&gt;. While in the past i&amp;rsquo;ve been mostly interested in making my docker images as small as possible with images like alpine-linux(busy-box based) the Phusion base breaks from this tradition by encouraging you to run multiple processes from a single container.&lt;/p&gt;
 
 &lt;p&gt;While I was wary of this approach initially they make a good &lt;a href=&#34;https://github.com/phusion/baseimage-docker#docker_single_process&#34;&gt;argument&lt;/a&gt; for it and in practice I have been really enjoying working in this fashion.&lt;/p&gt;
@@ -482,10 +482,10 @@ concat_osx.sh recording-name.gif
     
     <item>
       <title>Launchd in 5 Minutes</title>
-      <link>https://davidhampgonsalves.github.io/posts/launchd-in-5-minutes/</link>
+      <link>https://davidhampgonsalves.github.io/launchd-in-5-minutes/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/launchd-in-5-minutes/</guid>
+      <guid>https://davidhampgonsalves.github.io/launchd-in-5-minutes/</guid>
       <description>
 
 &lt;p&gt;Launchd is the official way to schedule a task or run a service on OSX. The provided documentations goal is to turn you into a launchd expert at the cost of your afternoon. These are the 5 minute highlights to get a task running.&lt;/p&gt;
@@ -518,10 +518,10 @@ concat_osx.sh recording-name.gif
     
     <item>
       <title>OpenCV CompareHist Performance</title>
-      <link>https://davidhampgonsalves.github.io/posts/opencv-comparehist/</link>
+      <link>https://davidhampgonsalves.github.io/opencv-comparehist-performance/</link>
       <pubDate>Sat, 31 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/opencv-comparehist/</guid>
+      <guid>https://davidhampgonsalves.github.io/opencv-comparehist-performance/</guid>
       <description>&lt;p&gt;I did some performance tests on the four histograms comparison methods that &lt;a href=&#34;http://docs.opencv.org/java/org/opencv/imgproc/Imgproc.html#compareHist(org.opencv.core.Mat, org.opencv.core.Mat, int)&#34;&gt;compareHist&lt;/a&gt; provides and initially found that in basic performance tests they were all about the same speed. More recently I profiled them in a real world application and found they were significantly different.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/opencv-graph.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
@@ -532,10 +532,10 @@ concat_osx.sh recording-name.gif
     
     <item>
       <title>Markov Chains in Clojure</title>
-      <link>https://davidhampgonsalves.github.io/posts/markov-chains/</link>
+      <link>https://davidhampgonsalves.github.io/markov-chains-in-clojure/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/markov-chains/</guid>
+      <guid>https://davidhampgonsalves.github.io/markov-chains-in-clojure/</guid>
       <description>&lt;p&gt;I noticed that when you enter 30 into tumblrs age field it switches from &amp;ldquo;years old&amp;rdquo; to &amp;ldquo;years young&amp;rdquo;. Fully grasping the limited scope of my existence for the first time I wrote a &lt;a href=&#34;http://en.wikipedia.org/wiki/Markov_chain&#34;&gt;Markov Chain&lt;/a&gt; generator so that it could provide(tenuous) value long after I have fled this mortal coil, by mashing up the works &lt;a href=&#34;http://scrumdiddlyumptious-clojure.tumblr.com/&#34;&gt;of Roald Dahl with some Clojure manuals&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;When you reach this point in your life you can save some time and use my &lt;a href=&#34;https://github.com/davidhampgonsalves/markov-cloj&#34;&gt;Clojure implementation&lt;/a&gt; or write your own.&lt;/p&gt;

@@ -10,10 +10,10 @@
     
     <item>
       <title>Halifax Bus GPS Data</title>
-      <link>https://davidhampgonsalves.github.io/posts/halifax-gps-bus-data/</link>
+      <link>https://davidhampgonsalves.github.io/halifax-bus-gps-data/</link>
       <pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/halifax-gps-bus-data/</guid>
+      <guid>https://davidhampgonsalves.github.io/halifax-bus-gps-data/</guid>
       <description>&lt;p&gt;There are so many Haligonians that want a GPS based Go Time bus tracker. The secret is that the apps and data exist, but that no one ever seems to find them.&lt;/p&gt;
 
 &lt;p&gt;The other day that changed for me and I found &lt;em&gt;(via wikipedia)&lt;/em&gt; an old broken government webpage that when you looked at the pages source contained a link to: &lt;a href=&#34;http://eservices.halifax.ca/GoTime/departures_mobile.jsf?goTime=7094&#34;&gt;mobile departures&lt;/a&gt;.&lt;/p&gt;

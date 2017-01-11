@@ -10,10 +10,10 @@
     
     <item>
       <title>The Music Player/Organizer For the Rest of Us</title>
-      <link>https://davidhampgonsalves.github.io/posts/beets-play-plugin/</link>
+      <link>https://davidhampgonsalves.github.io/the-music-player/organizer-for-the-rest-of-us/</link>
       <pubDate>Fri, 02 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/beets-play-plugin/</guid>
+      <guid>https://davidhampgonsalves.github.io/the-music-player/organizer-for-the-rest-of-us/</guid>
       <description>&lt;p&gt;Everyone has their own &lt;em&gt;(strong)&lt;/em&gt; opinions about this but I think I&amp;rsquo;ve figured it out. First to organize your music &lt;a href=&#34;http://beets.radbox.org/&#34;&gt;Beets&lt;/a&gt; is amazing. Its light, easy to use and lets you tweek things exactly how you want them.&lt;/p&gt;
 
 &lt;p&gt;The limitation with Beets was that it was just an organizer and you still needed a full GUI application to conveniently find and play your music. This weekend I wrote the Play plugin which lets you harness the might of Beets queries and send those results to your choice of lightweight music player.&lt;/p&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title>Building a Basic Android Bot</title>
-      <link>https://davidhampgonsalves.github.io/posts/android-bot.js/</link>
+      <link>https://davidhampgonsalves.github.io/building-a-basic-android-bot/</link>
       <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/android-bot.js/</guid>
+      <guid>https://davidhampgonsalves.github.io/building-a-basic-android-bot/</guid>
       <description>
 
 &lt;p&gt;Last week I started playing a new game on my phone called Castle Crash. I don&amp;rsquo;t play often play video games but when I do, I play them obsesively until they are defeated. In this case you can&amp;rsquo;t beat the game since you are playing against the internet so I decided to tap out and let my computer take over.&lt;/p&gt;
@@ -89,10 +89,10 @@ def touch(x, y, delay=2)\:
     
     <item>
       <title>DIY Photobooth</title>
-      <link>https://davidhampgonsalves.github.io/posts/diy-photobooth/</link>
+      <link>https://davidhampgonsalves.github.io/diy-photobooth/</link>
       <pubDate>Mon, 12 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/diy-photobooth/</guid>
+      <guid>https://davidhampgonsalves.github.io/diy-photobooth/</guid>
       <description>
 
 &lt;p&gt;Last week I got married(it was amazing and surreal). When planning the wedding we really wanted to make the whole night reflect &amp;ldquo;us&amp;rdquo;. This meant an all vegan menu from hearty catering(amazing) and a lot of elbow grease as we built and crafted mostly everything ourselves. Our signs were life sized pictures, the cupcake stand was wooden slabs of a tree and I build a photobooth which is what I&amp;rsquo;m going to talk about in this post.
@@ -137,10 +137,10 @@ Running the python script will start an openCV loop which will connect to the fi
     
     <item>
       <title>OpenCV/Python Color Tracking</title>
-      <link>https://davidhampgonsalves.github.io/posts/opencv-python-color-tracking/</link>
+      <link>https://davidhampgonsalves.github.io/opencv/python-color-tracking/</link>
       <pubDate>Mon, 30 May 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/opencv-python-color-tracking/</guid>
+      <guid>https://davidhampgonsalves.github.io/opencv/python-color-tracking/</guid>
       <description>
 
 &lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/color_tracking.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;

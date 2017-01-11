@@ -10,10 +10,10 @@
     
     <item>
       <title>WebRTC in 5 Minutes</title>
-      <link>https://davidhampgonsalves.github.io/posts/webrtc-in-5-minutes/</link>
+      <link>https://davidhampgonsalves.github.io/webrtc-in-5-minutes/</link>
       <pubDate>Sat, 23 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/webrtc-in-5-minutes/</guid>
+      <guid>https://davidhampgonsalves.github.io/webrtc-in-5-minutes/</guid>
       <description>
 
 &lt;p&gt;While WebRTC has been around for awhile now but its still feels like a young technology and there are few resources to learn about it. These are the basics of how a connection is made between peers which is important for understanding how WebRTC differs from traditional networking.&lt;/p&gt;

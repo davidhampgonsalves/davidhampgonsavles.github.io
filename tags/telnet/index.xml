@@ -10,10 +10,10 @@
     
     <item>
       <title>SMTP Test/Usage Via Telnet</title>
-      <link>https://davidhampgonsalves.github.io/posts/smtp-telnet-test/</link>
+      <link>https://davidhampgonsalves.github.io/smtp-test/usage-via-telnet/</link>
       <pubDate>Wed, 09 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/smtp-telnet-test/</guid>
+      <guid>https://davidhampgonsalves.github.io/smtp-test/usage-via-telnet/</guid>
       <description>
 
 &lt;p&gt;A telnet client is a handy testing tool for testing connectivity between servers. Today I needed to test an SMTP server connection from a linux environment so I wrote the following script. You could use the same technique manually to do the same thing as long as your have access to a telnet client.&lt;/p&gt;

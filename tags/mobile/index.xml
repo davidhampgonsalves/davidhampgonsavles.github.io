@@ -10,10 +10,10 @@
     
     <item>
       <title>Detecting Mobile Device from Javascript</title>
-      <link>https://davidhampgonsalves.github.io/posts/detect-mobile-javascript/</link>
+      <link>https://davidhampgonsalves.github.io/detecting-mobile-device-from-javascript/</link>
       <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/detect-mobile-javascript/</guid>
+      <guid>https://davidhampgonsalves.github.io/detecting-mobile-device-from-javascript/</guid>
       <description>&lt;p&gt;This is a pretty lightweight way of detecting when your javascript is living in a mobile device.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if(typeof window.orientation != &#39;undefined&#39;) { /* put mobile spesific code here */ }

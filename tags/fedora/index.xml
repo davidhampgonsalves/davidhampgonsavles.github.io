@@ -10,10 +10,10 @@
     
     <item>
       <title>Building Dolphin-Emu on Fedora</title>
-      <link>https://davidhampgonsalves.github.io/posts/dolphin-emu-on-fedora/</link>
+      <link>https://davidhampgonsalves.github.io/building-dolphin-emu-on-fedora/</link>
       <pubDate>Sun, 20 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/dolphin-emu-on-fedora/</guid>
+      <guid>https://davidhampgonsalves.github.io/building-dolphin-emu-on-fedora/</guid>
       <description>&lt;p&gt;Over the holidays I wanted to play some old game cube games to be festive(Christmas means new games). After some performance troubles I noticed that the version of the Dolphin Emulator I was using from the Fedora repos was version 3 and the current was 3.5. Eventually I broke down and built the latest version, which did make my life/performance better.&lt;/p&gt;
 
 &lt;p&gt;Bellow is the &lt;strong&gt;command to install all the build dependancies&lt;/strong&gt; and after that the build should go smoothy and you&amp;rsquo;ll be up and running in no time.&lt;/p&gt;
@@ -27,10 +27,10 @@
     
     <item>
       <title>Install Node.js / NPM on Fedora Core 17</title>
-      <link>https://davidhampgonsalves.github.io/posts/install-node/</link>
+      <link>https://davidhampgonsalves.github.io/install-node.js-/-npm-on-fedora-core-17/</link>
       <pubDate>Thu, 18 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/install-node/</guid>
+      <guid>https://davidhampgonsalves.github.io/install-node.js-/-npm-on-fedora-core-17/</guid>
       <description>
 
 &lt;p&gt;This is just a short and sweet set of commands to install Nodejs and NPM on Fedora 17.&lt;/p&gt;
@@ -63,10 +63,10 @@ exit
     
     <item>
       <title>Iterative Javascript QuickSelect</title>
-      <link>https://davidhampgonsalves.github.io/posts/javascript-quickselect/</link>
+      <link>https://davidhampgonsalves.github.io/iterative-javascript-quickselect/</link>
       <pubDate>Fri, 08 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/javascript-quickselect/</guid>
+      <guid>https://davidhampgonsalves.github.io/iterative-javascript-quickselect/</guid>
       <description>
 
 &lt;p&gt;A couple weeks ago I entered my first AI related contest, hosted by &lt;a href=&#34;http://www.scribd.com/jobs/botrace&#34;&gt;scribd&lt;/a&gt;. The contest was great for beginners since it involved a very simple world and control scheme.&lt;/p&gt;

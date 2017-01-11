@@ -10,10 +10,10 @@
     
     <item>
       <title>The Magic of UPC/EAN Barcodes</title>
-      <link>https://davidhampgonsalves.github.io/posts/barcodes/</link>
+      <link>https://davidhampgonsalves.github.io/the-magic-of-upc/ean-barcodes/</link>
       <pubDate>Mon, 12 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/barcodes/</guid>
+      <guid>https://davidhampgonsalves.github.io/the-magic-of-upc/ean-barcodes/</guid>
       <description>
 
 &lt;p&gt;Lately I&amp;rsquo;ve been working a mobile app called Ethical Barcode that scans product barcodes and determines if the related brand is worth supporting/avoiding.&lt;/p&gt;

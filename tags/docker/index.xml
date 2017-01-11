@@ -10,10 +10,10 @@
     
     <item>
       <title>Docker Phusion Base</title>
-      <link>https://davidhampgonsalves.github.io/posts/phusion-docker-base/</link>
+      <link>https://davidhampgonsalves.github.io/docker-phusion-base/</link>
       <pubDate>Sun, 15 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/phusion-docker-base/</guid>
+      <guid>https://davidhampgonsalves.github.io/docker-phusion-base/</guid>
       <description>&lt;p&gt;I have been using the &lt;a href=&#34;https://github.com/phusion/passenger-docker&#34;&gt;phusion baseimage-docker&lt;/a&gt;. While in the past i&amp;rsquo;ve been mostly interested in making my docker images as small as possible with images like alpine-linux(busy-box based) the Phusion base breaks from this tradition by encouraging you to run multiple processes from a single container.&lt;/p&gt;
 
 &lt;p&gt;While I was wary of this approach initially they make a good &lt;a href=&#34;https://github.com/phusion/baseimage-docker#docker_single_process&#34;&gt;argument&lt;/a&gt; for it and in practice I have been really enjoying working in this fashion.&lt;/p&gt;

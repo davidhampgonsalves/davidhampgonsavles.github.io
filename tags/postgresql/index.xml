@@ -10,10 +10,10 @@
     
     <item>
       <title>Postgresql Range Basics</title>
-      <link>https://davidhampgonsalves.github.io/posts/postgres-ranges/</link>
+      <link>https://davidhampgonsalves.github.io/postgresql-range-basics/</link>
       <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/postgres-ranges/</guid>
+      <guid>https://davidhampgonsalves.github.io/postgresql-range-basics/</guid>
       <description>
 
 &lt;p&gt;In postgres 9.2 a new family of data types were added called &lt;a href=&#34;http://www.postgresql.org/docs/9.2/static/rangetypes.html&#34;&gt;Ranges&lt;/a&gt;. This is a quick overview of how to use them.&lt;/p&gt;

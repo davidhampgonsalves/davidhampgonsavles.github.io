@@ -10,10 +10,10 @@
     
     <item>
       <title>Change Gnome Shell Dash Key Binding</title>
-      <link>https://davidhampgonsalves.github.io/posts/gnome-shell-key-binding/</link>
+      <link>https://davidhampgonsalves.github.io/change-gnome-shell-dash-key-binding/</link>
       <pubDate>Mon, 30 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/gnome-shell-key-binding/</guid>
+      <guid>https://davidhampgonsalves.github.io/change-gnome-shell-dash-key-binding/</guid>
       <description>&lt;p&gt;Most of the key binding can be configured from the system settings &amp;gt; Keyboard area with the exception of the configuring the dash or overview overlay, which by default is bound to the left super key. This can be problematic in certain cases and especially in the case of some VM&amp;rsquo;s.&lt;/p&gt;
 
 &lt;p&gt;To change this binding you need to modify the gconf settings by doing something like the following&lt;/p&gt;

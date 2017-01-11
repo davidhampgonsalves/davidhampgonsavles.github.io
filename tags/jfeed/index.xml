@@ -10,10 +10,10 @@
     
     <item>
       <title>JQuery JFeed</title>
-      <link>https://davidhampgonsalves.github.io/posts/jfeed/</link>
+      <link>https://davidhampgonsalves.github.io/jquery-jfeed/</link>
       <pubDate>Wed, 26 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/jfeed/</guid>
+      <guid>https://davidhampgonsalves.github.io/jquery-jfeed/</guid>
       <description>
 
 &lt;p&gt;While working on Foxish I needed to parse some RSS/Atom feeds in javascript. Thinking there would be nice a library for this I took a look around and found a couple old libraries and determined that the best of those was &lt;a href=&#34;http://plugins.jquery.com/project/jFeed&#34;&gt;JFeed&lt;/a&gt; which is a JQuery plugin.&lt;/p&gt;

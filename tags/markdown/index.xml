@@ -10,10 +10,10 @@
     
     <item>
       <title>Painless Resumes with Markdown</title>
-      <link>https://davidhampgonsalves.github.io/posts/markdown-resume/</link>
+      <link>https://davidhampgonsalves.github.io/painless-resumes-with-markdown/</link>
       <pubDate>Tue, 15 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/markdown-resume/</guid>
+      <guid>https://davidhampgonsalves.github.io/painless-resumes-with-markdown/</guid>
       <description>&lt;p&gt;Latex might be the most fashionable format for the discerning developer but I think its overkill. For my current resume rerwrite I choose markdown because:&lt;/p&gt;
 
 &lt;ul&gt;

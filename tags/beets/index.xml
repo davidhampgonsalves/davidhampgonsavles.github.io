@@ -10,10 +10,10 @@
     
     <item>
       <title>The Music Player/Organizer For the Rest of Us</title>
-      <link>https://davidhampgonsalves.github.io/posts/beets-play-plugin/</link>
+      <link>https://davidhampgonsalves.github.io/the-music-player/organizer-for-the-rest-of-us/</link>
       <pubDate>Fri, 02 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/posts/beets-play-plugin/</guid>
+      <guid>https://davidhampgonsalves.github.io/the-music-player/organizer-for-the-rest-of-us/</guid>
       <description>&lt;p&gt;Everyone has their own &lt;em&gt;(strong)&lt;/em&gt; opinions about this but I think I&amp;rsquo;ve figured it out. First to organize your music &lt;a href=&#34;http://beets.radbox.org/&#34;&gt;Beets&lt;/a&gt; is amazing. Its light, easy to use and lets you tweek things exactly how you want them.&lt;/p&gt;
 
 &lt;p&gt;The limitation with Beets was that it was just an organizer and you still needed a full GUI application to conveniently find and play your music. This weekend I wrote the Play plugin which lets you harness the might of Beets queries and send those results to your choice of lightweight music player.&lt;/p&gt;
