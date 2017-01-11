@@ -19,53 +19,54 @@
 &lt;p&gt;I was doing some nodejs work lately and needed such a function to clean up one of my datasets and so I ported this version from C# to Javascript.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Enjoy!&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; damerauLevenshteinDistance(source, target) {
-  &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; (!source || source.length === 0)
-    &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; (!target || target.length === 0)
-      &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; 0;
-    &lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt;
-      &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; target.length;
-  &lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; (!target)
-    &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; source.length;
 
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; sourceLength = source.length;
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; targetLength = target.length;
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; score = [];
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function damerauLevenshteinDistance(source, target) {
+  if (!source || source.length === 0)
+    if (!target || target.length === 0)
+      return 0;
+    else
+      return target.length;
+  else if (!target)
+    return source.length;
 
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; INF = sourceLength + targetLength;
+  var sourceLength = source.length;
+  var targetLength = target.length;
+  var score = [];
+
+  var INF = sourceLength + targetLength;
   score[0] = [INF];
-  &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=0 ; i &amp;lt;= sourceLength ; i++) { score[i + 1] = []; score[i + 1][1] = i; score[i + 1][0] = INF; }
-  &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=0 ; i &amp;lt;= targetLength ; i++) { score[1][i + 1] = i; score[0][i + 1] = INF; }
+  for (var i=0 ; i &amp;lt;= sourceLength ; i++) { score[i + 1] = []; score[i + 1][1] = i; score[i + 1][0] = INF; }
+  for (var i=0 ; i &amp;lt;= targetLength ; i++) { score[1][i + 1] = i; score[0][i + 1] = INF; }
 
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; sd = {};
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; combinedStrings = source + target;
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; combinedStringsLength = combinedStrings.length;
-  &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=0 ; i &amp;lt; combinedStringsLength ; i++) {
-    &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; letter = combinedStrings[i];
-    &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; (!sd.hasOwnProperty(letter))
+  var sd = {};
+  var combinedStrings = source + target;
+  var combinedStringsLength = combinedStrings.length;
+  for(var i=0 ; i &amp;lt; combinedStringsLength ; i++) {
+    var letter = combinedStrings[i];
+    if (!sd.hasOwnProperty(letter))
       sd[letter] = 0;
   }
 
-  &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=1 ; i &amp;lt;= sourceLength ; i++) {
-    &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; DB = 0;
-    &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; j=1 ; j &amp;lt;= targetLength ; j++) {
-      &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i1 = sd[target[j - 1]];
-      &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; j1 = DB;
+  for (var i=1 ; i &amp;lt;= sourceLength ; i++) {
+    var DB = 0;
+    for (var j=1 ; j &amp;lt;= targetLength ; j++) {
+      var i1 = sd[target[j - 1]];
+      var j1 = DB;
 
-      &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; (source[i - 1] == target[j - 1]) {
+      if (source[i - 1] == target[j - 1]) {
         score[i + 1][j + 1] = score[i][j];
         DB = j;
       }
-      &lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt;
+      else
         score[i + 1][j + 1] = Math.min(score[i][j], Math.min(score[i + 1][j], score[i][j + 1])) + 1;
 
       score[i + 1][j + 1] = Math.min(score[i + 1][j + 1], score[i1][j1] + (i - i1 - 1) + 1 + (j - j1 - 1));
     }
     sd[source[i - 1]] = i;
   }
-  &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; score[sourceLength + 1][targetLength + 1];
+  return score[sourceLength + 1][targetLength + 1];
 }
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -87,18 +88,19 @@
 &lt;/ul&gt;
 
 &lt;h2 id=&#34;the-guts-go-bash-go&#34;&gt;The Guts(go bash go!)&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;sudo yum install openssl-devel.i686 gcc gcc-c++
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;sudo yum install openssl-devel.i686 gcc gcc-c++
 sudo ./configure
 sudo make -j2
 sudo make install
 
 su
 cd /tmp
-git clone https&lt;span style=&#34;font-weight: bold; font-style: italic&#34;&gt;\:&lt;/span&gt;//github.com/isaacs/npm.git
+git clone https\://github.com/isaacs/npm.git
 cd npm
 make install
 exit
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;Most of this was based on an older post I found &lt;a href=&#34;http://johnroach.info/2011/11/20/installing-node-js-0-6-2-on-fedora-16/&#34;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 </description>
@@ -117,63 +119,64 @@ exit
 &lt;p&gt;At some point in by bot creation process I needed to determine the n-th highest number in an Array. While for such a simple project I probably should have just thrown some loops together and moved on, but since the project was just I started researching the problem and Hoare&amp;rsquo;s Selection Algorithm. I wasn&amp;rsquo;t able to find a Javascript implementation so I ported a Java version() which in turn had been ported over from the book &lt;em&gt;&amp;ldquo;Numerical Recipes in C: The Art of Scientific Computing&amp;rdquo;&lt;/em&gt;. The best part about this implementation is that unlike most, it isn&amp;rsquo;t recursive. This makes it more verbose but much more interesting and it avoids any stack depth restrictions that browser vendors may impose.&lt;/p&gt;
 
 &lt;h2 id=&#34;the-code&#34;&gt;The Code&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-style: italic&#34;&gt;//javascript implementation of quickselect&lt;/span&gt;
-&lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; quickSelect( array, k ) {
-    &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; left = 0, right = array.length - 1;
 
-    &lt;span style=&#34;font-weight: bold&#34;&gt;while&lt;/span&gt;( &lt;span style=&#34;font-weight: bold&#34;&gt;true&lt;/span&gt; ) {
-        &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;( right &amp;lt;= left + 1 ) {
-         &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;( right === left + 1 &amp;amp;&amp;amp; array[right] &amp;lt; array[left] )
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;//javascript implementation of quickselect
+function quickSelect( array, k ) {
+    var left = 0, right = array.length - 1;
+
+    while( true ) {
+        if( right &amp;lt;= left + 1 ) {
+         if( right === left + 1 &amp;amp;&amp;amp; array[right] &amp;lt; array[left] )
          swap( array, left, right );
-         &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; array[k];
-        } &lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt; {
-            &lt;span style=&#34;font-style: italic&#34;&gt;//the unsigned bitshift has the effect of dividing by 2&lt;/span&gt;
-            &lt;span style=&#34;font-style: italic&#34;&gt;//and discarding any remainder&lt;/span&gt;
-         &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; middle = ( left + right ) &amp;gt;&amp;gt;&amp;gt; 1;
+         return array[k];
+        } else {
+            //the unsigned bitshift has the effect of dividing by 2
+            //and discarding any remainder
+         var middle = ( left + right ) &amp;gt;&amp;gt;&amp;gt; 1;
          swap( array, middle, left + 1 );
 
-         &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;( array[ left ] &amp;gt; array[ right ] )
+         if( array[ left ] &amp;gt; array[ right ] )
          swap( array, left, right );
 
-         &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;( array[ left + 1 ] &amp;gt; array[ right ] )
+         if( array[ left + 1 ] &amp;gt; array[ right ] )
          swap( array, left + 1, right );
 
-         &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;( array[ left ] &amp;gt; array[ left + 1 ] )
+         if( array[ left ] &amp;gt; array[ left + 1 ] )
          swap( array, left, left + 1 );
 
-         &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i = left + 1, j = right;
-         &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; pivot = array[ i ];
-         &lt;span style=&#34;font-weight: bold&#34;&gt;while&lt;/span&gt;( &lt;span style=&#34;font-weight: bold&#34;&gt;true&lt;/span&gt; ) {
+         var i = left + 1, j = right;
+         var pivot = array[ i ];
+         while( true ) {
              i++;
-         &lt;span style=&#34;font-weight: bold&#34;&gt;while&lt;/span&gt;( array[ i ] &amp;lt; pivot )
+         while( array[ i ] &amp;lt; pivot )
              i++;
 
              j--;
-         &lt;span style=&#34;font-weight: bold&#34;&gt;while&lt;/span&gt;( array[ j ] &amp;gt; pivot )
+         while( array[ j ] &amp;gt; pivot )
              j--;
 
-         &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;( j &amp;lt; i )
-         &lt;span style=&#34;font-weight: bold&#34;&gt;break&lt;/span&gt;;
+         if( j &amp;lt; i )
+         break;
          swap(array, i, j);
          }
          array[left + 1] = array[j];
          array[j] = pivot;
 
-         &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;( j &amp;gt;= k )
+         if( j &amp;gt;= k )
          right = j - 1;
 
-         &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;( j &amp;lt;= k )
+         if( j &amp;lt;= k )
 left = i;
 }
     }
 }
 
-&lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; swap( array, i, j ) {
-    &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; temp = array[ i ];
+function swap( array, i, j ) {
+    var temp = array[ i ];
     array[ i ] = array[ j ];
     array[ j ] = temp;
 }
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

@@ -41,7 +41,8 @@ Wowza uses modules to extends the servers functionally. In our case we&amp;rsquo
 &lt;p&gt;Create our Remotely Callable Method  Now that we have our empty module we just need to add the code to inject the metadata event. This method will be called using a NetConnection from the flash object we&amp;rsquo;ll create later.&lt;/p&gt;
 
 &lt;p&gt;This code gets the stream that matches the passed in parameters and injects the associated metadata into it.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;    &lt;span style=&#34;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;void&lt;/span&gt; injectEvent(IClient client, RequestFunction function,
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;    public void injectEvent(IClient client, RequestFunction function,
 			AMFDataList params) {
 
 		String streamname = params.getString(PARAM1);
@@ -49,13 +50,13 @@ Wowza uses modules to extends the servers functionally. In our case we&amp;rsquo
 
 		IMediaStream stream = client.getAppInstance().getStreams()
 			.getStream(streamname);
-		&lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(stream != &lt;span style=&#34;font-weight: bold&#34;&gt;null&lt;/span&gt;) {
-			System.out.println(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;event injected into &amp;quot;&lt;/span&gt; + streamname);
-			stream.sendDirect(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;question&amp;quot;&lt;/span&gt;, question);
-		} &lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt;
-			System.out.println(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;stream &amp;quot;&lt;/span&gt; + streamname + &lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot; wasn&amp;#39;t found to inject into&amp;quot;&lt;/span&gt;);
+		if(stream != null) {
+			System.out.println(&amp;quot;event injected into &amp;quot; + streamname);
+			stream.sendDirect(&amp;quot;question&amp;quot;, question);
+		} else
+			System.out.println(&amp;quot;stream &amp;quot; + streamname + &amp;quot; wasn&#39;t found to inject into&amp;quot;);
 	}
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Deploying our Module Wowza modules are jar archives which live in the servers lib directory. You can either have Wowza IDE deploy your change automatically or you can build it and then move i manually depending on your situation and where your media server is. In a later post I&amp;rsquo;ll cover how to deploy on EC2 as well.&lt;/p&gt;
 
@@ -96,28 +97,30 @@ Wowza uses modules to extends the servers functionally. In our case we&amp;rsquo
 &lt;h2 id=&#34;adding-metadata-handling-to-osmf-s-lightweightvideoelement&#34;&gt;Adding Metadata Handling to OSMF&amp;rsquo;s LightweightVideoElement&lt;/h2&gt;
 
 &lt;p&gt;To handle our event we need to use OSMF NetClient. Our players NetClient wont be ready until the player is ready to play so we set up our handler by overriding the processReadyState method.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;override&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; processReadyState()\:void {
-    &lt;span style=&#34;font-weight: bold&#34;&gt;super&lt;/span&gt;.processReadyState();
-    client.addHandler(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;question&amp;quot;&lt;/span&gt;, onMetaData);
+
+&lt;pre&gt;&lt;code class=&#34;language-actionscript&#34;&gt;override protected function processReadyState()\:void {
+    super.processReadyState();
+    client.addHandler(&amp;quot;question&amp;quot;, onMetaData);
 }
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;That&amp;rsquo;s really the only change we need to make. Our onMetadata will be called when metadata is received and because its embedded in the media stream it will be in sync.&lt;/p&gt;
 
 &lt;p&gt;To actually do something with the metadata you can convert it to JSON like bellow and call an external javascript function of your choosing.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; onMetadata(data&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:Object)&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:&lt;span style=&#34;font-weight: bold&#34;&gt;void&lt;/span&gt; {
-	&lt;span style=&#34;font-style: italic&#34;&gt;//convert the question to json and call javascript handler&lt;/span&gt;
-	&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; dataToJSON&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:Object = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; Object();
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;public function onMetadata(data\:Object)\:void {
+	//convert the question to json and call javascript handler
+	var dataToJSON\:Object = new Object();
 
 	dataToJSON.text = data.text;
 	dataToJSON.type = data.type;
 	dataToJSON.duration = data.duration;
 	dataToJSON.attributes = data.attributes;
 
-	&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; dataJSON&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:String = JSON.encode(dataToJSON);
-	ExternalInterface.call(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;onData&amp;quot;&lt;/span&gt;, dataJSON);
+	var dataJSON\:String = JSON.encode(dataToJSON);
+	ExternalInterface.call(&amp;quot;onData&amp;quot;, dataJSON);
 }
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;closing&#34;&gt;Closing&lt;/h2&gt;
 

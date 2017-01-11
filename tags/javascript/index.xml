@@ -15,16 +15,17 @@
       
       <guid>https://davidhampgonsalves.github.io/posts/css-reset/</guid>
       <description>&lt;p&gt;When ever you ever have to inject HTML into an unknown page you have to battle with all the page styles messing with your own content. This happens a lot when building bookmarklets like my recent &lt;a href=&#34;https://davidhampgonsalves.github.io/spritz-like-rsvp-reader-bookmarklet/&#34;&gt;RSVP Reader&lt;/a&gt;. In the past you had to manually assign values for all the CSS properties that could have been set by the page. Since then then &lt;em&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/initial&#34;&gt;initial&lt;/a&gt;&lt;/em&gt; CSS property was added we can perform this reset automatically. The following is a function that resets all CSS properties for a given DOM node.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; resetStyles(node) {
-    &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(!node)
-        console.error(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;node was invalid\: &amp;#39;&lt;/span&gt; + node);
-    &lt;span style=&#34;font-style: italic&#34;&gt;/* iterate over the DOM nodes style properties and set them to initial */&lt;/span&gt;
-    &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; props = window.getComputedStyle(node, &lt;span style=&#34;font-weight: bold&#34;&gt;null&lt;/span&gt;);
-    &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=0, len=props.length ; i &amp;lt; len ; i++) {
-        node.style[props] = &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;initial&amp;#39;&lt;/span&gt;;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function resetStyles(node) {
+    if(!node)
+        console.error(&#39;node was invalid\: &#39; + node);
+    /* iterate over the DOM nodes style properties and set them to initial */
+    var props = window.getComputedStyle(node, null);
+    for(var i=0, len=props.length ; i &amp;lt; len ; i++) {
+        node.style[props] = &#39;initial&#39;;
     }
 };
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -138,9 +139,10 @@ This resulted in a savings of &lt;strong&gt;%35&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Wasting space representing each character in UTF-8(8 bits per character). Since those 8-buts can represent 255 possibilities we can represent 2 digits for each character without getting fancy by using a base 100 encoding.&lt;/p&gt;
 
 &lt;p&gt;So current our digits are being represented using UFT-9 encoding. if we only use the first 255 characters of UTF-8 only a single byte will be sent per character. We can use  100 of those 255 options to represent 2 digits with a single character by converting our numbers to their UTF-8 charater counterparts.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;String.fromCharCode(65) === &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;;
-&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;.getCharCodeAt(0) === &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;65&amp;#39;&lt;/span&gt;;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;String.fromCharCode(65) === &#39;A&#39;;
+&#39;A&#39;.getCharCodeAt(0) === &#39;65&#39;;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;&#39;3   0  &#39;&lt;/code&gt;
 This resulted in a savings of &lt;strong&gt;%40&lt;/strong&gt;.&lt;/p&gt;
@@ -200,14 +202,16 @@ This resulted in a savings of &lt;strong&gt;%40&lt;/strong&gt;.&lt;/p&gt;
       
       <guid>https://davidhampgonsalves.github.io/posts/detect-mobile-javascript/</guid>
       <description>&lt;p&gt;This is a pretty lightweight way of detecting when your javascript is living in a mobile device.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;typeof&lt;/span&gt; window.orientation != &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;undefined&amp;#39;&lt;/span&gt;) { &lt;span style=&#34;font-style: italic&#34;&gt;/* put mobile spesific code here */&lt;/span&gt; }
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if(typeof window.orientation != &#39;undefined&#39;) { /* put mobile spesific code here */ }
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;To omit spesific devices from running this code you can also add individual checks like the following.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;typeof&lt;/span&gt; window.orientation != &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;undefined&amp;#39;&lt;/span&gt; &amp;amp;&amp;amp; !navigator.userAgent.match(&lt;span style=&#34;font-style: italic&#34;&gt;/iPad/i&lt;/span&gt;)) {
-  &lt;span style=&#34;font-style: italic&#34;&gt;/* put mobile spesific(but not ipad) code here */&lt;/span&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if(typeof window.orientation != &#39;undefined&#39; &amp;amp;&amp;amp; !navigator.userAgent.match(/iPad/i)) {
+  /* put mobile spesific(but not ipad) code here */
 }
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This is a mix of the answers found on &lt;a href=&#34;http://stackoverflow.com/questions/11381673/javascript-solution-to-detect-mobile-browser&#34;&gt;stack overflow&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -226,40 +230,44 @@ This resulted in a savings of &lt;strong&gt;%40&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;drawing-a-polygon&#34;&gt;Drawing a Polygon&lt;/h2&gt;
 
 &lt;p&gt;The Natural Earth Dataset provides outline coordinates using the EPSG 4326 projection. We can build our polygon(s) with those points like:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; regionCoords = [];
-&lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=0 ; i &amp;lt; data.length ; i++)
-	regionCoords.push(&lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; google.maps.LatLng(data[i][1], data[i][0]);
 
-&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; overlayOptions = {
-  paths&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: regionCoords,
-  strokeColor&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: &lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;#FF0000&amp;quot;&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var regionCoords = [];
+for(var i=0 ; i &amp;lt; data.length ; i++)
+	regionCoords.push(new google.maps.LatLng(data[i][1], data[i][0]);
+
+var overlayOptions = {
+  paths\: regionCoords,
+  strokeColor\: &amp;quot;#FF0000&amp;quot;
 };
-&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; regionOverlay = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; google.maps.Polygon(overlayOptions);
+var regionOverlay = new google.maps.Polygon(overlayOptions);
 regionOverlay.setMap(map);
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;In the above code we are building an array of LatLng points(notice the Natural Earth Dataset uses Long/Lat format so we need to flip the order of the values). Then we are overlaying them on our map.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;positioning-and-centering-map&#34;&gt;Positioning and Centering Map&lt;/h2&gt;
 
 &lt;p&gt;To display the map at a position and scale so that our polygon(s) are visiable we need to create a bounds object that contains our polygon(s).&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; regionBounds = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; google.maps.LatLngBounds();
-&lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=0 ; i &amp;lt; data.length ; i++) {
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; point = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; google.maps.LatLng(data[i][1], data[i][0]);
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var regionBounds = new google.maps.LatLngBounds();
+for(var i=0 ; i &amp;lt; data.length ; i++) {
+  var point = new google.maps.LatLng(data[i][1], data[i][0]);
   regionBounds.extend(point);
 }
 
-&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; allPolygonBounds = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; google.maps.LatLngBounds();
+var allPolygonBounds = new google.maps.LatLngBounds();
 
-&lt;span style=&#34;font-style: italic&#34;&gt;//combine all of your polygons together into a single bounds object that contains them all using union&lt;/span&gt;
+//combine all of your polygons together into a single bounds object that contains them all using union
 allPolygonBounds.union(regionBounds);
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;In the above code we are creating a combined bounds object that we can center our map on at a scale that all polygons are visiable.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;We center and scale the map like:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;map.fitBounds(allPolygonBounds);
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;map.fitBounds(allPolygonBounds);
+
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;creating-pretty-polygons&#34;&gt;Creating Pretty Polygons&lt;/h2&gt;
 
@@ -313,53 +321,54 @@ allPolygonBounds.union(regionBounds);
 &lt;p&gt;I was doing some nodejs work lately and needed such a function to clean up one of my datasets and so I ported this version from C# to Javascript.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Enjoy!&lt;/em&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; damerauLevenshteinDistance(source, target) {
-  &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; (!source || source.length === 0)
-    &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; (!target || target.length === 0)
-      &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; 0;
-    &lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt;
-      &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; target.length;
-  &lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; (!target)
-    &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; source.length;
 
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; sourceLength = source.length;
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; targetLength = target.length;
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; score = [];
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function damerauLevenshteinDistance(source, target) {
+  if (!source || source.length === 0)
+    if (!target || target.length === 0)
+      return 0;
+    else
+      return target.length;
+  else if (!target)
+    return source.length;
 
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; INF = sourceLength + targetLength;
+  var sourceLength = source.length;
+  var targetLength = target.length;
+  var score = [];
+
+  var INF = sourceLength + targetLength;
   score[0] = [INF];
-  &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=0 ; i &amp;lt;= sourceLength ; i++) { score[i + 1] = []; score[i + 1][1] = i; score[i + 1][0] = INF; }
-  &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=0 ; i &amp;lt;= targetLength ; i++) { score[1][i + 1] = i; score[0][i + 1] = INF; }
+  for (var i=0 ; i &amp;lt;= sourceLength ; i++) { score[i + 1] = []; score[i + 1][1] = i; score[i + 1][0] = INF; }
+  for (var i=0 ; i &amp;lt;= targetLength ; i++) { score[1][i + 1] = i; score[0][i + 1] = INF; }
 
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; sd = {};
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; combinedStrings = source + target;
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; combinedStringsLength = combinedStrings.length;
-  &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=0 ; i &amp;lt; combinedStringsLength ; i++) {
-    &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; letter = combinedStrings[i];
-    &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; (!sd.hasOwnProperty(letter))
+  var sd = {};
+  var combinedStrings = source + target;
+  var combinedStringsLength = combinedStrings.length;
+  for(var i=0 ; i &amp;lt; combinedStringsLength ; i++) {
+    var letter = combinedStrings[i];
+    if (!sd.hasOwnProperty(letter))
       sd[letter] = 0;
   }
 
-  &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=1 ; i &amp;lt;= sourceLength ; i++) {
-    &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; DB = 0;
-    &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; j=1 ; j &amp;lt;= targetLength ; j++) {
-      &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i1 = sd[target[j - 1]];
-      &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; j1 = DB;
+  for (var i=1 ; i &amp;lt;= sourceLength ; i++) {
+    var DB = 0;
+    for (var j=1 ; j &amp;lt;= targetLength ; j++) {
+      var i1 = sd[target[j - 1]];
+      var j1 = DB;
 
-      &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; (source[i - 1] == target[j - 1]) {
+      if (source[i - 1] == target[j - 1]) {
         score[i + 1][j + 1] = score[i][j];
         DB = j;
       }
-      &lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt;
+      else
         score[i + 1][j + 1] = Math.min(score[i][j], Math.min(score[i + 1][j], score[i][j + 1])) + 1;
 
       score[i + 1][j + 1] = Math.min(score[i + 1][j + 1], score[i1][j1] + (i - i1 - 1) + 1 + (j - j1 - 1));
     }
     sd[source[i - 1]] = i;
   }
-  &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; score[sourceLength + 1][targetLength + 1];
+  return score[sourceLength + 1][targetLength + 1];
 }
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -388,66 +397,67 @@ allPolygonBounds.union(regionBounds);
 &lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
 
 &lt;p&gt;This code uses JQuery since I was already using it on the page. You could remove the references pretty easily since I only used some selectors and CSS manipulations.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; setupStickyHeaders() {
-    &lt;span style=&#34;font-style: italic&#34;&gt;//get initial offset positions of the headers&lt;/span&gt;
-    &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; headers = [];
-    $.each($(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;div.day-start&amp;#39;&lt;/span&gt;), &lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt;(i, headerDiv) {
-        &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; header = $(headerDiv);
-        headers.push({element&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:header, orgOffset&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: header.offset().top});
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function setupStickyHeaders() {
+    //get initial offset positions of the headers
+    var headers = [];
+    $.each($(&#39;div.day-start&#39;), function(i, headerDiv) {
+        var header = $(headerDiv);
+        headers.push({element\:header, orgOffset\: header.offset().top});
     });
 
-    &lt;span style=&#34;font-style: italic&#34;&gt;//if no headers on this page then stop&lt;/span&gt;
-    &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(headers.length == 0)
-        &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt;;
+    //if no headers on this page then stop
+    if(headers.length == 0)
+        return;
 
-    &lt;span style=&#34;font-style: italic&#34;&gt;//get the original css for the&lt;/span&gt;
-    &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; orgCSS = {width&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:headers[0].element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;width&amp;#39;&lt;/span&gt;), position&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:headers[0].element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;position&amp;#39;&lt;/span&gt;), height&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:headers[0].element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;height&amp;#39;&lt;/span&gt;)};
+    //get the original css for the
+    var orgCSS = {width\:headers[0].element.css(&#39;width&#39;), position\:headers[0].element.css(&#39;position&#39;), height\:headers[0].element.css(&#39;height&#39;)};
 
-    &lt;span style=&#34;font-style: italic&#34;&gt;//handle scrolling&lt;/span&gt;
-    $(window).scroll(&lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt;(){
-        &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; scrollTop = $(&lt;span style=&#34;font-weight: bold&#34;&gt;this&lt;/span&gt;).scrollTop();
+    //handle scrolling
+    $(window).scroll(function(){
+        var scrollTop = $(this).scrollTop();
 
 
-        &lt;span style=&#34;font-style: italic&#34;&gt;//unstick headers&lt;/span&gt;
-        &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(i &lt;span style=&#34;font-weight: bold&#34;&gt;in&lt;/span&gt; headers) {
-            &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; header = headers[i];
-            &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(!isStuck(header)) &lt;span style=&#34;font-weight: bold&#34;&gt;break&lt;/span&gt;;
+        //unstick headers
+        for(i in headers) {
+            var header = headers[i];
+            if(!isStuck(header)) break;
 
-            &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(scrollTop &amp;lt; header.orgOffset) {
-                header.element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;position&amp;#39;&lt;/span&gt;, orgCSS.position).css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;top&amp;#39;&lt;/span&gt;,&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;).prev().remove();
-                &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(i &amp;gt; 0)
-                    headers[i-1].element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;z-index&amp;#39;&lt;/span&gt;, 1);
+            if(scrollTop &amp;lt; header.orgOffset) {
+                header.element.css(&#39;position&#39;, orgCSS.position).css(&#39;top&#39;,&#39;&#39;).prev().remove();
+                if(i &amp;gt; 0)
+                    headers[i-1].element.css(&#39;z-index&#39;, 1);
             }
         }
 
-        &lt;span style=&#34;font-style: italic&#34;&gt;//stick headers&lt;/span&gt;
-        &lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(i &lt;span style=&#34;font-weight: bold&#34;&gt;in&lt;/span&gt; headers) {
-            &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; header = headers[i];
-            &lt;span style=&#34;font-style: italic&#34;&gt;//make sure any stuck headers are stuck in the right place(fast scrolling sometimes messes this up)&lt;/span&gt;
-            &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(isStuck(header))
-                header.element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;top&amp;#39;&lt;/span&gt;,&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;)
+        //stick headers
+        for(i in headers) {
+            var header = headers[i];
+            //make sure any stuck headers are stuck in the right place(fast scrolling sometimes messes this up)
+            if(isStuck(header))
+                header.element.css(&#39;top&#39;,&#39;0&#39;)
 
-            &lt;span style=&#34;font-style: italic&#34;&gt;//skip this header if its bellow the top of the window&lt;/span&gt;
-            &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(scrollTop &amp;lt; header.orgOffset - parseInt(orgCSS.height))
-                &lt;span style=&#34;font-weight: bold&#34;&gt;break&lt;/span&gt;;
+            //skip this header if its bellow the top of the window
+            if(scrollTop &amp;lt; header.orgOffset - parseInt(orgCSS.height))
+                break;
 
-            &lt;span style=&#34;font-style: italic&#34;&gt;//if the header is already stuck then ignore it&lt;/span&gt;
-            &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(!isStuck(header)) {
-                &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(scrollTop &amp;gt; header.orgOffset) {
-                    &lt;span style=&#34;font-style: italic&#34;&gt;//stick the header&lt;/span&gt;
-                    header.element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;width&amp;#39;&lt;/span&gt;, orgCSS.width).css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;position&amp;#39;&lt;/span&gt;, &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;fixed&amp;#39;&lt;/span&gt;).css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;top&amp;#39;&lt;/span&gt;,&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;).before(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;&amp;lt;div class=day-start&amp;gt; &amp;lt;/div&amp;gt;&amp;#39;&lt;/span&gt;);
-                    &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(i &amp;gt; 0)
-                        headers[i-1].element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;z-index&amp;#39;&lt;/span&gt;, -1);
-                }&lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(i &amp;gt; 0)
-                    &lt;span style=&#34;font-style: italic&#34;&gt;//hide the element since it should be off the screen now&lt;/span&gt;
-                    headers[i-1].element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;top&amp;#39;&lt;/span&gt;, header.orgOffset - scrollTop - parseInt(orgCSS.height));
+            //if the header is already stuck then ignore it
+            if(!isStuck(header)) {
+                if(scrollTop &amp;gt; header.orgOffset) {
+                    //stick the header
+                    header.element.css(&#39;width&#39;, orgCSS.width).css(&#39;position&#39;, &#39;fixed&#39;).css(&#39;top&#39;,&#39;0&#39;).before(&#39;&amp;lt;div class=day-start&amp;gt; &amp;lt;/div&amp;gt;&#39;);
+                    if(i &amp;gt; 0)
+                        headers[i-1].element.css(&#39;z-index&#39;, -1);
+                }else if(i &amp;gt; 0)
+                    //hide the element since it should be off the screen now
+                    headers[i-1].element.css(&#39;top&#39;, header.orgOffset - scrollTop - parseInt(orgCSS.height));
             }
         }
     });
 }
 
-&lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; isStuck(header) {&lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; header.element.css(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;position&amp;#39;&lt;/span&gt;) === &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;fixed&amp;#39;&lt;/span&gt;}
-&lt;/pre&gt;&lt;/div&gt;
+function isStuck(header) {return header.element.css(&#39;position&#39;) === &#39;fixed&#39;}
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

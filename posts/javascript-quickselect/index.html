@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <base href="https://davidhampgonsalves.github.io/">
-    <meta name="description" content="Don&#39;t panic">
+    
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
 
@@ -18,7 +18,7 @@
     <title>
       
       
-       Iterative Javascript QuickSelect 
+         Iterative Javascript QuickSelect 
       
     </title>
     <link rel="canonical" href="https://davidhampgonsalves.github.io/posts/javascript-quickselect/">
@@ -56,6 +56,7 @@
   img {
     margin: 10px auto 10px auto;
     max-width: 100%;
+    display: block;
   }
 
   pre, code {
@@ -377,19 +378,22 @@
 </style>
 
 
-
     <link rel="shortcut icon" href="https://davidhampgonsalves.github.io/favicon.ico">
 
     
   </head>
 
-  <body lang="en">
+  <body>
     <section id=nav>
       <h1><a href="https://davidhampgonsalves.github.io/">David Hamp-Gonsalves</a></h1>
       <ul>
-        <li><a href="https://github.com/davidhampgonsalves">GitHub</a>
-          <li><a href="https://davidhampgonsalves.github.io/projects/">Projects</a>
-            <li><a href="http://www.ethicalbarcode.com">Ethical Barcode</a>
+        
+          <li><a href="//github.com/davidhampgonsalves">GitHub</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/projects">Projects</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/html/resume.html">Resume</a></li>
+        
       </ul>
     </section>
 
@@ -409,63 +413,64 @@
 <p>At some point in by bot creation process I needed to determine the n-th highest number in an Array. While for such a simple project I probably should have just thrown some loops together and moved on, but since the project was just I started researching the problem and Hoare&rsquo;s Selection Algorithm. I wasn&rsquo;t able to find a Javascript implementation so I ported a Java version() which in turn had been ported over from the book <em>&ldquo;Numerical Recipes in C: The Art of Scientific Computing&rdquo;</em>. The best part about this implementation is that unlike most, it isn&rsquo;t recursive. This makes it more verbose but much more interesting and it avoids any stack depth restrictions that browser vendors may impose.</p>
 
 <h2 id="the-code">The Code</h2>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="font-style: italic">//javascript implementation of quickselect</span>
-<span style="font-weight: bold">function</span> quickSelect( array, k ) {
-    <span style="font-weight: bold">var</span> left = 0, right = array.length - 1;
 
-    <span style="font-weight: bold">while</span>( <span style="font-weight: bold">true</span> ) {
-        <span style="font-weight: bold">if</span>( right &lt;= left + 1 ) {
-         <span style="font-weight: bold">if</span>( right === left + 1 &amp;&amp; array[right] &lt; array[left] )
+<pre><code class="language-javascript">//javascript implementation of quickselect
+function quickSelect( array, k ) {
+    var left = 0, right = array.length - 1;
+
+    while( true ) {
+        if( right &lt;= left + 1 ) {
+         if( right === left + 1 &amp;&amp; array[right] &lt; array[left] )
          swap( array, left, right );
-         <span style="font-weight: bold">return</span> array[k];
-        } <span style="font-weight: bold">else</span> {
-            <span style="font-style: italic">//the unsigned bitshift has the effect of dividing by 2</span>
-            <span style="font-style: italic">//and discarding any remainder</span>
-         <span style="font-weight: bold">var</span> middle = ( left + right ) &gt;&gt;&gt; 1;
+         return array[k];
+        } else {
+            //the unsigned bitshift has the effect of dividing by 2
+            //and discarding any remainder
+         var middle = ( left + right ) &gt;&gt;&gt; 1;
          swap( array, middle, left + 1 );
 
-         <span style="font-weight: bold">if</span>( array[ left ] &gt; array[ right ] )
+         if( array[ left ] &gt; array[ right ] )
          swap( array, left, right );
 
-         <span style="font-weight: bold">if</span>( array[ left + 1 ] &gt; array[ right ] )
+         if( array[ left + 1 ] &gt; array[ right ] )
          swap( array, left + 1, right );
 
-         <span style="font-weight: bold">if</span>( array[ left ] &gt; array[ left + 1 ] )
+         if( array[ left ] &gt; array[ left + 1 ] )
          swap( array, left, left + 1 );
 
-         <span style="font-weight: bold">var</span> i = left + 1, j = right;
-         <span style="font-weight: bold">var</span> pivot = array[ i ];
-         <span style="font-weight: bold">while</span>( <span style="font-weight: bold">true</span> ) {
+         var i = left + 1, j = right;
+         var pivot = array[ i ];
+         while( true ) {
              i++;
-         <span style="font-weight: bold">while</span>( array[ i ] &lt; pivot )
+         while( array[ i ] &lt; pivot )
              i++;
 
              j--;
-         <span style="font-weight: bold">while</span>( array[ j ] &gt; pivot )
+         while( array[ j ] &gt; pivot )
              j--;
 
-         <span style="font-weight: bold">if</span>( j &lt; i )
-         <span style="font-weight: bold">break</span>;
+         if( j &lt; i )
+         break;
          swap(array, i, j);
          }
          array[left + 1] = array[j];
          array[j] = pivot;
 
-         <span style="font-weight: bold">if</span>( j &gt;= k )
+         if( j &gt;= k )
          right = j - 1;
 
-         <span style="font-weight: bold">if</span>( j &lt;= k )
+         if( j &lt;= k )
 left = i;
 }
     }
 }
 
-<span style="font-weight: bold">function</span> swap( array, i, j ) {
-    <span style="font-weight: bold">var</span> temp = array[ i ];
+function swap( array, i, j ) {
+    var temp = array[ i ];
     array[ i ] = array[ j ];
     array[ j ] = temp;
 }
-</pre></div>
+</code></pre>
 
   </div>
 
@@ -480,6 +485,7 @@ left = i;
 </section>
 
   </div>
+  
 </body>
 </html>
 

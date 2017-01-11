@@ -23,32 +23,34 @@
 &lt;p&gt;For my loading indicator I used a container div and also a div to cover half of the sun which isn&amp;rsquo;t required. All you need is a DOM element that you want to spin.
 The Important Bits
 The spinning sun animation is achieved(using CSS) by first creating an animation that rotates the image from 0 to 360 degrees. This is shown in the code bellow for both Chrome(Webkit prefix) and Firefox(Moz prefix):&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-style: italic&#34;&gt;/* the rest of the important stuff for Chrome */&lt;/span&gt;
-&lt;span style=&#34;font-weight: bold&#34;&gt;@-webkit-keyframes&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;rotate&lt;/span&gt; {
-	&lt;span style=&#34;font-weight: bold&#34;&gt;from&lt;/span&gt; {-webkit-transform&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:rotate(0deg);}
-	&lt;span style=&#34;font-weight: bold&#34;&gt;to&lt;/span&gt; {-webkit-transform&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:rotate(360deg);}
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* the rest of the important stuff for Chrome */
+@-webkit-keyframes rotate {
+	from {-webkit-transform\:rotate(0deg);}
+	to {-webkit-transform\:rotate(360deg);}
 }
-&lt;span style=&#34;font-style: italic&#34;&gt;/* the rest of the important stuff for Firefox */&lt;/span&gt;
-&lt;span style=&#34;font-weight: bold&#34;&gt;@-moz-keyframes&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;rotate&lt;/span&gt; {
-    &lt;span style=&#34;font-weight: bold&#34;&gt;from&lt;/span&gt; {-moz-transform&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: rotate(0deg);}
-    &lt;span style=&#34;font-weight: bold&#34;&gt;to&lt;/span&gt; {-moz-transform&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: rotate(360deg);}
+/* the rest of the important stuff for Firefox */
+@-moz-keyframes rotate {
+    from {-moz-transform\: rotate(0deg);}
+    to {-moz-transform\: rotate(360deg);}
 }
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Next we need to start the animation. This involves setting its peroid(time per animation), iteration count and the animation name we want to start. In our case we want a continous animation so we set the iteration count to infinate andset our peroid to 5 seconds since that looks nice to me. We also define which animation-timing function to start. This is all shown bellow for both Chrome(Webkit prefix) and Firefox(Moz prefix):&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;#your-dom-element&lt;/span&gt; {
-	&lt;span style=&#34;font-style: italic&#34;&gt;/* some of the important stuff for Chrome */&lt;/span&gt;
-	-webkit-animation-name&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: rotate;
-	-webkit-animation-duration&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: 5s;
-	-webkit-animation-iteration-count&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: infinite;
-	-webkit-animation-timing-function&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: linear;
-	&lt;span style=&#34;font-style: italic&#34;&gt;/* some of the important stuff for Firefox */&lt;/span&gt;
-	-moz-animation-name&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: rotate;
-	-moz-animation-duration&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: 5s;
-	-moz-animation-iteration-count&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: infinite;
-	-moz-animation-timing-function&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: linear;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;#your-dom-element {
+	/* some of the important stuff for Chrome */
+	-webkit-animation-name\: rotate;
+	-webkit-animation-duration\: 5s;
+	-webkit-animation-iteration-count\: infinite;
+	-webkit-animation-timing-function\: linear;
+	/* some of the important stuff for Firefox */
+	-moz-animation-name\: rotate;
+	-moz-animation-duration\: 5s;
+	-moz-animation-iteration-count\: infinite;
+	-moz-animation-timing-function\: linear;
 }
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;wrap-up&#34;&gt;Wrap up&lt;/h2&gt;
 

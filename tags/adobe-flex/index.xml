@@ -35,12 +35,13 @@
 &lt;h2 id=&#34;netconection-rmi&#34;&gt;NetConection RMI&lt;/h2&gt;
 
 &lt;p&gt;In my case I used the ExternalInterface to allow me to call one of the flash object&amp;rsquo;s methods from Javascript but you can do whatever you want in your broadcaster. The important bit is creating a connection to the Wowza server via a NetConnection and using it to call our Modules(created in last post) inject metadata method. This is shown bellow:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;NetConnection.defaultObjectEncoding = flash.net.ObjectEncoding.AMF0;
-NetConnection nc = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; NetConnection();
-nc.connect(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;your server name&amp;quot;&lt;/span&gt;);
 
-nc.call(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;wowza_module_method_name&amp;quot;&lt;/span&gt;, &lt;span style=&#34;font-weight: bold&#34;&gt;null&lt;/span&gt;, &lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;your movie name&amp;quot;&lt;/span&gt;, JSONMetadata);
-&lt;/pre&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-actionscript&#34;&gt;NetConnection.defaultObjectEncoding = flash.net.ObjectEncoding.AMF0;
+NetConnection nc = new NetConnection();
+nc.connect(&amp;quot;your server name&amp;quot;);
+
+nc.call(&amp;quot;wowza_module_method_name&amp;quot;, null, &amp;quot;your movie name&amp;quot;, JSONMetadata);
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This code tells the net connection to use the object encoding of AS 1.0/2.0 which Wowza likes. Then it creates the connection to your server and passes the movie name as a method parameter so that Wowza knows what stream to inject the data into. The JSONMetadata parameter is an Flex Object that contains all the metadata to inject.&lt;/p&gt;
 

@@ -17,8 +17,9 @@
       <description>&lt;p&gt;Most of the key binding can be configured from the system settings &amp;gt; Keyboard area with the exception of the configuring the dash or overview overlay, which by default is bound to the left super key. This can be problematic in certain cases and especially in the case of some VM&amp;rsquo;s.&lt;/p&gt;
 
 &lt;p&gt;To change this binding you need to modify the gconf settings by doing something like the following&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;gconftool-2 -s /apps/mutter/general/overlay_key Super_R -t string
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gconftool-2 -s /apps/mutter/general/overlay_key Super_R -t string
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This line when run from the termainal tells the gconf tool that you want to &lt;em&gt;set(-s)&lt;/em&gt; the overlay_key property to the &lt;em&gt;Super_R key&lt;/em&gt;(or whatever you want to bind it to) and that this property is of &lt;em&gt;type(-t)&lt;/em&gt; string.&lt;/p&gt;
 </description>

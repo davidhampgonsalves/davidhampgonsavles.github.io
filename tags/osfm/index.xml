@@ -37,28 +37,30 @@
 &lt;h2 id=&#34;adding-metadata-handling-to-osmf-s-lightweightvideoelement&#34;&gt;Adding Metadata Handling to OSMF&amp;rsquo;s LightweightVideoElement&lt;/h2&gt;
 
 &lt;p&gt;To handle our event we need to use OSMF NetClient. Our players NetClient wont be ready until the player is ready to play so we set up our handler by overriding the processReadyState method.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;override&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; processReadyState()\:void {
-    &lt;span style=&#34;font-weight: bold&#34;&gt;super&lt;/span&gt;.processReadyState();
-    client.addHandler(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;question&amp;quot;&lt;/span&gt;, onMetaData);
+
+&lt;pre&gt;&lt;code class=&#34;language-actionscript&#34;&gt;override protected function processReadyState()\:void {
+    super.processReadyState();
+    client.addHandler(&amp;quot;question&amp;quot;, onMetaData);
 }
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;That&amp;rsquo;s really the only change we need to make. Our onMetadata will be called when metadata is received and because its embedded in the media stream it will be in sync.&lt;/p&gt;
 
 &lt;p&gt;To actually do something with the metadata you can convert it to JSON like bellow and call an external javascript function of your choosing.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; onMetadata(data&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:Object)&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:&lt;span style=&#34;font-weight: bold&#34;&gt;void&lt;/span&gt; {
-	&lt;span style=&#34;font-style: italic&#34;&gt;//convert the question to json and call javascript handler&lt;/span&gt;
-	&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; dataToJSON&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:Object = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; Object();
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;public function onMetadata(data\:Object)\:void {
+	//convert the question to json and call javascript handler
+	var dataToJSON\:Object = new Object();
 
 	dataToJSON.text = data.text;
 	dataToJSON.type = data.type;
 	dataToJSON.duration = data.duration;
 	dataToJSON.attributes = data.attributes;
 
-	&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; dataJSON&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;:String = JSON.encode(dataToJSON);
-	ExternalInterface.call(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;onData&amp;quot;&lt;/span&gt;, dataJSON);
+	var dataJSON\:String = JSON.encode(dataToJSON);
+	ExternalInterface.call(&amp;quot;onData&amp;quot;, dataJSON);
 }
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;closing&#34;&gt;Closing&lt;/h2&gt;
 

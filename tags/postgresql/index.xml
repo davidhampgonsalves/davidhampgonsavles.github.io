@@ -39,11 +39,12 @@
 &lt;h2 id=&#34;non-overlapping-ranges&#34;&gt;Non-Overlapping Ranges&lt;/h2&gt;
 
 &lt;p&gt;I find that when using ranges you often need to create non-overlapping ranges. You can add such a condition using like:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;TABLE&lt;/span&gt; ranges (
+
+&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;CREATE TABLE ranges (
   range int4range,
-  EXCLUDE &lt;span style=&#34;font-weight: bold&#34;&gt;USING&lt;/span&gt; gist (range &lt;span style=&#34;font-weight: bold&#34;&gt;WITH&lt;/span&gt; &amp;amp;&amp;amp;)
+  EXCLUDE USING gist (range WITH &amp;amp;&amp;amp;)
 );
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

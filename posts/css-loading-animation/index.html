@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <base href="https://davidhampgonsalves.github.io/">
-    <meta name="description" content="Don&#39;t panic">
+    
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
 
@@ -18,7 +18,7 @@
     <title>
       
       
-       Loading Indicator &amp; CSS Animations 
+         Loading Indicator &amp; CSS Animations 
       
     </title>
     <link rel="canonical" href="https://davidhampgonsalves.github.io/posts/css-loading-animation/">
@@ -56,6 +56,7 @@
   img {
     margin: 10px auto 10px auto;
     max-width: 100%;
+    display: block;
   }
 
   pre, code {
@@ -377,19 +378,22 @@
 </style>
 
 
-
     <link rel="shortcut icon" href="https://davidhampgonsalves.github.io/favicon.ico">
 
     
   </head>
 
-  <body lang="en">
+  <body>
     <section id=nav>
       <h1><a href="https://davidhampgonsalves.github.io/">David Hamp-Gonsalves</a></h1>
       <ul>
-        <li><a href="https://github.com/davidhampgonsalves">GitHub</a>
-          <li><a href="https://davidhampgonsalves.github.io/projects/">Projects</a>
-            <li><a href="http://www.ethicalbarcode.com">Ethical Barcode</a>
+        
+          <li><a href="//github.com/davidhampgonsalves">GitHub</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/projects">Projects</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/html/resume.html">Resume</a></li>
+        
       </ul>
     </section>
 
@@ -411,32 +415,34 @@
 <p>For my loading indicator I used a container div and also a div to cover half of the sun which isn&rsquo;t required. All you need is a DOM element that you want to spin.
 The Important Bits
 The spinning sun animation is achieved(using CSS) by first creating an animation that rotates the image from 0 to 360 degrees. This is shown in the code bellow for both Chrome(Webkit prefix) and Firefox(Moz prefix):</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="font-style: italic">/* the rest of the important stuff for Chrome */</span>
-<span style="font-weight: bold">@-webkit-keyframes</span> <span style="font-weight: bold">rotate</span> {
-	<span style="font-weight: bold">from</span> {-webkit-transform<span style="border: 1px solid #FF0000">\</span>:rotate(0deg);}
-	<span style="font-weight: bold">to</span> {-webkit-transform<span style="border: 1px solid #FF0000">\</span>:rotate(360deg);}
+
+<pre><code class="language-css">/* the rest of the important stuff for Chrome */
+@-webkit-keyframes rotate {
+	from {-webkit-transform\:rotate(0deg);}
+	to {-webkit-transform\:rotate(360deg);}
 }
-<span style="font-style: italic">/* the rest of the important stuff for Firefox */</span>
-<span style="font-weight: bold">@-moz-keyframes</span> <span style="font-weight: bold">rotate</span> {
-    <span style="font-weight: bold">from</span> {-moz-transform<span style="border: 1px solid #FF0000">\</span>: rotate(0deg);}
-    <span style="font-weight: bold">to</span> {-moz-transform<span style="border: 1px solid #FF0000">\</span>: rotate(360deg);}
+/* the rest of the important stuff for Firefox */
+@-moz-keyframes rotate {
+    from {-moz-transform\: rotate(0deg);}
+    to {-moz-transform\: rotate(360deg);}
 }
-</pre></div>
+</code></pre>
 
 <p>Next we need to start the animation. This involves setting its peroid(time per animation), iteration count and the animation name we want to start. In our case we want a continous animation so we set the iteration count to infinate andset our peroid to 5 seconds since that looks nice to me. We also define which animation-timing function to start. This is all shown bellow for both Chrome(Webkit prefix) and Firefox(Moz prefix):</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="font-weight: bold">#your-dom-element</span> {
-	<span style="font-style: italic">/* some of the important stuff for Chrome */</span>
-	-webkit-animation-name<span style="border: 1px solid #FF0000">\</span>: rotate;
-	-webkit-animation-duration<span style="border: 1px solid #FF0000">\</span>: 5s;
-	-webkit-animation-iteration-count<span style="border: 1px solid #FF0000">\</span>: infinite;
-	-webkit-animation-timing-function<span style="border: 1px solid #FF0000">\</span>: linear;
-	<span style="font-style: italic">/* some of the important stuff for Firefox */</span>
-	-moz-animation-name<span style="border: 1px solid #FF0000">\</span>: rotate;
-	-moz-animation-duration<span style="border: 1px solid #FF0000">\</span>: 5s;
-	-moz-animation-iteration-count<span style="border: 1px solid #FF0000">\</span>: infinite;
-	-moz-animation-timing-function<span style="border: 1px solid #FF0000">\</span>: linear;
+
+<pre><code class="language-css">#your-dom-element {
+	/* some of the important stuff for Chrome */
+	-webkit-animation-name\: rotate;
+	-webkit-animation-duration\: 5s;
+	-webkit-animation-iteration-count\: infinite;
+	-webkit-animation-timing-function\: linear;
+	/* some of the important stuff for Firefox */
+	-moz-animation-name\: rotate;
+	-moz-animation-duration\: 5s;
+	-moz-animation-iteration-count\: infinite;
+	-moz-animation-timing-function\: linear;
 }
-</pre></div>
+</code></pre>
 
 <h2 id="wrap-up">Wrap up</h2>
 
@@ -455,6 +461,7 @@ The spinning sun animation is achieved(using CSS) by first creating an animation
 </section>
 
   </div>
+  
 </body>
 </html>
 

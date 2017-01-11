@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <base href="https://davidhampgonsalves.github.io/">
-    <meta name="description" content="Don&#39;t panic">
+    
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
 
@@ -18,7 +18,7 @@
     <title>
       
       
-       Install Node.js / NPM on Fedora Core 17 
+         Install Node.js / NPM on Fedora Core 17 
       
     </title>
     <link rel="canonical" href="https://davidhampgonsalves.github.io/posts/install-node/">
@@ -56,6 +56,7 @@
   img {
     margin: 10px auto 10px auto;
     max-width: 100%;
+    display: block;
   }
 
   pre, code {
@@ -377,19 +378,22 @@
 </style>
 
 
-
     <link rel="shortcut icon" href="https://davidhampgonsalves.github.io/favicon.ico">
 
     
   </head>
 
-  <body lang="en">
+  <body>
     <section id=nav>
       <h1><a href="https://davidhampgonsalves.github.io/">David Hamp-Gonsalves</a></h1>
       <ul>
-        <li><a href="https://github.com/davidhampgonsalves">GitHub</a>
-          <li><a href="https://davidhampgonsalves.github.io/projects/">Projects</a>
-            <li><a href="http://www.ethicalbarcode.com">Ethical Barcode</a>
+        
+          <li><a href="//github.com/davidhampgonsalves">GitHub</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/projects">Projects</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/html/resume.html">Resume</a></li>
+        
       </ul>
     </section>
 
@@ -414,18 +418,19 @@
 </ul>
 
 <h2 id="the-guts-go-bash-go">The Guts(go bash go!)</h2>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>sudo yum install openssl-devel.i686 gcc gcc-c++
+
+<pre><code class="language-bash">sudo yum install openssl-devel.i686 gcc gcc-c++
 sudo ./configure
 sudo make -j2
 sudo make install
 
 su
 cd /tmp
-git clone https<span style="font-weight: bold; font-style: italic">\:</span>//github.com/isaacs/npm.git
+git clone https\://github.com/isaacs/npm.git
 cd npm
 make install
 exit
-</pre></div>
+</code></pre>
 
 <p><em>Most of this was based on an older post I found <a href="http://johnroach.info/2011/11/20/installing-node-js-0-6-2-on-fedora-16/">here</a>.</em></p>
 
@@ -442,6 +447,7 @@ exit
 </section>
 
   </div>
+  
 </body>
 </html>
 

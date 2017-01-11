@@ -51,30 +51,31 @@
 &lt;/ul&gt;
 
 &lt;p&gt;You can take a look at my version which adds the bounce animation bellow or you can take a look at it in action at: &lt;a href=&#34;http://www.hourweather.com/&#34;&gt;www.hourweather.com&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;jQuery.easing[&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;jswing&amp;#39;&lt;/span&gt;] = jQuery.easing[&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;swing&amp;#39;&lt;/span&gt;];
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;jQuery.easing[&#39;jswing&#39;] = jQuery.easing[&#39;swing&#39;];
 
 jQuery.extend( jQuery.easing,
 {
-    def&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;easeOutQuad&amp;#39;&lt;/span&gt;,
-    swing&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: &lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; (x, t, b, c, d) {
-        &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; jQuery.easing[jQuery.easing.def](x, t, b, c, d);
+    def\: &#39;easeOutQuad&#39;,
+    swing\: function (x, t, b, c, d) {
+        return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
     },
-    easeOutQuad&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: &lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; (x, t, b, c, d) {
-        &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; -c *(t/=d)*(t-2) + b;
+    easeOutQuad\: function (x, t, b, c, d) {
+        return -c *(t/=d)*(t-2) + b;
     },
-    easeOutBounce&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: &lt;span style=&#34;font-weight: bold&#34;&gt;function&lt;/span&gt; (x, t, b, c, d) {
-        &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; ((t/=d) &amp;lt; (1/2.75)) {
-            &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; c*(7.5625*t*t) + b;
-        } &lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; (t &amp;lt; (2/2.75)) {
-            &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
-        } &lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt; (t &amp;lt; (2.5/2.75)) {
-            &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
-        } &lt;span style=&#34;font-weight: bold&#34;&gt;else&lt;/span&gt; {
-            &lt;span style=&#34;font-weight: bold&#34;&gt;return&lt;/span&gt; c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
+    easeOutBounce\: function (x, t, b, c, d) {
+        if ((t/=d) &amp;lt; (1/2.75)) {
+            return c*(7.5625*t*t) + b;
+        } else if (t &amp;lt; (2/2.75)) {
+            return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
+        } else if (t &amp;lt; (2.5/2.75)) {
+            return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
+        } else {
+            return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
         }
     }
 });
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

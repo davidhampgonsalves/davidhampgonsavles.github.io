@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <base href="https://davidhampgonsalves.github.io/">
-    <meta name="description" content="Don&#39;t panic">
+    
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
 
@@ -18,7 +18,7 @@
     <title>
       
       
-       Dynamic CSS Reset 
+         Dynamic CSS Reset 
       
     </title>
     <link rel="canonical" href="https://davidhampgonsalves.github.io/posts/css-reset/">
@@ -56,6 +56,7 @@
   img {
     margin: 10px auto 10px auto;
     max-width: 100%;
+    display: block;
   }
 
   pre, code {
@@ -377,19 +378,22 @@
 </style>
 
 
-
     <link rel="shortcut icon" href="https://davidhampgonsalves.github.io/favicon.ico">
 
     
   </head>
 
-  <body lang="en">
+  <body>
     <section id=nav>
       <h1><a href="https://davidhampgonsalves.github.io/">David Hamp-Gonsalves</a></h1>
       <ul>
-        <li><a href="https://github.com/davidhampgonsalves">GitHub</a>
-          <li><a href="https://davidhampgonsalves.github.io/projects/">Projects</a>
-            <li><a href="http://www.ethicalbarcode.com">Ethical Barcode</a>
+        
+          <li><a href="//github.com/davidhampgonsalves">GitHub</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/projects">Projects</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/html/resume.html">Resume</a></li>
+        
       </ul>
     </section>
 
@@ -403,16 +407,17 @@
 
   <div class="entry-content">
     <p>When ever you ever have to inject HTML into an unknown page you have to battle with all the page styles messing with your own content. This happens a lot when building bookmarklets like my recent <a href="https://davidhampgonsalves.github.io/spritz-like-rsvp-reader-bookmarklet/">RSVP Reader</a>. In the past you had to manually assign values for all the CSS properties that could have been set by the page. Since then then <em><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/initial">initial</a></em> CSS property was added we can perform this reset automatically. The following is a function that resets all CSS properties for a given DOM node.</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="font-weight: bold">function</span> resetStyles(node) {
-    <span style="font-weight: bold">if</span>(!node)
-        console.error(<span style="font-style: italic">&#39;node was invalid\: &#39;</span> + node);
-    <span style="font-style: italic">/* iterate over the DOM nodes style properties and set them to initial */</span>
-    <span style="font-weight: bold">var</span> props = window.getComputedStyle(node, <span style="font-weight: bold">null</span>);
-    <span style="font-weight: bold">for</span>(<span style="font-weight: bold">var</span> i=0, len=props.length ; i &lt; len ; i++) {
-        node.style[props] = <span style="font-style: italic">&#39;initial&#39;</span>;
+
+<pre><code class="language-javascript">function resetStyles(node) {
+    if(!node)
+        console.error('node was invalid\: ' + node);
+    /* iterate over the DOM nodes style properties and set them to initial */
+    var props = window.getComputedStyle(node, null);
+    for(var i=0, len=props.length ; i &lt; len ; i++) {
+        node.style[props] = 'initial';
     }
 };
-</pre></div>
+</code></pre>
 
   </div>
 
@@ -427,6 +432,7 @@
 </section>
 
   </div>
+  
 </body>
 </html>
 

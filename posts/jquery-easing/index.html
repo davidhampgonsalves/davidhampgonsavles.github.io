@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <base href="https://davidhampgonsalves.github.io/">
-    <meta name="description" content="Don&#39;t panic">
+    
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
 
@@ -18,7 +18,7 @@
     <title>
       
       
-       Slimming Down JQuery Easing 
+         Slimming Down JQuery Easing 
       
     </title>
     <link rel="canonical" href="https://davidhampgonsalves.github.io/posts/jquery-easing/">
@@ -56,6 +56,7 @@
   img {
     margin: 10px auto 10px auto;
     max-width: 100%;
+    display: block;
   }
 
   pre, code {
@@ -377,19 +378,22 @@
 </style>
 
 
-
     <link rel="shortcut icon" href="https://davidhampgonsalves.github.io/favicon.ico">
 
     
   </head>
 
-  <body lang="en">
+  <body>
     <section id=nav>
       <h1><a href="https://davidhampgonsalves.github.io/">David Hamp-Gonsalves</a></h1>
       <ul>
-        <li><a href="https://github.com/davidhampgonsalves">GitHub</a>
-          <li><a href="https://davidhampgonsalves.github.io/projects/">Projects</a>
-            <li><a href="http://www.ethicalbarcode.com">Ethical Barcode</a>
+        
+          <li><a href="//github.com/davidhampgonsalves">GitHub</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/projects">Projects</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/html/resume.html">Resume</a></li>
+        
       </ul>
     </section>
 
@@ -417,30 +421,31 @@
 </ul>
 
 <p>You can take a look at my version which adds the bounce animation bellow or you can take a look at it in action at: <a href="http://www.hourweather.com/">www.hourweather.com</a>.</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>jQuery.easing[<span style="font-style: italic">&#39;jswing&#39;</span>] = jQuery.easing[<span style="font-style: italic">&#39;swing&#39;</span>];
+
+<pre><code class="language-javascript">jQuery.easing['jswing'] = jQuery.easing['swing'];
 
 jQuery.extend( jQuery.easing,
 {
-    def<span style="border: 1px solid #FF0000">\</span>: <span style="font-style: italic">&#39;easeOutQuad&#39;</span>,
-    swing<span style="border: 1px solid #FF0000">\</span>: <span style="font-weight: bold">function</span> (x, t, b, c, d) {
-        <span style="font-weight: bold">return</span> jQuery.easing[jQuery.easing.def](x, t, b, c, d);
+    def\: 'easeOutQuad',
+    swing\: function (x, t, b, c, d) {
+        return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
     },
-    easeOutQuad<span style="border: 1px solid #FF0000">\</span>: <span style="font-weight: bold">function</span> (x, t, b, c, d) {
-        <span style="font-weight: bold">return</span> -c *(t/=d)*(t-2) + b;
+    easeOutQuad\: function (x, t, b, c, d) {
+        return -c *(t/=d)*(t-2) + b;
     },
-    easeOutBounce<span style="border: 1px solid #FF0000">\</span>: <span style="font-weight: bold">function</span> (x, t, b, c, d) {
-        <span style="font-weight: bold">if</span> ((t/=d) &lt; (1/2.75)) {
-            <span style="font-weight: bold">return</span> c*(7.5625*t*t) + b;
-        } <span style="font-weight: bold">else</span> <span style="font-weight: bold">if</span> (t &lt; (2/2.75)) {
-            <span style="font-weight: bold">return</span> c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
-        } <span style="font-weight: bold">else</span> <span style="font-weight: bold">if</span> (t &lt; (2.5/2.75)) {
-            <span style="font-weight: bold">return</span> c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
-        } <span style="font-weight: bold">else</span> {
-            <span style="font-weight: bold">return</span> c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
+    easeOutBounce\: function (x, t, b, c, d) {
+        if ((t/=d) &lt; (1/2.75)) {
+            return c*(7.5625*t*t) + b;
+        } else if (t &lt; (2/2.75)) {
+            return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
+        } else if (t &lt; (2.5/2.75)) {
+            return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
+        } else {
+            return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
         }
     }
 });
-</pre></div>
+</code></pre>
 
   </div>
 
@@ -455,6 +460,7 @@ jQuery.extend( jQuery.easing,
 </section>
 
   </div>
+  
 </body>
 </html>
 

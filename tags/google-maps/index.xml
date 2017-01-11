@@ -21,40 +21,44 @@
 &lt;h2 id=&#34;drawing-a-polygon&#34;&gt;Drawing a Polygon&lt;/h2&gt;
 
 &lt;p&gt;The Natural Earth Dataset provides outline coordinates using the EPSG 4326 projection. We can build our polygon(s) with those points like:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; regionCoords = [];
-&lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=0 ; i &amp;lt; data.length ; i++)
-	regionCoords.push(&lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; google.maps.LatLng(data[i][1], data[i][0]);
 
-&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; overlayOptions = {
-  paths&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: regionCoords,
-  strokeColor&lt;span style=&#34;border: 1px solid #FF0000&#34;&gt;\&lt;/span&gt;: &lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;#FF0000&amp;quot;&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var regionCoords = [];
+for(var i=0 ; i &amp;lt; data.length ; i++)
+	regionCoords.push(new google.maps.LatLng(data[i][1], data[i][0]);
+
+var overlayOptions = {
+  paths\: regionCoords,
+  strokeColor\: &amp;quot;#FF0000&amp;quot;
 };
-&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; regionOverlay = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; google.maps.Polygon(overlayOptions);
+var regionOverlay = new google.maps.Polygon(overlayOptions);
 regionOverlay.setMap(map);
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;In the above code we are building an array of LatLng points(notice the Natural Earth Dataset uses Long/Lat format so we need to flip the order of the values). Then we are overlaying them on our map.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;positioning-and-centering-map&#34;&gt;Positioning and Centering Map&lt;/h2&gt;
 
 &lt;p&gt;To display the map at a position and scale so that our polygon(s) are visiable we need to create a bounds object that contains our polygon(s).&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; regionBounds = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; google.maps.LatLngBounds();
-&lt;span style=&#34;font-weight: bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; i=0 ; i &amp;lt; data.length ; i++) {
-  &lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; point = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; google.maps.LatLng(data[i][1], data[i][0]);
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var regionBounds = new google.maps.LatLngBounds();
+for(var i=0 ; i &amp;lt; data.length ; i++) {
+  var point = new google.maps.LatLng(data[i][1], data[i][0]);
   regionBounds.extend(point);
 }
 
-&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; allPolygonBounds = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; google.maps.LatLngBounds();
+var allPolygonBounds = new google.maps.LatLngBounds();
 
-&lt;span style=&#34;font-style: italic&#34;&gt;//combine all of your polygons together into a single bounds object that contains them all using union&lt;/span&gt;
+//combine all of your polygons together into a single bounds object that contains them all using union
 allPolygonBounds.union(regionBounds);
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;In the above code we are creating a combined bounds object that we can center our map on at a scale that all polygons are visiable.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;We center and scale the map like:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;map.fitBounds(allPolygonBounds);
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;map.fitBounds(allPolygonBounds);
+
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;creating-pretty-polygons&#34;&gt;Creating Pretty Polygons&lt;/h2&gt;
 

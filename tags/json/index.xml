@@ -63,9 +63,10 @@ This resulted in a savings of &lt;strong&gt;%35&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Wasting space representing each character in UTF-8(8 bits per character). Since those 8-buts can represent 255 possibilities we can represent 2 digits for each character without getting fancy by using a base 100 encoding.&lt;/p&gt;
 
 &lt;p&gt;So current our digits are being represented using UFT-9 encoding. if we only use the first 255 characters of UTF-8 only a single byte will be sent per character. We can use  100 of those 255 options to represent 2 digits with a single character by converting our numbers to their UTF-8 charater counterparts.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;String.fromCharCode(65) === &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;;
-&lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;A&amp;#39;&lt;/span&gt;.getCharCodeAt(0) === &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;65&amp;#39;&lt;/span&gt;;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;String.fromCharCode(65) === &#39;A&#39;;
+&#39;A&#39;.getCharCodeAt(0) === &#39;65&#39;;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;&#39;3   0  &#39;&lt;/code&gt;
 This resulted in a savings of &lt;strong&gt;%40&lt;/strong&gt;.&lt;/p&gt;

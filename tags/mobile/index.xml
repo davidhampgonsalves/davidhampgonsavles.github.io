@@ -15,14 +15,16 @@
       
       <guid>https://davidhampgonsalves.github.io/posts/detect-mobile-javascript/</guid>
       <description>&lt;p&gt;This is a pretty lightweight way of detecting when your javascript is living in a mobile device.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;typeof&lt;/span&gt; window.orientation != &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;undefined&amp;#39;&lt;/span&gt;) { &lt;span style=&#34;font-style: italic&#34;&gt;/* put mobile spesific code here */&lt;/span&gt; }
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if(typeof window.orientation != &#39;undefined&#39;) { /* put mobile spesific code here */ }
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;To omit spesific devices from running this code you can also add individual checks like the following.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;font-weight: bold&#34;&gt;typeof&lt;/span&gt; window.orientation != &lt;span style=&#34;font-style: italic&#34;&gt;&amp;#39;undefined&amp;#39;&lt;/span&gt; &amp;amp;&amp;amp; !navigator.userAgent.match(&lt;span style=&#34;font-style: italic&#34;&gt;/iPad/i&lt;/span&gt;)) {
-  &lt;span style=&#34;font-style: italic&#34;&gt;/* put mobile spesific(but not ipad) code here */&lt;/span&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if(typeof window.orientation != &#39;undefined&#39; &amp;amp;&amp;amp; !navigator.userAgent.match(/iPad/i)) {
+  /* put mobile spesific(but not ipad) code here */
 }
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This is a mix of the answers found on &lt;a href=&#34;http://stackoverflow.com/questions/11381673/javascript-solution-to-detect-mobile-browser&#34;&gt;stack overflow&lt;/a&gt;.&lt;/p&gt;
 </description>

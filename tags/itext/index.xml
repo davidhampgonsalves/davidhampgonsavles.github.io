@@ -21,33 +21,38 @@
 &lt;p&gt;Your standard servlet hello world example is 10 super simple lines.&lt;/p&gt;
 
 &lt;p&gt;In your servlets doGet method:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;	response.setContentType(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;application/pdf&amp;quot;&lt;/span&gt;);
-	Document document = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; Document();
-	&lt;span style=&#34;font-weight: bold&#34;&gt;try&lt;/span&gt; {
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;	response.setContentType(&amp;quot;application/pdf&amp;quot;);
+	Document document = new Document();
+	try {
 		PdfWriter.getInstance(document, response.getOutputStream());
 		document.open();
-		document.add(&lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; Paragraph(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;Hello world&amp;quot;&lt;/span&gt;));
+		document.add(new Paragraph(&amp;quot;Hello world&amp;quot;));
 		document.close();
-	} &lt;span style=&#34;font-weight: bold&#34;&gt;catch&lt;/span&gt; (DocumentException e) { &lt;span style=&#34;font-style: italic&#34;&gt;//handle the error }&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+	} catch (DocumentException e) { //handle the error }
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;to-break-that-down&#34;&gt;to break that down:&lt;/h2&gt;
 
 &lt;p&gt;First you need to let the browser know via the http response headers that the content is a pdf.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;response.setContentType(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;application/pdf&amp;quot;&lt;/span&gt;);
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;response.setContentType(&amp;quot;application/pdf&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Next you need to creat the document object that will house your pdf.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;Document document = &lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; Document();
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Document document = new Document();
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Then get an instance of the PdfWriter to create the pdf using the contents of your document and output them to the response stream.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;PdfWriter.getInstance(document, response.getOutputStream());
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;PdfWriter.getInstance(document, response.getOutputStream());
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Finally you need to open and populate your pdf with whatever you want.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;document.open(); document.add(&lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; Paragraph(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;Hello world&amp;quot;&lt;/span&gt;)); document.close();
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;document.open(); document.add(new Paragraph(&amp;quot;Hello world&amp;quot;)); document.close();
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;If you want to create a PDF in a file its the same thing except easier because you don&amp;rsquo;t have to worry about the content type you just replace the response.getOutputStream() with a valid FileOutputStream and your all set.&lt;/p&gt;
 

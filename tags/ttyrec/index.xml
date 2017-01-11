@@ -21,9 +21,10 @@
 &lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
 
 &lt;p&gt;The tool we will use to capture our gif &lt;a href=&#34;https://github.com/icholy/ttygif&#34;&gt;ttygif&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;brew install imagemagick ttyrec
-brew install https&lt;span style=&#34;font-weight: bold; font-style: italic&#34;&gt;\:&lt;/span&gt;//raw.githubusercontent.com/icholy/ttygif/master/ttygif.rb
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;brew install imagemagick ttyrec
+brew install https\://raw.githubusercontent.com/icholy/ttygif/master/ttygif.rb
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;gif&#34;&gt;Gif&lt;/h2&gt;
 
@@ -32,13 +33,14 @@ brew install https&lt;span style=&#34;font-weight: bold; font-style: italic&#34;
 * Run &lt;code&gt;ttygif&lt;/code&gt; to convert the &lt;code&gt;png&lt;/code&gt; files to small &lt;code&gt;gifs&lt;/code&gt;.
 * Concat the &lt;code&gt;gif&lt;/code&gt; files using the concat script.
 * Edit the final &lt;code&gt;gif&lt;/code&gt; using whatever tool or online site you like.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-style: italic&#34;&gt;#creates series pngs(type exit to finish recording)&lt;/span&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#creates series pngs(type exit to finish recording)
 ttyrec recording-name
-&lt;span style=&#34;font-style: italic&#34;&gt;#convert png -&amp;gt; gif(-f disables cropping)&lt;/span&gt;
+#convert png -&amp;gt; gif(-f disables cropping)
 ttygif recording-name -f
-&lt;span style=&#34;font-style: italic&#34;&gt;#concat gif parts into final product&lt;/span&gt;
+#concat gif parts into final product
 concat_osx.sh recording-name.gif
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h1 id=&#34;example&#34;&gt;Example&lt;/h1&gt;
 

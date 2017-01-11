@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <base href="https://davidhampgonsalves.github.io/">
-    <meta name="description" content="Don&#39;t panic">
+    
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
 
@@ -18,7 +18,7 @@
     <title>
       
       
-       Drawing Region Polygons on Google Maps API v.3 
+         Drawing Region Polygons on Google Maps API v.3 
       
     </title>
     <link rel="canonical" href="https://davidhampgonsalves.github.io/posts/polygons_and_google_maps/">
@@ -56,6 +56,7 @@
   img {
     margin: 10px auto 10px auto;
     max-width: 100%;
+    display: block;
   }
 
   pre, code {
@@ -377,19 +378,22 @@
 </style>
 
 
-
     <link rel="shortcut icon" href="https://davidhampgonsalves.github.io/favicon.ico">
 
     
   </head>
 
-  <body lang="en">
+  <body>
     <section id=nav>
       <h1><a href="https://davidhampgonsalves.github.io/">David Hamp-Gonsalves</a></h1>
       <ul>
-        <li><a href="https://github.com/davidhampgonsalves">GitHub</a>
-          <li><a href="https://davidhampgonsalves.github.io/projects/">Projects</a>
-            <li><a href="http://www.ethicalbarcode.com">Ethical Barcode</a>
+        
+          <li><a href="//github.com/davidhampgonsalves">GitHub</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/projects">Projects</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/html/resume.html">Resume</a></li>
+        
       </ul>
     </section>
 
@@ -409,40 +413,44 @@
 <h2 id="drawing-a-polygon">Drawing a Polygon</h2>
 
 <p>The Natural Earth Dataset provides outline coordinates using the EPSG 4326 projection. We can build our polygon(s) with those points like:</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="font-weight: bold">var</span> regionCoords = [];
-<span style="font-weight: bold">for</span>(<span style="font-weight: bold">var</span> i=0 ; i &lt; data.length ; i++)
-	regionCoords.push(<span style="font-weight: bold">new</span> google.maps.LatLng(data[i][1], data[i][0]);
 
-<span style="font-weight: bold">var</span> overlayOptions = {
-  paths<span style="border: 1px solid #FF0000">\</span>: regionCoords,
-  strokeColor<span style="border: 1px solid #FF0000">\</span>: <span style="font-style: italic">&quot;#FF0000&quot;</span>
+<pre><code class="language-javascript">var regionCoords = [];
+for(var i=0 ; i &lt; data.length ; i++)
+	regionCoords.push(new google.maps.LatLng(data[i][1], data[i][0]);
+
+var overlayOptions = {
+  paths\: regionCoords,
+  strokeColor\: &quot;#FF0000&quot;
 };
-<span style="font-weight: bold">var</span> regionOverlay = <span style="font-weight: bold">new</span> google.maps.Polygon(overlayOptions);
+var regionOverlay = new google.maps.Polygon(overlayOptions);
 regionOverlay.setMap(map);
-</pre></div>
+</code></pre>
 
 <p><em>In the above code we are building an array of LatLng points(notice the Natural Earth Dataset uses Long/Lat format so we need to flip the order of the values). Then we are overlaying them on our map.</em></p>
 
 <h2 id="positioning-and-centering-map">Positioning and Centering Map</h2>
 
 <p>To display the map at a position and scale so that our polygon(s) are visiable we need to create a bounds object that contains our polygon(s).</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="font-weight: bold">var</span> regionBounds = <span style="font-weight: bold">new</span> google.maps.LatLngBounds();
-<span style="font-weight: bold">for</span>(<span style="font-weight: bold">var</span> i=0 ; i &lt; data.length ; i++) {
-  <span style="font-weight: bold">var</span> point = <span style="font-weight: bold">new</span> google.maps.LatLng(data[i][1], data[i][0]);
+
+<pre><code class="language-javascript">var regionBounds = new google.maps.LatLngBounds();
+for(var i=0 ; i &lt; data.length ; i++) {
+  var point = new google.maps.LatLng(data[i][1], data[i][0]);
   regionBounds.extend(point);
 }
 
-<span style="font-weight: bold">var</span> allPolygonBounds = <span style="font-weight: bold">new</span> google.maps.LatLngBounds();
+var allPolygonBounds = new google.maps.LatLngBounds();
 
-<span style="font-style: italic">//combine all of your polygons together into a single bounds object that contains them all using union</span>
+//combine all of your polygons together into a single bounds object that contains them all using union
 allPolygonBounds.union(regionBounds);
-</pre></div>
+</code></pre>
 
 <p><em>In the above code we are creating a combined bounds object that we can center our map on at a scale that all polygons are visiable.</em></p>
 
 <p>We center and scale the map like:</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span>map.fitBounds(allPolygonBounds);
-</pre></div>
+
+<pre><code class="language-javascript">map.fitBounds(allPolygonBounds);
+
+</code></pre>
 
 <h2 id="creating-pretty-polygons">Creating Pretty Polygons</h2>
 
@@ -461,6 +469,7 @@ allPolygonBounds.union(regionBounds);
 </section>
 
   </div>
+  
 </body>
 </html>
 

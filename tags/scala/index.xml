@@ -36,23 +36,25 @@
 &lt;h2 id=&#34;usage-setup&#34;&gt;Usage: Setup&lt;/h2&gt;
 
 &lt;p&gt;I was working in Scala for my project but the conversion to Java is trivial.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;	&lt;span style=&#34;font-weight: bold&#34;&gt;SvnKitClientAdapterFactory&lt;/span&gt;.setup();
-	&lt;span style=&#34;font-style: italic&#34;&gt;//To create the SVN client we first need to tell it what type of client to use.&lt;/span&gt;
-	&lt;span style=&#34;font-style: italic&#34;&gt;//Letting it choose whatever is availiable is usually fine unless you have both&lt;/span&gt;
-	&lt;span style=&#34;font-style: italic&#34;&gt;//and want to force it to use something specific&lt;/span&gt;
-	&lt;span style=&#34;font-weight: bold&#34;&gt;val&lt;/span&gt; clientType\:&lt;span style=&#34;font-weight: bold&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;SVNClientAdapterFactory&lt;/span&gt;.getPreferredSVNClientType();
-	&lt;span style=&#34;font-weight: bold&#34;&gt;val&lt;/span&gt; svnClient\:&lt;span style=&#34;font-weight: bold&#34;&gt;ISVNClientAdapter&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;SVNClientAdapterFactory&lt;/span&gt;.createSVNClient(clientType);
 
-	&lt;span style=&#34;font-style: italic&#34;&gt;//add whatever authentication your repositor requires(if any)&lt;/span&gt;
-	svnClient.setUsername(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;&amp;lt;your user name&amp;gt;&amp;quot;&lt;/span&gt;);
-	svnClient.setPassword(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;&amp;lt;your password&amp;gt;&amp;quot;&lt;/span&gt;);
-&lt;/pre&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;	SvnKitClientAdapterFactory.setup();
+	//To create the SVN client we first need to tell it what type of client to use.
+	//Letting it choose whatever is availiable is usually fine unless you have both
+	//and want to force it to use something specific
+	val clientType\:String = SVNClientAdapterFactory.getPreferredSVNClientType();
+	val svnClient\:ISVNClientAdapter = SVNClientAdapterFactory.createSVNClient(clientType);
+
+	//add whatever authentication your repositor requires(if any)
+	svnClient.setUsername(&amp;quot;&amp;lt;your user name&amp;gt;&amp;quot;);
+	svnClient.setPassword(&amp;quot;&amp;lt;your password&amp;gt;&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
 
 &lt;p&gt;Now that we have a svn client object we can do some work. If your familiar with SVN this part very straight forward. In my case I was listing directories and searching for files.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;font-weight: bold&#34;&gt;var&lt;/span&gt; svnDirs\: &lt;span style=&#34;font-weight: bold&#34;&gt;Array&lt;/span&gt;[&lt;span style=&#34;font-weight: bold&#34;&gt;ISVNDirEntry&lt;/span&gt;] &lt;span style=&#34;font-weight: bold&#34;&gt;=&lt;/span&gt; svnClient.getList(&lt;span style=&#34;font-weight: bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;font-weight: bold&#34;&gt;SVNUrl&lt;/span&gt;(&lt;span style=&#34;font-style: italic&#34;&gt;&amp;quot;&amp;lt;SVN repository URL&amp;gt;&amp;quot;&lt;/span&gt;), &lt;span style=&#34;font-weight: bold&#34;&gt;SVNRevision&lt;/span&gt;.&lt;span style=&#34;font-weight: bold&#34;&gt;HEAD&lt;/span&gt;, &lt;span style=&#34;font-weight: bold&#34;&gt;false&lt;/span&gt;)
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;var svnDirs\: Array[ISVNDirEntry] = svnClient.getList(new SVNUrl(&amp;quot;&amp;lt;SVN repository URL&amp;gt;&amp;quot;), SVNRevision.HEAD, false)
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 

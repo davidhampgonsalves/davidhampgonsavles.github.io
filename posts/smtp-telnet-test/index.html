@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
     <base href="https://davidhampgonsalves.github.io/">
-    <meta name="description" content="Don&#39;t panic">
+    
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
 
@@ -18,7 +18,7 @@
     <title>
       
       
-       SMTP Test/Usage Via Telnet 
+         SMTP Test/Usage Via Telnet 
       
     </title>
     <link rel="canonical" href="https://davidhampgonsalves.github.io/posts/smtp-telnet-test/">
@@ -56,6 +56,7 @@
   img {
     margin: 10px auto 10px auto;
     max-width: 100%;
+    display: block;
   }
 
   pre, code {
@@ -377,19 +378,22 @@
 </style>
 
 
-
     <link rel="shortcut icon" href="https://davidhampgonsalves.github.io/favicon.ico">
 
     
   </head>
 
-  <body lang="en">
+  <body>
     <section id=nav>
       <h1><a href="https://davidhampgonsalves.github.io/">David Hamp-Gonsalves</a></h1>
       <ul>
-        <li><a href="https://github.com/davidhampgonsalves">GitHub</a>
-          <li><a href="https://davidhampgonsalves.github.io/projects/">Projects</a>
-            <li><a href="http://www.ethicalbarcode.com">Ethical Barcode</a>
+        
+          <li><a href="//github.com/davidhampgonsalves">GitHub</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/projects">Projects</a></li>
+        
+          <li><a href="https://davidhampgonsalves.github.io/html/resume.html">Resume</a></li>
+        
       </ul>
     </section>
 
@@ -409,19 +413,20 @@
 <h2 id="usage">Usage</h2>
 
 <p>The script takes three parameters: the smtp server url, the sender address and the recipient address.</p>
-<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="font-style: italic">#!/usr/bin/env bash</span>
+
+<pre><code class="language-bash">#!/usr/bin/env bash
 	(echo HELO
 	 sleep 10
-	 echo MAIL FROM<span style="font-weight: bold; font-style: italic">\:</span>$2
+	 echo MAIL FROM\:$2
 	 sleep 10
-	 echo RCPT TO<span style="font-weight: bold; font-style: italic">\:</span>$3
+	 echo RCPT TO\:$3
 	 sleep 10
 	 echo DATA
 	 sleep 10
 	 echo .
 	 sleep 10
 	 echo QUIT) | telnet $1 25
-</pre></div>
+</code></pre>
 
   </div>
 
@@ -436,6 +441,7 @@
 </section>
 
   </div>
+  
 </body>
 </html>
 
