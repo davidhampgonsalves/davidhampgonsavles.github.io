@@ -19,7 +19,7 @@
 
 &lt;p&gt;I converted my blog from &lt;a href=&#34;https://davidhampgonsalves.github.io/octopress-to-hugo/&#34;&gt;Octopress to Hugo&lt;/a&gt; and also ported over the existing theme.&lt;/p&gt;
 
-&lt;p&gt;Its now called &lt;a href=&#34;https://github.com/davidhampgonsalves/hugo-black-and-light-theme&#34;&gt;Black and Light&lt;/a&gt;, a high contrast, performant and Javascript-free.&lt;/p&gt;
+&lt;p&gt;Its called &lt;a href=&#34;https://github.com/davidhampgonsalves/hugo-black-and-light-theme&#34;&gt;Black and Light&lt;/a&gt; and is high contrast, text oriented, and Javascript-free.&lt;/p&gt;
 
 &lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
 
@@ -107,7 +107,12 @@ console.log(foo(5));
       <pubDate>Fri, 06 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/octopress-to-hugo/</guid>
-      <description></description>
+      <description>&lt;p&gt;I ported this blog (and its &lt;a href=&#34;https://github.com/davidhampgonsalves/hugo-black-and-light-theme&#34;&gt;theme&lt;/a&gt; from Octopress 2 to Hugo.&lt;/p&gt;
+
+&lt;p&gt;The process (which I wont go into detail about since the hugo docs are great) was enjoyable and quick.&lt;/p&gt;
+
+&lt;p&gt;Hugo is easy to reason about, amazingly fast, and at least for a simple site like this a much better fit.&lt;/p&gt;
+</description>
     </item>
     
     <item>
