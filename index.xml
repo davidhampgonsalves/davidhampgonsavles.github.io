@@ -121,7 +121,7 @@ console.log(foo(5));
       <pubDate>Fri, 15 Apr 2016 23:12:01 -0500</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</guid>
-      <description>&lt;p&gt;TLDR: Just use CircleCI.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;TLDR&lt;/strong&gt;: Just use CircleCI.&lt;/p&gt;
 
 &lt;p&gt;Having used both products in my last two positions I can say that while I once pined for Travis&amp;rsquo;s(then) superior documentation, that stage has passed and I now enthusiastically choose CircleCI.&lt;/p&gt;
 
