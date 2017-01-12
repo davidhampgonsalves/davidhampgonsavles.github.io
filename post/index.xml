@@ -6,34 +6,18 @@
     <description>Recent content in Posts on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 11 Jan 2017 23:12:01 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jan 2016 23:09:36 -0500</lastBuildDate>
     <atom:link href="https://davidhampgonsalves.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>circleci vs travis</title>
-      <link>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</link>
-      <pubDate>Wed, 11 Jan 2017 23:12:01 -0500</pubDate>
-      
-      <guid>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</guid>
-      <description>&lt;p&gt;TLDR: Just use CircleCI.&lt;/p&gt;
-
-&lt;p&gt;Having used both products in my last two positions I can say that while I once pined for Travis&amp;rsquo;s(then) superior documentation, that stage has passed and I now enthusiastically choose CircleCI.&lt;/p&gt;
-
-&lt;p&gt;CircleCI&amp;rsquo;s UI is amazing. It feels snappy and well suited to the task. I often find myself waiting for pages to load in Travis. The UI is also branch centric which better supports feature development where as Travis seems project focused and doesn&amp;rsquo;t suit my typical usage.&lt;/p&gt;
-
-&lt;p&gt;CircleCI&amp;rsquo;s ability to parse the test results(which I didn&amp;rsquo;t appreciate this till it was gone) is amazing. Its so nice not to have to scroll though all your tests to see what broke.&lt;/p&gt;
-
-&lt;p&gt;There are other better publicised benefits in the areas of running tests in parallel but for me these two details have the largest impact on my quality of life.&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>Should You Move To San Francisco?</title>
       <link>https://davidhampgonsalves.github.io/post/moving-to-sf/</link>
-      <pubDate>Wed, 11 Jan 2017 23:09:36 -0500</pubDate>
+      <pubDate>Mon, 11 Jan 2016 23:09:36 -0500</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/post/moving-to-sf/</guid>
-      <description>&lt;p&gt;TLDR:  Yes.&lt;/p&gt;
+      <description>
+
+&lt;p&gt;&lt;strong&gt;TLDR&lt;/strong&gt;:  Yes.&lt;/p&gt;
 
 &lt;p&gt;My move to SF is 100% a silicon valley stereotype. I wrote an app(eb), was contacted by some startups and large valley companies and a couple weeks later I was on a plane with a 6 month old and my wife.&lt;/p&gt;
 
@@ -49,21 +33,43 @@
 
 &lt;p&gt;The working conditions were far better then any I had experienced prior. I played guitar in the office music room, learned how to play ping pong, found / rebuilt drones all over the place and generally just had a lot of fun. The work was interesting and it was amazing being around brilliant co-workers. You&amp;rsquo;ll also never have to worry about saying something too technical, geeky or nuanced since it will always be received warmly.&lt;/p&gt;
 
-&lt;p&gt;The counter to this is that: everything is expensive, you&amp;rsquo;ll spend more time at work, you&amp;rsquo;ll get sick of microbrew IPA&amp;rsquo;s, money will loose all meaning and generally things will feel &amp;ldquo;unreal&amp;rdquo;.&lt;/p&gt;
+&lt;h2 id=&#34;cons&#34;&gt;Cons&lt;/h2&gt;
+
+&lt;p&gt;The counter to this is: everything is expensive, you&amp;rsquo;ll spend more time at work, you&amp;rsquo;ll get sick of microbrew IPA&amp;rsquo;s, money will loose all meaning and generally things will feel &amp;ldquo;unreal&amp;rdquo;.&lt;/p&gt;
 
 &lt;p&gt;You&amp;rsquo;ll feel like you&amp;rsquo;ve entered a world that is oddly tailored to you which will only emphasise your feelings of being a muppet. At the same time you&amp;rsquo;ll see the daily negative effects that tech wealth has on the remaining residents which you are now a part of.&lt;/p&gt;
+
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 
 &lt;p&gt;Retrospectively it was a positive experience. I&amp;rsquo;m still benefiting from the contacts I made and experience I accrued. The TN visa makes it easy for Canadians to make this move and its in our interest to take advantage of our free trade agreement the politicians worked to put in place.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>hacktoberfest 2015</title>
+      <title>Hacktoberfest 2015</title>
       <link>https://davidhampgonsalves.github.io/post/hacktoberfest-2015/</link>
       <pubDate>Mon, 23 Nov 2015 23:14:38 -0500</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/post/hacktoberfest-2015/</guid>
       <description>&lt;p&gt;I took part in Digital Oceans Hacktoberfest &amp;amp; had a lot of fun. I ended up pushing some PR&amp;rsquo;s to new projects that I wouldn&amp;rsquo;t have otherwise and got a a t-shirt even though I live in Canada (usually these things are US only). I also noticed an influx in GitHub stickers in my neighbourhood (which were included with the t-shirt) so I assume there must be a few participants in my hood.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CircleCI vs Travis</title>
+      <link>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</guid>
+      <description>&lt;p&gt;TLDR: Just use CircleCI.&lt;/p&gt;
+
+&lt;p&gt;Having used both products in my last two positions I can say that while I once pined for Travis&amp;rsquo;s(then) superior documentation, that stage has passed and I now enthusiastically choose CircleCI.&lt;/p&gt;
+
+&lt;p&gt;CircleCI&amp;rsquo;s UI is amazing. It feels snappy and well suited to the task. I often find myself waiting for pages to load in Travis. The UI is also branch centric which better supports feature development where as Travis seems project focused and doesn&amp;rsquo;t suit my typical usage.&lt;/p&gt;
+
+&lt;p&gt;CircleCI&amp;rsquo;s ability to parse the test results(which I didn&amp;rsquo;t appreciate this till it was gone) is amazing. Its so nice not to have to scroll though all your tests to see what broke.&lt;/p&gt;
+
+&lt;p&gt;There are other better publicised benefits in the areas of running tests in parallel but for me these two details have the largest impact on my quality of life.&lt;/p&gt;
 </description>
     </item>
     
