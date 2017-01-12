@@ -6,8 +6,26 @@
     <description>Recent content in Posts on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 11 Jan 2016 23:09:36 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 15 Apr 2016 23:12:01 -0500</lastBuildDate>
     <atom:link href="https://davidhampgonsalves.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CircleCI vs Travis</title>
+      <link>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</link>
+      <pubDate>Fri, 15 Apr 2016 23:12:01 -0500</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</guid>
+      <description>&lt;p&gt;TLDR: Just use CircleCI.&lt;/p&gt;
+
+&lt;p&gt;Having used both products in my last two positions I can say that while I once pined for Travis&amp;rsquo;s(then) superior documentation, that stage has passed and I now enthusiastically choose CircleCI.&lt;/p&gt;
+
+&lt;p&gt;CircleCI&amp;rsquo;s UI is amazing. It feels snappy and well suited to the task. I often find myself waiting for pages to load in Travis. The UI is also branch centric which better supports feature development where as Travis seems project focused and doesn&amp;rsquo;t suit my typical usage.&lt;/p&gt;
+
+&lt;p&gt;CircleCI&amp;rsquo;s ability to parse the test results(which I didn&amp;rsquo;t appreciate this till it was gone) is amazing. Its so nice not to have to scroll though all your tests to see what broke.&lt;/p&gt;
+
+&lt;p&gt;There are other better publicised benefits in the areas of running tests in parallel but for me these two details have the largest impact on my quality of life.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Should You Move To San Francisco?</title>
@@ -52,24 +70,6 @@
       
       <guid>https://davidhampgonsalves.github.io/post/hacktoberfest-2015/</guid>
       <description>&lt;p&gt;I took part in Digital Oceans Hacktoberfest &amp;amp; had a lot of fun. I ended up pushing some PR&amp;rsquo;s to new projects that I wouldn&amp;rsquo;t have otherwise and got a a t-shirt even though I live in Canada (usually these things are US only). I also noticed an influx in GitHub stickers in my neighbourhood (which were included with the t-shirt) so I assume there must be a few participants in my hood.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>CircleCI vs Travis</title>
-      <link>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</guid>
-      <description>&lt;p&gt;TLDR: Just use CircleCI.&lt;/p&gt;
-
-&lt;p&gt;Having used both products in my last two positions I can say that while I once pined for Travis&amp;rsquo;s(then) superior documentation, that stage has passed and I now enthusiastically choose CircleCI.&lt;/p&gt;
-
-&lt;p&gt;CircleCI&amp;rsquo;s UI is amazing. It feels snappy and well suited to the task. I often find myself waiting for pages to load in Travis. The UI is also branch centric which better supports feature development where as Travis seems project focused and doesn&amp;rsquo;t suit my typical usage.&lt;/p&gt;
-
-&lt;p&gt;CircleCI&amp;rsquo;s ability to parse the test results(which I didn&amp;rsquo;t appreciate this till it was gone) is amazing. Its so nice not to have to scroll though all your tests to see what broke.&lt;/p&gt;
-
-&lt;p&gt;There are other better publicised benefits in the areas of running tests in parallel but for me these two details have the largest impact on my quality of life.&lt;/p&gt;
 </description>
     </item>
     

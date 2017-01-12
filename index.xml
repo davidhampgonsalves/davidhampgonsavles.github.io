@@ -116,6 +116,24 @@ console.log(foo(5));
     </item>
     
     <item>
+      <title>CircleCI vs Travis</title>
+      <link>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</link>
+      <pubDate>Fri, 15 Apr 2016 23:12:01 -0500</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</guid>
+      <description>&lt;p&gt;TLDR: Just use CircleCI.&lt;/p&gt;
+
+&lt;p&gt;Having used both products in my last two positions I can say that while I once pined for Travis&amp;rsquo;s(then) superior documentation, that stage has passed and I now enthusiastically choose CircleCI.&lt;/p&gt;
+
+&lt;p&gt;CircleCI&amp;rsquo;s UI is amazing. It feels snappy and well suited to the task. I often find myself waiting for pages to load in Travis. The UI is also branch centric which better supports feature development where as Travis seems project focused and doesn&amp;rsquo;t suit my typical usage.&lt;/p&gt;
+
+&lt;p&gt;CircleCI&amp;rsquo;s ability to parse the test results(which I didn&amp;rsquo;t appreciate this till it was gone) is amazing. Its so nice not to have to scroll though all your tests to see what broke.&lt;/p&gt;
+
+&lt;p&gt;There are other better publicised benefits in the areas of running tests in parallel but for me these two details have the largest impact on my quality of life.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Should You Move To San Francisco?</title>
       <link>https://davidhampgonsalves.github.io/post/moving-to-sf/</link>
       <pubDate>Mon, 11 Jan 2016 23:09:36 -0500</pubDate>
@@ -478,42 +496,6 @@ concat_osx.sh recording-name.gif
 &lt;p&gt;The ability and convince of grouping processes  logically without the overhead of complex docker container orchestration. For small projects this is great.&lt;/p&gt;
 
 &lt;p&gt;Finally I don&amp;rsquo;t find myself constantly &lt;code&gt;docker exec&lt;/code&gt;&amp;lsquo;ing into a pile of containers because the services can be logically grouped which makes development and maintenance more convenient.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Launchd in 5 Minutes</title>
-      <link>https://davidhampgonsalves.github.io/launchd-in-5-minutes/</link>
-      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidhampgonsalves.github.io/launchd-in-5-minutes/</guid>
-      <description>
-
-&lt;p&gt;Launchd is the official way to schedule a task or run a service on OSX. The provided documentations goal is to turn you into a launchd expert at the cost of your afternoon. These are the 5 minute highlights to get a task running.&lt;/p&gt;
-
-&lt;h2 id=&#34;configure-plist&#34;&gt;Configure Plist&lt;/h2&gt;
-
-&lt;p&gt;You tell launchd to run a task by putting a reverse domain named plist file(&lt;code&gt;com.example.name&lt;/code&gt;) in &lt;code&gt;~/Library/LaunchAgents&lt;/code&gt;, this is probably what you are looking for but if you want it to be global then put it in &lt;code&gt;/Library/LaunchAgents&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;This file needs to have 600 permissions &lt;code&gt;chmod 600 com.example.name.plist&lt;/code&gt; and be owned by &lt;code&gt;root&lt;/code&gt;, &lt;code&gt;chown root com.example.name.plist&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Launchd tasks are run from &lt;code&gt;/&lt;/code&gt; so all paths should be relative from that point.&lt;/p&gt;
-
-&lt;p&gt;Take a look at my &lt;a href=&#34;https://github.com/davidhampgonsalves/markov-cloj/blob/master/markov-tumblr.plist&#34;&gt;plist&lt;/a&gt; as an example. Everything in there is pretty self explanatory. There is also an &lt;a href=&#34;http://launched.zerowidth.com/&#34;&gt;online service&lt;/a&gt; to help you build your own..&lt;/p&gt;
-
-&lt;h2 id=&#34;launchctl&#34;&gt;LaunchCtl&lt;/h2&gt;
-
-&lt;p&gt;The following commands are self explanatory. If you change your plist you need to unload/load it again for the changes to take effect.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;launchctl list | grep com.task.name&lt;/code&gt;
-&lt;code&gt;sudo launchctl unload com.davidhampgonsalves.markov-tumblr.plist&lt;/code&gt;
-&lt;code&gt;sudo launchctl load -w com.davidhampgonsalves.markov-tumblr.plist&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;You can force a run of your task with &lt;code&gt;sudo launchctl start com.markov-tumblr&lt;/code&gt;,&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;debug&#34;&gt;debug&lt;/h2&gt;
-
-&lt;p&gt;The best way I have found is to keep a tail of the syslog running with: &lt;code&gt;tail -F /var/log/system.log&lt;/code&gt;. decipher any error numbers with &lt;code&gt;launchd error &amp;lt;error number&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 </description>
     </item>
     

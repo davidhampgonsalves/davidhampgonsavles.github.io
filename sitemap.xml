@@ -12,6 +12,11 @@
   </url>
   
   <url>
+    <loc>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</loc>
+    <lastmod>2016-04-15T23:12:01-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://davidhampgonsalves.github.io/post/moving-to-sf/</loc>
     <lastmod>2016-01-11T23:09:36-05:00</lastmod>
   </url>
@@ -391,10 +396,6 @@
   </url>
   
   <url>
-    <loc>https://davidhampgonsalves.github.io/post/circleci-vs-travis/</loc>
-  </url>
-  
-  <url>
     <loc>https://davidhampgonsalves.github.io/tags/clojure/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -618,7 +619,7 @@
   
   <url>
     <loc>https://davidhampgonsalves.github.io/post/</loc>
-    <lastmod>2016-01-11T23:09:36-05:00</lastmod>
+    <lastmod>2016-04-15T23:12:01-05:00</lastmod>
     <priority>0</priority>
   </url>
   
