@@ -18,10 +18,10 @@
     <title>
       
       
-         Flash NetConnection for Wowza RMI (2/3) 
+         Cargo Bike in Canada 
       
     </title>
-    <link rel="canonical" href="https://davidhampgonsalves.github.io/flash-netconnection-for-wowza-rmi-2/3/">
+    <link rel="canonical" href="https://davidhampgonsalves.github.io/post/cargo-bike-in-canada/">
 
     <style>
   * {
@@ -397,56 +397,51 @@
 
 
 <section id=content>
-  <h1> Flash NetConnection for Wowza RMI (2/3) </h1>
+  <h1> Cargo Bike in Canada </h1>
 
   <div id=sub-header>
-    August 2011 · 2 minute read
+    January 2017 · 2 minute read
   </div>
 
   <div class="entry-content">
     
 
-<p>This is the second post in a series about injecting JSON based metadata into a live RTP streams using Wowza Media Server, Adobe Flex and OSMF.</p>
+<p>I&rsquo;ve had a <a href="http://www.bakfietsen.com/">Babboe</a> cargo bike in Toronto for a year now, this is a review of that time.</p>
 
-<h2 id="what-we-ve-built">What We&rsquo;ve Built</h2>
+<p><img src="https://davidhampgonsalves.github.io/images/cargo-bike.jpg" class="center plain"/></p>
 
-<p>So far in the previous post we got Wowza setup and created a module which will inject our JSON metadata into our live RTP stream.</p>
+<p>I&rsquo;ve ridden the Babboe every day for a year. Its terrific on the ice and works well in deep snow. Its amazingly useful, and gets my daughter to daycare and back each day. It holds about $200 in groceries plus a child. Its easy to peddle and only takes a few minutes to learn to ride (if you can already ride a bicycle).</p>
 
-<h2 id="what-we-re-building-in-this-post">What We&rsquo;re Building (in this post)</h2>
+<h1 id="good">Good</h1>
 
-<p>In this short post we&rsquo;ll be triggering the injection of metadata from the browser using a flash object created with Flex. Depending on your needs you may choose to call this method in some other way.</p>
+<ul>
+<li>Cargo bikes in general are amazingly useful.</li>
+<li>Weathered the Canadian winters well even being stored outdoors under a cover.</li>
+<li>The wooden box is beautiful, solid and durible.</li>
+<li>Fenders and chainguard keep you clean and comfortable even in bad weather.</li>
+<li>Rainhood keeps passengers dry and warm even in the winter.</li>
+<li>The tires are nice but I switched to thinner(35mm) after they wore out which I prefer.</li>
+</ul>
 
-<h2 id="developing-in-flash-builder">Developing in Flash Builder</h2>
+<h1 id="bad">Bad</h1>
 
-<p>The first thing you&rsquo;ll need is Flash Builder, or in my case a 30 day trial of Flash Builder.</p>
+<ul>
+<li>Although it costs over $3000 the components it uses are low end. A <a href="http://www.larryvsharry.com/">Bullitt</a> is much nicer but at a higher price point.</li>
+<li>It uses drum brakes which are low maintenence but perform poorly (replaced with higher end ones with minimal improvement).</li>
+<li>The peddles are plastic and get slippery in bad weather (replaced).</li>
+<li>My brake cables developed rust and had to be replaced with better quality ones.</li>
+<li>Rain hood attachment is a bit slow to put on but is great if you can leave it on.</li>
+</ul>
 
-<p>Once you have Flash Builder you&rsquo;ll need to create a Flex Project for the web. At the time of writing this I was using Flex 4.5.1.</p>
-
-<h2 id="netconection-rmi">NetConection RMI</h2>
-
-<p>In my case I used the ExternalInterface to allow me to call one of the flash object&rsquo;s methods from Javascript but you can do whatever you want in your broadcaster. The important bit is creating a connection to the Wowza server via a NetConnection and using it to call our Modules(created in last post) inject metadata method. This is shown bellow:</p>
-
-<pre><code class="language-actionscript">NetConnection.defaultObjectEncoding = flash.net.ObjectEncoding.AMF0;
-NetConnection nc = new NetConnection();
-nc.connect(&quot;your server name&quot;);
-
-nc.call(&quot;wowza_module_method_name&quot;, null, &quot;your movie name&quot;, JSONMetadata);
-</code></pre>
-
-<p>This code tells the net connection to use the object encoding of AS 1.0/2.0 which Wowza likes. Then it creates the connection to your server and passes the movie name as a method parameter so that Wowza knows what stream to inject the data into. The JSONMetadata parameter is an Flex Object that contains all the metadata to inject.</p>
-
-<h2 id="closing">Closing</h2>
-
-<p>This post is pretty brief but I&rsquo;m hoping the important bits are all in there. I&rsquo;ll be posting all my code in the next(last) post. Im my code to keep the flash to a minimum I created a flash object which I called using javascript(ExternalInterface) and passed in a javascript object which gets converted to an Action Script object automatically.</p>
+<p><br><br>
+<em>I bought my Babboe from <a href="https://curbsidecycle.com/">Curbside</a> which is a great shop.</em></p>
 
   </div>
 
   <div id=links>
     
-      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/live-metadata-handling-using-osmf-3/3/">&laquo; Live Metadata Handling Using OSMF (3/3)</a>
+      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/post/the-value-of-being-the-best/">&laquo; The Value of Being the Best</a>
     
-    
-      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/injecting-live-metadata-with-wowza-1/3/">Injecting Live Metadata with Wowza (1/3) &raquo;</a>
     
   </div>
 </section>

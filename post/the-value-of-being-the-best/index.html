@@ -18,10 +18,10 @@
     <title>
       
       
-         Flash NetConnection for Wowza RMI (2/3) 
+         The Value of Being the Best 
       
     </title>
-    <link rel="canonical" href="https://davidhampgonsalves.github.io/flash-netconnection-for-wowza-rmi-2/3/">
+    <link rel="canonical" href="https://davidhampgonsalves.github.io/post/the-value-of-being-the-best/">
 
     <style>
   * {
@@ -397,56 +397,33 @@
 
 
 <section id=content>
-  <h1> Flash NetConnection for Wowza RMI (2/3) </h1>
+  <h1> The Value of Being the Best </h1>
 
   <div id=sub-header>
-    August 2011 · 2 minute read
+    January 2017 · 1 minute read
   </div>
 
   <div class="entry-content">
-    
+    <p>Training data shapes our current iterations of AI and as they get more competitive so will the search for the best datasets.</p>
 
-<p>This is the second post in a series about injecting JSON based metadata into a live RTP streams using Wowza Media Server, Adobe Flex and OSMF.</p>
+<p>While its easy to use training data from many individuals(driving habits for example) which might average out to be the best overall it will be hard to optomize for specific attributes(gas milage, passenger comfort).</p>
 
-<h2 id="what-we-ve-built">What We&rsquo;ve Built</h2>
+<p>I think this will create new incentives for being the best at mundane activities.</p>
 
-<p>So far in the previous post we got Wowza setup and created a module which will inject our JSON metadata into our live RTP stream.</p>
+<p>For example it would be ideal if your atonomous car drove like the highest rated, safest, most full efficent uber/lift driver.</p>
 
-<h2 id="what-we-re-building-in-this-post">What We&rsquo;re Building (in this post)</h2>
+<p>A team dedicated to the perfection of a routine task solely for the sake of generating a dataset that could then be used to train a superior AI for a given usecase could become the next sport like pursuit.</p>
 
-<p>In this short post we&rsquo;ll be triggering the injection of metadata from the browser using a flash object created with Flex. Depending on your needs you may choose to call this method in some other way.</p>
-
-<h2 id="developing-in-flash-builder">Developing in Flash Builder</h2>
-
-<p>The first thing you&rsquo;ll need is Flash Builder, or in my case a 30 day trial of Flash Builder.</p>
-
-<p>Once you have Flash Builder you&rsquo;ll need to create a Flex Project for the web. At the time of writing this I was using Flex 4.5.1.</p>
-
-<h2 id="netconection-rmi">NetConection RMI</h2>
-
-<p>In my case I used the ExternalInterface to allow me to call one of the flash object&rsquo;s methods from Javascript but you can do whatever you want in your broadcaster. The important bit is creating a connection to the Wowza server via a NetConnection and using it to call our Modules(created in last post) inject metadata method. This is shown bellow:</p>
-
-<pre><code class="language-actionscript">NetConnection.defaultObjectEncoding = flash.net.ObjectEncoding.AMF0;
-NetConnection nc = new NetConnection();
-nc.connect(&quot;your server name&quot;);
-
-nc.call(&quot;wowza_module_method_name&quot;, null, &quot;your movie name&quot;, JSONMetadata);
-</code></pre>
-
-<p>This code tells the net connection to use the object encoding of AS 1.0/2.0 which Wowza likes. Then it creates the connection to your server and passes the movie name as a method parameter so that Wowza knows what stream to inject the data into. The JSONMetadata parameter is an Flex Object that contains all the metadata to inject.</p>
-
-<h2 id="closing">Closing</h2>
-
-<p>This post is pretty brief but I&rsquo;m hoping the important bits are all in there. I&rsquo;ll be posting all my code in the next(last) post. Im my code to keep the flash to a minimum I created a flash object which I called using javascript(ExternalInterface) and passed in a javascript object which gets converted to an Action Script object automatically.</p>
+<p>Rather then an artists artwork being the final product they sell, the training data could be auctioned off and the artwork itself could be generated as needed.</p>
 
   </div>
 
   <div id=links>
     
-      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/live-metadata-handling-using-osmf-3/3/">&laquo; Live Metadata Handling Using OSMF (3/3)</a>
+      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/post/circleci-vs-travis/">&laquo; CircleCI vs Travis</a>
     
     
-      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/injecting-live-metadata-with-wowza-1/3/">Injecting Live Metadata with Wowza (1/3) &raquo;</a>
+      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/post/cargo-bike-in-canada/">Cargo Bike in Canada &raquo;</a>
     
   </div>
 </section>

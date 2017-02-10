@@ -6,8 +6,68 @@
     <description>Recent content in Posts on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 15 Apr 2016 23:12:01 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 26 Jan 2017 10:17:20 -0800</lastBuildDate>
     <atom:link href="https://davidhampgonsalves.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cargo Bike in Canada</title>
+      <link>https://davidhampgonsalves.github.io/post/cargo-bike-in-canada/</link>
+      <pubDate>Thu, 26 Jan 2017 10:17:20 -0800</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/post/cargo-bike-in-canada/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;ve had a &lt;a href=&#34;http://www.bakfietsen.com/&#34;&gt;Babboe&lt;/a&gt; cargo bike in Toronto for a year now, this is a review of that time.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/cargo-bike.jpg&#34; class=&#34;center plain&#34;/&gt;&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve ridden the Babboe every day for a year. Its terrific on the ice and works well in deep snow. Its amazingly useful, and gets my daughter to daycare and back each day. It holds about $200 in groceries plus a child. Its easy to peddle and only takes a few minutes to learn to ride (if you can already ride a bicycle).&lt;/p&gt;
+
+&lt;h1 id=&#34;good&#34;&gt;Good&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cargo bikes in general are amazingly useful.&lt;/li&gt;
+&lt;li&gt;Weathered the Canadian winters well even being stored outdoors under a cover.&lt;/li&gt;
+&lt;li&gt;The wooden box is beautiful, solid and durible.&lt;/li&gt;
+&lt;li&gt;Fenders and chainguard keep you clean and comfortable even in bad weather.&lt;/li&gt;
+&lt;li&gt;Rainhood keeps passengers dry and warm even in the winter.&lt;/li&gt;
+&lt;li&gt;The tires are nice but I switched to thinner(35mm) after they wore out which I prefer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;bad&#34;&gt;Bad&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Although it costs over $3000 the components it uses are low end. A &lt;a href=&#34;http://www.larryvsharry.com/&#34;&gt;Bullitt&lt;/a&gt; is much nicer but at a higher price point.&lt;/li&gt;
+&lt;li&gt;It uses drum brakes which are low maintenence but perform poorly (replaced with higher end ones with minimal improvement).&lt;/li&gt;
+&lt;li&gt;The peddles are plastic and get slippery in bad weather (replaced).&lt;/li&gt;
+&lt;li&gt;My brake cables developed rust and had to be replaced with better quality ones.&lt;/li&gt;
+&lt;li&gt;Rain hood attachment is a bit slow to put on but is great if you can leave it on.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;
+&lt;em&gt;I bought my Babboe from &lt;a href=&#34;https://curbsidecycle.com/&#34;&gt;Curbside&lt;/a&gt; which is a great shop.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Value of Being the Best</title>
+      <link>https://davidhampgonsalves.github.io/post/the-value-of-being-the-best/</link>
+      <pubDate>Thu, 19 Jan 2017 14:12:19 -0500</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/post/the-value-of-being-the-best/</guid>
+      <description>&lt;p&gt;Training data shapes our current iterations of AI and as they get more competitive so will the search for the best datasets.&lt;/p&gt;
+
+&lt;p&gt;While its easy to use training data from many individuals(driving habits for example) which might average out to be the best overall it will be hard to optomize for specific attributes(gas milage, passenger comfort).&lt;/p&gt;
+
+&lt;p&gt;I think this will create new incentives for being the best at mundane activities.&lt;/p&gt;
+
+&lt;p&gt;For example it would be ideal if your atonomous car drove like the highest rated, safest, most full efficent uber/lift driver.&lt;/p&gt;
+
+&lt;p&gt;A team dedicated to the perfection of a routine task solely for the sake of generating a dataset that could then be used to train a superior AI for a given usecase could become the next sport like pursuit.&lt;/p&gt;
+
+&lt;p&gt;Rather then an artists artwork being the final product they sell, the training data could be auctioned off and the artwork itself could be generated as needed.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>CircleCI vs Travis</title>
