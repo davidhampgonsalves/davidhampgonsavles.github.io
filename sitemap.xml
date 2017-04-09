@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://davidhampgonsalves.github.io/post/gif-twist/</loc>
+    <lastmod>2017-04-09T10:31:31-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://davidhampgonsalves.github.io/post/cargo-bike-in-canada/</loc>
     <lastmod>2017-01-26T10:17:20-08:00</lastmod>
   </url>
@@ -425,7 +430,7 @@
   
   <url>
     <loc>https://davidhampgonsalves.github.io/</loc>
-    <lastmod>2017-01-26T10:17:20-08:00</lastmod>
+    <lastmod>2017-04-09T10:31:31-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -623,7 +628,7 @@
   
   <url>
     <loc>https://davidhampgonsalves.github.io/post/</loc>
-    <lastmod>2017-01-26T10:17:20-08:00</lastmod>
+    <lastmod>2017-04-09T10:31:31-04:00</lastmod>
     <priority>0</priority>
   </url>
   

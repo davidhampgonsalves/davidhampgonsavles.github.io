@@ -6,8 +6,25 @@
     <description>Recent content on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 26 Jan 2017 10:17:20 -0800</lastBuildDate>
+    <lastBuildDate>Sun, 09 Apr 2017 10:31:31 -0400</lastBuildDate>
     <atom:link href="https://davidhampgonsalves.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Gif Twist</title>
+      <link>https://davidhampgonsalves.github.io/post/gif-twist/</link>
+      <pubDate>Sun, 09 Apr 2017 10:31:31 -0400</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/post/gif-twist/</guid>
+      <description>
+
+&lt;p&gt;I saw a interesting timelapse animation on &lt;a href=&#34;https://www.reddit.com/r/gifs/comments/4xdfa9/timescape_halls_harbour_nova_scotia/&#34;&gt;Reddit&lt;/a&gt; and created &lt;a href=&#34;https://github.com/davidhampgonsalves/Gif-Twist&#34;&gt;Gif-Twist&lt;/a&gt; which automates the technique.&lt;/p&gt;
+
+&lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/davidhampgonsalves/gif-twist/raw/master/examples/m&amp;m.gif&#34; style=&#34;width\: 800px&#34; class=&#34;center plain&#34;/&gt;
+&lt;img src=&#34;https://github.com/davidhampgonsalves/gif-twist/raw/master/examples/dubai.gif&#34; style=&#34;width\: 800px&#34; class=&#34;center plain&#34;/&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cargo Bike in Canada</title>
@@ -474,46 +491,6 @@ console.log(foo(5));
 &lt;p&gt;&lt;br&gt;
 &lt;br&gt;
 &lt;em&gt;I learned about WebRTC in the context of &lt;a href=&#34;https://github.com/feross/webtorrent&#34;&gt;WebTorrent&lt;/a&gt; which is an amazing project, you should check it out.&lt;/em&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Terminal GIFs on OSX</title>
-      <link>https://davidhampgonsalves.github.io/terminal-gifs-on-osx/</link>
-      <pubDate>Tue, 07 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidhampgonsalves.github.io/terminal-gifs-on-osx/</guid>
-      <description>
-
-&lt;p&gt;Using Gifs for terminal explanations and usages aren&amp;rsquo;t new and exciting anymore but they are still useful. This is how to create them quickly on OSX.&lt;/p&gt;
-
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-
-&lt;p&gt;The tool we will use to capture our gif &lt;a href=&#34;https://github.com/icholy/ttygif&#34;&gt;ttygif&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;brew install imagemagick ttyrec
-brew install https\://raw.githubusercontent.com/icholy/ttygif/master/ttygif.rb
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;gif&#34;&gt;Gif&lt;/h2&gt;
-
-&lt;p&gt;The process of creating the gif is:
-* Run &lt;code&gt;ttyrec&lt;/code&gt; which records your terminal session as series of &lt;code&gt;png&lt;/code&gt; files.
-* Run &lt;code&gt;ttygif&lt;/code&gt; to convert the &lt;code&gt;png&lt;/code&gt; files to small &lt;code&gt;gifs&lt;/code&gt;.
-* Concat the &lt;code&gt;gif&lt;/code&gt; files using the concat script.
-* Edit the final &lt;code&gt;gif&lt;/code&gt; using whatever tool or online site you like.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#creates series pngs(type exit to finish recording)
-ttyrec recording-name
-#convert png -&amp;gt; gif(-f disables cropping)
-ttygif recording-name -f
-#concat gif parts into final product
-concat_osx.sh recording-name.gif
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;example&#34;&gt;Example&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/terminal-gif-example.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
