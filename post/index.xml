@@ -17,12 +17,14 @@
       <guid>https://davidhampgonsalves.github.io/post/gif-twist/</guid>
       <description>
 
-&lt;p&gt;I saw a interesting timelapse animation on &lt;a href=&#34;https://www.reddit.com/r/gifs/comments/4xdfa9/timescape_halls_harbour_nova_scotia/&#34;&gt;Reddit&lt;/a&gt; and created &lt;a href=&#34;https://github.com/davidhampgonsalves/Gif-Twist&#34;&gt;Gif-Twist&lt;/a&gt; which automates the technique.&lt;/p&gt;
+&lt;p&gt;I saw a interesting timelapse animation on &lt;a href=&#34;https://www.reddit.com/r/gifs/comments/4xdfa9/timescape_halls_harbour_nova_scotia/&#34;&gt;Reddit&lt;/a&gt; and created &lt;a href=&#34;https://github.com/davidhampgonsalves/Gif-Twist&#34;&gt;Gif-Twist&lt;/a&gt; to automate the long manual processs (~10 hours).&lt;/p&gt;
+
+&lt;p&gt;Gif-Twist combines all the images of a timelapse into each output frame, displaying slices of each radiating around a central point.&lt;/p&gt;
 
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://github.com/davidhampgonsalves/gif-twist/raw/master/examples/m&amp;m.gif&#34; style=&#34;width\: 800px&#34; class=&#34;center plain&#34;/&gt;
-&lt;img src=&#34;https://github.com/davidhampgonsalves/gif-twist/raw/master/examples/dubai.gif&#34; style=&#34;width\: 800px&#34; class=&#34;center plain&#34;/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/davidhampgonsalves/gif-twist/raw/master/examples/dubai.gif&#34; style=&#34;width: 100%&#34; class=&#34;center plain&#34;/&gt;
+&lt;img src=&#34;https://github.com/davidhampgonsalves/gif-twist/raw/master/examples/m&amp;m.gif&#34; style=&#34;width: 100%&#34; class=&#34;center plain&#34;/&gt;&lt;/p&gt;
 </description>
     </item>
     
