@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rss on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/rss/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/rss/</link>
     <description>Recent content in Rss on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Mar 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>RSS Luddite</title>
@@ -14,19 +17,10 @@
       <pubDate>Tue, 26 Mar 2013 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/rss-luddite/</guid>
-      <description>&lt;p&gt;With Google Reader closing its doors the &lt;em&gt;&amp;ldquo;Is RSS Dead?&amp;rdquo;&lt;/em&gt; debate has been revived.&lt;/p&gt;
-
-&lt;p&gt;As someone who loves RSS(enough to write a &lt;a href=&#34;https://chrome.google.com/webstore/detail/foxish-live-rss/jpgagcapnkccceppgljfpoadahaopjdb?hl=en&#34;&gt;Chrome Extension&lt;/a&gt;) but never liked Google Reader I&amp;rsquo;d like my turn on the soapbox.&lt;/p&gt;
-
-&lt;p&gt;Since my first usage of Firefox(ver 1.5) I have always loved its live bookmarks feature(but not the read/unread indicators).&lt;/p&gt;
-
-&lt;p&gt;RSS readers shouldn&amp;rsquo;t be email clones. They should expect us to ignore items and act as a consistent, omnipresent and minimal interface to the internet.&lt;/p&gt;
-
-&lt;p&gt;They shouldn&amp;rsquo;t be websites since the click and load times are too great. They should be airy and lightweight and let us fill our fleeting free cycles.&lt;/p&gt;
-
-&lt;p&gt;I don&amp;rsquo;t think RSS is dead just misunderstood.
-Long live RSS&lt;/p&gt;
-</description>
+      <description>With Google Reader closing its doors the &amp;ldquo;Is RSS Dead?&amp;rdquo; debate has been revived.
+As someone who loves RSS(enough to write a Chrome Extension) but never liked Google Reader I&amp;rsquo;d like my turn on the soapbox.
+Since my first usage of Firefox(ver 1.5) I have always loved its live bookmarks feature(but not the read/unread indicators).
+RSS readers shouldn&amp;rsquo;t be email clones. They should expect us to ignore items and act as a consistent, omnipresent and minimal interface to the internet.</description>
     </item>
     
   </channel>

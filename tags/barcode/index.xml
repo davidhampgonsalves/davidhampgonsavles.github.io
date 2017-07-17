@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Barcode on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/barcode/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/barcode/</link>
     <description>Recent content in Barcode on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/barcode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Nov 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/barcode/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>The Magic of UPC/EAN Barcodes</title>
@@ -14,60 +17,10 @@
       <pubDate>Mon, 12 Nov 2012 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/the-magic-of-upc/ean-barcodes/</guid>
-      <description>
-
-&lt;p&gt;Lately I&amp;rsquo;ve been working a mobile app called Ethical Barcode that scans product barcodes and determines if the related brand is worth supporting/avoiding.&lt;/p&gt;
-
-&lt;p&gt;As such of this I&amp;rsquo;ve been getting pretty familiar with the pitfalls and issues surrounding barcodes and product identification and I thought I&amp;rsquo;d share some of details that were tricky to find/figure out.&lt;/p&gt;
-
-&lt;p&gt;Before we get into the hurdles though, I&amp;rsquo;ll cover some barcode basics.&lt;/p&gt;
-
-&lt;p&gt;Barcode Types(that matter)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;UPC-A: 12 digits, first 6-10 represent the manufacture.&lt;/li&gt;
-&lt;li&gt;UPC-E: 6 digits, used when package size does not permit UPC-A.&lt;/li&gt;
-&lt;li&gt;EAN-13: 13 digits, first 7-11 represent the manufacture(EAN is a superset of UPC-A).&lt;/li&gt;
-&lt;li&gt;EAN-8: 8 digits.&lt;/li&gt;
-&lt;li&gt;EAN-5: 5 digits, never seen one in North America so I don&amp;rsquo;t support them.&lt;/li&gt;
-&lt;li&gt;EAN-2: 2 digits, never seen one in North America so I don&amp;rsquo;t support them.&lt;/li&gt;
-&lt;li&gt;GTIN: There is a variant of GTIN codes for each of the above types, but I&amp;rsquo;m not going to get into that since everything usually focuses on UPC or EAN.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;While there are quite a few formats of barcodes in North America we usually see UPC-A and UPC-B barcodes and sometimes EAN which is what I cover. You can simplify your storage/handling of these codes by converting each format to EAN.&lt;/p&gt;
-
-&lt;h2 id=&#34;conversion&#34;&gt;Conversion&lt;/h2&gt;
-
-&lt;p&gt;UPC-A can be converted to EAN-13 by pre-pending a zero making the 12 digit UPC code a 13 digit EAN. UPC-B can be converted to UPC-A as described on the &lt;a href=&#34;http://en.wikipedia.org/wiki/List_of_GS1_country_codes&#34;&gt;wikipedia page&lt;/a&gt; or you can take a look at my sample code. EAN-8 cannot be converted to EAN-13 so you can either throw it in short and check for that condition if its important or avoid them.&lt;/p&gt;
-
-&lt;h2 id=&#34;whats-in-a-barcode&#34;&gt;Whats in a Barcode&lt;/h2&gt;
-
-&lt;p&gt;Barcodes contain information that can be pretty useful.&lt;/p&gt;
-
-&lt;h3 id=&#34;first-3-digits&#34;&gt;First 3 Digits&lt;/h3&gt;
-
-&lt;p&gt;A code which is controlled by GS1 that determines where the code was registered or the type of product. As always, take a look at the wikipedia page. Watch out for barcodes that use the 200–299 prefix as it is meant for barcodes that are used for products that are only sold at a specific store. This means there may be duplicates if you are targeting more then one store. Also there is a code(050-059) for coupons and a code for drugs(030–039) which you may want need to handle differently.&lt;/p&gt;
-
-&lt;h3 id=&#34;digits-4-11&#34;&gt;Digits 4-11&lt;/h3&gt;
-
-&lt;p&gt;Represent the company number. This number has a variable length which is decided based on the number of products a company produces. A shorter company number means more digits to represent products.&lt;/p&gt;
-
-&lt;h3 id=&#34;digits-7-12&#34;&gt;Digits 7-12&lt;/h3&gt;
-
-&lt;p&gt;A number representing the item itself. Digit 13A checksum which can be used to detect all single digit errors.&lt;/p&gt;
-
-&lt;h2 id=&#34;pitfalls&#34;&gt;Pitfalls&lt;/h2&gt;
-
-&lt;p&gt;So barcodes seem like pretty handy tools to help identify products in our world but its not quite so simple.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;First of all&lt;/em&gt;, the company number isn&amp;rsquo;t as cut and dry as it sounds. This is because some companies decided to sell subsets of their barcodes to other smaller companies&amp;hellip; which sucks because now it can never really be relied upon.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Secondly&lt;/em&gt;, its really hard to find out what companies are associated with which company numbers because the GS1(in my experience) doesn&amp;rsquo;t share this information(I asked). They do have a search option on their site but again in my experience it never gives any real data back.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Thirdly&lt;/em&gt;, many stores don&amp;rsquo;t use real barcodes or if they do they use the 200-299 GS1 code range. This is usually in cases where the products are only sold at that store or chain.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Lastly&lt;/em&gt;, there isn&amp;rsquo;t a really good product database that you can link to based on UPC/EAN. I&amp;rsquo;ll cover the current options in this next post.&lt;/p&gt;
-</description>
+      <description>Lately I&amp;rsquo;ve been working a mobile app called Ethical Barcode that scans product barcodes and determines if the related brand is worth supporting/avoiding.
+As such of this I&amp;rsquo;ve been getting pretty familiar with the pitfalls and issues surrounding barcodes and product identification and I thought I&amp;rsquo;d share some of details that were tricky to find/figure out.
+Before we get into the hurdles though, I&amp;rsquo;ll cover some barcode basics.
+Barcode Types(that matter)</description>
     </item>
     
   </channel>

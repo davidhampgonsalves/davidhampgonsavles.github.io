@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Json on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/json/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/json/</link>
     <description>Recent content in Json on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Nov 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Compressing JSON into a Brittle Lightweight String</title>
@@ -14,73 +17,7 @@
       <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/compressing-json-into-a-brittle-lightweight-string/</guid>
-      <description>
-
-&lt;p&gt;Client side single page apps tend to throw a lot of JSON data across the internet. These are some techniques I used on &lt;a href=&#34;http://crimeheatmap.ca&#34;&gt;cimrheatmap.ca&lt;/a&gt; to compress my Geo/Time data by about &lt;strong&gt;90%&lt;/strong&gt; and avoided the overhead of gzipping the page. Be warned most of this was just for fun and is a silly idea because of the disadvantages listed bellow.
-&lt;code&gt;{lat\:45.123, lng\:-63.123, type\: &#39;Assult&#39;, timestamp\: &#39;1383837388112&#39;}&lt;/code&gt; vs. &lt;code&gt;&#39;3   0  &#39;&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;maps-vs-arrays&#34;&gt;Maps vs. Arrays&lt;/h2&gt;
-
-&lt;p&gt;Standard JSON compression usually focuses on flatening the maps that are normally used to represent objects. This removes all the duplciate keys.
-* There are some nice plugins to help, like &lt;a href=&#34;https://github.com/sapienlab/jsonpack&#34;&gt;json pack&lt;/a&gt;.
-In our case we have a fixed number of items in our map so we can convert it to an array and toss our keys.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;[45.123, -63.123, &#39;Assult&#39;, &#39;1383837388112&#39;]&lt;/code&gt;
-This resulted in a savings of &lt;strong&gt;%36&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;type-identifiers-to-digits&#34;&gt;Type Identifiers to Digits&lt;/h2&gt;
-
-&lt;p&gt;Type identifiers can also result in some easy savings if you have a higher item count than types.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;[45.123, -63.123, 0, &#39;1383837388112&#39;]&lt;/code&gt;
-Replacing &amp;lsquo;Assult&amp;rsquo; with 0 results in a savings of &lt;strong&gt;%16&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;rounded-timestamps-to-date-parts&#34;&gt;Rounded Timestamps to Date Parts&lt;/h2&gt;
-
-&lt;p&gt;In many cases we don&amp;rsquo;t require timestamps to be accurate to the millisecond. In my case to the day was acceptable and also all my data fell within the same year. This allowed to be store the year seperately and only assoicate the month and day with the Geo/Time item.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;[45.123, -63.123, 0, 8, 7]&lt;/code&gt;
-This resulted in a savings of &lt;strong&gt;%18&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;repeating-digits&#34;&gt;Repeating Digits&lt;/h2&gt;
-
-&lt;p&gt;Sometimes data allows us to filter out fixed digits. In my case my Latitude is always between 40-50 and my longitude is between -60-(-60). This means I can extracting these digits out(and the decimal) and replace them on the client side.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;[5123, 3123, 0, 8, 7]&lt;/code&gt;
-This resulted in a savings of &lt;strong&gt;%8&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;arrays-to-fixed-length-strings&#34;&gt;Arrays to Fixed Length Strings&lt;/h2&gt;
-
-&lt;p&gt;Arrays are lighter then Maps but they still have the overhead of 3 characters plus one additional character for each element they contain. By converting my data to a fixed length string I can avoid all that.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;&#39;5123312300807&#39;&lt;/code&gt;
-This resulted in a savings of &lt;strong&gt;%35&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;alternate-encodings&#34;&gt;Alternate Encodings&lt;/h2&gt;
-
-&lt;p&gt;So we are getting pretty small here but we can now take advantage of only having digits by playing with our encoding.&lt;/p&gt;
-
-&lt;p&gt;Wasting space representing each character in UTF-8(8 bits per character). Since those 8-buts can represent 255 possibilities we can represent 2 digits for each character without getting fancy by using a base 100 encoding.&lt;/p&gt;
-
-&lt;p&gt;So current our digits are being represented using UFT-9 encoding. if we only use the first 255 characters of UTF-8 only a single byte will be sent per character. We can use  100 of those 255 options to represent 2 digits with a single character by converting our numbers to their UTF-8 charater counterparts.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;String.fromCharCode(65) === &#39;A&#39;;
-&#39;A&#39;.getCharCodeAt(0) === &#39;65&#39;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;&#39;3   0  &#39;&lt;/code&gt;
-This resulted in a savings of &lt;strong&gt;%40&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;disadvantages-of-compression&#34;&gt;Disadvantages of Compression&lt;/h2&gt;
-
-&lt;p&gt;So for the advantage of reducing our data payload by 90% we suffered in three ways.&lt;/p&gt;
-
-&lt;p&gt;The first is the you have to write some code to transform your data into a usable format on the client. &lt;em&gt;In my case the code was 346 characters long after minification and executing it for 1500 records on chrome takes under 10 milliseconds.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The second is that we have thrown away all the safety that comes from structured data. If we have a bug that throws anything off(even by a single character) we will be left with scrambled, unusable data from that error onwards.&lt;/p&gt;
-
-&lt;p&gt;The third is that our data is now quite unreadable which could make debugging harder, that being said by adding 65 to each character code you can at least get into the range of displayable characters.&lt;/p&gt;
-</description>
+      <description>Client side single page apps tend to throw a lot of JSON data across the internet. These are some techniques I used on cimrheatmap.ca to compress my Geo/Time data by about 90% and avoided the overhead of gzipping the page. Be warned most of this was just for fun and is a silly idea because of the disadvantages listed bellow. {lat\:45.123, lng\:-63.123, type\: &#39;Assult&#39;, timestamp\: &#39;1383837388112&#39;} vs. &#39;3 0 &#39;</description>
     </item>
     
   </channel>

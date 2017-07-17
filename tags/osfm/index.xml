@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Osfm on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/osfm/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/osfm/</link>
     <description>Recent content in Osfm on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/osfm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Aug 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/osfm/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Live Metadata Handling Using OSMF (3/3)</title>
@@ -14,64 +17,8 @@
       <pubDate>Mon, 01 Aug 2011 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/live-metadata-handling-using-osmf-3/3/</guid>
-      <description>
-
-&lt;p&gt;This is the third post in a series about injecting JSON based metadata into a live RTP streams using Wowza Media Server, Adobe Flex and OSMF.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-we-ve-built&#34;&gt;What We&amp;rsquo;ve Built&lt;/h2&gt;
-
-&lt;p&gt;So far in the previous posts(1,2) we setup Wowza and created a module which will inject our JSON metadata into our live RTP stream. Then we created a flash object to trigger the event injection with our metadata from the browser.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-we-re-building-in-this-post&#34;&gt;What We&amp;rsquo;re Building (in this post)&lt;/h2&gt;
-
-&lt;p&gt;In this post we&amp;rsquo;ll be reacting to the metadata event to preform related actions on the streaming clients browser. We&amp;rsquo;ll keep the flash to a minimum by converting the metadata action script object to JSON and passing it off to our javascript handler. In this way we can add or modify the reactions associated with the metadata without having to rebuild or modify our player.&lt;/p&gt;
-
-&lt;h2 id=&#34;working-with-osmf&#34;&gt;Working with OSMF&lt;/h2&gt;
-
-&lt;p&gt;Since by now you should already have flash builder installed you&amp;rsquo;ll now just need to get the OSMF libraries from osmf.org. At the time of writing I was using version 1.5.&lt;/p&gt;
-
-&lt;p&gt;Once you have the library you just need to add the OSMF.swc to your projects build path. This is done by right clicking your project and selecting &amp;ldquo;properties&amp;rdquo;. Then select &amp;ldquo;build path&amp;rdquo; and add the library.&lt;/p&gt;
-
-&lt;p&gt;Depending if you want to convert your data to JSON and pass it off to some javascript you can also grab the as3corelib which will help with the Action Script object to JSON conversion.&lt;/p&gt;
-
-&lt;h2 id=&#34;adding-metadata-handling-to-osmf-s-lightweightvideoelement&#34;&gt;Adding Metadata Handling to OSMF&amp;rsquo;s LightweightVideoElement&lt;/h2&gt;
-
-&lt;p&gt;To handle our event we need to use OSMF NetClient. Our players NetClient wont be ready until the player is ready to play so we set up our handler by overriding the processReadyState method.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-actionscript&#34;&gt;override protected function processReadyState()\:void {
-    super.processReadyState();
-    client.addHandler(&amp;quot;question&amp;quot;, onMetaData);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That&amp;rsquo;s really the only change we need to make. Our onMetadata will be called when metadata is received and because its embedded in the media stream it will be in sync.&lt;/p&gt;
-
-&lt;p&gt;To actually do something with the metadata you can convert it to JSON like bellow and call an external javascript function of your choosing.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;public function onMetadata(data\:Object)\:void {
-	//convert the question to json and call javascript handler
-	var dataToJSON\:Object = new Object();
-
-	dataToJSON.text = data.text;
-	dataToJSON.type = data.type;
-	dataToJSON.duration = data.duration;
-	dataToJSON.attributes = data.attributes;
-
-	var dataJSON\:String = JSON.encode(dataToJSON);
-	ExternalInterface.call(&amp;quot;onData&amp;quot;, dataJSON);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;closing&#34;&gt;Closing&lt;/h2&gt;
-
-&lt;p&gt;Over these last three posts we&amp;rsquo;ve build a system that allows us to stream a live event and in (near) real time inject data of our choosing which will then be injected into our RTP stream by Wowza and be displayed in the users browser.&lt;/p&gt;
-
-&lt;p&gt;This is a pretty useful technique and so far I&amp;rsquo;ve only see it used to trigger next slide events in presentation software. The sky is the limit with this one I think.&lt;/p&gt;
-
-&lt;h2 id=&#34;code-finally&#34;&gt;Code (finally)&lt;/h2&gt;
-
-&lt;p&gt;The code is safely tucked away in &lt;a href=&#34;https://github.com/davidhampgonsalves/Wowza-Metadata-Injection-Demo&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>This is the third post in a series about injecting JSON based metadata into a live RTP streams using Wowza Media Server, Adobe Flex and OSMF.
+What We&amp;rsquo;ve Built So far in the previous posts(1,2) we setup Wowza and created a module which will inject our JSON metadata into our live RTP stream. Then we created a flash object to trigger the event injection with our metadata from the browser.</description>
     </item>
     
   </channel>

@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Halifax on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/halifax/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/halifax/</link>
     <description>Recent content in Halifax on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/halifax/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Aug 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/halifax/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Halifax Bus GPS Data</title>
@@ -14,14 +17,9 @@
       <pubDate>Tue, 20 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/halifax-bus-gps-data/</guid>
-      <description>&lt;p&gt;There are so many Haligonians that want a GPS based Go Time bus tracker. The secret is that the apps and data exist, but that no one ever seems to find them.&lt;/p&gt;
-
-&lt;p&gt;The other day that changed for me and I found &lt;em&gt;(via wikipedia)&lt;/em&gt; an old broken government webpage that when you looked at the pages source contained a link to: &lt;a href=&#34;http://eservices.halifax.ca/GoTime/departures_mobile.jsf?goTime=7094&#34;&gt;mobile departures&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;When combined with the recent bus information released as part of &lt;a href=&#34;https://www.halifaxopendata.ca/&#34;&gt;Halifax&amp;rsquo;s Open Data Project&lt;/a&gt; you have everything you need to build a great Bus App.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Before you run off to build the best bus tracking app ever, keep in mind that 2 already exist: &lt;a href=&#34;http://www.transit360app.com/&#34;&gt;transit 360&lt;/a&gt; and &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.busTrack&amp;amp;hl=en&#34;&gt;Halifax Bus&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-</description>
+      <description>There are so many Haligonians that want a GPS based Go Time bus tracker. The secret is that the apps and data exist, but that no one ever seems to find them.
+The other day that changed for me and I found (via wikipedia) an old broken government webpage that when you looked at the pages source contained a link to: mobile departures.
+When combined with the recent bus information released as part of Halifax&amp;rsquo;s Open Data Project you have everything you need to build a great Bus App.</description>
     </item>
     
   </channel>

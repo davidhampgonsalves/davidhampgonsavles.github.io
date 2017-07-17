@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Api on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/api/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/api/</link>
     <description>Recent content in Api on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Nov 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>UPC/EAN Product Databases/API&#39;s</title>
@@ -14,136 +17,7 @@
       <pubDate>Wed, 07 Nov 2012 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/upc/ean-product-databases/apis/</guid>
-      <description>
-
-&lt;p&gt;Converting a barcode into useful, descriptive information is harder then you would expect. Or rather its difficult to do with any reliability and accuracy. There are a few good API&amp;rsquo;s that I&amp;rsquo;ve been using or looking into that I&amp;rsquo;ll cover here.
-The API&amp;rsquo;s
-Each service offers different information so you need to nail down your requirements before you read further. For my needs I really just need Barcode -&amp;gt; Company but I&amp;rsquo;ll try to add details that fall outside of that where I can remember them.&lt;/p&gt;
-
-&lt;h2 id=&#34;google-shopping-api&#34;&gt;Google Shopping API&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://developers.google.com/shopping-search/&#34;&gt;Google Shopping API&lt;/a&gt; is a good starting point since it covers a wide array of products.&lt;/p&gt;
-
-&lt;h3 id=&#34;features&#34;&gt;features&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Very descriptive.&lt;/li&gt;
-&lt;li&gt;Dead easy to consume and you can customize your responses.&lt;/li&gt;
-&lt;li&gt;Great documentation.&lt;/li&gt;
-&lt;li&gt;Reasonable usage quotas.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;milo&#34;&gt;Milo&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://www.x.com/developers/ebay/products/milo-open-api&#34;&gt;Milo Open API&lt;/a&gt; is an Ebay product(or at least they bought it). It also has a wide product range and is a great service.&lt;/p&gt;
-
-&lt;h3 id=&#34;features-1&#34;&gt;features&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Tons of available attributes.&lt;/li&gt;
-&lt;li&gt;Dead easy to consume and you can customize your responses(supports JSON).&lt;/li&gt;
-&lt;li&gt;Great documentation(once you find the site).&lt;/li&gt;
-&lt;li&gt;Reasonable usage quotas.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;amazon-product-advertising-api&#34;&gt;Amazon Product Advertising API&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html&#34;&gt;Amazon Product Advertising API&lt;/a&gt; seems to be the defacto standard in UPC lookup game. It also has a wide product range and is a great service. You do have to navigate very detailed XML responses to find the good bits of data you actually care about but other then that its great.&lt;/p&gt;
-
-&lt;h3 id=&#34;features-2&#34;&gt;features&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Very descriptive.&lt;/li&gt;
-&lt;li&gt;Great documentation(once you find it).&lt;/li&gt;
-&lt;li&gt;Reasonable usage quotas.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;factual-product-api&#34;&gt;Factual Product API&lt;/h2&gt;
-
-&lt;p&gt;The Factual Product API is pretty new to me but so far I like what I see. They have a ton of data and some cool attributes(ie nutrition, ingrediants). Their quota is only 500 lookups a day but thats enough to get started.&lt;/p&gt;
-
-&lt;h3 id=&#34;features-3&#34;&gt;features&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Clean, simple and straight forward(Supports JSON).&lt;/li&gt;
-&lt;li&gt;Great documentation.&lt;/li&gt;
-&lt;li&gt;Nutritional data.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;eandata&#34;&gt;eanData&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&#34;http://eandata.com/&#34;&gt;EanData API&lt;/a&gt; is amazing. I really want to emphasize that since I almost didn&amp;rsquo;t even bother with it. The site isn&amp;rsquo;t pretty but the data is great and the developer that supports it seems like a good guy.&lt;/p&gt;
-
-&lt;h3 id=&#34;features-4&#34;&gt;features&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Tons of data.&lt;/li&gt;
-&lt;li&gt;Reasonable usage quotas.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;upcdatabase-com&#34;&gt;upcDatabase.com&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&#34;http://www.upcdatabase.com/&#34;&gt;UPC Database&lt;/a&gt; is probably one of the biggest open sources of UPC data(even Google uses it if you search for a upc). The only problem is that it usually can only tell you the product name and nothing else. There are some old database exports floating around the internet from when they were regularly released that have more structured data so you may be able to use it that way.&lt;/p&gt;
-
-&lt;h3 id=&#34;features-5&#34;&gt;features&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Tons of UPCs.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;good-guide&#34;&gt;Good Guide&lt;/h2&gt;
-
-&lt;p&gt;I really like the &lt;a href=&#34;http://goodguide.com/&#34;&gt;Good Guide&lt;/a&gt;. They offer a great product and are nice enough to share their data through a great API. Their product coverage is mostly in the areas of house hold items.&lt;/p&gt;
-
-&lt;h3 id=&#34;features-6&#34;&gt;features&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Very accurate.&lt;/li&gt;
-&lt;li&gt;Easy to consume and you can customize your responses.&lt;/li&gt;
-&lt;li&gt;Great documentation.&lt;/li&gt;
-&lt;li&gt;Reasonable usage quotas.&lt;/li&gt;
-&lt;li&gt;The developers are awesome and prompt.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;simple-upc&#34;&gt;Simple UPC&lt;/h2&gt;
-
-&lt;p&gt;This is the only Paid service I&amp;rsquo;m including here. It focuses on grocery store items but when I tried it out I couldn&amp;rsquo;t find most of my sample UPCs. That being said when it does find an entry it has a lot of great information(like ingredients). I might give it another try later but they need to reduce the barriers of entry so you can do some basic testing. Also they have a really restrictive usage policy so make sure they don&amp;rsquo;t conflict with your requirements.&lt;/p&gt;
-
-&lt;h3 id=&#34;features-7&#34;&gt;features&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Very accurate.&lt;/li&gt;
-&lt;li&gt;Easy to consume.&lt;/li&gt;
-&lt;li&gt;Great documentation.&lt;/li&gt;
-&lt;li&gt;Support was prompt.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;supermarket-api&#34;&gt;Supermarket API&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&#34;http://supermarketapi.com/&#34;&gt;Supermarket API&lt;/a&gt; doesn&amp;rsquo;t let you search by UPC but it does have some great product information and the developer behind it is a nice guy so I&amp;rsquo;m including it here anyway.&lt;/p&gt;
-
-&lt;h3 id=&#34;features-8&#34;&gt;features&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Accurate.&lt;/li&gt;
-&lt;li&gt;Easy to consume.&lt;/li&gt;
-&lt;li&gt;Great documentation.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;scandit&#34;&gt;Scandit&lt;/h2&gt;
-
-&lt;p&gt;Scandit offers a few resources for barcode scanning. First they offer their own properity scanning technology for most smart phones which is pretty great especially once you start scanning barcodes in the real world. Secondly they offer a API for looking up products. At the time of writing they didn&amp;rsquo;t have manufacteur info but they said they would be releasing more data shortly.&lt;/p&gt;
-
-&lt;h2 id=&#34;bestbuy&#34;&gt;BestBuy&lt;/h2&gt;
-
-&lt;p&gt;The[ ]Best Buy API](https://bbyopen.com/) looks great but I haven&amp;rsquo;t used it myself since I&amp;rsquo;m not concerned with electronics(yet) which is what it covers.&lt;/p&gt;
-
-&lt;h2 id=&#34;zappos&#34;&gt;Zappos&lt;/h2&gt;
-
-&lt;p&gt;The &lt;a href=&#34;http://developer.zappos.com/&#34;&gt;Zappos API&lt;/a&gt; is pretty new and covers clothing, shoes, etc. Its new but it looks promising.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Alright, that&amp;rsquo;s it. There are more options that I&amp;rsquo;ve looked into but these are the major ones that I&amp;rsquo;ve found that are worth mentioning.&lt;/em&gt;&lt;/p&gt;
-</description>
+      <description>Converting a barcode into useful, descriptive information is harder then you would expect. Or rather its difficult to do with any reliability and accuracy. There are a few good API&amp;rsquo;s that I&amp;rsquo;ve been using or looking into that I&amp;rsquo;ll cover here. The API&amp;rsquo;s Each service offers different information so you need to nail down your requirements before you read further. For my needs I really just need Barcode -&amp;gt; Company but I&amp;rsquo;ll try to add details that fall outside of that where I can remember them.</description>
     </item>
     
   </channel>

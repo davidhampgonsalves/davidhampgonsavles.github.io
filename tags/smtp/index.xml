@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Smtp on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/smtp/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/smtp/</link>
     <description>Recent content in Smtp on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/smtp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Nov 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/smtp/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>SMTP Test/Usage Via Telnet</title>
@@ -14,28 +17,8 @@
       <pubDate>Wed, 09 Nov 2011 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/smtp-test/usage-via-telnet/</guid>
-      <description>
-
-&lt;p&gt;A telnet client is a handy testing tool for testing connectivity between servers. Today I needed to test an SMTP server connection from a linux environment so I wrote the following script. You could use the same technique manually to do the same thing as long as your have access to a telnet client.&lt;/p&gt;
-
-&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
-
-&lt;p&gt;The script takes three parameters: the smtp server url, the sender address and the recipient address.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/usr/bin/env bash
-	(echo HELO
-	 sleep 10
-	 echo MAIL FROM\:$2
-	 sleep 10
-	 echo RCPT TO\:$3
-	 sleep 10
-	 echo DATA
-	 sleep 10
-	 echo .
-	 sleep 10
-	 echo QUIT) | telnet $1 25
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>A telnet client is a handy testing tool for testing connectivity between servers. Today I needed to test an SMTP server connection from a linux environment so I wrote the following script. You could use the same technique manually to do the same thing as long as your have access to a telnet client.
+Usage The script takes three parameters: the smtp server url, the sender address and the recipient address.</description>
     </item>
     
   </channel>

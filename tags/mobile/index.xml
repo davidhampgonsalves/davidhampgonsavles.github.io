@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mobile on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/mobile/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/mobile/</link>
     <description>Recent content in Mobile on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/mobile/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Oct 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/mobile/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Detecting Mobile Device from Javascript</title>
@@ -14,20 +17,9 @@
       <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/detecting-mobile-device-from-javascript/</guid>
-      <description>&lt;p&gt;This is a pretty lightweight way of detecting when your javascript is living in a mobile device.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if(typeof window.orientation != &#39;undefined&#39;) { /* put mobile spesific code here */ }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To omit spesific devices from running this code you can also add individual checks like the following.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;if(typeof window.orientation != &#39;undefined&#39; &amp;amp;&amp;amp; !navigator.userAgent.match(/iPad/i)) {
-  /* put mobile spesific(but not ipad) code here */
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is a mix of the answers found on &lt;a href=&#34;http://stackoverflow.com/questions/11381673/javascript-solution-to-detect-mobile-browser&#34;&gt;stack overflow&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>This is a pretty lightweight way of detecting when your javascript is living in a mobile device.
+if(typeof window.orientation != &#39;undefined&#39;) { /* put mobile spesific code here */ }  To omit spesific devices from running this code you can also add individual checks like the following.
+if(typeof window.orientation != &#39;undefined&#39; &amp;amp;&amp;amp; !navigator.userAgent.match(/iPad/i)) { /* put mobile spesific(but not ipad) code here */ }  This is a mix of the answers found on stack overflow.</description>
     </item>
     
   </channel>

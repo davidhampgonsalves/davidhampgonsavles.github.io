@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Css on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/css/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/css/</link>
     <description>Recent content in Css on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Nov 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Loading Indicator &amp; CSS Animations</title>
@@ -14,48 +17,7 @@
       <pubDate>Sat, 26 Nov 2011 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/loading-indicator--css-animations/</guid>
-      <description>
-
-&lt;p&gt;Recently I needed a minimum viable animated web loading indicator. I didn&amp;rsquo;t want to add another image to my page for load time reasons. Nor did I want to write any javascript for size/time reasons. This left me with CSS animations. CSS based animations at this point only have limited browser support but for my project which already required HTML5 Geo Location it seemed like a good fit. This post is to show how easily this animation can be added as well as show how nicely it downgrades.&lt;/p&gt;
-
-&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
-
-&lt;p&gt;For my loading indicator I used a container div and also a div to cover half of the sun which isn&amp;rsquo;t required. All you need is a DOM element that you want to spin.
-The Important Bits
-The spinning sun animation is achieved(using CSS) by first creating an animation that rotates the image from 0 to 360 degrees. This is shown in the code bellow for both Chrome(Webkit prefix) and Firefox(Moz prefix):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* the rest of the important stuff for Chrome */
-@-webkit-keyframes rotate {
-	from {-webkit-transform\:rotate(0deg);}
-	to {-webkit-transform\:rotate(360deg);}
-}
-/* the rest of the important stuff for Firefox */
-@-moz-keyframes rotate {
-    from {-moz-transform\: rotate(0deg);}
-    to {-moz-transform\: rotate(360deg);}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next we need to start the animation. This involves setting its peroid(time per animation), iteration count and the animation name we want to start. In our case we want a continous animation so we set the iteration count to infinate andset our peroid to 5 seconds since that looks nice to me. We also define which animation-timing function to start. This is all shown bellow for both Chrome(Webkit prefix) and Firefox(Moz prefix):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;#your-dom-element {
-	/* some of the important stuff for Chrome */
-	-webkit-animation-name\: rotate;
-	-webkit-animation-duration\: 5s;
-	-webkit-animation-iteration-count\: infinite;
-	-webkit-animation-timing-function\: linear;
-	/* some of the important stuff for Firefox */
-	-moz-animation-name\: rotate;
-	-moz-animation-duration\: 5s;
-	-moz-animation-iteration-count\: infinite;
-	-moz-animation-timing-function\: linear;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;wrap-up&#34;&gt;Wrap up&lt;/h2&gt;
-
-&lt;p&gt;There are many cases where the lack of browser support will prevent you from using this approch but for me this is a great solution. It creates very little extra load and doesn&amp;rsquo;t require new image reasources(if you can reuse an image already on the page). It also downgrades well and maintains its function. For a live example you can check out: &lt;a href=&#34;http://www.hourweather.com&#34;&gt;hour weather&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Recently I needed a minimum viable animated web loading indicator. I didn&amp;rsquo;t want to add another image to my page for load time reasons. Nor did I want to write any javascript for size/time reasons. This left me with CSS animations. CSS based animations at this point only have limited browser support but for my project which already required HTML5 Geo Location it seemed like a good fit. This post is to show how easily this animation can be added as well as show how nicely it downgrades.</description>
     </item>
     
   </channel>

@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Itext on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/itext/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/itext/</link>
     <description>Recent content in Itext on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/itext/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 May 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/itext/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>PDF&#39;s using iText in 10 lines</title>
@@ -14,52 +17,10 @@
       <pubDate>Mon, 16 May 2011 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/pdfs-using-itext-in-10-lines/</guid>
-      <description>
-
-&lt;p&gt;There are some getting started tutorials for the iText library but I don&amp;rsquo;t think they really capture how fast and easy it is to get working PDF&amp;rsquo;s.&lt;/p&gt;
-
-&lt;p&gt;Your standard servlet hello world example is 10 super simple lines.&lt;/p&gt;
-
-&lt;p&gt;In your servlets doGet method:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;	response.setContentType(&amp;quot;application/pdf&amp;quot;);
-	Document document = new Document();
-	try {
-		PdfWriter.getInstance(document, response.getOutputStream());
-		document.open();
-		document.add(new Paragraph(&amp;quot;Hello world&amp;quot;));
-		document.close();
-	} catch (DocumentException e) { //handle the error }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;to-break-that-down&#34;&gt;to break that down:&lt;/h2&gt;
-
-&lt;p&gt;First you need to let the browser know via the http response headers that the content is a pdf.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;response.setContentType(&amp;quot;application/pdf&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next you need to creat the document object that will house your pdf.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Document document = new Document();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then get an instance of the PdfWriter to create the pdf using the contents of your document and output them to the response stream.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;PdfWriter.getInstance(document, response.getOutputStream());
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Finally you need to open and populate your pdf with whatever you want.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;document.open(); document.add(new Paragraph(&amp;quot;Hello world&amp;quot;)); document.close();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you want to create a PDF in a file its the same thing except easier because you don&amp;rsquo;t have to worry about the content type you just replace the response.getOutputStream() with a valid FileOutputStream and your all set.&lt;/p&gt;
-
-&lt;h2 id=&#34;licenses&#34;&gt;Licenses&lt;/h2&gt;
-
-&lt;p&gt;At the time of writing IText is at version 5.0.6 but starting with version 5 the license was changed to the Affero General Public License. If that is a problem you can still use 2.1.7 which from my experence is fairly compatable with version 5 except for the package names and is bound by the LGPL.&lt;/p&gt;
-</description>
+      <description>There are some getting started tutorials for the iText library but I don&amp;rsquo;t think they really capture how fast and easy it is to get working PDF&amp;rsquo;s.
+Your standard servlet hello world example is 10 super simple lines.
+In your servlets doGet method:
+response.setContentType(&amp;quot;application/pdf&amp;quot;); Document document = new Document(); try { PdfWriter.getInstance(document, response.getOutputStream()); document.open(); document.add(new Paragraph(&amp;quot;Hello world&amp;quot;)); document.close(); } catch (DocumentException e) { //handle the error }  to break that down: First you need to let the browser know via the http response headers that the content is a pdf.</description>
     </item>
     
   </channel>

@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bitcoin on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/bitcoin/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/bitcoin/</link>
     <description>Recent content in Bitcoin on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Aug 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/bitcoin/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Generating Bitcoins using Online Ads</title>
@@ -14,33 +17,9 @@
       <pubDate>Fri, 02 Aug 2013 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/generating-bitcoins-using-online-ads/</guid>
-      <description>&lt;p&gt;After reading about using &lt;a href=&#34;http://threatpost.com/buy-an-ad-own-a-browser-botnet&#34;&gt;online ads to launch a javascript based DDoS attack&lt;/a&gt; I started wondering about how well such a system would do at mining bitcoins. These are my &lt;em&gt;rough calculations.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;From my research I&amp;rsquo;ve found there are 3 ways to mine bitcoins(compute hashes) using Javascript:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;UI thread&lt;/em&gt; (I was seeing about 800 hashes/s)&lt;/li&gt;
-&lt;li&gt;Multiple threads via &lt;em&gt;WebWorkers&lt;/em&gt; (I was seeing about 13000 hashes/s)&lt;/li&gt;
-&lt;li&gt;Using the GPU via &lt;em&gt;WebGL&lt;/em&gt; (&lt;a href=&#34;http://caniuse.com/webgl&#34;&gt;limited browser support&lt;/a&gt; couldn&amp;rsquo;t find working example).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;I based my numbers on this implementation:&lt;/em&gt; (http://bitcoin.biniok.net/gl.html) running chrome on a pentium 4. The rates are averages over 5 seconds.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ll show the math for WebWorkers since they have pretty &lt;a href=&#34;http://caniuse.com/webworkers&#34;&gt;decent support&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;So lets say that we want 1 Million computers calculating hashes using webworkers at a rate of 13000 hashes/s. If we &lt;em&gt;assume&lt;/em&gt; that each ad view results in 5 seconds of computing time then we can calculate the required number of ad views like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(2 592 000(seconds in month) / 5 (seconds per ad view)) * 1 000 000(number of computers required at any time)
- =
-518 400 000 000(number of ad views required month)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Using &lt;a href=&#34;http://www.bitcoinx.com/profit/&#34;&gt;this&lt;/a&gt; bitcoin calculator we can see that our distributed system will earn us 6326.96 USD a month negating all costs.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;final numbers:&lt;/em&gt; 5 Billion pageviews &lt;strong&gt;≈&lt;/strong&gt; 6000USD&lt;/p&gt;
-
-&lt;p&gt;So unless you can really crank up the hash rate this endeavor isn&amp;rsquo;t going to facilitate early retirement.&lt;/p&gt;
-</description>
+      <description>After reading about using online ads to launch a javascript based DDoS attack I started wondering about how well such a system would do at mining bitcoins. These are my rough calculations.
+From my research I&amp;rsquo;ve found there are 3 ways to mine bitcoins(compute hashes) using Javascript:
+ UI thread (I was seeing about 800 hashes/s) Multiple threads via WebWorkers (I was seeing about 13000 hashes/s) Using the GPU via WebGL (limited browser support couldn&amp;rsquo;t find working example).</description>
     </item>
     
   </channel>

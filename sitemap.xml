@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://davidhampgonsalves.github.io/post/diy-rollers/</loc>
+    <lastmod>2017-07-16T19:51:50-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://davidhampgonsalves.github.io/post/gif-twist/</loc>
     <lastmod>2017-04-09T10:31:31-04:00</lastmod>
   </url>
@@ -149,6 +154,11 @@
   <url>
     <loc>https://davidhampgonsalves.github.io/generating-identicons/</loc>
     <lastmod>2013-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidhampgonsalves.github.io/post/apps4halifax-crime-heatmaps/</loc>
+    <lastmod>2013-11-16T21:02:46-03:00</lastmod>
   </url>
   
   <url>
@@ -342,11 +352,6 @@
   </url>
   
   <url>
-    <loc>https://davidhampgonsalves.github.io/projects/</loc>
-    <lastmod>2010-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://davidhampgonsalves.github.io/foxish/</loc>
     <lastmod>2010-05-30T00:00:00+00:00</lastmod>
   </url>
@@ -354,6 +359,11 @@
   <url>
     <loc>https://davidhampgonsalves.github.io/foxish-faq/</loc>
     <lastmod>2010-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://davidhampgonsalves.github.io/projects/</loc>
+    <lastmod>2010-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -405,6 +415,11 @@
   </url>
   
   <url>
+    <loc>https://davidhampgonsalves.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://davidhampgonsalves.github.io/tags/chrome-extensions/</loc>
     <lastmod>2012-08-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -430,7 +445,7 @@
   
   <url>
     <loc>https://davidhampgonsalves.github.io/</loc>
-    <lastmod>2017-04-09T10:31:31-04:00</lastmod>
+    <lastmod>2017-07-16T19:51:50-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -495,7 +510,7 @@
   </url>
   
   <url>
-    <loc>https://davidhampgonsalves.github.io/tags/heatmap/index.js/</loc>
+    <loc>https://davidhampgonsalves.github.io/tags/heatmap.js/</loc>
     <lastmod>2013-10-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -628,7 +643,7 @@
   
   <url>
     <loc>https://davidhampgonsalves.github.io/post/</loc>
-    <lastmod>2017-04-09T10:31:31-04:00</lastmod>
+    <lastmod>2017-07-16T19:51:50-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -676,6 +691,7 @@
   
   <url>
     <loc>https://davidhampgonsalves.github.io/tags/</loc>
+    <lastmod>2011-08-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ttyrec on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/ttyrec/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/ttyrec/</link>
     <description>Recent content in Ttyrec on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/ttyrec/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Apr 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/ttyrec/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Terminal GIFs on OSX</title>
@@ -14,38 +17,9 @@
       <pubDate>Tue, 07 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/terminal-gifs-on-osx/</guid>
-      <description>
-
-&lt;p&gt;Using Gifs for terminal explanations and usages aren&amp;rsquo;t new and exciting anymore but they are still useful. This is how to create them quickly on OSX.&lt;/p&gt;
-
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-
-&lt;p&gt;The tool we will use to capture our gif &lt;a href=&#34;https://github.com/icholy/ttygif&#34;&gt;ttygif&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;brew install imagemagick ttyrec
-brew install https\://raw.githubusercontent.com/icholy/ttygif/master/ttygif.rb
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;gif&#34;&gt;Gif&lt;/h2&gt;
-
-&lt;p&gt;The process of creating the gif is:
-* Run &lt;code&gt;ttyrec&lt;/code&gt; which records your terminal session as series of &lt;code&gt;png&lt;/code&gt; files.
-* Run &lt;code&gt;ttygif&lt;/code&gt; to convert the &lt;code&gt;png&lt;/code&gt; files to small &lt;code&gt;gifs&lt;/code&gt;.
-* Concat the &lt;code&gt;gif&lt;/code&gt; files using the concat script.
-* Edit the final &lt;code&gt;gif&lt;/code&gt; using whatever tool or online site you like.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#creates series pngs(type exit to finish recording)
-ttyrec recording-name
-#convert png -&amp;gt; gif(-f disables cropping)
-ttygif recording-name -f
-#concat gif parts into final product
-concat_osx.sh recording-name.gif
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;example&#34;&gt;Example&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/terminal-gif-example.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+      <description>Using Gifs for terminal explanations and usages aren&amp;rsquo;t new and exciting anymore but they are still useful. This is how to create them quickly on OSX.
+Install The tool we will use to capture our gif ttygif.
+brew install imagemagick ttyrec brew install https\://raw.githubusercontent.com/icholy/ttygif/master/ttygif.rb  Gif The process of creating the gif is: * Run ttyrec which records your terminal session as series of png files. * Run ttygif to convert the png files to small gifs.</description>
     </item>
     
   </channel>

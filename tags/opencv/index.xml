@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Opencv on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/opencv/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/opencv/</link>
     <description>Recent content in Opencv on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/opencv/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Aug 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/opencv/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Failed Projects: Open Mosaic</title>
@@ -14,42 +17,8 @@
       <pubDate>Sun, 02 Aug 2015 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/failed-projects-open-mosaic/</guid>
-      <description>
-
-&lt;p&gt;The goal of this project was to recreate an image as a mosaic of other images. I wanted to achieve this with a low number of tiles and not simply use images as pixels based on their colors.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/open-mosaic/sample.png&#34; style=&#34;width\: 800px&#34; class=&#34;center plain&#34;/&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;mistakes&#34;&gt;Mistakes&lt;/h2&gt;
-
-&lt;p&gt;The biggest mistake I made was to vastly underestimate the difficulty of the problem. I thought I could get good results by tuning my early histogram grid implementation and floundered. I have seen many other attempts at this project but yet to see any that produce good results.&lt;/p&gt;
-
-&lt;h2 id=&#34;path-to-failure&#34;&gt;Path to Failure&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Played with Perceptual Hashes (then read about how they work and abandoned this path).&lt;/li&gt;
-&lt;li&gt;Moved to Grid of Histograms: &lt;em&gt;Divide source and input images into grids and generate / compare Histograms.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Switched from HSV to LAB / LUV color spaces for a more human perception of color.&lt;/li&gt;
-&lt;li&gt;Switched from Instagram to Flickr for source images(Insta is filled with images of text).&lt;/li&gt;
-&lt;li&gt;Experimented with different histogram comparison methods (Chi-Square, Bhattacharyya, etc).&lt;/li&gt;
-&lt;li&gt;Optimised algorithm for a shorter iteration loop (this was successful).&lt;/li&gt;
-&lt;li&gt;Researched our perception of shapes, switched to basic shape (still factor in color) approach.&lt;/li&gt;
-&lt;li&gt;Performance mandated hybrid approch: first pass histogram grid, second pass with feature detection, finally adjust image contrast / brightness.&lt;/li&gt;
-&lt;li&gt;Failure.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;next-time&#34;&gt;Next Time&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Quantify success early: &lt;em&gt;manually create mosaic based on small input set and diff with algorithms results to calculate how successful each run was&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Search inside each possible image for good matches / try different rotations of source images.&lt;/li&gt;
-&lt;li&gt;More processing power (cluster).&lt;/li&gt;
-&lt;li&gt;Focus on shapes and start in greyscale space.&lt;/li&gt;
-&lt;li&gt;Use bag of words model.&lt;/li&gt;
-&lt;li&gt;Use weighted multiple factors (histograms, FLANN, Feature Detection, shapes, etc).&lt;/li&gt;
-&lt;li&gt;Write it in C++: &lt;em&gt;Other language bindings are great but the stack traces force you into C/C++ anyway.&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>The goal of this project was to recreate an image as a mosaic of other images. I wanted to achieve this with a low number of tiles and not simply use images as pixels based on their colors.
+Mistakes The biggest mistake I made was to vastly underestimate the difficulty of the problem. I thought I could get good results by tuning my early histogram grid implementation and floundered. I have seen many other attempts at this project but yet to see any that produce good results.</description>
     </item>
     
     <item>
@@ -58,12 +27,8 @@
       <pubDate>Sat, 31 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/opencv-comparehist-performance/</guid>
-      <description>&lt;p&gt;I did some performance tests on the four histograms comparison methods that &lt;a href=&#34;http://docs.opencv.org/java/org/opencv/imgproc/Imgproc.html#compareHist(org.opencv.core.Mat, org.opencv.core.Mat, int)&#34;&gt;compareHist&lt;/a&gt; provides and initially found that in basic performance tests they were all about the same speed. More recently I profiled them in a real world application and found they were significantly different.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/opencv-graph.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This is all using the Java OpenCV bindings.&lt;/em&gt;&lt;/p&gt;
-</description>
+      <description>I did some performance tests on the four histograms comparison methods that compareHist provides and initially found that in basic performance tests they were all about the same speed. More recently I profiled them in a real world application and found they were significantly different.
+This is all using the Java OpenCV bindings.</description>
     </item>
     
     <item>
@@ -72,91 +37,7 @@
       <pubDate>Mon, 30 May 2011 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/opencv/python-color-tracking/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://davidhampgonsalves.github.io/images/color_tracking.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;preamble&#34;&gt;Preamble&lt;/h2&gt;
-
-&lt;p&gt;I needed some color based object tracking for a project I was hacking together last weekend. I choose to use the OpenCV Python bindings since I knew that I wouldn&amp;rsquo;t be doing anything fancy and I thought it would simplify the learning process. While the Python bindings are great I wasn&amp;rsquo;t able to find much documentation and what I thought would be an easy 10 minutes turned into a bit of an afternoon project. Admittedly I got side tracked with CamShifts, Histograms, Moments and the example code.&lt;/p&gt;
-
-&lt;p&gt;I also found that most of the tutorials and documentation makes even simple concepts like color tracking seem more complex then it really are. This post is intended to help you bypass all that and help you get your feet wet teaching your computer to see.&lt;/p&gt;
-
-&lt;h2 id=&#34;overview-of-the-process&#34;&gt;Overview of the Process&lt;/h2&gt;
-
-&lt;p&gt;The first thing we need to do is to get a single frame of the video feed and convert its color model from RGB which OpenCV uses to represent images by default to HSV since we can then look at just a single value to determine the Hue.&lt;/p&gt;
-
-&lt;p&gt;Now that we have our image in the correct format we can apply a threshold to eliminate(set their value to 0) all pixels that don&amp;rsquo;t meet our criteria. This will leave only the object we aim to track so then to determine its location we can get OpenCV to calculate its moments and compute its co-ordinal position.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-code&#34;&gt;The Code&lt;/h2&gt;
-
-&lt;p&gt;And finally without further adieu, the commented code which will get you on your way. This code will open a window which will display the web cams video feed. It will then try to track a purple object but you can change the hue value to make it work with any color you want. Just make sure that color is fairly unique in the video feed.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#! /usr/bin/env python
-
-import cv
-
-color_tracker_window = &amp;quot;Color Tracker&amp;quot;
-
-class ColorTracker\:
-
-    def __init__(self)\:
-        cv.NamedWindow( color_tracker_window, 1 )
-        self.capture = cv.CaptureFromCAM(0)
-
-    def run(self)\:
-        while True\:
-            img = cv.QueryFrame( self.capture )
-
-            #blur the source image to reduce color noise
-            cv.Smooth(img, img, cv.CV_BLUR, 3);
-
-            #convert the image to hsv(Hue, Saturation, Value) so its
-            #easier to determine the color to track(hue)
-            hsv_img = cv.CreateImage(cv.GetSize(img), 8, 3)
-            cv.CvtColor(img, hsv_img, cv.CV_BGR2HSV)
-
-            #limit all pixels that don&#39;t match our criteria, in this case we are
-            #looking for purple but if you want you can adjust the first value in
-            #both turples which is the hue range(120,140).  OpenCV uses 0-180 as
-            #a hue range for the HSV color model
-            thresholded_img =  cv.CreateImage(cv.GetSize(hsv_img), 8, 1)
-            cv.InRangeS(hsv_img, (120, 80, 80), (140, 255, 255), thresholded_img)
-
-            #determine the objects moments and check that the area is large
-            #enough to be our object
-            moments = cv.Moments(thresholded_img, 0)
-            area = cv.GetCentralMoment(moments, 0, 0)
-
-            #there can be noise in the video so ignore objects with small areas
-            if(area &amp;gt; 100000)\:
-                #determine the x and y coordinates of the center of the object
-                #we are tracking by dividing the 1, 0 and 0, 1 moments by the area
-                x = cv.GetSpatialMoment(moments, 1, 0)/area
-                y = cv.GetSpatialMoment(moments, 0, 1)/area
-
-                #print &#39;x\: &#39; + str(x) + &#39; y\: &#39; + str(y) + &#39; area\: &#39; + str(area)
-
-                #create an overlay to mark the center of the tracked object
-                overlay = cv.CreateImage(cv.GetSize(img), 8, 3)
-
-                cv.Circle(overlay, (x, y), 2, (255, 255, 255), 20)
-                cv.Add(img, overlay, img)
-                #add the thresholded image back to the img so we can see what was
-                #left after it was applied
-                cv.Merge(thresholded_img, None, None, None, img)
-
-            #display the image
-            cv.ShowImage(color_tracker_window, img)
-
-            if cv.WaitKey(10) == 27\:
-                break
-
-if __name__==&amp;quot;__main__&amp;quot;\:
-    color_tracker = ColorTracker()
-    color_tracker.run()
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>Preamble I needed some color based object tracking for a project I was hacking together last weekend. I choose to use the OpenCV Python bindings since I knew that I wouldn&amp;rsquo;t be doing anything fancy and I thought it would simplify the learning process. While the Python bindings are great I wasn&amp;rsquo;t able to find much documentation and what I thought would be an easy 10 minutes turned into a bit of an afternoon project.</description>
     </item>
     
   </channel>

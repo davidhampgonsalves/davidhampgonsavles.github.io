@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clojure on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/clojure/index.xml</link>
+    <link>https://davidhampgonsalves.github.io/tags/clojure/</link>
     <description>Recent content in Clojure on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://davidhampgonsalves.github.io/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jan 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidhampgonsalves.github.io/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Markov Chains in Clojure</title>
@@ -14,20 +17,8 @@
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.github.io/markov-chains-in-clojure/</guid>
-      <description>&lt;p&gt;I noticed that when you enter 30 into tumblrs age field it switches from &amp;ldquo;years old&amp;rdquo; to &amp;ldquo;years young&amp;rdquo;. Fully grasping the limited scope of my existence for the first time I wrote a &lt;a href=&#34;http://en.wikipedia.org/wiki/Markov_chain&#34;&gt;Markov Chain&lt;/a&gt; generator so that it could provide(tenuous) value long after I have fled this mortal coil, by mashing up the works &lt;a href=&#34;http://scrumdiddlyumptious-clojure.tumblr.com/&#34;&gt;of Roald Dahl with some Clojure manuals&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;When you reach this point in your life you can save some time and use my &lt;a href=&#34;https://github.com/davidhampgonsalves/markov-cloj&#34;&gt;Clojure implementation&lt;/a&gt; or write your own.&lt;/p&gt;
-
-&lt;p&gt;If you write your own, here are some pointers\:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Don&amp;rsquo;t remove punctuation, all that data is valuable.&lt;/li&gt;
-&lt;li&gt;The training material quality is of the utmost importance.&lt;/li&gt;
-&lt;li&gt;Similar training materials will intertwine more often and lead to more interesting results.&lt;/li&gt;
-&lt;li&gt;Avoid works that contain made up words/spellings, they will lead to boring chains.&lt;/li&gt;
-&lt;li&gt;Longer state lengths(how many words are considered when calculating next state) lead to more readable but boring text.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>I noticed that when you enter 30 into tumblrs age field it switches from &amp;ldquo;years old&amp;rdquo; to &amp;ldquo;years young&amp;rdquo;. Fully grasping the limited scope of my existence for the first time I wrote a Markov Chain generator so that it could provide(tenuous) value long after I have fled this mortal coil, by mashing up the works of Roald Dahl with some Clojure manuals.
+When you reach this point in your life you can save some time and use my Clojure implementation or write your own.</description>
     </item>
     
   </channel>
