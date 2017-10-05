@@ -6,10 +6,20 @@
     <description>Recent content in Posts on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 16 Jul 2017 19:51:50 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 05 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://davidhampgonsalves.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GCN Top 10 Cycling Apps</title>
+      <link>https://davidhampgonsalves.github.io/post/gcn-top-10-apps/</link>
+      <pubDate>Thu, 05 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidhampgonsalves.github.io/post/gcn-top-10-apps/</guid>
+      <description>A few years back I wrote a simple launcher that took advantage of Strava&amp;rsquo;s NFC action intents to automatically start recording a ride. I created some icons for it, named it One Tap Record for Strava and put it in the Play store for others to use.
+Fast forward to today, where without a single update or PR campaign the &amp;ldquo;app&amp;rdquo; has garnered 100 thousand users and was featured on GCN&amp;rsquo;s Top 10 Cycling Apps list.</description>
+    </item>
     
     <item>
       <title>DIY Rollers</title>
