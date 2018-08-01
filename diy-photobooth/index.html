@@ -7,14 +7,13 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <base href="https://davidhampgonsalves.github.io/">
     
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400' rel='stylesheet' type='text/css'>
 
-    <link rel="icon" type="image/png" href="https://davidhampgonsalves.github.io/favicon_16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="https://davidhampgonsalves.github.io/favicon_32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://davidhampgonsalves.github.io/favicon_128x128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="https://davidhampgonsalves.com/favicon_16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://davidhampgonsalves.com/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://davidhampgonsalves.com/favicon_128x128.png" sizes="128x128">
 
     <title>
       
@@ -22,7 +21,7 @@
          DIY Photobooth 
       
     </title>
-    <link rel="canonical" href="https://davidhampgonsalves.github.io/diy-photobooth/">
+    <link rel="canonical" href="https://davidhampgonsalves.com/diy-photobooth/">
 
     <style>
   * {
@@ -391,14 +390,14 @@
 
   <body>
     <section id=nav>
-      <h1><a href="https://davidhampgonsalves.github.io/">David Hamp-Gonsalves</a></h1>
+      <h1><a href="https://davidhampgonsalves.com/">David Hamp-Gonsalves</a></h1>
       <ul>
         
           <li><a href="//github.com/davidhampgonsalves">GitHub</a></li>
         
-          <li><a href="https://davidhampgonsalves.github.io/projects">Projects</a></li>
+          <li><a href="https://davidhampgonsalves.com/projects">Projects</a></li>
         
-          <li><a href="https://davidhampgonsalves.github.io/html/resume.html">Resume</a></li>
+          <li><a href="https://davidhampgonsalves.com/resume.html">Resume</a></li>
         
       </ul>
     </section>
@@ -407,27 +406,29 @@
 <section id=content>
   <h1> DIY Photobooth </h1>
 
-  <div id=sub-header>
-    November 2012 · 4 minute read
-  </div>
+  
+    <div id=sub-header>
+      November 2012 · 4 minute read
+    </div>
+  
 
   <div class="entry-content">
     
 
 <p>Last week I got married(it was amazing and surreal). When planning the wedding we really wanted to make the whole night reflect &ldquo;us&rdquo;. This meant an all vegan menu from hearty catering(amazing) and a lot of elbow grease as we built and crafted mostly everything ourselves. Our signs were life sized pictures, the cupcake stand was wooden slabs of a tree and I build a photobooth which is what I&rsquo;m going to talk about in this post.
-<img src="https://davidhampgonsalves.github.io/images/photobooth/photobooth-01.png" alt="" /></p>
+<img src="https://davidhampgonsalves.com/images/photobooth/photobooth-01.png" alt="" /></p>
 
 <h2 id="the-alternatives">The Alternatives</h2>
 
 <p>Looking on the internet I found that lots of people &ldquo;built&rdquo; photobooths by plunking a laptop on a table with some &ldquo;photobooth&rdquo; software. In my mind this was worse then nothing. Everyone owns a laptop and a webcam, whats the point in letting them use yours? What I wanted was to simulate(with as little work as possible) was the magic of a photobooth and the feeling you get from walking away with a small strip of memories to mark an event.
-<img src="https://davidhampgonsalves.github.io/images/photobooth/photobooth-02.png" alt="" /></p>
+<img src="https://davidhampgonsalves.com/images/photobooth/photobooth-02.png" alt="" /></p>
 
 <h2 id="a-bit-of-movie-magic">A Bit of Movie Magic</h2>
 
 <p>What the &ldquo;magic&rdquo; meant for me(never used a real photobooth so this could be way off) is you walk in to a dark booth, you push a button, the booth &ldquo;speaks&rdquo; to you and directs you in taking some pictures, you walk out and you get a convenient photo strip(not an entire page!) of well lit pictures to slip in your pocket.</p>
 
 <p>With that in mind my photobooths user flow starts when the user presses the main(and only) button(hacked apart usb keyboard). This triggers the main loop in the python script that drives the whole thing. It plays the introductory audio to explain whats going to happen, then it uses the python OpenCV bindings to grab our first picture and makes a shutter sounds. This cycle repeats 3 more times and then the booth directs the users to leave and pick up their strip outside. The strips are automatically printed on strips of photo paper that are pre-cut. The strips are the width of an envelope since thats the narrowest that most printers can support repeatedly without any screw ups.
-<img src="https://davidhampgonsalves.github.io/images/photobooth/photobooth-03.jpg" alt="" /></p>
+<img src="https://davidhampgonsalves.com/images/photobooth/photobooth-03.jpg" alt="" /></p>
 
 <p>The beauty of this booth is that from the users perspective its more then what it really is. Like real photobooths its a magic box. The picture quality is great because you can control the focus and lighting of the booth and the result is a cool take away.</p>
 
@@ -441,7 +442,7 @@
 
 <h2 id="usage">Usage</h2>
 
-<p><img src="https://davidhampgonsalves.github.io/images/photobooth/photobooth-04.jpg" alt="" />
+<p><img src="https://davidhampgonsalves.com/images/photobooth/photobooth-04.jpg" alt="" />
 Running the python script will start an openCV loop which will connect to the first webcam on your system. It will display the webcam feed in a window so you can focus your webcam and make any adjustments. Pressing the spacebar will trigger the photo strip process. Audio will be played from the sounds folder and the pictures will be taken. Then the photostrip will be created. It will create a color version of the strip and save it in the /images/color folder and it will create and print the greyscale version. It will then archive the full resolution originals in the images/originals folder. After that it&rsquo;ll be ready for the next user.</p>
 
 <h2 id="building-the-booth">Building the Booth</h2>
@@ -456,10 +457,10 @@ Running the python script will start an openCV loop which will connect to the fi
 
   <div id=links>
     
-      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/the-magic-of-upc/ean-barcodes/">&laquo; The Magic of UPC/EAN Barcodes</a>
+      <a class="basic-alignment left" href="https://davidhampgonsalves.com/the-magic-of-upc/ean-barcodes/">&laquo; The Magic of UPC/EAN Barcodes</a>
     
     
-      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/javascript-damerau-levenshtein-algorithim/">Javascript Damerau Levenshtein Algorithim &raquo;</a>
+      <a class="basic-alignment left" href="https://davidhampgonsalves.com/javascript-damerau-levenshtein-algorithim/">Javascript Damerau Levenshtein Algorithim &raquo;</a>
     
   </div>
 </section>

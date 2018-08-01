@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rss on David Hamp-Gonsalves</title>
-    <link>https://davidhampgonsalves.github.io/tags/rss/</link>
+    <link>https://davidhampgonsalves.com/tags/rss/</link>
     <description>Recent content in Rss on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 26 Mar 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://davidhampgonsalves.github.io/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://davidhampgonsalves.com/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>RSS Luddite</title>
-      <link>https://davidhampgonsalves.github.io/rss-luddite/</link>
+      <link>https://davidhampgonsalves.com/rss-luddite/</link>
       <pubDate>Tue, 26 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.github.io/rss-luddite/</guid>
+      <guid>https://davidhampgonsalves.com/rss-luddite/</guid>
       <description>With Google Reader closing its doors the &amp;ldquo;Is RSS Dead?&amp;rdquo; debate has been revived.
 As someone who loves RSS(enough to write a Chrome Extension) but never liked Google Reader I&amp;rsquo;d like my turn on the soapbox.
 Since my first usage of Firefox(ver 1.5) I have always loved its live bookmarks feature(but not the read/unread indicators).

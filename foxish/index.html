@@ -7,14 +7,13 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <base href="https://davidhampgonsalves.github.io/">
     
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400' rel='stylesheet' type='text/css'>
 
-    <link rel="icon" type="image/png" href="https://davidhampgonsalves.github.io/favicon_16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="https://davidhampgonsalves.github.io/favicon_32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://davidhampgonsalves.github.io/favicon_128x128.png" sizes="128x128">
+    <link rel="icon" type="image/png" href="https://davidhampgonsalves.com/favicon_16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://davidhampgonsalves.com/favicon_32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://davidhampgonsalves.com/favicon_128x128.png" sizes="128x128">
 
     <title>
       
@@ -22,7 +21,7 @@
          Foxish 
       
     </title>
-    <link rel="canonical" href="https://davidhampgonsalves.github.io/foxish/">
+    <link rel="canonical" href="https://davidhampgonsalves.com/foxish/">
 
     <style>
   * {
@@ -391,14 +390,14 @@
 
   <body>
     <section id=nav>
-      <h1><a href="https://davidhampgonsalves.github.io/">David Hamp-Gonsalves</a></h1>
+      <h1><a href="https://davidhampgonsalves.com/">David Hamp-Gonsalves</a></h1>
       <ul>
         
           <li><a href="//github.com/davidhampgonsalves">GitHub</a></li>
         
-          <li><a href="https://davidhampgonsalves.github.io/projects">Projects</a></li>
+          <li><a href="https://davidhampgonsalves.com/projects">Projects</a></li>
         
-          <li><a href="https://davidhampgonsalves.github.io/html/resume.html">Resume</a></li>
+          <li><a href="https://davidhampgonsalves.com/resume.html">Resume</a></li>
         
       </ul>
     </section>
@@ -407,9 +406,11 @@
 <section id=content>
   <h1> Foxish </h1>
 
-  <div id=sub-header>
-    May 2010 · 2 minute read
-  </div>
+  
+    <div id=sub-header>
+      May 2010 · 2 minute read
+    </div>
+  
 
   <div class="entry-content">
     
@@ -417,7 +418,7 @@
 
 <figure class="right-justify">
     
-        <img src="https://davidhampgonsalves.github.io/images/projects/foxish.png" />
+        <img src="https://davidhampgonsalves.com/images/projects/foxish.png" />
     
     
 </figure>
@@ -431,7 +432,7 @@
 
 <ul>
 <li>Enables live bookmark handling of RSS/Atom feeds.</li>
-<li>Detects feeds on the page(code based on the<a href="https://chrome.google.com/extensions/detail/nlbjncdgjeocebhnmkbbbdekmmmcbfjd">RSS Subscription Extension</a> by Google).</li>
+<li>Detects feeds on the page(code based on <a href="https://chrome.google.com/extensions/detail/nlbjncdgjeocebhnmkbbbdekmmmcbfjd">RSS Subscription Extension</a> by Google).</li>
 <li>Customizable polling interval.</li>
 <li>Import function for <a href="http://en.wikipedia.org/wiki/OPML">OPML</a>.</li>
 </ul>
@@ -445,26 +446,28 @@
 
 <h2 id="chrome-limitations">Chrome Limitations</h2>
 
-<h3 id="bookmark-folders-close-when-a-bookmark-gets-modified-all-bookmark-folders-will-be-closed-which-is-what-foxish-does-during-a-sync-this-is-chromium-bug-2469-http-code-google-com-p-chromium-issues-detail-id-2469">Bookmark Folders Close When a bookmark gets modified all bookmark folders will be closed, which is what foxish does during a sync. This is Chromium bug <a href="http://code.google.com/p/chromium/issues/detail?id=2469">2469</a>.</h3>
+<ul>
+<li><p>Bookmark Folders Close When a bookmark gets modified all bookmark folders will be closed, which is what foxish does during a sync. This is Chromium bug <a href="http://code.google.com/p/chromium/issues/detail?id=2469">2469</a>.</p></li>
 
-<h3 id="chrome-bookmark-sync-using-the-bookmark-sync-will-cause-multiple-items-in-the-feeds-since-chrome-will-sync-your-feed-folders-as-well-you-shouldn-t-use-this-extension-with-the-core-bookmark-feature-some-other-bookmark-sync-extensions-allow-you-to-get-around-this-by-filtering-out-the-feed-folders">Chrome Bookmark Sync Using the bookmark sync will cause multiple items in the feeds since chrome will sync your feed folders as well. You shouldn&rsquo;t use this extension with the core bookmark feature. Some other bookmark sync extensions allow you to get around this by filtering out the feed folders.</h3>
+<li><p>Chrome Bookmark Sync Using the bookmark sync will cause multiple items in the feeds since chrome will sync your feed folders as well. You shouldn&rsquo;t use this extension with the core bookmark feature. Some other bookmark sync extensions allow you to get around this by filtering out the feed folders.</p></li>
 
-<h3 id="chrome-bookmark-api-there-are-quotas-based-limitations-on-the-number-of-bookmark-actions-add-remove-move-that-extensions-can-perform-in-a-period-of-time-so-this-extension-tries-to-do-as-little-as-possible-even-so-it-is-possible-i-never-have-though-to-hit-these-limits-and-the-extension-will-have-to-wait-for-an-hour-before-it-can-continue-in-that-case-you-ll-be-able-to-see-the-error-in-the-error-log-page-whcih-is-accessiable-fromt-he-options-page">Chrome Bookmark API There are quotas based limitations on the number of bookmark actions(add, remove, move) that extensions can perform in a period of time so this extension tries to do as little as possible. Even so it is possible(I never have though) to hit these limits and the extension will have to wait for an hour before it can continue. In that case you&rsquo;ll be able to see the error in the error log page whcih is accessiable fromt he options page.</h3>
+<li><p>Chrome Bookmark API There are quotas based limitations on the number of bookmark actions(add, remove, move) that extensions can perform in a period of time so this extension tries to do as little as possible. Even so it is possible(I never have though) to hit these limits and the extension will have to wait for an hour before it can continue. In that case you&rsquo;ll be able to see the error in the error log page whcih is accessiable fromt he options page.</p></li>
+</ul>
 
 <h2 id="feed-back">Feed Back</h2>
 
 <p>I created Foxish to fill a need I had and decided to share. I was really happy that people seem to like it but I was blown away when it was written about on <a href="http://gizmodo.com/5609633/10-add+ons-you-have-to-know-about-for-google-chrome">Gizmodo</a> and <a href="http://lifehacker.com/5603602/foxish-live-rss-adds-live-bookmarks-to-google-chrome">LifeHacker</a>.</p>
 
-<p>If you have any issues checkout the <a href="https://davidhampgonsalves.github.io/blog/2010/05/Foxish-faq/">FAQ</a> and if you still have a problem send me an email.</p>
+<p>If you have any issues checkout the <a href="https://davidhampgonsalves.com/blog/2010/05/Foxish-faq/">FAQ</a> and if you still have a problem send me an email.</p>
 
   </div>
 
   <div id=links>
     
-      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/foxish-faq/">&laquo; Foxish FAQ</a>
+      <a class="basic-alignment left" href="https://davidhampgonsalves.com/foxish-faq/">&laquo; Foxish FAQ</a>
     
     
-      <a class="basic-alignment left" href="https://davidhampgonsalves.github.io/notefeeder/">Notefeeder &raquo;</a>
+      <a class="basic-alignment left" href="https://davidhampgonsalves.com/notefeeder/">Notefeeder &raquo;</a>
     
   </div>
 </section>
