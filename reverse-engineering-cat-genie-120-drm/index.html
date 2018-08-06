@@ -427,15 +427,15 @@
 
 <h3 id="research">Research</h3>
 
-<p>Looking at the cartridge I found an RFID tag under the label. Initially, still thinking the device bricking might be more oversight then malicous business stratagy, I tried an unrelated RFID tag but it was rejected.</p>
+<p>Looking at the cartridge I found an RFID tag under the label. Initially, still thinking the device bricking might be more oversight then malicious business strategy, I tried an unrelated RFID tag but it was rejected.</p>
 
-<p>Online I found that someone named MindBender had already suppreseed these limitations and was selling a closed source solution called the <a href="http://cartridgegenius.com/">CartridgeGenius</a>. They were out of stock at the time and I wasn&rsquo;t sure more were coming so pressed on. Knowing that MindBender was supressing the DRM by replacing the RFID reader remidied a concern I had regarding the possibily of usage counts being stored on the main board in EEPROM.</p>
+<p>Online I found that someone named MindBender had already suppressed these limitations and was selling a closed source solution called the <a href="http://cartridgegenius.com/">CartridgeGenius</a>. They were out of stock at the time and I wasn&rsquo;t sure more were coming so pressed on. Knowing that MindBender was suppressing the DRM by replacing the RFID reader remedied a concern I had regarding the possibility of usage counts being stored on the main board in EEPROM.</p>
 
-<p>Next I took the device appart and removed the RFID reader. Based on its markings and Googling I identified it as a CR14 made by <a href="//www.st.com/">ST</a> and found a copy of the <a href="https://github.com/davidhampgonsalves/CR14-emulator-for-CatGenie-120/raw/master/CR14-datasheet.pdf">datasheet</a>.</p>
+<p>Next I took the device apart and removed the RFID reader. Based on its markings and Googling I identified it as a CR14 made by <a href="//www.st.com/">ST</a> and found a copy of the <a href="https://github.com/davidhampgonsalves/CR14-emulator-for-CatGenie-120/raw/master/CR14-datasheet.pdf">datasheet</a>.</p>
 
 <h3 id="probing">Probing</h3>
 
-<p>From the datasheet I knew that the main device was communicating with the CR14 via I2C. I had learned about cheap logic analizers and <a href="//sigrok.org/">Sigrok</a> from the podcast so I ordered one off of AliExpress for 5$ and waited. Once it arrived I ran into a series of issues. First the wires that connect to the chip used incorrect colors(I think to be misleading) and combined with this being my first time using a logic analizer it took me awhile to figure out. After that my lack of knowledge about I2C and signal analyzers sampling rates caught up to me and killed another few days of free time.</p>
+<p>From the datasheet I knew that the main device was communicating with the CR14 via I2C. I had learned about cheap logic analyzers and <a href="//sigrok.org/">Sigrok</a> from the podcast so I ordered one off of AliExpress for 5$ and waited. Once it arrived I ran into a series of issues. First the wires that connect to the chip used incorrect colors(I think to be misleading) and combined with this being my first time using a logic analizer it took me awhile to figure out. After that my lack of knowledge about I2C and signal analyzers sampling rates caught up to me and killed another few days of free time.</p>
 
 <p>Eventually I got everything working and recorded my first accurate signal capture:</p>
 
@@ -449,15 +449,15 @@
 
 <p>After I had a rough idea of what the main board was expecting from the CR14 I wrote some code for an Arduino to emulate it. I ran into issues using Serial writes in the I2C response call backs, I think because they slowed the responses down but eventually I figured that out and switched to using the logic analyzer to debug what was happening. As I worked on this, sitting on the cold bathroom floor the CatGenie serinaded me with angry beeps every few seconds. Finally getting the tag validation working and stopping the beeping was a relief. If I knew how long I would be sitting there I would have located and disabled the beeper.</p>
 
-<p>After the beeping stoped I realized that there was still more work to be done as the CatGenie wouldn&rsquo;t actually start. I captured <a href="//github.com/davidhampgonsalves/CR14-emulator-for-CatGenie-120/raw/master/write-remaining-count.sr">more samples</a> right as I pressed the start button and found the logic that decrements the usage count. Once I implemented that portion of the logic I was able to successfully run the device.</p>
+<p>After the beeping stopped I realized that there was still more work to be done as the CatGenie wouldn&rsquo;t actually start. I captured <a href="//github.com/davidhampgonsalves/CR14-emulator-for-CatGenie-120/raw/master/write-remaining-count.sr">more samples</a> right as I pressed the start button and found the logic that decrements the usage count. Once I implemented that portion of the logic I was able to successfully run the device.</p>
 
 <p><img src="https://davidhampgonsalves.com/images/cr14/sigrok-screenshot-2.png" alt="" /></p>
 
 <h3 id="closing">Closing</h3>
 
-<p>If you want to perform similiar modifications as these check out the <a href="//github.com/davidhampgonsalves/CR14-emulator-for-CatGenie-120">git repo</a> and it will guide you through the process.</p>
+<p>If you want to perform similar modifications as these check out the <a href="//github.com/davidhampgonsalves/CR14-emulator-for-CatGenie-120">git repo</a> and it will guide you through the process.</p>
 
-<p>Another alternative is to run a opensource firmware also created by the auther of the CartridgeGenius called <a href="https://github.com/CatGenius/catgenius/">CatGenius</a> but if you choose this route know that you can&rsquo;t revert back to the original firmware.</p>
+<p>Another alternative is to run a opensource firmware also created by the author of the CartridgeGenius called <a href="https://github.com/CatGenius/catgenius/">CatGenius</a> but if you choose this route know that you can&rsquo;t revert back to the original firmware.</p>
 
   </div>
 
