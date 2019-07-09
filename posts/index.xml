@@ -6,10 +6,40 @@
     <description>Recent content in Posts on David Hamp-Gonsalves</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 17 Jul 2018 20:02:31 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2019 20:02:31 -0300</lastBuildDate>
     
 	<atom:link href="https://davidhampgonsalves.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ESP Based Scheduling Thermostat</title>
+      <link>https://davidhampgonsalves.com/esp-based-scheduling-thermostat/</link>
+      <pubDate>Mon, 01 Apr 2019 20:02:31 -0300</pubDate>
+      
+      <guid>https://davidhampgonsalves.com/esp-based-scheduling-thermostat/</guid>
+      <description>I moved into a house that uses a few mini split heatpumps for temperature control and while the technology is efficient and amazing interacting with them is not. Each unit eschews the standard thermostat wiring and standards in favor of implementing their own baked in system.
+In my case this means that I can&amp;rsquo;t schedule temperature changes through the day or even set temperatures outside of a small range (16°-25° C).</description>
+    </item>
+    
+    <item>
+      <title>Life Dashboard</title>
+      <link>https://davidhampgonsalves.com/life-dashboard/</link>
+      <pubDate>Fri, 01 Feb 2019 20:02:31 -0300</pubDate>
+      
+      <guid>https://davidhampgonsalves.com/life-dashboard/</guid>
+      <description>Second hand Kindles are waiting in drawers for someone to repurpose them into something great. Boasting large e-ink screens, wifi connectivity and ARM processors they are an amazing hacking platform.
+In my case I created an information panel summarizing my day such as my calendar, surf and weather forecast, garbage schedule, school closures, etc. My favorite part is that any extra space is filled with a random Pokémon sprite which my kids(not me) like to come check in on.</description>
+    </item>
+    
+    <item>
+      <title>Halloween Mask 2018</title>
+      <link>https://davidhampgonsalves.com/halloween-mask-2018/</link>
+      <pubDate>Wed, 24 Oct 2018 20:02:31 -0300</pubDate>
+      
+      <guid>https://davidhampgonsalves.com/halloween-mask-2018/</guid>
+      <description>I made a cardboard halloween mask powered by an Arduino. Unfortunately it was too scary for the kids when combined with the hunch back and cloak I made so I couldn&amp;rsquo;t wear it.
+It has blinking eyes and a breath animation and the code that powers it can be found in github.</description>
+    </item>
     
     <item>
       <title>Reverse Engineering Cat Genie 120 DRM</title>
@@ -97,10 +127,10 @@ I think this will create new incentives for being the best at mundane activities
     
     <item>
       <title>Hugo Black &amp; Light</title>
-      <link>https://davidhampgonsalves.com/hugo-black--light/</link>
+      <link>https://davidhampgonsalves.com/hugo-black-light/</link>
       <pubDate>Sun, 08 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.com/hugo-black--light/</guid>
+      <guid>https://davidhampgonsalves.com/hugo-black-light/</guid>
       <description>I converted my blog from Octopress to Hugo and in as part of that process ported over the existing theme. Its available on the Hugo Themes Site.
 Its called Black and Light and is high contrast, text oriented, and Javascript-free.
 Features  Loads in a single request (with web-fonts disabled) 100 / 100 on Google Page Speed test (100 / 100 on mobile with web-fonts disabled) Scriptless (unless you enable Google Analyitcs) Styles inlined in head High Contrast  Style Demo h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading This is bold text</description>
@@ -660,10 +690,10 @@ I found there wasn&amp;rsquo;t much out there about this topic, especially when 
     
     <item>
       <title>Loading Indicator &amp; CSS Animations</title>
-      <link>https://davidhampgonsalves.com/loading-indicator--css-animations/</link>
+      <link>https://davidhampgonsalves.com/loading-indicator-css-animations/</link>
       <pubDate>Sat, 26 Nov 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidhampgonsalves.com/loading-indicator--css-animations/</guid>
+      <guid>https://davidhampgonsalves.com/loading-indicator-css-animations/</guid>
       <description>Recently I needed a minimum viable animated web loading indicator. I didn&amp;rsquo;t want to add another image to my page for load time reasons. Nor did I want to write any javascript for size/time reasons. This left me with CSS animations. CSS based animations at this point only have limited browser support but for my project which already required HTML5 Geo Location it seemed like a good fit. This post is to show how easily this animation can be added as well as show how nicely it downgrades.</description>
     </item>
     
