@@ -429,13 +429,13 @@
 
 <h2 id="schedule">Schedule</h2>
 
-<p>The ESP will fetch the <a href="schedule">/davidhampgonsalves/IR-Schedule-Thermostat/blob/master/schedules/3.json</a> that corresponds with its node number every 2 days. They use tuples to keep the payload small to reduce memory usage on the ESP in the form <code>[hour, minute, power(boolean), temperature]</code>.</p>
+<p>The ESP will fetch the <a href="https://github.com/davidhampgonsalves/davidhampgonsalves/IR-Schedule-Thermostat/blob/master/schedules/3.json">schedule</a> that corresponds with its node number every 2 days. They use tuples to keep the payload small to reduce memory usage on the ESP in the form: <code>[hour, minute, power(boolean), temperature]</code>.</p>
 
 <h2 id="ir">IR</h2>
 
 <p>Heatpump and AC IR signals are typically huge. So large in fact that most IR libraries will break trying to process the signals. This is because each time you press a button on the remote the entire state of the unit is transmitted.</p>
 
-<p>I used the very capable <a href="https://github.com/markszabo/IRremoteESP8266">markszabo/IRremoteESP8266</a> library to capture each IR state since it can handle the huge payloads and the ESP replays the states as required.</p>
+<p>I used the very capable <a href="https://github.com/markszabo/IRremoteESP8266">markszabo/IRremoteESP8266</a> library to capture each IR state which are then replayed by the ESP as required.</p>
 
 <h2 id="power-usage">Power Usage</h2>
 
