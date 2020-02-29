@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -436,13 +433,9 @@
 
   <div class="entry-content">
     <p>Most of the key binding can be configured from the system settings &gt; Keyboard area with the exception of the configuring the dash or overview overlay, which by default is bound to the left super key. This can be problematic in certain cases and especially in the case of some VM&rsquo;s.</p>
-
 <p>To change this binding you need to modify the gconf settings by doing something like the following</p>
-
-<pre><code class="language-bash">gconftool-2 -s /apps/mutter/general/overlay_key Super_R -t string
-</code></pre>
-
-<p>This line when run from the termainal tells the gconf tool that you want to <em>set(-s)</em> the overlay_key property to the <em>Super_R key</em>(or whatever you want to bind it to) and that this property is of <em>type(-t)</em> string.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gconftool-2 -s /apps/mutter/general/overlay_key Super_R -t string
+</code></pre></div><p>This line when run from the termainal tells the gconf tool that you want to <em>set(-s)</em> the overlay_key property to the <em>Super_R key</em>(or whatever you want to bind it to) and that this property is of <em>type(-t)</em> string.</p>
 
   </div>
 

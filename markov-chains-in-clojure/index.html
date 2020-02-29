@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -436,11 +433,8 @@
 
   <div class="entry-content">
     <p>I noticed that when you enter 30 into tumblrs age field it switches from &ldquo;years old&rdquo; to &ldquo;years young&rdquo;. Fully grasping the limited scope of my existence for the first time I wrote a <a href="http://en.wikipedia.org/wiki/Markov_chain">Markov Chain</a> generator so that it could provide(tenuous) value long after I have fled this mortal coil, by mashing up the works <a href="http://scrumdiddlyumptious-clojure.tumblr.com/">of Roald Dahl with some Clojure manuals</a>.</p>
-
 <p>When you reach this point in your life you can save some time and use my <a href="https://github.com/davidhampgonsalves/markov-cloj">Clojure implementation</a> or write your own.</p>
-
 <p>If you write your own, here are some pointers\:</p>
-
 <ul>
 <li>Don&rsquo;t remove punctuation, all that data is valuable.</li>
 <li>The training material quality is of the utmost importance.</li>

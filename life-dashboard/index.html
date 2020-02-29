@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,37 +432,21 @@
   
 
   <div class="entry-content">
-    
-
-<p>Second hand Kindles are waiting in drawers for someone to repurpose them into something great. Boasting large e-ink screens, wifi connectivity and ARM processors they are an amazing hacking platform.</p>
-
+    <p>Second hand Kindles are waiting in drawers for someone to repurpose them into something great. Boasting large e-ink screens, wifi connectivity and ARM processors they are an amazing hacking platform.</p>
 <p>Check out the project <a href="https://github.com/davidhampgonsalves/life-dashboard">repository</a> for more details.</p>
-
-<p><img src="https://davidhampgonsalves.com/images/life-dashboard-01.jpg" /></p>
-
+<p><!-- raw HTML omitted --></p>
 <p>In my case I created an information panel summarizing my day such as my calendar, surf and weather forecast, garbage schedule, school closures, etc. My favorite part is that any extra space is filled with a random Pokémon sprite which my kids(not me) like to come check in on.</p>
-
 <h2 id="implementation">Implementation</h2>
-
 <p>The project uses a serverless backend to collate data from external services and on the Kindle itself Rust code (cross compiled via docker) fetches and typesets the data into an image.</p>
-
 <p>I could have avoided the backend of this project and only used the Kindle but I had already created it when I planned on using a dedicated e-ink display and it saved time to still use it.</p>
-
 <h2 id="reusability">Reusability</h2>
-
 <p>I built a stand rather then the more standard frame because the e-reader functionality of the Kindle is still present and can be picked up and used without modification. I also thought it was important to avoid obscuring the original device and celebrate its reuse.</p>
-
 <h2 id="kindle-hacking-notes">Kindle Hacking Notes</h2>
-
 <p>The <a href="https://www.mobileread.com/forums/">mobileread forum</a> is the place for mobile reader hacking.</p>
-
 <p>My Kindle (KT 4) does not provide access to the RTC, but if I ever find a Kindle Paper White I would be able to sleep the device and run it unplugged for months between changes.</p>
-
-<p><img src="https://davidhampgonsalves.com/images/life-dashboard-02.jpg" /></p>
-
-<p><img src="https://davidhampgonsalves.com/images/life-dashboard-03.jpg" /></p>
-
-<p><img src="https://davidhampgonsalves.com/images/life-dashboard-04.jpg" /></p>
+<p><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --></p>
 
   </div>
 

@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,44 +432,28 @@
   
 
   <div class="entry-content">
-    
-
-<figure class="right-justify">
+    <figure class="right-justify">
     <img src="https://davidhampgonsalves.com/images/projects/notefeeder.png"/> 
 </figure>
 
-
 <p><a href="https://github.com/davidhampgonsalves/notefeeder">Note Feeder</a> is a small web application that lets you save urls and notes from your current page.</p>
-
 <p>You can access your notes from RSS feeds to find sites or thoughts later.</p>
-
 <h2 id="features">Features</h2>
-
 <ul>
 <li>Save links and notes without leaving your page using the bookmarklet.</li>
 <li>Various ways to create notes. For details see the input methods page.</li>
 <li>Access your notes from your current page using the RSS feeds. For other options see the output methods page</li>
 <li>Description field supports <a href="http://en.wikipedia.org/wiki/Markdown">markdown</a>.</li>
 </ul>
-
 <h2 id="why-i-built-it">Why I built it</h2>
-
 <p>I created note feeder to help me remember things I read and wanted to come back to on Hacker News and Reddit.</p>
-
 <p>One of the main requirements I had for the project was that I didn&rsquo;t want to have to go to a site to do this.</p>
-
 <p>Note Feeder does this by offering some convient input methods like a bookmarklet, get request or simple forms.</p>
-
 <h2 id="technical-notes">Technical Notes</h2>
-
 <p>Note Feeder is a fairly simple Rails Web App. It ran on <a href="http://heroku.com/">Heroku</a> until the bamboo stack was shutdown. It needs to be upgraded to cedar to run again.</p>
-
 <p>Authentication is handled using OpenId. This greatly reduces the first usage barrier.</p>
-
 <p>I put a priortiy on caching which is preformed using page, action and fragment caching as well as HTTP caching using Varnish to reduce server load and thus hosting fees.</p>
-
 <p>Markdown is handled using <a href="https://github.com/rtomayko/rdiscount">RDiscount</a> in the description area.</p>
-
 <p>Full text search is performed using Postgres tsearch2 as its the only free(unofficial) option on Heroku.</p>
 
   </div>

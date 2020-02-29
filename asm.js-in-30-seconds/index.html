@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -436,29 +433,17 @@
 
   <div class="entry-content">
     <p>Everyone loves faster Javascript, which is why Mozilla&rsquo;s ASM.js is such big news. This is my 5 second overview.</p>
-
 <p>ASM.js is a subset of javascript that allows for further optimization.</p>
-
-<p>You can mark your JS code as being ASM.js complaint by adding <em>&ldquo;use asm;&rdquo;</em> to your file/function(similar to <strong>&ldquo;use strict&rdquo;</strong>).</p>
-
+<p>You can mark your JS code as being ASM.js complaint by adding <em>&ldquo;use asm;&quot;</em> to your file/function(similar to <strong>&ldquo;use strict&rdquo;</strong>).</p>
 <p>ASM.js contains type hints and lacks a garbage collector. These differences make it highly optimizable (roughly half as fast as native).</p>
-
 <p>ASM.js can be compiled ahead of time(not just JIT).</p>
-
 <p>The type hints look like(still valid js):</p>
-
-<pre><code class="language-javascript">var integerVariable = variable | 0;
-var doubleVariable  = +variable;
-</code></pre>
-
-<p><em>ASM.js can&rsquo;t manipulate Objects or Strings.</em></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">integerVariable</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">variable</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">doubleVariable</span>  <span style="color:#f92672">=</span> <span style="color:#f92672">+</span><span style="color:#a6e22e">variable</span>;
+</code></pre></div><p><em>ASM.js can&rsquo;t manipulate Objects or Strings.</em></p>
 <p>ASM.js uses an ArrayBuffer as its memory heap.</p>
-
 <p>ASM.js isn&rsquo;t intended to be written mere mortals. Its a target for compilers like Emscripten. So you would write C/C++ code and compile it to ASM.js.</p>
-
 <p>ASM is ready now, sort of. Since it is just javascript it will run right now everywhere javascript will. You will only see the performance benefit on browsers that have implemented ASM optimizations(Firefox Nightly, hopefully Chrome in the future).</p>
-
 <p>Converting JS to ASM.js would be non-trivial.</p>
 
   </div>

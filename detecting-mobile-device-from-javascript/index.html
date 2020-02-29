@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -436,18 +433,12 @@
 
   <div class="entry-content">
     <p>This is a pretty lightweight way of detecting when your javascript is living in a mobile device.</p>
-
-<pre><code class="language-javascript">if(typeof window.orientation != 'undefined') { /* put mobile spesific code here */ }
-</code></pre>
-
-<p>To omit spesific devices from running this code you can also add individual checks like the following.</p>
-
-<pre><code class="language-javascript">if(typeof window.orientation != 'undefined' &amp;&amp; !navigator.userAgent.match(/iPad/i)) {
-  /* put mobile spesific(but not ipad) code here */
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">typeof</span> window.<span style="color:#a6e22e">orientation</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;undefined&#39;</span>) { <span style="color:#75715e">/* put mobile spesific code here */</span> }
+</code></pre></div><p>To omit spesific devices from running this code you can also add individual checks like the following.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">typeof</span> window.<span style="color:#a6e22e">orientation</span> <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;undefined&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">userAgent</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/iPad/i</span>)) {
+  <span style="color:#75715e">/* put mobile spesific(but not ipad) code here */</span>
 }
-</code></pre>
-
-<p>This is a mix of the answers found on <a href="http://stackoverflow.com/questions/11381673/javascript-solution-to-detect-mobile-browser">stack overflow</a>.</p>
+</code></pre></div><p>This is a mix of the answers found on <a href="http://stackoverflow.com/questions/11381673/javascript-solution-to-detect-mobile-browser">stack overflow</a>.</p>
 
   </div>
 

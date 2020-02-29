@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,87 +432,75 @@
   
 
   <div class="entry-content">
-    
-
-<p>Sticky headers are heading elements that stick to the top of the window as the user scrolls down the page. This is useful since you can use them to retain the contextual information of the section regardless of the position.</p>
-
+    <p>Sticky headers are heading elements that stick to the top of the window as the user scrolls down the page. This is useful since you can use them to retain the contextual information of the section regardless of the position.</p>
 <p>In my case I needed to have multiple headers in the hourly forecast list for <a href="http://www.hourweather.com/">hourweather.com</a>.</p>
-
 <p>I found there wasn&rsquo;t much out there about this topic, especially when you want to have multiple sticky headers per page so I thought I&rsquo;d share my implementation(which is pretty rough) for others to reference for the main ideas.</p>
-
 <h2 id="basic-concept">Basic Concept</h2>
-
 <p>Sticky headers basically work by toggling the headers position type when it reaches the top of the window to fixed so that it sticks in place. The rest of the logic really just handles the flipping from one stuck headers to the next as the scrolling continues up or down the page.</p>
-
 <h2 id="demo">Demo</h2>
-
 <p>Check out <a href="http://www.hourweather.com/">hourweather.com</a> as its used in the hourly forecast listings.</p>
-
 <h2 id="code">Code</h2>
-
 <p>This code uses JQuery since I was already using it on the page. You could remove the references pretty easily since I only used some selectors and CSS manipulations.</p>
-
-<pre><code class="language-javascript">function setupStickyHeaders() {
-    //get initial offset positions of the headers
-    var headers = [];
-    $.each($('div.day-start'), function(i, headerDiv) {
-        var header = $(headerDiv);
-        headers.push({element\:header, orgOffset\: header.offset().top});
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setupStickyHeaders</span>() {
+    <span style="color:#75715e">//get initial offset positions of the headers
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">headers</span> <span style="color:#f92672">=</span> [];
+    <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">each</span>(<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;div.day-start&#39;</span>), <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">headerDiv</span>) {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">header</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">headerDiv</span>);
+        <span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">push</span>({<span style="color:#a6e22e">element</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">:</span><span style="color:#a6e22e">header</span>, <span style="color:#a6e22e">orgOffset</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">offset</span>().<span style="color:#a6e22e">top</span>});
     });
 
-    //if no headers on this page then stop
-    if(headers.length == 0)
-        return;
+    <span style="color:#75715e">//if no headers on this page then stop
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+        <span style="color:#66d9ef">return</span>;
 
-    //get the original css for the
-    var orgCSS = {width\:headers[0].element.css('width'), position\:headers[0].element.css('position'), height\:headers[0].element.css('height')};
+    <span style="color:#75715e">//get the original css for the
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">orgCSS</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">width</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">:</span><span style="color:#a6e22e">headers</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;width&#39;</span>), <span style="color:#a6e22e">position</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">:</span><span style="color:#a6e22e">headers</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;position&#39;</span>), <span style="color:#a6e22e">height</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">:</span><span style="color:#a6e22e">headers</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;height&#39;</span>)};
 
-    //handle scrolling
-    $(window).scroll(function(){
-        var scrollTop = $(this).scrollTop();
+    <span style="color:#75715e">//handle scrolling
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">$</span>(window).<span style="color:#a6e22e">scroll</span>(<span style="color:#66d9ef">function</span>(){
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">scrollTop</span>();
 
 
-        //unstick headers
-        for(i in headers) {
-            var header = headers[i];
-            if(!isStuck(header)) break;
+        <span style="color:#75715e">//unstick headers
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">headers</span>) {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">header</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">headers</span>[<span style="color:#a6e22e">i</span>];
+            <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">isStuck</span>(<span style="color:#a6e22e">header</span>)) <span style="color:#66d9ef">break</span>;
 
-            if(scrollTop &lt; header.orgOffset) {
-                header.element.css('position', orgCSS.position).css('top','').prev().remove();
-                if(i &gt; 0)
-                    headers[i-1].element.css('z-index', 1);
+            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">orgOffset</span>) {
+                <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;position&#39;</span>, <span style="color:#a6e22e">orgCSS</span>.<span style="color:#a6e22e">position</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;top&#39;</span>,<span style="color:#e6db74">&#39;&#39;</span>).<span style="color:#a6e22e">prev</span>().<span style="color:#a6e22e">remove</span>();
+                <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)
+                    <span style="color:#a6e22e">headers</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;z-index&#39;</span>, <span style="color:#ae81ff">1</span>);
             }
         }
 
-        //stick headers
-        for(i in headers) {
-            var header = headers[i];
-            //make sure any stuck headers are stuck in the right place(fast scrolling sometimes messes this up)
-            if(isStuck(header))
-                header.element.css('top','0')
+        <span style="color:#75715e">//stick headers
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">headers</span>) {
+            <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">header</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">headers</span>[<span style="color:#a6e22e">i</span>];
+            <span style="color:#75715e">//make sure any stuck headers are stuck in the right place(fast scrolling sometimes messes this up)
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">isStuck</span>(<span style="color:#a6e22e">header</span>))
+                <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;top&#39;</span>,<span style="color:#e6db74">&#39;0&#39;</span>)
 
-            //skip this header if its bellow the top of the window
-            if(scrollTop &lt; header.orgOffset - parseInt(orgCSS.height))
-                break;
+            <span style="color:#75715e">//skip this header if its bellow the top of the window
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">orgOffset</span> <span style="color:#f92672">-</span> parseInt(<span style="color:#a6e22e">orgCSS</span>.<span style="color:#a6e22e">height</span>))
+                <span style="color:#66d9ef">break</span>;
 
-            //if the header is already stuck then ignore it
-            if(!isStuck(header)) {
-                if(scrollTop &gt; header.orgOffset) {
-                    //stick the header
-                    header.element.css('width', orgCSS.width).css('position', 'fixed').css('top','0').before('&lt;div class=day-start&gt; &lt;/div&gt;');
-                    if(i &gt; 0)
-                        headers[i-1].element.css('z-index', -1);
-                }else if(i &gt; 0)
-                    //hide the element since it should be off the screen now
-                    headers[i-1].element.css('top', header.orgOffset - scrollTop - parseInt(orgCSS.height));
+            <span style="color:#75715e">//if the header is already stuck then ignore it
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">isStuck</span>(<span style="color:#a6e22e">header</span>)) {
+                <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">orgOffset</span>) {
+                    <span style="color:#75715e">//stick the header
+</span><span style="color:#75715e"></span>                    <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;width&#39;</span>, <span style="color:#a6e22e">orgCSS</span>.<span style="color:#a6e22e">width</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;position&#39;</span>, <span style="color:#e6db74">&#39;fixed&#39;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;top&#39;</span>,<span style="color:#e6db74">&#39;0&#39;</span>).<span style="color:#a6e22e">before</span>(<span style="color:#e6db74">&#39;&lt;div class=day-start&gt; &lt;/div&gt;&#39;</span>);
+                    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)
+                        <span style="color:#a6e22e">headers</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;z-index&#39;</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+                }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)
+                    <span style="color:#75715e">//hide the element since it should be off the screen now
+</span><span style="color:#75715e"></span>                    <span style="color:#a6e22e">headers</span>[<span style="color:#a6e22e">i</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>].<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;top&#39;</span>, <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">orgOffset</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">-</span> parseInt(<span style="color:#a6e22e">orgCSS</span>.<span style="color:#a6e22e">height</span>));
             }
         }
     });
 }
 
-function isStuck(header) {return header.element.css('position') === 'fixed'}
-</code></pre>
-
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isStuck</span>(<span style="color:#a6e22e">header</span>) {<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">header</span>.<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;position&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;fixed&#39;</span>}
+</code></pre></div>
   </div>
 
   <div id=links>

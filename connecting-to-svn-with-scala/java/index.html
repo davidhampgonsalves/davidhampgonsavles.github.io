@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,50 +432,32 @@
   
 
   <div class="entry-content">
-    
-
-<p>I needed to do some SVN scraping recently to automate the detection of certain areas of code and this is what I learned.</p>
-
+    <p>I needed to do some SVN scraping recently to automate the detection of certain areas of code and this is what I learned.</p>
 <h2 id="libraries">Libraries</h2>
-
 <p><strong>SVNKit</strong> was too low level for my(and I suggest most) needs. I found I was writing quite a bit of code for relatively simple actions.</p>
-
 <p><strong>SvnClientAdapter</strong> provides a simplified interface for either the cmd line client, SVNJavahl or SVNKit. Its my recommendation that for most projects this is the best way to go. In my case I used SVNJavaHL as my low level SVN library.</p>
-
 <h2 id="download">Download</h2>
-
 <p>The SVNClientAdaptor library were hard at the time of writing but are available as dependencies in the related Apache project SVNAnt: <em>subclipse.tigris.org/source/browse/subclipse/trunk/svnant/lib</em>.</p>
-
 <ul>
 <li>svnjavahl.jar</li>
 <li>svnClientAdapter.jar</li>
 </ul>
-
 <h2 id="usage-setup">Usage: Setup</h2>
-
 <p>I was working in Scala for my project but the conversion to Java is trivial.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala">	<span style="color:#a6e22e">SvnKitClientAdapterFactory</span><span style="color:#f92672">.</span>setup<span style="color:#f92672">();</span>
+	<span style="color:#75715e">//To create the SVN client we first need to tell it what type of client to use.
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//Letting it choose whatever is availiable is usually fine unless you have both
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//and want to force it to use something specific
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">val</span> clientType\<span style="color:#66d9ef">:</span><span style="color:#66d9ef">String</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SVNClientAdapterFactory</span><span style="color:#f92672">.</span>getPreferredSVNClientType<span style="color:#f92672">();</span>
+	<span style="color:#66d9ef">val</span> svnClient\<span style="color:#66d9ef">:</span><span style="color:#66d9ef">ISVNClientAdapter</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">SVNClientAdapterFactory</span><span style="color:#f92672">.</span>createSVNClient<span style="color:#f92672">(</span>clientType<span style="color:#f92672">);</span>
 
-<pre><code class="language-scala">	SvnKitClientAdapterFactory.setup();
-	//To create the SVN client we first need to tell it what type of client to use.
-	//Letting it choose whatever is availiable is usually fine unless you have both
-	//and want to force it to use something specific
-	val clientType\:String = SVNClientAdapterFactory.getPreferredSVNClientType();
-	val svnClient\:ISVNClientAdapter = SVNClientAdapterFactory.createSVNClient(clientType);
-
-	//add whatever authentication your repositor requires(if any)
-	svnClient.setUsername(&quot;&lt;your user name&gt;&quot;);
-	svnClient.setPassword(&quot;&lt;your password&gt;&quot;);
-</code></pre>
-
-<h2 id="usage">Usage</h2>
-
+	<span style="color:#75715e">//add whatever authentication your repositor requires(if any)
+</span><span style="color:#75715e"></span>	svnClient<span style="color:#f92672">.</span>setUsername<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;your user name&gt;&#34;</span><span style="color:#f92672">);</span>
+	svnClient<span style="color:#f92672">.</span>setPassword<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;your password&gt;&#34;</span><span style="color:#f92672">);</span>
+</code></pre></div><h2 id="usage">Usage</h2>
 <p>Now that we have a svn client object we can do some work. If your familiar with SVN this part very straight forward. In my case I was listing directories and searching for files.</p>
-
-<pre><code class="language-scala">var svnDirs\: Array[ISVNDirEntry] = svnClient.getList(new SVNUrl(&quot;&lt;SVN repository URL&gt;&quot;), SVNRevision.HEAD, false)
-</code></pre>
-
-<h2 id="conclusion">Conclusion</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-scala" data-lang="scala"><span style="color:#66d9ef">var</span> svnDirs\<span style="color:#66d9ef">:</span> <span style="color:#66d9ef">Array</span><span style="color:#f92672">[</span><span style="color:#66d9ef">ISVNDirEntry</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">=</span> svnClient<span style="color:#f92672">.</span>getList<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SVNUrl</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&lt;SVN repository URL&gt;&#34;</span><span style="color:#f92672">),</span> <span style="color:#a6e22e">SVNRevision</span><span style="color:#f92672">.</span><span style="color:#a6e22e">HEAD</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
+</code></pre></div><h2 id="conclusion">Conclusion</h2>
 <p>This is a short post because its a short topic. Once you&rsquo;ve got your libraries in the classpath and the client instantiated its smooth sailing. Automating SVN mapping, organization and monitoring can save you a lot of time in a big organization/repository.</p>
 
   </div>

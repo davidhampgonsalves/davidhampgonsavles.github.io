@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -436,17 +433,11 @@
 
   <div class="entry-content">
     <p><em>This post should really just read: JQuery 1.4 breaks(Refused to execute inline script) when used in Chrome Extensions using the version 2 Manifest. Update to Jquery 1.7 and you&rsquo;ll be happy.</em></p>
-
 <p>Unfortunately it doesn&rsquo;t, it reads more like:</p>
-
 <p>Last night I decided to cross something off my to do list and updated <a href="https://chrome.google.com/webstore/detail/jpgagcapnkccceppgljfpoadahaopjdb">Foxish</a>(a chrome extension) to use the version 2 manifest that will become manditory in a short while.</p>
-
 <p>For the most part it was pretty painless. Mostly it involves moving your javascript from the headers(or footers) of your html and placing it in seperate .js files to avoid some security risks outlined on the <a href="http://developer.chrome.com/extensions/manifestVersion.html">chrome site</a>.</p>
-
-<p>The tricky part came after I had finished eliminating all the inline javascript and I was still seeing <strong>Refused to execute inline script because it violates the following Content Security Policy directive: &ldquo;script-src &lsquo;self&rsquo; chrome-extension-resource:&ldquo;</strong>. on every page of my extension.</p>
-
+<p>The tricky part came after I had finished eliminating all the inline javascript and I was still seeing <strong>Refused to execute inline script because it violates the following Content Security Policy directive: &ldquo;script-src &lsquo;self&rsquo; chrome-extension-resource:&quot;</strong>. on every page of my extension.</p>
 <p>Since it was affecting everything and all the errors were reported to come from the first line of each page I knew it had to be something global or common to all pages. Turns out it was JQuery. I was still using version 1.4.2(which was the newest at the time) and for some reason(I didn&rsquo;t check) that causes the issue. Upgrading to 1.7 fixes this.</p>
-
 <p>Looking around the internet this morning it looks like a couple other people have been affected by this but all(like me) have been to lazy to rip appart the old JQuery library to determine the cause. If you get around to it let me know and I&rsquo;ll buy you a coffee.</p>
 
   </div>

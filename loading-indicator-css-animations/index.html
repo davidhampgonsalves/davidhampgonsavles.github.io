@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,46 +432,35 @@
   
 
   <div class="entry-content">
-    
-
-<p>Recently I needed a minimum viable animated web loading indicator. I didn&rsquo;t want to add another image to my page for load time reasons. Nor did I want to write any javascript for size/time reasons. This left me with CSS animations. CSS based animations at this point only have limited browser support but for my project which already required HTML5 Geo Location it seemed like a good fit. This post is to show how easily this animation can be added as well as show how nicely it downgrades.</p>
-
+    <p>Recently I needed a minimum viable animated web loading indicator. I didn&rsquo;t want to add another image to my page for load time reasons. Nor did I want to write any javascript for size/time reasons. This left me with CSS animations. CSS based animations at this point only have limited browser support but for my project which already required HTML5 Geo Location it seemed like a good fit. This post is to show how easily this animation can be added as well as show how nicely it downgrades.</p>
 <h2 id="setup">Setup</h2>
-
 <p>For my loading indicator I used a container div and also a div to cover half of the sun which isn&rsquo;t required. All you need is a DOM element that you want to spin.
 The Important Bits
 The spinning sun animation is achieved(using CSS) by first creating an animation that rotates the image from 0 to 360 degrees. This is shown in the code bellow for both Chrome(Webkit prefix) and Firefox(Moz prefix):</p>
-
-<pre><code class="language-css">/* the rest of the important stuff for Chrome */
-@-webkit-keyframes rotate {
-	from {-webkit-transform\:rotate(0deg);}
-	to {-webkit-transform\:rotate(360deg);}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* the rest of the important stuff for Chrome */</span>
+@<span style="color:#66d9ef">-webkit-keyframes</span> <span style="color:#f92672">rotate</span> {
+	<span style="color:#f92672">from</span> {<span style="color:#66d9ef">-webkit-</span><span style="color:#960050;background-color:#1e0010">transform\:rotate(0deg)</span>;}
+	<span style="color:#f92672">to</span> {<span style="color:#66d9ef">-webkit-</span><span style="color:#960050;background-color:#1e0010">transform\:rotate(360deg)</span>;}
 }
-/* the rest of the important stuff for Firefox */
-@-moz-keyframes rotate {
-    from {-moz-transform\: rotate(0deg);}
-    to {-moz-transform\: rotate(360deg);}
+<span style="color:#75715e">/* the rest of the important stuff for Firefox */</span>
+@<span style="color:#66d9ef">-moz-keyframes</span> <span style="color:#f92672">rotate</span> {
+    <span style="color:#f92672">from</span> {<span style="color:#66d9ef">-moz-</span><span style="color:#960050;background-color:#1e0010">transform\:</span> <span style="color:#960050;background-color:#1e0010">rotate(0deg)</span>;}
+    <span style="color:#f92672">to</span> {<span style="color:#66d9ef">-moz-</span><span style="color:#960050;background-color:#1e0010">transform\:</span> <span style="color:#960050;background-color:#1e0010">rotate(360deg)</span>;}
 }
-</code></pre>
-
-<p>Next we need to start the animation. This involves setting its peroid(time per animation), iteration count and the animation name we want to start. In our case we want a continous animation so we set the iteration count to infinate andset our peroid to 5 seconds since that looks nice to me. We also define which animation-timing function to start. This is all shown bellow for both Chrome(Webkit prefix) and Firefox(Moz prefix):</p>
-
-<pre><code class="language-css">#your-dom-element {
-	/* some of the important stuff for Chrome */
-	-webkit-animation-name\: rotate;
-	-webkit-animation-duration\: 5s;
-	-webkit-animation-iteration-count\: infinite;
-	-webkit-animation-timing-function\: linear;
-	/* some of the important stuff for Firefox */
-	-moz-animation-name\: rotate;
-	-moz-animation-duration\: 5s;
-	-moz-animation-iteration-count\: infinite;
-	-moz-animation-timing-function\: linear;
+</code></pre></div><p>Next we need to start the animation. This involves setting its peroid(time per animation), iteration count and the animation name we want to start. In our case we want a continous animation so we set the iteration count to infinate andset our peroid to 5 seconds since that looks nice to me. We also define which animation-timing function to start. This is all shown bellow for both Chrome(Webkit prefix) and Firefox(Moz prefix):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">#your-dom-element {
+	<span style="color:#75715e">/* some of the important stuff for Chrome */</span>
+	<span style="color:#66d9ef">-webkit-</span><span style="color:#960050;background-color:#1e0010">animation-name\:</span> <span style="color:#960050;background-color:#1e0010">rotate</span>;
+	<span style="color:#66d9ef">-webkit-</span><span style="color:#960050;background-color:#1e0010">animation-duration\:</span> <span style="color:#960050;background-color:#1e0010">5s</span>;
+	<span style="color:#66d9ef">-webkit-</span><span style="color:#960050;background-color:#1e0010">animation-iteration-count\:</span> <span style="color:#960050;background-color:#1e0010">infinite</span>;
+	<span style="color:#66d9ef">-webkit-</span><span style="color:#960050;background-color:#1e0010">animation-timing-function\:</span> <span style="color:#960050;background-color:#1e0010">linear</span>;
+	<span style="color:#75715e">/* some of the important stuff for Firefox */</span>
+	<span style="color:#66d9ef">-moz-</span><span style="color:#960050;background-color:#1e0010">animation-name\:</span> <span style="color:#960050;background-color:#1e0010">rotate</span>;
+	<span style="color:#66d9ef">-moz-</span><span style="color:#960050;background-color:#1e0010">animation-duration\:</span> <span style="color:#960050;background-color:#1e0010">5s</span>;
+	<span style="color:#66d9ef">-moz-</span><span style="color:#960050;background-color:#1e0010">animation-iteration-count\:</span> <span style="color:#960050;background-color:#1e0010">infinite</span>;
+	<span style="color:#66d9ef">-moz-</span><span style="color:#960050;background-color:#1e0010">animation-timing-function\:</span> <span style="color:#960050;background-color:#1e0010">linear</span>;
 }
-</code></pre>
-
-<h2 id="wrap-up">Wrap up</h2>
-
+</code></pre></div><h2 id="wrap-up">Wrap up</h2>
 <p>There are many cases where the lack of browser support will prevent you from using this approch but for me this is a great solution. It creates very little extra load and doesn&rsquo;t require new image reasources(if you can reuse an image already on the page). It also downgrades well and maintains its function. For a live example you can check out: <a href="http://www.hourweather.com">hour weather</a>.</p>
 
   </div>

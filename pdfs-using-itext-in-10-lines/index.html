@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,50 +432,28 @@
   
 
   <div class="entry-content">
-    
-
-<p>There are some getting started tutorials for the iText library but I don&rsquo;t think they really capture how fast and easy it is to get working PDF&rsquo;s.</p>
-
+    <p>There are some getting started tutorials for the iText library but I don&rsquo;t think they really capture how fast and easy it is to get working PDF&rsquo;s.</p>
 <p>Your standard servlet hello world example is 10 super simple lines.</p>
-
 <p>In your servlets doGet method:</p>
-
-<pre><code class="language-java">	response.setContentType(&quot;application/pdf&quot;);
-	Document document = new Document();
-	try {
-		PdfWriter.getInstance(document, response.getOutputStream());
-		document.open();
-		document.add(new Paragraph(&quot;Hello world&quot;));
-		document.close();
-	} catch (DocumentException e) { //handle the error }
-</code></pre>
-
-<h2 id="to-break-that-down">to break that down:</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	response<span style="color:#f92672">.</span><span style="color:#a6e22e">setContentType</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;application/pdf&#34;</span><span style="color:#f92672">);</span>
+	Document document <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Document<span style="color:#f92672">();</span>
+	<span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+		PdfWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span>document<span style="color:#f92672">,</span> response<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">());</span>
+		document<span style="color:#f92672">.</span><span style="color:#a6e22e">open</span><span style="color:#f92672">();</span>
+		document<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Paragraph<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello world&#34;</span><span style="color:#f92672">));</span>
+		document<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+	<span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>DocumentException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">//handle the error }
+</span></code></pre></div><h2 id="to-break-that-down">to break that down:</h2>
 <p>First you need to let the browser know via the http response headers that the content is a pdf.</p>
-
-<pre><code class="language-java">response.setContentType(&quot;application/pdf&quot;);
-</code></pre>
-
-<p>Next you need to creat the document object that will house your pdf.</p>
-
-<pre><code class="language-java">Document document = new Document();
-</code></pre>
-
-<p>Then get an instance of the PdfWriter to create the pdf using the contents of your document and output them to the response stream.</p>
-
-<pre><code class="language-java">PdfWriter.getInstance(document, response.getOutputStream());
-</code></pre>
-
-<p>Finally you need to open and populate your pdf with whatever you want.</p>
-
-<pre><code class="language-java">document.open(); document.add(new Paragraph(&quot;Hello world&quot;)); document.close();
-</code></pre>
-
-<p>If you want to create a PDF in a file its the same thing except easier because you don&rsquo;t have to worry about the content type you just replace the response.getOutputStream() with a valid FileOutputStream and your all set.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">response<span style="color:#f92672">.</span><span style="color:#a6e22e">setContentType</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;application/pdf&#34;</span><span style="color:#f92672">);</span>
+</code></pre></div><p>Next you need to creat the document object that will house your pdf.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Document document <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Document<span style="color:#f92672">();</span>
+</code></pre></div><p>Then get an instance of the PdfWriter to create the pdf using the contents of your document and output them to the response stream.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">PdfWriter<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span>document<span style="color:#f92672">,</span> response<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">());</span>
+</code></pre></div><p>Finally you need to open and populate your pdf with whatever you want.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">document<span style="color:#f92672">.</span><span style="color:#a6e22e">open</span><span style="color:#f92672">();</span> document<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Paragraph<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello world&#34;</span><span style="color:#f92672">));</span> document<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+</code></pre></div><p>If you want to create a PDF in a file its the same thing except easier because you don&rsquo;t have to worry about the content type you just replace the response.getOutputStream() with a valid FileOutputStream and your all set.</p>
 <h2 id="licenses">Licenses</h2>
-
 <p>At the time of writing IText is at version 5.0.6 but starting with version 5 the license was changed to the Affero General Public License. If that is a problem you can still use 2.1.7 which from my experence is fairly compatable with version 5 except for the package names and is bound by the LGPL.</p>
 
   </div>

@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,14 +432,9 @@
   
 
   <div class="entry-content">
-    
-
-<p>I converted my blog from <a href="https://davidhampgonsalves.com/octopress-to-hugo/">Octopress to Hugo</a> and in as part of that process ported over the existing theme. Its available on the <a href="http://themes.gohugo.io/black-and-light/">Hugo Themes Site</a>.</p>
-
+    <p>I converted my blog from <a href="https://davidhampgonsalves.com/octopress-to-hugo/">Octopress to Hugo</a> and in as part of that process ported over the existing theme. Its available on the <a href="http://themes.gohugo.io/black-and-light/">Hugo Themes Site</a>.</p>
 <p>Its called <a href="https://github.com/davidhampgonsalves/hugo-black-and-light-theme">Black and Light</a> and is high contrast, text oriented, and Javascript-free.</p>
-
 <h2 id="features">Features</h2>
-
 <ul>
 <li>Loads in a single request (with web-fonts disabled)</li>
 <li>100 / 100 on Google Page Speed test (100 / 100 on mobile with web-fonts disabled)</li>
@@ -450,75 +442,54 @@
 <li>Styles inlined in head</li>
 <li>High Contrast</li>
 </ul>
-
 <h2 id="style-demo">Style Demo</h2>
-
 <h1 id="h1-heading">h1 Heading</h1>
-
 <h2 id="h2-heading">h2 Heading</h2>
-
 <h3 id="h3-heading">h3 Heading</h3>
-
 <h4 id="h4-heading">h4 Heading</h4>
-
 <h5 id="h5-heading">h5 Heading</h5>
-
 <h6 id="h6-heading">h6 Heading</h6>
-
-<hr />
-
+<hr>
 <p><strong>This is bold text</strong></p>
-
 <p><strong>This is bold text</strong></p>
-
 <p><em>This is italic text</em></p>
-
 <p><em>This is italic text</em></p>
-
 <p><del>Deleted text</del></p>
-
 <blockquote>
 <p>Block quotes are
 written like so.</p>
-
 <p>They can span multiple paragraphs,
 if you like.</p>
 </blockquote>
-
 <p>Some text, and some <code>code</code> and then a nice plain <a href="https://github.com/davidhampgonsalves/davidhampgonsalves.com-hugo" title="title text!">link with title</a>.</p>
-
 <p>and then</p>
-
 <ul>
 <li>Create a list by starting a line with <code>+</code>, <code>-</code>, or <code>*</code></li>
 <li>Sub-lists are made by indenting 2 spaces:
-
 <ul>
-<li>Marker character change forces new list start:</li>
+<li>Marker character change forces new list start:
+<ul>
 <li>Ac tristique libero volutpat at</li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>Very easy!</li>
 </ul>
-
 <p>vs.</p>
-
 <ol>
 <li>Lorem ipsum dolor sit amet</li>
 <li>Consectetur adipiscing elit</li>
 <li>Integer molestie lorem at massa</li>
 </ol>
-
 <h2 id="code">Code</h2>
-
 <p>Inline <code>code</code></p>
-
-<pre><code class="language-js">var foo = function (bar) {
-  return bar++;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">bar</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">bar</span><span style="color:#f92672">++</span>;
 };
 
-console.log(foo(5));
-</code></pre>
-
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">foo</span>(<span style="color:#ae81ff">5</span>));
+</code></pre></div>
   </div>
 
   <div id=links>

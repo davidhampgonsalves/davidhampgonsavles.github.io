@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,34 +432,19 @@
   
 
   <div class="entry-content">
-    
-
-<p>The last few weeks I&rsquo;ve seen more fake burning fires then every other holiday season I can remember so when I noticed no one had written one in canvas I figured I&rsquo;ll fill the gap.</p>
-
+    <p>The last few weeks I&rsquo;ve seen more fake burning fires then every other holiday season I can remember so when I noticed no one had written one in canvas I figured I&rsquo;ll fill the gap.</p>
 <h2 id="the-fire">the Fire</h2>
-
 <p>Not being a game developer I needed to read a bit about how to create a reasonable but minimally resource intensive fire simulation. The one I chose works by randomly generating colors and then propagating them up the page while averaging out near by colors and adding a cooling effect.</p>
-
 <h2 id="porting">Porting</h2>
-
 <p>I&rsquo;ve never had the chance to port code before so for this little project I decided to give it a try. I found a reasonable implementation in ruby(chosen because its also a dynamic language) and did a direct port over to javascript and canvas. I would include a link to the ruby src but I can&rsquo;t seem to find it anymore. This worked pretty well but even in chrome performance was very poor. In each area I discuss some of the performance changes I made.</p>
-
 <h2 id="color-palatte">Color Palatte</h2>
-
 <p>The color palette takes the form of an array of colors ranging from yellow to orange to red. Canvas doesn&rsquo;t have a standard way of setting colors directly and relies on css based colors when specifying for fills and paths. To address this I pre-generated all of the CSS RGB color strings to avoid the string concatination in the main loop.</p>
-
 <h2 id="fire-map">Fire Map</h2>
-
 <p>In the Ruby implementation they used a single dimension array for tracking the current fire positions and colors. I changed this to use a 2 dimensional array because in my main animation loop I have to poll three reference points to calculate the new value for each square of the fire. Having a two dimensional array lets me store the row index and thus makes my look ups faster. Because this is getting called for every block of the fire map it made a big difference. I say square and not pixel because in this example I&rsquo;m actually drawing squares so that I can change the scale of the fire if I want to. Next time I&rsquo;ll probably try flipping the pixels directly using the Canvas ImageData method to see how much better it performs.</p>
-
 <h2 id="audio">Audio</h2>
-
 <p>Audio is one of the more exciting parts of the HTML 5 spec but at the time of writing this isn&rsquo;t well supported by stable browsers although I&rsquo;ve seen some really cool audio demos from the Firefox guys with their betas. I&rsquo;m using a looped Theora ogg sound file but even so there is limited support. Because of this I had to work around the loop parameter being ignored with a standard chunk of Javascript. Even so this only works on Firefox 4(beta at the moment) and Chrome.</p>
-
 <h2 id="demo">Demo</h2>
-
 <p>You&rsquo;ll need to be using Chrome or a Firefox Beta for this to run correctly.</p>
-
 <p><a href="https://davidhampgonsalves.com/html/woodstove.html">Yule log canvas demo</a></p>
 
   </div>

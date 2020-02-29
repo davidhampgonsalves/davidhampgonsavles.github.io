@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,33 +432,25 @@
   
 
   <div class="entry-content">
-    
-
-<p>This is just a short and sweet set of commands to install Nodejs and NPM on Fedora 17.</p>
-
+    <p>This is just a short and sweet set of commands to install Nodejs and NPM on Fedora 17.</p>
 <h2 id="versions">Versions</h2>
-
 <ul>
 <li>Fedora Core 17</li>
 <li>node.js 0.8.9</li>
 </ul>
-
-<h2 id="the-guts-go-bash-go">The Guts(go bash go!)</h2>
-
-<pre><code class="language-bash">sudo yum install openssl-devel.i686 gcc gcc-c++
+<h2 id="the-gutsgo-bash-go">The Guts(go bash go!)</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install openssl-devel.i686 gcc gcc-c++
 sudo ./configure
 sudo make -j2
 sudo make install
 
 su
 cd /tmp
-git clone https\://github.com/isaacs/npm.git
+git clone https<span style="color:#ae81ff">\:</span>//github.com/isaacs/npm.git
 cd npm
 make install
 exit
-</code></pre>
-
-<p><em>Most of this was based on an older post I found <a href="http://johnroach.info/2011/11/20/installing-node-js-0-6-2-on-fedora-16/">here</a>.</em></p>
+</code></pre></div><p><em>Most of this was based on an older post I found <a href="http://johnroach.info/2011/11/20/installing-node-js-0-6-2-on-fedora-16/">here</a>.</em></p>
 
   </div>
 

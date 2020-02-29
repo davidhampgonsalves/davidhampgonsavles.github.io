@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,89 +432,59 @@
   
 
   <div class="entry-content">
-    
-
-<p>Converting a barcode into useful, descriptive information is harder then you would expect. Or rather its difficult to do with any reliability and accuracy. There are a few good API&rsquo;s that I&rsquo;ve been using or looking into that I&rsquo;ll cover here.
+    <p>Converting a barcode into useful, descriptive information is harder then you would expect. Or rather its difficult to do with any reliability and accuracy. There are a few good API&rsquo;s that I&rsquo;ve been using or looking into that I&rsquo;ll cover here.
 The API&rsquo;s
 Each service offers different information so you need to nail down your requirements before you read further. For my needs I really just need Barcode -&gt; Company but I&rsquo;ll try to add details that fall outside of that where I can remember them.</p>
-
 <h2 id="google-shopping-api">Google Shopping API</h2>
-
 <p>The <a href="https://developers.google.com/shopping-search/">Google Shopping API</a> is a good starting point since it covers a wide array of products.</p>
-
 <h3 id="features">features</h3>
-
 <ul>
 <li>Very descriptive.</li>
 <li>Dead easy to consume and you can customize your responses.</li>
 <li>Great documentation.</li>
 <li>Reasonable usage quotas.</li>
 </ul>
-
 <h2 id="milo">Milo</h2>
-
 <p>The <a href="https://www.x.com/developers/ebay/products/milo-open-api">Milo Open API</a> is an Ebay product(or at least they bought it). It also has a wide product range and is a great service.</p>
-
 <h3 id="features-1">features</h3>
-
 <ul>
 <li>Tons of available attributes.</li>
 <li>Dead easy to consume and you can customize your responses(supports JSON).</li>
 <li>Great documentation(once you find the site).</li>
 <li>Reasonable usage quotas.</li>
 </ul>
-
 <h2 id="amazon-product-advertising-api">Amazon Product Advertising API</h2>
-
 <p>The <a href="https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html">Amazon Product Advertising API</a> seems to be the defacto standard in UPC lookup game. It also has a wide product range and is a great service. You do have to navigate very detailed XML responses to find the good bits of data you actually care about but other then that its great.</p>
-
 <h3 id="features-2">features</h3>
-
 <ul>
 <li>Very descriptive.</li>
 <li>Great documentation(once you find it).</li>
 <li>Reasonable usage quotas.</li>
 </ul>
-
 <h2 id="factual-product-api">Factual Product API</h2>
-
 <p>The Factual Product API is pretty new to me but so far I like what I see. They have a ton of data and some cool attributes(ie nutrition, ingrediants). Their quota is only 500 lookups a day but thats enough to get started.</p>
-
 <h3 id="features-3">features</h3>
-
 <ul>
 <li>Clean, simple and straight forward(Supports JSON).</li>
 <li>Great documentation.</li>
 <li>Nutritional data.</li>
 </ul>
-
 <h2 id="eandata">eanData</h2>
-
 <p>The <a href="http://eandata.com/">EanData API</a> is amazing. I really want to emphasize that since I almost didn&rsquo;t even bother with it. The site isn&rsquo;t pretty but the data is great and the developer that supports it seems like a good guy.</p>
-
 <h3 id="features-4">features</h3>
-
 <ul>
 <li>Tons of data.</li>
 <li>Reasonable usage quotas.</li>
 </ul>
-
-<h2 id="upcdatabase-com">upcDatabase.com</h2>
-
+<h2 id="upcdatabasecom">upcDatabase.com</h2>
 <p>The <a href="http://www.upcdatabase.com/">UPC Database</a> is probably one of the biggest open sources of UPC data(even Google uses it if you search for a upc). The only problem is that it usually can only tell you the product name and nothing else. There are some old database exports floating around the internet from when they were regularly released that have more structured data so you may be able to use it that way.</p>
-
 <h3 id="features-5">features</h3>
-
 <ul>
 <li>Tons of UPCs.</li>
 </ul>
-
 <h2 id="good-guide">Good Guide</h2>
-
 <p>I really like the <a href="http://goodguide.com/">Good Guide</a>. They offer a great product and are nice enough to share their data through a great API. Their product coverage is mostly in the areas of house hold items.</p>
-
 <h3 id="features-6">features</h3>
-
 <ul>
 <li>Very accurate.</li>
 <li>Easy to consume and you can customize your responses.</li>
@@ -525,44 +492,29 @@ Each service offers different information so you need to nail down your requirem
 <li>Reasonable usage quotas.</li>
 <li>The developers are awesome and prompt.</li>
 </ul>
-
 <h2 id="simple-upc">Simple UPC</h2>
-
 <p>This is the only Paid service I&rsquo;m including here. It focuses on grocery store items but when I tried it out I couldn&rsquo;t find most of my sample UPCs. That being said when it does find an entry it has a lot of great information(like ingredients). I might give it another try later but they need to reduce the barriers of entry so you can do some basic testing. Also they have a really restrictive usage policy so make sure they don&rsquo;t conflict with your requirements.</p>
-
 <h3 id="features-7">features</h3>
-
 <ul>
 <li>Very accurate.</li>
 <li>Easy to consume.</li>
 <li>Great documentation.</li>
 <li>Support was prompt.</li>
 </ul>
-
 <h2 id="supermarket-api">Supermarket API</h2>
-
 <p>The <a href="http://supermarketapi.com/">Supermarket API</a> doesn&rsquo;t let you search by UPC but it does have some great product information and the developer behind it is a nice guy so I&rsquo;m including it here anyway.</p>
-
 <h3 id="features-8">features</h3>
-
 <ul>
 <li>Accurate.</li>
 <li>Easy to consume.</li>
 <li>Great documentation.</li>
 </ul>
-
 <h2 id="scandit">Scandit</h2>
-
 <p>Scandit offers a few resources for barcode scanning. First they offer their own properity scanning technology for most smart phones which is pretty great especially once you start scanning barcodes in the real world. Secondly they offer a API for looking up products. At the time of writing they didn&rsquo;t have manufacteur info but they said they would be releasing more data shortly.</p>
-
 <h2 id="bestbuy">BestBuy</h2>
-
 <p>The[ ]Best Buy API](https://bbyopen.com/) looks great but I haven&rsquo;t used it myself since I&rsquo;m not concerned with electronics(yet) which is what it covers.</p>
-
 <h2 id="zappos">Zappos</h2>
-
 <p>The <a href="http://developer.zappos.com/">Zappos API</a> is pretty new and covers clothing, shoes, etc. Its new but it looks promising.</p>
-
 <p><em>Alright, that&rsquo;s it. There are more options that I&rsquo;ve looked into but these are the major ones that I&rsquo;ve found that are worth mentioning.</em></p>
 
   </div>

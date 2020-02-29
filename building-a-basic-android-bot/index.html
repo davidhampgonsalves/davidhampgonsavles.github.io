@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,61 +432,41 @@
   
 
   <div class="entry-content">
-    
-
-<p>Last week I started playing a new game on my phone called Castle Crash. I don&rsquo;t play often play video games but when I do, I play them obsesively until they are defeated. In this case you can&rsquo;t beat the game since you are playing against the internet so I decided to tap out and let my computer take over.</p>
-
+    <p>Last week I started playing a new game on my phone called Castle Crash. I don&rsquo;t play often play video games but when I do, I play them obsesively until they are defeated. In this case you can&rsquo;t beat the game since you are playing against the internet so I decided to tap out and let my computer take over.</p>
 <h2 id="monkeyrunner">MonkeyRunner</h2>
-
 <p>Android has a great tool for writing simple automated tests on a device called MonkeyRunner. It uses Jython to let you write Python scripts that simulate user interactions and events on your device. <a href="http://developer.android.com/tools/help/monkeyrunner_concepts.html">MonkeyRunner</a> can be found in the tool directoy after you have installed the Android SDK.</p>
-
-<h2 id="determine-apps-package-activity">Determine Apps Package/Activity</h2>
-
+<h2 id="determine-apps-packageactivity">Determine Apps Package/Activity</h2>
 <p>To determine an apps package/activity the easiest way is to download the .apk file, decompress it and take a look at the <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">AndroidManifest.xml</a>. Alternatevly you can run the app on your device and watch the <a href="http://developer.android.com/tools/help/logcat.html">logs</a>.</p>
-
 <h2 id="long-presses">Long Presses</h2>
-
 <p>Long pressing is a pretty standard user interaction but MonkeyRunner doesn&rsquo;t really support it. It does however support .drag() which can be used for the same purpose.</p>
-
-<pre><code class="language-python">	device.drag((x,y), (x,y), pressTime)
-</code></pre>
-
-<h2 id="exiting-app">Exiting App</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">	device<span style="color:#f92672">.</span>drag((x,y), (x,y), pressTime)
+</code></pre></div><h2 id="exiting-app">Exiting App</h2>
 <p>Exiting the app is a good way to reset back to a known state and can be done between actions if the game structure allows.</p>
-
-<pre><code class="language-python">device.shell('am force-stop ' + package)
-</code></pre>
-
-<h2 id="determine-interaction-coordinates">Determine Interaction Coordinates</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">device<span style="color:#f92672">.</span>shell(<span style="color:#e6db74">&#39;am force-stop &#39;</span> <span style="color:#f92672">+</span> package)
+</code></pre></div><h2 id="determine-interaction-coordinates">Determine Interaction Coordinates</h2>
 <p>Since MonkeyRunner doesn&rsquo;t know anything about the app that is running it works solely with pixel coordinates. This means that you need to determine the location of all elements on the screen you want to interact with and there are a few ways of doign this. The most basic way is to determine the size in pixels of your device and then start estimating from there. This actually works quite well once you get the hang of it. A more accurate method is to enable ponter locations on your device(under developer options) and then walk through the flow keeping track of each required action.</p>
-
 <h2 id="some-bot-code">Some Bot Code</h2>
-
 <p>This code replenishes the four troop camps in Castle Crash and is a good example of simple interactions with the game.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">replenishTroops</span>(campNumber)\:
+	<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#39;replenishing troops&#39;</span>
+	campLocations <span style="color:#f92672">=</span> [(<span style="color:#ae81ff">320</span>, <span style="color:#ae81ff">400</span>), (<span style="color:#ae81ff">320</span>, <span style="color:#ae81ff">120</span>), (<span style="color:#ae81ff">590</span>, <span style="color:#ae81ff">80</span>), (<span style="color:#ae81ff">560</span>, <span style="color:#ae81ff">350</span>)][campNumber]
 
-<pre><code class="language-python">def replenishTroops(campNumber)\:
-	print 'replenishing troops'
-	campLocations = [(320, 400), (320, 120), (590, 80), (560, 350)][campNumber]
+	touch(campLocations[<span style="color:#ae81ff">0</span>], campLocations[<span style="color:#ae81ff">1</span>]) <span style="color:#75715e">#select camp</span>
+	touch(<span style="color:#ae81ff">480</span>, <span style="color:#ae81ff">450</span>) <span style="color:#75715e">#press hire button</span>
 
-	touch(campLocations[0], campLocations[1]) #select camp
-	touch(480, 450) #press hire button
+	device<span style="color:#f92672">.</span>drag((<span style="color:#ae81ff">300</span>, <span style="color:#ae81ff">450</span>), (<span style="color:#ae81ff">200</span>, <span style="color:#ae81ff">450</span>)) <span style="color:#75715e">#scroll to archers</span>
+	time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">5</span>) <span style="color:#75715e">#wait for scroll to finish</span>
+	device<span style="color:#f92672">.</span>drag((<span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">450</span>), (<span style="color:#ae81ff">501</span>, <span style="color:#ae81ff">451</span>), <span style="color:#ae81ff">5</span>) <span style="color:#75715e">#long press archers button</span>
 
-	device.drag((300, 450), (200, 450)) #scroll to archers
-	time.sleep(5) #wait for scroll to finish
-	device.drag((500, 450), (501, 451), 5) #long press archers button
+	touch(<span style="color:#ae81ff">660</span>, <span style="color:#ae81ff">60</span>) <span style="color:#75715e">#close areana window</span>
+	touch(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">#deselect anything</span>
 
-	touch(660, 60) #close areana window
-	touch(5, 5) #deselect anything
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">touch</span>(x, y, delay<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)\:
+	<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;touching &#39;</span> <span style="color:#f92672">+</span> str(x) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;, &#39;</span> <span style="color:#f92672">+</span> str(y))
+	device<span style="color:#f92672">.</span>touch(x, y, <span style="color:#e6db74">&#39;DOWN_AND_UP&#39;</span>)
+	time<span style="color:#f92672">.</span>sleep(delay)
 
-def touch(x, y, delay=2)\:
-	print('touching ' + str(x) + ', ' + str(y))
-	device.touch(x, y, 'DOWN_AND_UP')
-	time.sleep(delay)
-
-</code></pre>
-
+</code></pre></div>
   </div>
 
   <div id=links>

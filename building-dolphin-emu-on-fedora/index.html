@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -436,13 +433,9 @@
 
   <div class="entry-content">
     <p>Over the holidays I wanted to play some old game cube games to be festive(Christmas means new games). After some performance troubles I noticed that the version of the Dolphin Emulator I was using from the Fedora repos was version 3 and the current was 3.5. Eventually I broke down and built the latest version, which did make my life/performance better.</p>
-
 <p>Bellow is the <strong>command to install all the build dependancies</strong> and after that the build should go smoothy and you&rsquo;ll be up and running in no time.</p>
-
-<pre><code class="language-bash">sudo yum install build-essentials git cmake-fedora gcc-c++ wxGTK-devel SDL-devel Cg bluez-libs-devel readline-devel alsa-lib-devel pulseaudio-libs-devel libao-devel openal-soft-devel ffmpeg-devel glew-devel lzo-devel portaudio-devel
-</code></pre>
-
-<p>After that you can follow the official guide <a href="https://code.google.com/p/dolphin-emu/wiki/Linux_Build">here</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install build-essentials git cmake-fedora gcc-c++ wxGTK-devel SDL-devel Cg bluez-libs-devel readline-devel alsa-lib-devel pulseaudio-libs-devel libao-devel openal-soft-devel ffmpeg-devel glew-devel lzo-devel portaudio-devel
+</code></pre></div><p>After that you can follow the official guide <a href="https://code.google.com/p/dolphin-emu/wiki/Linux_Build">here</a>.</p>
 
   </div>
 

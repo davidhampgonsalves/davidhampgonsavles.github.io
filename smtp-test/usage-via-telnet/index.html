@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,28 +432,22 @@
   
 
   <div class="entry-content">
-    
-
-<p>A telnet client is a handy testing tool for testing connectivity between servers. Today I needed to test an SMTP server connection from a linux environment so I wrote the following script. You could use the same technique manually to do the same thing as long as your have access to a telnet client.</p>
-
+    <p>A telnet client is a handy testing tool for testing connectivity between servers. Today I needed to test an SMTP server connection from a linux environment so I wrote the following script. You could use the same technique manually to do the same thing as long as your have access to a telnet client.</p>
 <h2 id="usage">Usage</h2>
-
 <p>The script takes three parameters: the smtp server url, the sender address and the recipient address.</p>
-
-<pre><code class="language-bash">#!/usr/bin/env bash
-	(echo HELO
-	 sleep 10
-	 echo MAIL FROM\:$2
-	 sleep 10
-	 echo RCPT TO\:$3
-	 sleep 10
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">(</span>echo HELO
+	 sleep <span style="color:#ae81ff">10</span>
+	 echo MAIL FROM<span style="color:#ae81ff">\:</span>$2
+	 sleep <span style="color:#ae81ff">10</span>
+	 echo RCPT TO<span style="color:#ae81ff">\:</span>$3
+	 sleep <span style="color:#ae81ff">10</span>
 	 echo DATA
-	 sleep 10
+	 sleep <span style="color:#ae81ff">10</span>
 	 echo .
-	 sleep 10
-	 echo QUIT) | telnet $1 25
-</code></pre>
-
+	 sleep <span style="color:#ae81ff">10</span>
+	 echo QUIT<span style="color:#f92672">)</span> | telnet $1 <span style="color:#ae81ff">25</span>
+</code></pre></div>
   </div>
 
   <div id=links>

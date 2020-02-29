@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,45 +432,32 @@
   
 
   <div class="entry-content">
-    
-
-<figure class="right-justify">
+    <figure class="right-justify">
     <img src="https://davidhampgonsalves.com/images/projects/foxish.png"/> 
 </figure>
 
-
 <p>Foxish is a Chrome/Chromium extension that mimics the excellent native handling of RSS and Atom feed reading in Firefox using live bookmarks.</p>
-
 <p>It does this by syncing RSS feeds with bookmark folders and refreshing them on a customizable interval.</p>
-
 <h2 id="features">Features</h2>
-
 <ul>
 <li>Enables live bookmark handling of RSS/Atom feeds.</li>
 <li>Detects feeds on the page(code based on <a href="https://chrome.google.com/extensions/detail/nlbjncdgjeocebhnmkbbbdekmmmcbfjd">RSS Subscription Extension</a> by Google).</li>
 <li>Customizable polling interval.</li>
 <li>Import function for <a href="http://en.wikipedia.org/wiki/OPML">OPML</a>.</li>
 </ul>
-
 <h2 id="download">Download</h2>
-
 <ul>
 <li>Get Foxish from the <a href="https://chrome.google.com/extensions/detail/jpgagcapnkccceppgljfpoadahaopjdb">Google Chrome Extensions</a> site.</li>
 <li>Or get the source from my <a href="https://github.com/davidhampgonsalves/foxish">github repo</a>.</li>
 </ul>
-
 <h2 id="chrome-limitations">Chrome Limitations</h2>
-
 <ul>
 <li>Bookmark Folders Close When a bookmark gets modified all bookmark folders will be closed, which is what foxish does during a sync. This is Chromium bug <a href="http://code.google.com/p/chromium/issues/detail?id=2469">2469</a>.</li>
 <li>Chrome Bookmark Sync Using the bookmark sync will cause multiple items in the feeds since chrome will sync your feed folders as well. You shouldn&rsquo;t use this extension with the core bookmark feature. Some other bookmark sync extensions allow you to get around this by filtering out the feed folders.</li>
 <li>Chrome Bookmark API There are quotas based limitations on the number of bookmark actions(add, remove, move) that extensions can perform in a period of time so this extension tries to do as little as possible. Even so it is possible(I never have though) to hit these limits and the extension will have to wait for an hour before it can continue. In that case you&rsquo;ll be able to see the error in the error log page whcih is accessiable fromt he options page.</li>
 </ul>
-
 <h2 id="feed-back">Feed Back</h2>
-
 <p>I created Foxish to fill a need I had and decided to share. I was really happy that people seem to like it but I was blown away when it was written about on <a href="http://gizmodo.com/5609633/10-add+ons-you-have-to-know-about-for-google-chrome">Gizmodo</a> and <a href="http://lifehacker.com/5603602/foxish-live-rss-adds-live-bookmarks-to-google-chrome">LifeHacker</a>.</p>
-
 <p>If you have any issues checkout the <a href="https://davidhampgonsalves.com/blog/2010/05/Foxish-faq/">FAQ</a> and if you still have a problem send me an email.</p>
 
   </div>

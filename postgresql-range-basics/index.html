@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,38 +432,26 @@
   
 
   <div class="entry-content">
-    
-
-<p>In postgres 9.2 a new family of data types were added called <a href="http://www.postgresql.org/docs/9.2/static/rangetypes.html">Ranges</a>. This is a quick overview of how to use them.</p>
-
+    <p>In postgres 9.2 a new family of data types were added called <a href="http://www.postgresql.org/docs/9.2/static/rangetypes.html">Ranges</a>. This is a quick overview of how to use them.</p>
 <h3 id="range-types">Range Types</h3>
-
 <p>There are a handful of built in range types that cover the expected number and date types and you can also define your own if you need something outside of that.</p>
-
 <h2 id="basic-operations">Basic Operations</h2>
-
 <ul>
 <li><strong>Defining Range</strong> - CREATE TABLE ranges (range int4range)</li>
-<li><strong>Inserting Range</strong> - INSERT INTO ranges VALUES(&rsquo;[1, 4]&lsquo;)</li>
-<li><strong>Infinate Ranges</strong> - INSERT INTO ranges VALUES(&rsquo;[4, infinity]&lsquo;)</li>
+<li><strong>Inserting Range</strong> - INSERT INTO ranges VALUES('[1, 4]')</li>
+<li><strong>Infinate Ranges</strong> - INSERT INTO ranges VALUES('[4, infinity]')</li>
 <li><strong>Check Range Membership</strong> - SELECT * FROM ranges where range @&gt; 2</li>
 <li><strong>Get Range Bounds</strong> - SELECT lower(range), upper(range) FROM ranges</li>
 </ul>
-
 <h2 id="defining-ranges-values">Defining Ranges Values</h2>
-
-<p>You can define <em>inclusive</em> ranges using [2,3] and <em>exclusive</em> ranges using (1,4). You can also <em>mix</em> them [2,4). You can create <em>infinate ranges</em> like [4, infinaty] or [-infinity, 4] and you can test for infinity using _lower<em>inf</em> and _upper<em>inf</em>. Keep in mind that creating a range like [NULL, 4] will create a unbound lower range. This will act like [infinity, 4] but you wont be able to test for infinity since NULL is still distinct from infinity.</p>
-
+<p>You can define <em>inclusive</em> ranges using [2,3] and <em>exclusive</em> ranges using (1,4). You can also <em>mix</em> them [2,4). You can create <em>infinate ranges</em> like [4, infinaty] or [-infinity, 4] and you can test for infinity using <em>lower_inf</em> and <em>upper_inf</em>. Keep in mind that creating a range like [NULL, 4] will create a unbound lower range. This will act like [infinity, 4] but you wont be able to test for infinity since NULL is still distinct from infinity.</p>
 <h2 id="non-overlapping-ranges">Non-Overlapping Ranges</h2>
-
 <p>I find that when using ranges you often need to create non-overlapping ranges. You can add such a condition using like:</p>
-
-<pre><code class="language-sql">CREATE TABLE ranges (
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> ranges (
   range int4range,
-  EXCLUDE USING gist (range WITH &amp;&amp;)
+  EXCLUDE <span style="color:#66d9ef">USING</span> gist (range <span style="color:#66d9ef">WITH</span> <span style="color:#f92672">&amp;&amp;</span>)
 );
-</code></pre>
-
+</code></pre></div>
   </div>
 
   <div id=links>

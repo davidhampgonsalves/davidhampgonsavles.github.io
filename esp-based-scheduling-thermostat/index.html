@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,30 +432,17 @@
   
 
   <div class="entry-content">
-    
-
-<p>I moved into a house that uses a few mini split heatpumps for temperature control and while the technology is efficient and amazing interacting with them is not. Each unit eschews the standard thermostat wiring and standards in favor of implementing their own baked in system.</p>
-
+    <p>I moved into a house that uses a few mini split heatpumps for temperature control and while the technology is efficient and amazing interacting with them is not. Each unit eschews the standard thermostat wiring and standards in favor of implementing their own baked in system.</p>
 <p>In my case this means that I can&rsquo;t schedule temperature changes through the day or even set temperatures outside of a small range (16°-25° C).</p>
-
 <p>To get around all this I used an ESP-8622 to download the temperature schedule for the corresponding unit and then transmit each temperature change or power event via IR in the same way that the remote does.</p>
-
 <p>Check out the project <a href="https://github.com/davidhampgonsalves/IR-Schedule-Thermostat">repository</a> for more details.</p>
-
-<p><img src="https://davidhampgonsalves.com/images/esp-thermostat.jpg"  /></p>
-
+<p><!-- raw HTML omitted --></p>
 <h2 id="schedule">Schedule</h2>
-
 <p>The ESP will fetch the <a href="https://github.com/davidhampgonsalves/davidhampgonsalves/IR-Schedule-Thermostat/blob/master/schedules/3.json">schedule</a> that corresponds with its node number every 2 days. They use tuples to keep the payload small to reduce memory usage on the ESP in the form: <code>[hour, minute, power(boolean), temperature]</code>.</p>
-
 <h2 id="ir">IR</h2>
-
 <p>Heatpump and AC IR signals are typically huge. So large in fact that most IR libraries will break trying to process the signals. This is because each time you press a button on the remote the entire state of the unit is transmitted.</p>
-
 <p>I used the very capable <a href="https://github.com/markszabo/IRremoteESP8266">markszabo/IRremoteESP8266</a> library to capture each IR state which are then replayed by the ESP as required.</p>
-
 <h2 id="power-usage">Power Usage</h2>
-
 <p>The ESP deep sleeps between updates so after removing the voltage regulator so it can run on a small battery for months.</p>
 
   </div>

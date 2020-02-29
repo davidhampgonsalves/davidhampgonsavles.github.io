@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,62 +432,39 @@
   
 
   <div class="entry-content">
-    
-
-<p>This is the third post in a series about injecting JSON based metadata into a live RTP streams using Wowza Media Server, Adobe Flex and OSMF.</p>
-
-<h2 id="what-we-ve-built">What We&rsquo;ve Built</h2>
-
+    <p>This is the third post in a series about injecting JSON based metadata into a live RTP streams using Wowza Media Server, Adobe Flex and OSMF.</p>
+<h2 id="what-weve-built">What We&rsquo;ve Built</h2>
 <p>So far in the previous posts(1,2) we setup Wowza and created a module which will inject our JSON metadata into our live RTP stream. Then we created a flash object to trigger the event injection with our metadata from the browser.</p>
-
-<h2 id="what-we-re-building-in-this-post">What We&rsquo;re Building (in this post)</h2>
-
+<h2 id="what-were-building-in-this-post">What We&rsquo;re Building (in this post)</h2>
 <p>In this post we&rsquo;ll be reacting to the metadata event to preform related actions on the streaming clients browser. We&rsquo;ll keep the flash to a minimum by converting the metadata action script object to JSON and passing it off to our javascript handler. In this way we can add or modify the reactions associated with the metadata without having to rebuild or modify our player.</p>
-
 <h2 id="working-with-osmf">Working with OSMF</h2>
-
 <p>Since by now you should already have flash builder installed you&rsquo;ll now just need to get the OSMF libraries from osmf.org. At the time of writing I was using version 1.5.</p>
-
 <p>Once you have the library you just need to add the OSMF.swc to your projects build path. This is done by right clicking your project and selecting &ldquo;properties&rdquo;. Then select &ldquo;build path&rdquo; and add the library.</p>
-
 <p>Depending if you want to convert your data to JSON and pass it off to some javascript you can also grab the as3corelib which will help with the Action Script object to JSON conversion.</p>
-
-<h2 id="adding-metadata-handling-to-osmf-s-lightweightvideoelement">Adding Metadata Handling to OSMF&rsquo;s LightweightVideoElement</h2>
-
+<h2 id="adding-metadata-handling-to-osmfs-lightweightvideoelement">Adding Metadata Handling to OSMF&rsquo;s LightweightVideoElement</h2>
 <p>To handle our event we need to use OSMF NetClient. Our players NetClient wont be ready until the player is ready to play so we set up our handler by overriding the processReadyState method.</p>
-
-<pre><code class="language-actionscript">override protected function processReadyState()\:void {
-    super.processReadyState();
-    client.addHandler(&quot;question&quot;, onMetaData);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-actionscript" data-lang="actionscript"><span style="color:#66d9ef">override</span> <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">processReadyState</span>()<span style="color:#f92672">\:</span><span style="color:#a6e22e">void</span> {
+    <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">processReadyState</span>();
+    <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">addHandler</span>(<span style="color:#e6db74">&#34;question&#34;</span><span style="color:#f92672">,</span> <span style="color:#a6e22e">onMetaData</span>);
 }
-</code></pre>
-
-<p>That&rsquo;s really the only change we need to make. Our onMetadata will be called when metadata is received and because its embedded in the media stream it will be in sync.</p>
-
+</code></pre></div><p>That&rsquo;s really the only change we need to make. Our onMetadata will be called when metadata is received and because its embedded in the media stream it will be in sync.</p>
 <p>To actually do something with the metadata you can convert it to JSON like bellow and call an external javascript function of your choosing.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onMetadata</span>(<span style="color:#a6e22e">data</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">:</span>Object)<span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">:</span><span style="color:#66d9ef">void</span> {
+	<span style="color:#75715e">//convert the question to json and call javascript handler
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dataToJSON</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">:</span>Object <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object();
 
-<pre><code class="language-javascript">public function onMetadata(data\:Object)\:void {
-	//convert the question to json and call javascript handler
-	var dataToJSON\:Object = new Object();
+	<span style="color:#a6e22e">dataToJSON</span>.<span style="color:#a6e22e">text</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">text</span>;
+	<span style="color:#a6e22e">dataToJSON</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">type</span>;
+	<span style="color:#a6e22e">dataToJSON</span>.<span style="color:#a6e22e">duration</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">duration</span>;
+	<span style="color:#a6e22e">dataToJSON</span>.<span style="color:#a6e22e">attributes</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">attributes</span>;
 
-	dataToJSON.text = data.text;
-	dataToJSON.type = data.type;
-	dataToJSON.duration = data.duration;
-	dataToJSON.attributes = data.attributes;
-
-	var dataJSON\:String = JSON.encode(dataToJSON);
-	ExternalInterface.call(&quot;onData&quot;, dataJSON);
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">dataJSON</span><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#f92672">:</span>String <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">encode</span>(<span style="color:#a6e22e">dataToJSON</span>);
+	<span style="color:#a6e22e">ExternalInterface</span>.<span style="color:#a6e22e">call</span>(<span style="color:#e6db74">&#34;onData&#34;</span>, <span style="color:#a6e22e">dataJSON</span>);
 }
-</code></pre>
-
-<h2 id="closing">Closing</h2>
-
+</code></pre></div><h2 id="closing">Closing</h2>
 <p>Over these last three posts we&rsquo;ve build a system that allows us to stream a live event and in (near) real time inject data of our choosing which will then be injected into our RTP stream by Wowza and be displayed in the users browser.</p>
-
 <p>This is a pretty useful technique and so far I&rsquo;ve only see it used to trigger next slide events in presentation software. The sky is the limit with this one I think.</p>
-
 <h2 id="code-finally">Code (finally)</h2>
-
 <p>The code is safely tucked away in <a href="https://github.com/davidhampgonsalves/Wowza-Metadata-Injection-Demo">github</a>.</p>
 
   </div>

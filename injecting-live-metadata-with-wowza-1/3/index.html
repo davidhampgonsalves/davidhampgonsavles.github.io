@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,56 +432,37 @@
   
 
   <div class="entry-content">
-    
-
-<p>This is the first post in a series about injecting JSON based metadata into a live RTP streams using Wowza Media Server, Adobe Flex and OSMF.</p>
-
-<h2 id="what-we-re-building">What We&rsquo;re Building</h2>
-
+    <p>This is the first post in a series about injecting JSON based metadata into a live RTP streams using Wowza Media Server, Adobe Flex and OSMF.</p>
+<h2 id="what-were-building">What We&rsquo;re Building</h2>
 <p>Over the course of these posts I&rsquo;ll cover how to trigger a event with associated JSON data from a flash object via a NetConnection which then in turn cause Wowza to inject the related data into the live <a href="http://en.wikipedia.org/wiki/Real-time_Transport_Protocol">RTP</a> media stream and then finally to listen for and handle that event on the client side <a href="http://www.osmf.org/">OSMF</a> based video player.</p>
-
 <h2 id="developing-with-wowza">Developing with Wowza</h2>
-
 <p>Before we start you need to get set up. We&rsquo;ll be working on the Wowza Server injection first so you&rsquo;ll need to install and configure Wowza Server and the Wowza IDE which is all well documented and available on the Wowza site.</p>
-
 <p>At the time of writing I was using Wowza IDE version 2.0 and Wowza Server version 2.2.4.</p>
-
 <h2 id="setting-up-wowza">Setting up Wowza</h2>
-
 <p>If you&rsquo;re new to Wowza you&rsquo;ll want to look at the demos provided and the great documentation they have on their site.</p>
-
 <p>Otherwise you&rsquo;ll want to set up a <em>&ldquo;live-rtp&rdquo;</em> streaming application which we&rsquo;ll be using for this project.
 Metadata Injection Module
 Wowza uses modules to extends the servers functionally. In our case we&rsquo;ll need to create a Module which will add a method that can be called by our flash broadcaster client to inject data into our live stream.</p>
-
 <p>Create a Wowza Media Server Project  First we need to create a project in the Wowza IDE. You&rsquo;ll need to define your package name and also which methods your module with override which in our case is none since we&rsquo;ll be creating our own.</p>
-
 <p>Create our Remotely Callable Method  Now that we have our empty module we just need to add the code to inject the metadata event. This method will be called using a NetConnection from the flash object we&rsquo;ll create later.</p>
-
 <p>This code gets the stream that matches the passed in parameters and injects the associated metadata into it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">injectEvent</span><span style="color:#f92672">(</span>IClient client<span style="color:#f92672">,</span> RequestFunction function<span style="color:#f92672">,</span>
+			AMFDataList params<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-<pre><code class="language-java">    public void injectEvent(IClient client, RequestFunction function,
-			AMFDataList params) {
+		String streamname <span style="color:#f92672">=</span> params<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span>PARAM1<span style="color:#f92672">);</span>
+		AMFDataObj question <span style="color:#f92672">=</span> params<span style="color:#f92672">.</span><span style="color:#a6e22e">getObject</span><span style="color:#f92672">(</span>PARAM2<span style="color:#f92672">);</span>
 
-		String streamname = params.getString(PARAM1);
-		AMFDataObj question = params.getObject(PARAM2);
-
-		IMediaStream stream = client.getAppInstance().getStreams()
-			.getStream(streamname);
-		if(stream != null) {
-			System.out.println(&quot;event injected into &quot; + streamname);
-			stream.sendDirect(&quot;question&quot;, question);
-		} else
-			System.out.println(&quot;stream &quot; + streamname + &quot; wasn't found to inject into&quot;);
-	}
-</code></pre>
-
-<p>Deploying our Module Wowza modules are jar archives which live in the servers lib directory. You can either have Wowza IDE deploy your change automatically or you can build it and then move i manually depending on your situation and where your media server is. In a later post I&rsquo;ll cover how to deploy on EC2 as well.</p>
-
+		IMediaStream stream <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span><span style="color:#a6e22e">getAppInstance</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getStreams</span><span style="color:#f92672">()</span>
+			<span style="color:#f92672">.</span><span style="color:#a6e22e">getStream</span><span style="color:#f92672">(</span>streamname<span style="color:#f92672">);</span>
+		<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>stream <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;event injected into &#34;</span> <span style="color:#f92672">+</span> streamname<span style="color:#f92672">);</span>
+			stream<span style="color:#f92672">.</span><span style="color:#a6e22e">sendDirect</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;question&#34;</span><span style="color:#f92672">,</span> question<span style="color:#f92672">);</span>
+		<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span>
+			System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;stream &#34;</span> <span style="color:#f92672">+</span> streamname <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; wasn&#39;t found to inject into&#34;</span><span style="color:#f92672">);</span>
+	<span style="color:#f92672">}</span>
+</code></pre></div><p>Deploying our Module Wowza modules are jar archives which live in the servers lib directory. You can either have Wowza IDE deploy your change automatically or you can build it and then move i manually depending on your situation and where your media server is. In a later post I&rsquo;ll cover how to deploy on EC2 as well.</p>
 <p>Hooking Up the Module Finally we need to tell Wowza about our module. This is configured in the Application.xml file which resides in the conf directory in the Wowza server root. Add your module to the existing list of Modules by copying one of the existing entries and changing the Name, Description and Class fields to match your module.</p>
-
 <h2 id="closing">Closing</h2>
-
 <p>So by this point you should have Wowza running with a module that you can&rsquo;t really even use or test. Not to fear in the next post I&rsquo;ll cover how to call the module and have it inject JSON data into the stream.</p>
 
   </div>

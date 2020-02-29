@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -436,13 +433,9 @@
 
   <div class="entry-content">
     <p><strong>TLDR</strong>: Just use CircleCI.</p>
-
 <p>Having used both products in my last two positions I can say that while I once pined for Travis&rsquo;s(then) superior documentation, that stage has passed and I now enthusiastically choose CircleCI.</p>
-
 <p>CircleCI&rsquo;s UI is amazing. It feels snappy and well suited to the task. I often find myself waiting for pages to load in Travis. The UI is also branch centric which better supports feature development where as Travis seems project focused and doesn&rsquo;t suit my typical usage.</p>
-
 <p>CircleCI&rsquo;s ability to parse the test results(which I didn&rsquo;t appreciate this till it was gone) is amazing. Its so nice not to have to scroll though all your tests to see what broke.</p>
-
 <p>There are other better publicised benefits in the areas of running tests in parallel but for me these two details have the largest impact on my quality of life.</p>
 
   </div>

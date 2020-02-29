@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,44 +432,27 @@
   
 
   <div class="entry-content">
-    
-
-<p>Last week I got married(it was amazing and surreal). When planning the wedding we really wanted to make the whole night reflect &ldquo;us&rdquo;. This meant an all vegan menu from hearty catering(amazing) and a lot of elbow grease as we built and crafted mostly everything ourselves. Our signs were life sized pictures, the cupcake stand was wooden slabs of a tree and I build a photobooth which is what I&rsquo;m going to talk about in this post.
-<img src="https://davidhampgonsalves.com/images/photobooth/photobooth-01.png" alt="" /></p>
-
+    <p>Last week I got married(it was amazing and surreal). When planning the wedding we really wanted to make the whole night reflect &ldquo;us&rdquo;. This meant an all vegan menu from hearty catering(amazing) and a lot of elbow grease as we built and crafted mostly everything ourselves. Our signs were life sized pictures, the cupcake stand was wooden slabs of a tree and I build a photobooth which is what I&rsquo;m going to talk about in this post.
+<img src="https://davidhampgonsalves.com/images/photobooth/photobooth-01.png" alt=""></p>
 <h2 id="the-alternatives">The Alternatives</h2>
-
 <p>Looking on the internet I found that lots of people &ldquo;built&rdquo; photobooths by plunking a laptop on a table with some &ldquo;photobooth&rdquo; software. In my mind this was worse then nothing. Everyone owns a laptop and a webcam, whats the point in letting them use yours? What I wanted was to simulate(with as little work as possible) was the magic of a photobooth and the feeling you get from walking away with a small strip of memories to mark an event.
-<img src="https://davidhampgonsalves.com/images/photobooth/photobooth-02.png" alt="" /></p>
-
+<img src="https://davidhampgonsalves.com/images/photobooth/photobooth-02.png" alt=""></p>
 <h2 id="a-bit-of-movie-magic">A Bit of Movie Magic</h2>
-
 <p>What the &ldquo;magic&rdquo; meant for me(never used a real photobooth so this could be way off) is you walk in to a dark booth, you push a button, the booth &ldquo;speaks&rdquo; to you and directs you in taking some pictures, you walk out and you get a convenient photo strip(not an entire page!) of well lit pictures to slip in your pocket.</p>
-
 <p>With that in mind my photobooths user flow starts when the user presses the main(and only) button(hacked apart usb keyboard). This triggers the main loop in the python script that drives the whole thing. It plays the introductory audio to explain whats going to happen, then it uses the python OpenCV bindings to grab our first picture and makes a shutter sounds. This cycle repeats 3 more times and then the booth directs the users to leave and pick up their strip outside. The strips are automatically printed on strips of photo paper that are pre-cut. The strips are the width of an envelope since thats the narrowest that most printers can support repeatedly without any screw ups.
-<img src="https://davidhampgonsalves.com/images/photobooth/photobooth-03.jpg" alt="" /></p>
-
+<img src="https://davidhampgonsalves.com/images/photobooth/photobooth-03.jpg" alt=""></p>
 <p>The beauty of this booth is that from the users perspective its more then what it really is. Like real photobooths its a magic box. The picture quality is great because you can control the focus and lighting of the booth and the result is a cool take away.</p>
-
 <ul>
 <li><em>as a little extra the booth also says hi/bye as people enter and leave the booth, just to be friendly.</em></li>
 </ul>
-
 <h2 id="the-code">The Code</h2>
-
 <p>I wrote my booth in Python 2.7. You can find the code here in my github account. I used OpenCV to interface with the webcam, the PIL to manipulate the images and build the photo strip and some cool printing tricks I learned about here.</p>
-
 <h2 id="usage">Usage</h2>
-
-<p><img src="https://davidhampgonsalves.com/images/photobooth/photobooth-04.jpg" alt="" />
+<p><img src="https://davidhampgonsalves.com/images/photobooth/photobooth-04.jpg" alt="">
 Running the python script will start an openCV loop which will connect to the first webcam on your system. It will display the webcam feed in a window so you can focus your webcam and make any adjustments. Pressing the spacebar will trigger the photo strip process. Audio will be played from the sounds folder and the pictures will be taken. Then the photostrip will be created. It will create a color version of the strip and save it in the /images/color folder and it will create and print the greyscale version. It will then archive the full resolution originals in the images/originals folder. After that it&rsquo;ll be ready for the next user.</p>
-
 <h2 id="building-the-booth">Building the Booth</h2>
-
-<p>My booth was pretty basic but it worked out pretty well. The whole thing was made from <sup>1</sup>&frasl;<sub>4</sub>&rsquo; OSB and 2 * 2&rsquo;s. I drilled small holes in the ceiling for the speaker audio to come through. Mounted a recessed light fixture covered with wax paper for a soft light source. The webcam was mounted in the same way but I learned that people get pretty rowdy in photobooths so I would recomend shielding it with some plexiglass. The curtain needs to be thick enough so that you don&rsquo;t have any external light seeping through. This way you can totally control and adjust the lighting to take some really nice/consistant pictures.</p>
-
+<p>My booth was pretty basic but it worked out pretty well. The whole thing was made from 1/4&rsquo; OSB and 2 * 2&rsquo;s. I drilled small holes in the ceiling for the speaker audio to come through. Mounted a recessed light fixture covered with wax paper for a soft light source. The webcam was mounted in the same way but I learned that people get pretty rowdy in photobooths so I would recomend shielding it with some plexiglass. The curtain needs to be thick enough so that you don&rsquo;t have any external light seeping through. This way you can totally control and adjust the lighting to take some really nice/consistant pictures.</p>
 <h2 id="the-end">The End</h2>
-
 <p>Having a photobooth at a wedding(or anywhere) is a ton of fun. Your guests will have a blast cramming in and creating memories. Get to work.</p>
 
   </div>

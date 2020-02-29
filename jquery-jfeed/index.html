@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,21 +432,13 @@
   
 
   <div class="entry-content">
-    
-
-<p>While working on Foxish I needed to parse some RSS/Atom feeds in javascript. Thinking there would be nice a library for this I took a look around and found a couple old libraries and determined that the best of those was <a href="http://plugins.jquery.com/project/jFeed">JFeed</a> which is a JQuery plugin.</p>
-
+    <p>While working on Foxish I needed to parse some RSS/Atom feeds in javascript. Thinking there would be nice a library for this I took a look around and found a couple old libraries and determined that the best of those was <a href="http://plugins.jquery.com/project/jFeed">JFeed</a> which is a JQuery plugin.</p>
 <h2 id="issues">Issues</h2>
-
 <p>As I worked on the project I discovered issues with the library and since it was last updated in 2007 it didn&rsquo;t support JQuery 1.4.*.
 In working on Foxish I ended up updating the plugin and fixing a few small bugs and today I remembered that I should share the updates.</p>
-
 <h2 id="updates">Updates</h2>
-
 <p>It now works with JQuery 1.4.2 and so far has handled every feed that 3000 Foxish users have thrown at it.</p>
-
 <h2 id="download">Download</h2>
-
 <p>You can get my updated version from the Foxish src in my github repository <a href="https://github.com/davidhampgonsalves/foxish/blob/master/scripts/jquery.jfeed.js">here</a>.</p>
 
   </div>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>David Hamp-Gonsalves</title>
@@ -100,7 +100,7 @@ Fast forward to today, where without a single update or PR campaign the &amp;ldq
       <pubDate>Sun, 09 Apr 2017 10:31:31 -0400</pubDate>
       
       <guid>https://davidhampgonsalves.com/gif-twist/</guid>
-      <description> I saw a interesting timelapse animation on Reddit and created Gif-Twist to automate the long manual processs (~10 hours).
+      <description>I saw a interesting timelapse animation on Reddit and created Gif-Twist to automate the long manual processs (~10 hours).
 Gif-Twist combines all the images of a timelapse into each output frame, displaying slices of each radiating around a central point.
 Examples </description>
     </item>
@@ -134,7 +134,7 @@ I think this will create new incentives for being the best at mundane activities
       <guid>https://davidhampgonsalves.com/hugo-black-light/</guid>
       <description>I converted my blog from Octopress to Hugo and in as part of that process ported over the existing theme. Its available on the Hugo Themes Site.
 Its called Black and Light and is high contrast, text oriented, and Javascript-free.
-Features  Loads in a single request (with web-fonts disabled) 100 / 100 on Google Page Speed test (100 / 100 on mobile with web-fonts disabled) Scriptless (unless you enable Google Analyitcs) Styles inlined in head High Contrast  Style Demo h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading This is bold text</description>
+Features  Loads in a single request (with web-fonts disabled) 100 / 100 on Google Page Speed test (100 / 100 on mobile with web-fonts disabled) Scriptless (unless you enable Google Analyitcs) Styles inlined in head High Contrast  Style Demo h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading  This is bold text</description>
     </item>
     
     <item>
@@ -196,7 +196,7 @@ Coming from Toronto there was almost no cultural transition, except for the diss
       
       <guid>https://davidhampgonsalves.com/java-8-the-good-parts/</guid>
       <description>Sometimes I feel that Java has become a second class citizen on the JVM. While it commands a huge market share and is generally blazingly fast it hasn&amp;rsquo;t progressed like Clojure, Scala and even Groovy have. Java 8 delivered on some of the long planned features and this post is to talk about my favourites.
-Streams Java&amp;rsquo;s Streams are monads that let you represent computations as a chain of steps.</description>
+Streams Java&amp;rsquo;s Streams are monads that let you represent computations as a chain of steps. Typically they are created from a Collection and then the typical functional map, reduce, filter, etc functions are applied to achieve a desired transformation.</description>
     </item>
     
     <item>
@@ -260,9 +260,7 @@ I mostly followed the excellent video series by Walter Sorrells but with a modif
       
       <guid>https://davidhampgonsalves.com/webrtc-in-5-minutes/</guid>
       <description>While WebRTC has been around for awhile now but its still feels like a young technology and there are few resources to learn about it. These are the basics of how a connection is made between peers which is important for understanding how WebRTC differs from traditional networking.
-Creating a Connection 
-Fetch ICE (Interactive Connectivity Establishment) Candidates from STUN server.
- Contains details of how the data is going to be exchanged (ip, port, protocol).</description>
+Creating a Connection  Contains details of how the data is going to be exchanged (ip, port, protocol).  If STUN reports we are unreachable (behind a symetric NAT?</description>
     </item>
     
     <item>
@@ -273,7 +271,8 @@ Fetch ICE (Interactive Connectivity Establishment) Candidates from STUN server.
       <guid>https://davidhampgonsalves.com/terminal-gifs-on-osx/</guid>
       <description>Using Gifs for terminal explanations and usages aren&amp;rsquo;t new and exciting anymore but they are still useful. This is how to create them quickly on OSX.
 Install The tool we will use to capture our gif ttygif.
-brew install imagemagick ttyrec brew install https\://raw.githubusercontent.com/icholy/ttygif/master/ttygif.rb  Gif The process of creating the gif is: * Run ttyrec which records your terminal session as series of png files. * Run ttygif to convert the png files to small gifs.</description>
+brew install imagemagick ttyrec brew install https\://raw.githubusercontent.com/icholy/ttygif/master/ttygif.rb Gif The process of creating the gif is:
+ Run ttyrec which records your terminal session as series of png files. Run ttygif to convert the png files to small gifs.</description>
     </item>
     
     <item>
@@ -312,7 +311,7 @@ Configure Plist You tell launchd to run a task by putting a reverse domain named
       <pubDate>Sat, 31 Jan 2015 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.com/opencv-comparehist-performance/</guid>
-      <description>I did some performance tests on the four histograms comparison methods that compareHist provides and initially found that in basic performance tests they were all about the same speed. More recently I profiled them in a real world application and found they were significantly different.
+      <description>I did some performance tests on the four histograms comparison methods that [compareHist](http://docs.opencv.org/java/org/opencv/imgproc/Imgproc.html#compareHist(org.opencv.core.Mat, org.opencv.core.Mat, int)) provides and initially found that in basic performance tests they were all about the same speed. More recently I profiled them in a real world application and found they were significantly different.
 This is all using the Java OpenCV bindings.</description>
     </item>
     
@@ -365,7 +364,7 @@ The limitation with Beets was that it was just an organizer and you still needed
       <guid>https://davidhampgonsalves.com/postgresql-range-basics/</guid>
       <description>In postgres 9.2 a new family of data types were added called Ranges. This is a quick overview of how to use them.
 Range Types There are a handful of built in range types that cover the expected number and date types and you can also define your own if you need something outside of that.
-Basic Operations  Defining Range - CREATE TABLE ranges (range int4range) Inserting Range - INSERT INTO ranges VALUES(&amp;rsquo;[1, 4]&amp;lsquo;) Infinate Ranges - INSERT INTO ranges VALUES(&amp;rsquo;[4, infinity]&amp;lsquo;) Check Range Membership - SELECT * FROM ranges where range @&amp;gt; 2 Get Range Bounds - SELECT lower(range), upper(range) FROM ranges  Defining Ranges Values You can define inclusive ranges using [2,3] and exclusive ranges using (1,4).</description>
+Basic Operations  Defining Range - CREATE TABLE ranges (range int4range) Inserting Range - INSERT INTO ranges VALUES(&#39;[1, 4]&#39;) Infinate Ranges - INSERT INTO ranges VALUES(&#39;[4, infinity]&#39;) Check Range Membership - SELECT * FROM ranges where range @&amp;gt; 2 Get Range Bounds - SELECT lower(range), upper(range) FROM ranges  Defining Ranges Values You can define inclusive ranges using [2,3] and exclusive ranges using (1,4).</description>
     </item>
     
     <item>
@@ -385,7 +384,7 @@ Basic Operations  Defining Range - CREATE TABLE ranges (range int4range) Inserti
       <guid>https://davidhampgonsalves.com/spritz-likersvp-reader-bookmarklet/</guid>
       <description>So after seeing Spritz I waited for someone to whip up a nice extension so that I could try out the same technique(RSVP) in my brower. Since that hasn&amp;rsquo;t happened I created a bookmarklet that covers the basics so that we test this all out in real life and see how useful it really is.
 install To install drag the following link to your bookmark bar.
- 20 ? model.</description>
+Instructions  Select some text on a page and click the bookmarklet.</description>
     </item>
     
     <item>
@@ -405,7 +404,7 @@ Short List  big-O cheat sheet - Refresher on the complexity of various algorithm
       
       <guid>https://davidhampgonsalves.com/awesome-free-hosting-stacks/</guid>
       <description>Weekend projects and free hosting stacks go hand in hand. Its a hard sell to sign up for recurrent fees to power hacks and &amp;ldquo;experiments&amp;rdquo;. This is a list of combinations that I like.
-Highly Cachable Database Driven Sites Heroku + Mongo HQ : Databases on Heroku can be expensive. You can get around this using plugins and being flexable with your backend choices. The two best options I found are Mongo HQ which will give you 1&amp;frasl;2 a Gig of storage.</description>
+Highly Cachable Database Driven Sites Heroku + Mongo HQ : Databases on Heroku can be expensive. You can get around this using plugins and being flexable with your backend choices. The two best options I found are Mongo HQ which will give you 1/2 a Gig of storage.</description>
     </item>
     
     <item>
@@ -455,7 +454,7 @@ MonkeyRunner Android has a great tool for writing simple automated tests on a de
       <guid>https://davidhampgonsalves.com/animated-javascript-heatmaps.js/</guid>
       <description>I&amp;rsquo;ve been working on a crime heatmap animation lately and these are some tips for anyone else building something similar.
 Heatmap.js For my animation I used a version of heatmap.js that was tweeked for animation by alastair.is. The tweek slightly changes the look of the heatmaps but achieves a much better frame rate.
-The Animation If you new to Javascript based animation you will want to read up on window.</description>
+The Animation If you new to Javascript based animation you will want to read up on window.requestNextAnimationFrame().</description>
     </item>
     
     <item>
@@ -465,8 +464,8 @@ The Animation If you new to Javascript based animation you will want to read up 
       
       <guid>https://davidhampgonsalves.com/detecting-mobile-device-from-javascript/</guid>
       <description>This is a pretty lightweight way of detecting when your javascript is living in a mobile device.
-if(typeof window.orientation != &#39;undefined&#39;) { /* put mobile spesific code here */ }  To omit spesific devices from running this code you can also add individual checks like the following.
-if(typeof window.orientation != &#39;undefined&#39; &amp;amp;&amp;amp; !navigator.userAgent.match(/iPad/i)) { /* put mobile spesific(but not ipad) code here */ }  This is a mix of the answers found on stack overflow.</description>
+if(typeof window.orientation != &amp;#39;undefined&amp;#39;) { /* put mobile spesific code here */ } To omit spesific devices from running this code you can also add individual checks like the following.
+if(typeof window.orientation != &amp;#39;undefined&amp;#39; &amp;amp;&amp;amp; !navigator.userAgent.match(/iPad/i)) { /* put mobile spesific(but not ipad) code here */ } This is a mix of the answers found on stack overflow.</description>
     </item>
     
     <item>
@@ -528,7 +527,7 @@ Phonegap Build Phonegap build is very nice. It looks good, is easy to use, build
       <guid>https://davidhampgonsalves.com/asm.js-in-30-seconds/</guid>
       <description>Everyone loves faster Javascript, which is why Mozilla&amp;rsquo;s ASM.js is such big news. This is my 5 second overview.
 ASM.js is a subset of javascript that allows for further optimization.
-You can mark your JS code as being ASM.js complaint by adding &amp;ldquo;use asm;&amp;rdquo; to your file/function(similar to &amp;ldquo;use strict&amp;rdquo;).
+You can mark your JS code as being ASM.js complaint by adding &amp;ldquo;use asm;&amp;quot; to your file/function(similar to &amp;ldquo;use strict&amp;rdquo;).
 ASM.js contains type hints and lacks a garbage collector. These differences make it highly optimizable (roughly half as fast as native).</description>
     </item>
     
@@ -538,7 +537,7 @@ ASM.js contains type hints and lacks a garbage collector. These differences make
       <pubDate>Tue, 26 Mar 2013 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.com/rss-luddite/</guid>
-      <description>With Google Reader closing its doors the &amp;ldquo;Is RSS Dead?&amp;rdquo; debate has been revived.
+      <description>With Google Reader closing its doors the &amp;ldquo;Is RSS Dead?&amp;quot; debate has been revived.
 As someone who loves RSS(enough to write a Chrome Extension) but never liked Google Reader I&amp;rsquo;d like my turn on the soapbox.
 Since my first usage of Firefox(ver 1.5) I have always loved its live bookmarks feature(but not the read/unread indicators).
 RSS readers shouldn&amp;rsquo;t be email clones. They should expect us to ignore items and act as a consistent, omnipresent and minimal interface to the internet.</description>
@@ -612,7 +611,7 @@ Barcode Types(that matter)</description>
       
       <guid>https://davidhampgonsalves.com/install-node.js-/-npm-on-fedora-core-17/</guid>
       <description>This is just a short and sweet set of commands to install Nodejs and NPM on Fedora 17.
-Versions  Fedora Core 17 node.js 0.8.9  The Guts(go bash go!) sudo yum install openssl-devel.i686 gcc gcc-c++ sudo ./configure sudo make -j2 sudo make install su cd /tmp git clone https\://github.com/isaacs/npm.git cd npm make install exit  Most of this was based on an older post I found here.</description>
+Versions  Fedora Core 17 node.js 0.8.9  The Guts(go bash go!) sudo yum install openssl-devel.i686 gcc gcc-c++ sudo ./configure sudo make -j2 sudo make install su cd /tmp git clone https\://github.com/isaacs/npm.git cd npm make install exit Most of this was based on an older post I found here.</description>
     </item>
     
     <item>
@@ -656,7 +655,7 @@ At some point in by bot creation process I needed to determine the n-th highest 
       <guid>https://davidhampgonsalves.com/change-gnome-shell-dash-key-binding/</guid>
       <description>Most of the key binding can be configured from the system settings &amp;gt; Keyboard area with the exception of the configuring the dash or overview overlay, which by default is bound to the left super key. This can be problematic in certain cases and especially in the case of some VM&amp;rsquo;s.
 To change this binding you need to modify the gconf settings by doing something like the following
-gconftool-2 -s /apps/mutter/general/overlay_key Super_R -t string  This line when run from the termainal tells the gconf tool that you want to set(-s) the overlay_key property to the Super_R key(or whatever you want to bind it to) and that this property is of type(-t) string.</description>
+gconftool-2 -s /apps/mutter/general/overlay_key Super_R -t string This line when run from the termainal tells the gconf tool that you want to set(-s) the overlay_key property to the Super_R key(or whatever you want to bind it to) and that this property is of type(-t) string.</description>
     </item>
     
     <item>
@@ -778,7 +777,7 @@ What We&amp;rsquo;ve Built So far in the previous posts(1,2) we setup Wowza and 
       <description>There are some getting started tutorials for the iText library but I don&amp;rsquo;t think they really capture how fast and easy it is to get working PDF&amp;rsquo;s.
 Your standard servlet hello world example is 10 super simple lines.
 In your servlets doGet method:
-response.setContentType(&amp;quot;application/pdf&amp;quot;); Document document = new Document(); try { PdfWriter.getInstance(document, response.getOutputStream()); document.open(); document.add(new Paragraph(&amp;quot;Hello world&amp;quot;)); document.close(); } catch (DocumentException e) { //handle the error }  to break that down: First you need to let the browser know via the http response headers that the content is a pdf.</description>
+response.setContentType(&amp;#34;application/pdf&amp;#34;); Document document = new Document(); try { PdfWriter.getInstance(document, response.getOutputStream()); document.open(); document.add(new Paragraph(&amp;#34;Hello world&amp;#34;)); document.close(); } catch (DocumentException e) { //handle the error } to break that down: First you need to let the browser know via the http response headers that the content is a pdf.</description>
     </item>
     
     <item>
@@ -849,7 +848,7 @@ My Foxish RSS feeds arn&amp;rsquo;t syncing There can be a couple reasons for th
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.com/projects/</guid>
-      <description>.project { border-bottom: 1px solid #ccc; padding: 2em 0; } #content .project h2 { font-size: 1.6em; } #content .project .header { font-size: 1.5em; margin-bottom: 0.8em; } #content .project .header :first-child { margin-right: 0.5em; } #content .project .header .date { font-size: 0.8em; color: #555; } .container { display: flex; } .content { flex-grow: 1; } .headline { font-size: 1.1em; margin-bottom: 1em; } .container .images { margin-left: 1em; flex: 0 0 8em; } .</description>
+      <description>&amp;lt;div class=links&amp;gt; Links: &amp;lt;a href=&amp;quot;https://github.com/davidhampgonsalves/IR-Schedule-Thermostat&amp;quot;&amp;gt;Github&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;quot;/esp-based-scheduling-thermostat/&amp;quot;&amp;gt;Blog Post&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=images-lg&amp;gt; &amp;lt;img src=&amp;quot;/images/projects/esp-thermostat.jpg&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;   &amp;lt;div class=links&amp;gt; Links: &amp;lt;a href=&amp;quot;https://github.com/davidhampgonsalves/life-dashboard&amp;quot;&amp;gt;Github&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;quot;/life-dashboard/&amp;quot;&amp;gt;Blog Post&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=images-lg&amp;gt; &amp;lt;img src=&amp;quot;/images/projects/life-dashboard.jpg&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;   &amp;lt;div class=links&amp;gt; Links: &amp;lt;a href=&amp;quot;https://github.com/davidhampgonsalves/CR14-emulator-for-CatGenie-120&amp;quot;&amp;gt;Github&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;quot;/reverse-engineering-cat-genie-120-drm/&amp;quot;&amp;gt;Blog Post&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=images-lg&amp;gt; &amp;lt;img src=&amp;quot;/images/projects/catgenie.gif&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;   &amp;lt;p&amp;gt; My version was made to be recyclable, since these devices are only useful for the short time before children can read a traditional clock.</description>
     </item>
     
   </channel>

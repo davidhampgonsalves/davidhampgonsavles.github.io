@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,32 +432,19 @@
   
 
   <div class="entry-content">
-    
-
-<p>Launchd is the official way to schedule a task or run a service on OSX. The provided documentations goal is to turn you into a launchd expert at the cost of your afternoon. These are the 5 minute highlights to get a task running.</p>
-
+    <p>Launchd is the official way to schedule a task or run a service on OSX. The provided documentations goal is to turn you into a launchd expert at the cost of your afternoon. These are the 5 minute highlights to get a task running.</p>
 <h2 id="configure-plist">Configure Plist</h2>
-
 <p>You tell launchd to run a task by putting a reverse domain named plist file(<code>com.example.name</code>) in <code>~/Library/LaunchAgents</code>, this is probably what you are looking for but if you want it to be global then put it in <code>/Library/LaunchAgents</code>.</p>
-
 <p>This file needs to have 600 permissions <code>chmod 600 com.example.name.plist</code> and be owned by <code>root</code>, <code>chown root com.example.name.plist</code>.</p>
-
 <p>Launchd tasks are run from <code>/</code> so all paths should be relative from that point.</p>
-
 <p>Take a look at my <a href="https://github.com/davidhampgonsalves/markov-cloj/blob/master/markov-tumblr.plist">plist</a> as an example. Everything in there is pretty self explanatory. There is also an <a href="http://launched.zerowidth.com/">online service</a> to help you build your own..</p>
-
 <h2 id="launchctl">LaunchCtl</h2>
-
 <p>The following commands are self explanatory. If you change your plist you need to unload/load it again for the changes to take effect.</p>
-
 <p><code>launchctl list | grep com.task.name</code>
 <code>sudo launchctl unload com.davidhampgonsalves.markov-tumblr.plist</code>
 <code>sudo launchctl load -w com.davidhampgonsalves.markov-tumblr.plist</code></p>
-
 <p><em>You can force a run of your task with <code>sudo launchctl start com.markov-tumblr</code>,</em></p>
-
 <h2 id="debug">debug</h2>
-
 <p>The best way I have found is to keep a tail of the syslog running with: <code>tail -F /var/log/system.log</code>. decipher any error numbers with <code>launchd error &lt;error number&gt;</code>.</p>
 
   </div>

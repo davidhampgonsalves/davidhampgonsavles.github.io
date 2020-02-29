@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -436,30 +433,21 @@
 
   <div class="entry-content">
     <p>After reading about using <a href="http://threatpost.com/buy-an-ad-own-a-browser-botnet">online ads to launch a javascript based DDoS attack</a> I started wondering about how well such a system would do at mining bitcoins. These are my <em>rough calculations.</em></p>
-
 <p>From my research I&rsquo;ve found there are 3 ways to mine bitcoins(compute hashes) using Javascript:</p>
-
 <ul>
 <li><em>UI thread</em> (I was seeing about 800 hashes/s)</li>
 <li>Multiple threads via <em>WebWorkers</em> (I was seeing about 13000 hashes/s)</li>
 <li>Using the GPU via <em>WebGL</em> (<a href="http://caniuse.com/webgl">limited browser support</a> couldn&rsquo;t find working example).</li>
 </ul>
-
 <p><em>I based my numbers on this implementation:</em> (http://bitcoin.biniok.net/gl.html) running chrome on a pentium 4. The rates are averages over 5 seconds.</p>
-
 <p>I&rsquo;ll show the math for WebWorkers since they have pretty <a href="http://caniuse.com/webworkers">decent support</a>.</p>
-
 <p>So lets say that we want 1 Million computers calculating hashes using webworkers at a rate of 13000 hashes/s. If we <em>assume</em> that each ad view results in 5 seconds of computing time then we can calculate the required number of ad views like:</p>
-
 <pre><code>(2 592 000(seconds in month) / 5 (seconds per ad view)) * 1 000 000(number of computers required at any time)
  =
 518 400 000 000(number of ad views required month)
 </code></pre>
-
 <p>Using <a href="http://www.bitcoinx.com/profit/">this</a> bitcoin calculator we can see that our distributed system will earn us 6326.96 USD a month negating all costs.</p>
-
 <p><em>final numbers:</em> 5 Billion pageviews <strong>≈</strong> 6000USD</p>
-
 <p>So unless you can really crank up the hash rate this endeavor isn&rsquo;t going to facilitate early retirement.</p>
 
   </div>

@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,91 +432,79 @@
   
 
   <div class="entry-content">
-    
-
-<p><img src="https://davidhampgonsalves.com/images/color_tracking.png" alt="" /></p>
-
+    <p><img src="https://davidhampgonsalves.com/images/color_tracking.png" alt=""></p>
 <h2 id="preamble">Preamble</h2>
-
 <p>I needed some color based object tracking for a project I was hacking together last weekend. I choose to use the OpenCV Python bindings since I knew that I wouldn&rsquo;t be doing anything fancy and I thought it would simplify the learning process. While the Python bindings are great I wasn&rsquo;t able to find much documentation and what I thought would be an easy 10 minutes turned into a bit of an afternoon project. Admittedly I got side tracked with CamShifts, Histograms, Moments and the example code.</p>
-
 <p>I also found that most of the tutorials and documentation makes even simple concepts like color tracking seem more complex then it really are. This post is intended to help you bypass all that and help you get your feet wet teaching your computer to see.</p>
-
 <h2 id="overview-of-the-process">Overview of the Process</h2>
-
 <p>The first thing we need to do is to get a single frame of the video feed and convert its color model from RGB which OpenCV uses to represent images by default to HSV since we can then look at just a single value to determine the Hue.</p>
-
 <p>Now that we have our image in the correct format we can apply a threshold to eliminate(set their value to 0) all pixels that don&rsquo;t meet our criteria. This will leave only the object we aim to track so then to determine its location we can get OpenCV to calculate its moments and compute its co-ordinal position.</p>
-
 <h2 id="the-code">The Code</h2>
-
 <p>And finally without further adieu, the commented code which will get you on your way. This code will open a window which will display the web cams video feed. It will then try to track a purple object but you can change the hue value to make it work with any color you want. Just make sure that color is fairly unique in the video feed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#! /usr/bin/env python</span>
 
-<pre><code class="language-python">#! /usr/bin/env python
+<span style="color:#f92672">import</span> cv
 
-import cv
+color_tracker_window <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Color Tracker&#34;</span>
 
-color_tracker_window = &quot;Color Tracker&quot;
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ColorTracker</span>\:
 
-class ColorTracker\:
+    <span style="color:#66d9ef">def</span> __init__(self)\:
+        cv<span style="color:#f92672">.</span>NamedWindow( color_tracker_window, <span style="color:#ae81ff">1</span> )
+        self<span style="color:#f92672">.</span>capture <span style="color:#f92672">=</span> cv<span style="color:#f92672">.</span>CaptureFromCAM(<span style="color:#ae81ff">0</span>)
 
-    def __init__(self)\:
-        cv.NamedWindow( color_tracker_window, 1 )
-        self.capture = cv.CaptureFromCAM(0)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">run</span>(self)\:
+        <span style="color:#66d9ef">while</span> True\:
+            img <span style="color:#f92672">=</span> cv<span style="color:#f92672">.</span>QueryFrame( self<span style="color:#f92672">.</span>capture )
 
-    def run(self)\:
-        while True\:
-            img = cv.QueryFrame( self.capture )
+            <span style="color:#75715e">#blur the source image to reduce color noise</span>
+            cv<span style="color:#f92672">.</span>Smooth(img, img, cv<span style="color:#f92672">.</span>CV_BLUR, <span style="color:#ae81ff">3</span>);
 
-            #blur the source image to reduce color noise
-            cv.Smooth(img, img, cv.CV_BLUR, 3);
+            <span style="color:#75715e">#convert the image to hsv(Hue, Saturation, Value) so its</span>
+            <span style="color:#75715e">#easier to determine the color to track(hue)</span>
+            hsv_img <span style="color:#f92672">=</span> cv<span style="color:#f92672">.</span>CreateImage(cv<span style="color:#f92672">.</span>GetSize(img), <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">3</span>)
+            cv<span style="color:#f92672">.</span>CvtColor(img, hsv_img, cv<span style="color:#f92672">.</span>CV_BGR2HSV)
 
-            #convert the image to hsv(Hue, Saturation, Value) so its
-            #easier to determine the color to track(hue)
-            hsv_img = cv.CreateImage(cv.GetSize(img), 8, 3)
-            cv.CvtColor(img, hsv_img, cv.CV_BGR2HSV)
+            <span style="color:#75715e">#limit all pixels that don&#39;t match our criteria, in this case we are</span>
+            <span style="color:#75715e">#looking for purple but if you want you can adjust the first value in</span>
+            <span style="color:#75715e">#both turples which is the hue range(120,140).  OpenCV uses 0-180 as</span>
+            <span style="color:#75715e">#a hue range for the HSV color model</span>
+            thresholded_img <span style="color:#f92672">=</span>  cv<span style="color:#f92672">.</span>CreateImage(cv<span style="color:#f92672">.</span>GetSize(hsv_img), <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">1</span>)
+            cv<span style="color:#f92672">.</span>InRangeS(hsv_img, (<span style="color:#ae81ff">120</span>, <span style="color:#ae81ff">80</span>, <span style="color:#ae81ff">80</span>), (<span style="color:#ae81ff">140</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>), thresholded_img)
 
-            #limit all pixels that don't match our criteria, in this case we are
-            #looking for purple but if you want you can adjust the first value in
-            #both turples which is the hue range(120,140).  OpenCV uses 0-180 as
-            #a hue range for the HSV color model
-            thresholded_img =  cv.CreateImage(cv.GetSize(hsv_img), 8, 1)
-            cv.InRangeS(hsv_img, (120, 80, 80), (140, 255, 255), thresholded_img)
+            <span style="color:#75715e">#determine the objects moments and check that the area is large</span>
+            <span style="color:#75715e">#enough to be our object</span>
+            moments <span style="color:#f92672">=</span> cv<span style="color:#f92672">.</span>Moments(thresholded_img, <span style="color:#ae81ff">0</span>)
+            area <span style="color:#f92672">=</span> cv<span style="color:#f92672">.</span>GetCentralMoment(moments, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
 
-            #determine the objects moments and check that the area is large
-            #enough to be our object
-            moments = cv.Moments(thresholded_img, 0)
-            area = cv.GetCentralMoment(moments, 0, 0)
+            <span style="color:#75715e">#there can be noise in the video so ignore objects with small areas</span>
+            <span style="color:#66d9ef">if</span>(area <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">100000</span>)\:
+                <span style="color:#75715e">#determine the x and y coordinates of the center of the object</span>
+                <span style="color:#75715e">#we are tracking by dividing the 1, 0 and 0, 1 moments by the area</span>
+                x <span style="color:#f92672">=</span> cv<span style="color:#f92672">.</span>GetSpatialMoment(moments, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>)<span style="color:#f92672">/</span>area
+                y <span style="color:#f92672">=</span> cv<span style="color:#f92672">.</span>GetSpatialMoment(moments, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)<span style="color:#f92672">/</span>area
 
-            #there can be noise in the video so ignore objects with small areas
-            if(area &gt; 100000)\:
-                #determine the x and y coordinates of the center of the object
-                #we are tracking by dividing the 1, 0 and 0, 1 moments by the area
-                x = cv.GetSpatialMoment(moments, 1, 0)/area
-                y = cv.GetSpatialMoment(moments, 0, 1)/area
+                <span style="color:#75715e">#print &#39;x\: &#39; + str(x) + &#39; y\: &#39; + str(y) + &#39; area\: &#39; + str(area)</span>
 
-                #print 'x\: ' + str(x) + ' y\: ' + str(y) + ' area\: ' + str(area)
+                <span style="color:#75715e">#create an overlay to mark the center of the tracked object</span>
+                overlay <span style="color:#f92672">=</span> cv<span style="color:#f92672">.</span>CreateImage(cv<span style="color:#f92672">.</span>GetSize(img), <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">3</span>)
 
-                #create an overlay to mark the center of the tracked object
-                overlay = cv.CreateImage(cv.GetSize(img), 8, 3)
+                cv<span style="color:#f92672">.</span>Circle(overlay, (x, y), <span style="color:#ae81ff">2</span>, (<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>), <span style="color:#ae81ff">20</span>)
+                cv<span style="color:#f92672">.</span>Add(img, overlay, img)
+                <span style="color:#75715e">#add the thresholded image back to the img so we can see what was</span>
+                <span style="color:#75715e">#left after it was applied</span>
+                cv<span style="color:#f92672">.</span>Merge(thresholded_img, None, None, None, img)
 
-                cv.Circle(overlay, (x, y), 2, (255, 255, 255), 20)
-                cv.Add(img, overlay, img)
-                #add the thresholded image back to the img so we can see what was
-                #left after it was applied
-                cv.Merge(thresholded_img, None, None, None, img)
+            <span style="color:#75715e">#display the image</span>
+            cv<span style="color:#f92672">.</span>ShowImage(color_tracker_window, img)
 
-            #display the image
-            cv.ShowImage(color_tracker_window, img)
+            <span style="color:#66d9ef">if</span> cv<span style="color:#f92672">.</span>WaitKey(<span style="color:#ae81ff">10</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">27</span>\:
+                <span style="color:#66d9ef">break</span>
 
-            if cv.WaitKey(10) == 27\:
-                break
-
-if __name__==&quot;__main__&quot;\:
-    color_tracker = ColorTracker()
-    color_tracker.run()
-</code></pre>
-
+<span style="color:#66d9ef">if</span> __name__<span style="color:#f92672">==</span><span style="color:#e6db74">&#34;__main__&#34;</span>\:
+    color_tracker <span style="color:#f92672">=</span> ColorTracker()
+    color_tracker<span style="color:#f92672">.</span>run()
+</code></pre></div>
   </div>
 
   <div id=links>

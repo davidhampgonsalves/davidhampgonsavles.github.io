@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,38 +432,21 @@
   
 
   <div class="entry-content">
-    
-
-<p>Sometimes I feel that Java has become a second class citizen on the JVM. While it commands a huge market share and is generally blazingly fast it hasn&rsquo;t progressed like Clojure, Scala and even Groovy have. Java 8 delivered on some of the long planned features and this post is to talk about my favourites.</p>
-
+    <p>Sometimes I feel that Java has become a second class citizen on the JVM. While it commands a huge market share and is generally blazingly fast it hasn&rsquo;t progressed like Clojure, Scala and even Groovy have. Java 8 delivered on some of the long planned features and this post is to talk about my favourites.</p>
 <h2 id="streams">Streams</h2>
-
 <p>Java&rsquo;s Streams are monads that let you represent computations as a chain of steps. Typically they are created from a Collection and then the typical functional <code>map</code>, <code>reduce</code>, <code>filter</code>, etc functions are applied to achieve a desired transformation.</p>
-
 <p>Streams are a high level abstraction that make (in many common cases) writing parallelised computations simple and readable.</p>
-
 <h2 id="method-references">Method References</h2>
-
 <p>With the addition of <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html">Method References</a> Java can almost support <a href="https://en.wikipedia.org/wiki/First-class_function">first-class functions</a> which when coming from other languages should help Java feel less awkward.</p>
-
 <h2 id="default-methods">Default Methods</h2>
-
 <p>While default methods don&rsquo;t allow you to do anything you couldn&rsquo;t already do with abstract classes and proper inheritance design but I&rsquo;ve found them to be convenient and more natural.</p>
-
 <h2 id="futures">Futures</h2>
-
 <p><a href="http://download.java.net/lambda/b88/docs/api/java/util/concurrent/CompletableFuture.html">CompletableFutures</a> improves the flexibility of the existing Futures</p>
-
-<h2 id="fork-join-thread-pool">Fork/Join Thread Pool?</h2>
-
+<h2 id="forkjoin-thread-pool">Fork/Join Thread Pool?</h2>
 <p>Introduced in Java 7, a system wide instance of the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ForkJoinPool.html">ForkJoinPool</a> enables allows for parallel execution for both Streams and Futures,</p>
-
 <h2 id="monads">Monads</h2>
-
 <p>Along with Streams we also have the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html">Optional</a> monad. While its a great building block its not currently used often in the stdlib which means you would need to wrap functions that still use <code>null</code> to represent not found, or similar states.</p>
-
-<h2 id="date-time">Date/Time</h2>
-
+<h2 id="datetime">Date/Time</h2>
 <p>JodaTime has traditionally been almost a requirement for writing solid time/date code in but now we have <code>java.time</code> which was worked on by the author of JodaTime.</p>
 
   </div>

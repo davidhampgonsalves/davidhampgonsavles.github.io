@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,37 +432,27 @@
   
 
   <div class="entry-content">
-    
-
-<p>Using Gifs for terminal explanations and usages aren&rsquo;t new and exciting anymore but they are still useful. This is how to create them quickly on OSX.</p>
-
+    <p>Using Gifs for terminal explanations and usages aren&rsquo;t new and exciting anymore but they are still useful. This is how to create them quickly on OSX.</p>
 <h2 id="install">Install</h2>
-
 <p>The tool we will use to capture our gif <a href="https://github.com/icholy/ttygif">ttygif</a>.</p>
-
-<pre><code class="language-sh">brew install imagemagick ttyrec
-brew install https\://raw.githubusercontent.com/icholy/ttygif/master/ttygif.rb
-</code></pre>
-
-<h2 id="gif">Gif</h2>
-
-<p>The process of creating the gif is:
-* Run <code>ttyrec</code> which records your terminal session as series of <code>png</code> files.
-* Run <code>ttygif</code> to convert the <code>png</code> files to small <code>gifs</code>.
-* Concat the <code>gif</code> files using the concat script.
-* Edit the final <code>gif</code> using whatever tool or online site you like.</p>
-
-<pre><code class="language-sh">#creates series pngs(type exit to finish recording)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew install imagemagick ttyrec
+brew install https<span style="color:#ae81ff">\:</span>//raw.githubusercontent.com/icholy/ttygif/master/ttygif.rb
+</code></pre></div><h2 id="gif">Gif</h2>
+<p>The process of creating the gif is:</p>
+<ul>
+<li>Run <code>ttyrec</code> which records your terminal session as series of <code>png</code> files.</li>
+<li>Run <code>ttygif</code> to convert the <code>png</code> files to small <code>gifs</code>.</li>
+<li>Concat the <code>gif</code> files using the concat script.</li>
+<li>Edit the final <code>gif</code> using whatever tool or online site you like.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#creates series pngs(type exit to finish recording)</span>
 ttyrec recording-name
-#convert png -&gt; gif(-f disables cropping)
+<span style="color:#75715e">#convert png -&gt; gif(-f disables cropping)</span>
 ttygif recording-name -f
-#concat gif parts into final product
+<span style="color:#75715e">#concat gif parts into final product</span>
 concat_osx.sh recording-name.gif
-</code></pre>
-
-<h1 id="example">Example</h1>
-
-<p><img src="https://davidhampgonsalves.com/images/terminal-gif-example.gif" alt="" /></p>
+</code></pre></div><h1 id="example">Example</h1>
+<p><img src="https://davidhampgonsalves.com/images/terminal-gif-example.gif" alt=""></p>
 
   </div>
 

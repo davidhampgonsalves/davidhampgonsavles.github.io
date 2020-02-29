@@ -2,7 +2,6 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +95,6 @@
 
   pre code {
     display: inline;
-    max-width: auto;
     padding: 0;
     margin: 0;
     overflow: visible;
@@ -193,7 +191,7 @@
     margin-top:28px;
   }
 
-  #sub-header, time {
+  #sub-header, .date {
     color:#403c3b;
     font-size:13px;
   }
@@ -251,7 +249,7 @@
     margin-top:15px;
   }
 
-  #content time {
+  #content .date {
     margin-left:3px;
   }
 
@@ -394,7 +392,7 @@
       background-color: #262626;
     }
 
-    #sub-header, time {
+    #sub-header, .date {
       color: #BABABA;
     }
 
@@ -405,8 +403,7 @@
 </style>
 
 
-    
-  </head>
+    </head>
 
   <body>
     <section id=nav>
@@ -435,18 +432,11 @@
   
 
   <div class="entry-content">
-    
-
-<h2 id="project-goal">Project Goal</h2>
-
+    <h2 id="project-goal">Project Goal</h2>
 <p>I wanted to generate SVG based tree rings that would mirror peoples lives based on some basic info (name, age, times of growth).</p>
-
-<p><img src="https://davidhampgonsalves.com/images/tree-rings/pine.png" alt="" /></p>
-
+<p><img src="https://davidhampgonsalves.com/images/tree-rings/pine.png" alt=""></p>
 <h1 id="project-motivation">Project Motivation</h1>
-
 <p>Tree rings are interesting because they contain a lot of information.  Over the course of the project I identified and achieved the following:</p>
-
 <ul>
 <li>age (how many rings)</li>
 <li>species (bark characteristics, color, chance of cracking, etc)</li>
@@ -456,20 +446,13 @@
 <li>non-uniform ring width (simulate environmental factors)</li>
 <li>grain texture and coloration</li>
 </ul>
-
-<p><img src="https://davidhampgonsalves.com/images/tree-rings/willow.png" alt="" /></p>
-
+<p><img src="https://davidhampgonsalves.com/images/tree-rings/willow.png" alt=""></p>
 <p>The code generates a scalable image using millions of points. Unfortunately the SVG files are huge and complex and most programs can&rsquo;t handle them. Paper.js also often fails when exporting to SVG. It draws them to an HTML canvas element easily but then its no longer scalable.</p>
-
-<p><img src="https://davidhampgonsalves.com/images/tree-rings/willow-env.png" alt="" /></p>
-
+<p><img src="https://davidhampgonsalves.com/images/tree-rings/willow-env.png" alt=""></p>
 <h2 id="downfall-of-project">Downfall of Project</h2>
-
 <p>I could never get the look I wanted. Tree rings are so organic and beautiful that my representations always looked childish in comparison. The code is an abomination that arose out of a series of spikes to test out my early theories. It could be rewritten but I don&rsquo;t think it would result in a better final product.</p>
-
 <p>The code is preserved in all its tangled-ness in <a href="https://github.com/davidhampgonsalves/tree-rings">github</a></p>
-
-<p><img src="https://davidhampgonsalves.com/images/tree-rings/hemlock.png" alt="" /></p>
+<p><img src="https://davidhampgonsalves.com/images/tree-rings/hemlock.png" alt=""></p>
 
   </div>
 
