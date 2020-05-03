@@ -260,7 +260,7 @@ I mostly followed the excellent video series by Walter Sorrells but with a modif
       
       <guid>https://davidhampgonsalves.com/webrtc-in-5-minutes/</guid>
       <description>While WebRTC has been around for awhile now but its still feels like a young technology and there are few resources to learn about it. These are the basics of how a connection is made between peers which is important for understanding how WebRTC differs from traditional networking.
-Creating a Connection  Contains details of how the data is going to be exchanged (ip, port, protocol).  If STUN reports we are unreachable (behind a symetric NAT?</description>
+Creating a Connection __Fetch ICE (Interactive Connectivity Establishment) Candidates from STUN server.__  Contains details of how the data is going to be exchanged (ip, port, protocol).</description>
     </item>
     
     <item>
@@ -384,7 +384,7 @@ Basic Operations  Defining Range - CREATE TABLE ranges (range int4range) Inserti
       <guid>https://davidhampgonsalves.com/spritz-likersvp-reader-bookmarklet/</guid>
       <description>So after seeing Spritz I waited for someone to whip up a nice extension so that I could try out the same technique(RSVP) in my brower. Since that hasn&amp;rsquo;t happened I created a bookmarklet that covers the basics so that we test this all out in real life and see how useful it really is.
 install To install drag the following link to your bookmark bar.
-Instructions  Select some text on a page and click the bookmarklet.</description>
+ 20 ? model.index-20 \: 0; if(model.</description>
     </item>
     
     <item>
@@ -848,7 +848,7 @@ My Foxish RSS feeds arn&amp;rsquo;t syncing There can be a couple reasons for th
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://davidhampgonsalves.com/projects/</guid>
-      <description>&amp;lt;div class=links&amp;gt; Links: &amp;lt;a href=&amp;quot;https://github.com/davidhampgonsalves/IR-Schedule-Thermostat&amp;quot;&amp;gt;Github&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;quot;/esp-based-scheduling-thermostat/&amp;quot;&amp;gt;Blog Post&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=images-lg&amp;gt; &amp;lt;img src=&amp;quot;/images/projects/esp-thermostat.jpg&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;   &amp;lt;div class=links&amp;gt; Links: &amp;lt;a href=&amp;quot;https://github.com/davidhampgonsalves/life-dashboard&amp;quot;&amp;gt;Github&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;quot;/life-dashboard/&amp;quot;&amp;gt;Blog Post&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=images-lg&amp;gt; &amp;lt;img src=&amp;quot;/images/projects/life-dashboard.jpg&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;   &amp;lt;div class=links&amp;gt; Links: &amp;lt;a href=&amp;quot;https://github.com/davidhampgonsalves/CR14-emulator-for-CatGenie-120&amp;quot;&amp;gt;Github&amp;lt;/a&amp;gt;, &amp;lt;a href=&amp;quot;/reverse-engineering-cat-genie-120-drm/&amp;quot;&amp;gt;Blog Post&amp;lt;/a&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=images-lg&amp;gt; &amp;lt;img src=&amp;quot;/images/projects/catgenie.gif&amp;quot; /&amp;gt; &amp;lt;/div&amp;gt;   &amp;lt;p&amp;gt; My version was made to be recyclable, since these devices are only useful for the short time before children can read a traditional clock.</description>
+      <description>.project { border-bottom: 1px solid #ccc; padding: 2em 0; } #content .project h2 { font-size: 1.6em; } #content .project .header { font-size: 1.5em; margin-bottom: 0.8em; } #content .project .header :first-child { margin-right: 0.5em; } #content .project .header .date { font-size: 0.8em; color: #555; } .container { display: flex; } .content { flex-grow: 1; } .headline { font-size: 1.1em; margin-bottom: 1em; } .container .images { margin-left: 1em; flex: 0 0 8em; } .</description>
     </item>
     
   </channel>

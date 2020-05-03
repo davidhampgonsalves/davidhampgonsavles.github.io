@@ -260,7 +260,7 @@ I mostly followed the excellent video series by Walter Sorrells but with a modif
       
       <guid>https://davidhampgonsalves.com/webrtc-in-5-minutes/</guid>
       <description>While WebRTC has been around for awhile now but its still feels like a young technology and there are few resources to learn about it. These are the basics of how a connection is made between peers which is important for understanding how WebRTC differs from traditional networking.
-Creating a Connection  Contains details of how the data is going to be exchanged (ip, port, protocol).  If STUN reports we are unreachable (behind a symetric NAT?</description>
+Creating a Connection __Fetch ICE (Interactive Connectivity Establishment) Candidates from STUN server.__  Contains details of how the data is going to be exchanged (ip, port, protocol).</description>
     </item>
     
     <item>
@@ -384,7 +384,7 @@ Basic Operations  Defining Range - CREATE TABLE ranges (range int4range) Inserti
       <guid>https://davidhampgonsalves.com/spritz-likersvp-reader-bookmarklet/</guid>
       <description>So after seeing Spritz I waited for someone to whip up a nice extension so that I could try out the same technique(RSVP) in my brower. Since that hasn&amp;rsquo;t happened I created a bookmarklet that covers the basics so that we test this all out in real life and see how useful it really is.
 install To install drag the following link to your bookmark bar.
-Instructions  Select some text on a page and click the bookmarklet.</description>
+ 20 ? model.index-20 \: 0; if(model.</description>
     </item>
     
     <item>

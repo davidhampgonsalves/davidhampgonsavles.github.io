@@ -436,7 +436,7 @@
 <p>In my case this means that I can&rsquo;t schedule temperature changes through the day or even set temperatures outside of a small range (16°-25° C).</p>
 <p>To get around all this I used an ESP-8622 to download the temperature schedule for the corresponding unit and then transmit each temperature change or power event via IR in the same way that the remote does.</p>
 <p>Check out the project <a href="https://github.com/davidhampgonsalves/IR-Schedule-Thermostat">repository</a> for more details.</p>
-<p><!-- raw HTML omitted --></p>
+<p><img src="https://davidhampgonsalves.com/images/esp-thermostat.jpg"  /></p>
 <h2 id="schedule">Schedule</h2>
 <p>The ESP will fetch the <a href="https://github.com/davidhampgonsalves/davidhampgonsalves/IR-Schedule-Thermostat/blob/master/schedules/3.json">schedule</a> that corresponds with its node number every 2 days. They use tuples to keep the payload small to reduce memory usage on the ESP in the form: <code>[hour, minute, power(boolean), temperature]</code>.</p>
 <h2 id="ir">IR</h2>
